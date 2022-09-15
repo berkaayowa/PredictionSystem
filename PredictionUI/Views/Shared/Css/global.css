@@ -1,0 +1,143 @@
+﻿body {
+}
+
+.action-btn {
+    color: #383737;
+    background: #c7c7c7;
+    margin-left: 5px;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.action-btn:hover {
+    cursor:pointer;
+}
+
+.delete {
+    background: #ff4b4b;
+    color: white;
+}
+
+.edit {
+    background: #529a52;
+    color: white;
+}
+
+
+.skin-blue .main-header .logo {
+    background-color: #78ae7e;
+}
+
+.skin-blue:hover {
+    background-color: #78ae7e;
+}
+
+.skin-blue .main-header .navbar {
+    background-color: #78ae7e;
+}
+
+.navbar:hover {
+    background-color: #78ae7e;
+}
+
+.sidebar-toggle:hover, .logo:hover {
+    background-color: #37583a !important;
+}
+
+.c-green {
+    color: #78ae7e;
+}
+
+.c-black {
+    color: #333333
+}
+
+.c-orange {
+    color: #dc9552;
+}
+
+.bg-green {
+    background-color: #78ae7e;
+}
+
+.no-p {
+    padding: 0!important;
+}
+.skin-blue .sidebar-menu > li.active > a {
+    border-left-color: #db924e;
+}
+
+.box.box-primary {
+    border-top-color: #db924e;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #db924e;
+    border-color: #db924e;
+}
+.login {
+    background-color:transparent;
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    color: black;
+    /*position:absolute;*/
+    right:5%;
+    display: inline-block;
+}
+    .login:hover {
+        color: black;
+    }
+
+.btn-primary {
+    /*color: #fff;
+    background-color: #db924e;
+    border-color: #db924e;*/
+}
+
+.btn-primary:hover {
+    /*color: #fff;
+    background-color: #d88436;
+    border-color: #d88436;*/
+}
+
+.edit {
+    background: #78ae7e;
+    color: white;
+}
+
+.delete {
+    background: #db924e;
+    color: white;
+}
+
+.HomeImage {
+    border-radius: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+.box-action {
+    display: block;
+    position: absolute;
+    padding-left: 28px;
+    top: 31px;
+}
+
+.txt-lc {
+    text-transform: lowercase !important;
+}
+
+.error-sml {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.block {
+    display: block;
+}
+

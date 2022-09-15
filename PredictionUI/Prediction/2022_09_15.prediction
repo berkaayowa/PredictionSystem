@@ -1,0 +1,698 @@
+[
+  {
+    "Country": "Uruguay",
+    "League": "Clausura",
+    "Prediction": "Defensor Sp. (9,8 Win/Draw at 120,72%) - ( 1,47) Cerro Largo",
+    "PredictionLabel": "Win/Draw at 120,72%",
+    "Percentage": 120.72,
+    "Date": "2022-09-16T01:15:00",
+    "UniqueId": "14451441",
+    "HomeTeam": {
+      "TeamName": "Defensor Sp.",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 0.0,
+      "HeadtoheadPerecentage": 4.0,
+      "LeaguePointPerecentage": 0.0,
+      "LeaguePositionPerecentage": 0.8,
+      "TotalPerecentage": 9.8
+    },
+    "AwayTeam": {
+      "TeamName": "Cerro Largo",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 0.0,
+      "HeadtoheadPerecentage": 0.6666666666666666666666666665,
+      "LeaguePointPerecentage": 0.0,
+      "LeaguePositionPerecentage": 0.8,
+      "TotalPerecentage": 1.47
+    }
+  },
+  {
+    "Country": "Argentina",
+    "League": "Liga Profesional 2022",
+    "Prediction": "Rosario Central (40,14 Draw at 119,66%) - ( 36,67) Estudiantes LP",
+    "PredictionLabel": "Draw at 119,66%",
+    "Percentage": 119.66,
+    "Date": "2022-09-16T00:00:00",
+    "UniqueId": "29452932",
+    "HomeTeam": {
+      "TeamName": "Rosario Central",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 16.50,
+      "HeadtoheadPerecentage": 2.0,
+      "LeaguePointPerecentage": 5.8395061728395061728395061713,
+      "LeaguePositionPerecentage": 10.8,
+      "TotalPerecentage": 40.14
+    },
+    "AwayTeam": {
+      "TeamName": "Estudiantes LP",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 9.90,
+      "HeadtoheadPerecentage": 3.6666666666666666666666666665,
+      "LeaguePointPerecentage": 6.9012345679012345679012345696,
+      "LeaguePositionPerecentage": 16.2,
+      "TotalPerecentage": 36.67
+    }
+  },
+  {
+    "Country": "Argentina",
+    "League": "Liga Profesional 2022",
+    "Prediction": "Defensa Jus. (37,28 ) - (Win/Draw at 147,83% 47,48) Argentinos Jrs",
+    "PredictionLabel": "Win/Draw at 147,83%",
+    "Percentage": 147.83,
+    "Date": "2022-09-16T00:00:00",
+    "UniqueId": "29382930",
+    "HomeTeam": {
+      "TeamName": "Defensa Jus.",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 16.50,
+      "HeadtoheadPerecentage": 5.3333333333333333333333333335,
+      "LeaguePointPerecentage": 5.0432098765432098765432098758,
+      "LeaguePositionPerecentage": 5.4,
+      "TotalPerecentage": 37.28
+    },
+    "AwayTeam": {
+      "TeamName": "Argentinos Jrs",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 16.50,
+      "HeadtoheadPerecentage": 0.3333333333333333333333333335,
+      "LeaguePointPerecentage": 7.962962962962962962962962964,
+      "LeaguePositionPerecentage": 22.68,
+      "TotalPerecentage": 47.48
+    }
+  },
+  {
+    "Country": "Chile",
+    "League": "Primera Division",
+    "Prediction": "Antofagasta (35,21 ) - (Win/Draw at 146,67% 45,33) Curico Unido",
+    "PredictionLabel": "Win/Draw at 146,67%",
+    "Percentage": 146.67,
+    "Date": "2022-09-15T23:00:00",
+    "UniqueId": "63566357",
+    "HomeTeam": {
+      "TeamName": "Antofagasta",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 16.50,
+      "HeadtoheadPerecentage": 2.0,
+      "LeaguePointPerecentage": 10.511111111111111111111111109,
+      "LeaguePositionPerecentage": 1.2,
+      "TotalPerecentage": 35.21
+    },
+    "AwayTeam": {
+      "TeamName": "Curico Unido",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 13.2,
+      "HeadtoheadPerecentage": 3.6666666666666666666666666665,
+      "LeaguePointPerecentage": 20.066666666666666666666666668,
+      "LeaguePositionPerecentage": 8.4,
+      "TotalPerecentage": 45.33
+    }
+  },
+  {
+    "Country": "Chile",
+    "League": "Primera Division",
+    "Prediction": "Palestino (49,04 Win at 112,42%) - ( 31,39) U. de Chile",
+    "PredictionLabel": "Win at 112,42%",
+    "Percentage": 112.42,
+    "Date": "2022-09-15T20:30:00",
+    "UniqueId": "35986352",
+    "HomeTeam": {
+      "TeamName": "Palestino",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 16.50,
+      "HeadtoheadPerecentage": 2.6666666666666666666666666665,
+      "LeaguePointPerecentage": 17.677777777777777777777777777,
+      "LeaguePositionPerecentage": 7.2,
+      "TotalPerecentage": 49.04
+    },
+    "AwayTeam": {
+      "TeamName": "U. de Chile",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 17.6,
+      "HeadtoheadPerecentage": 1.0,
+      "LeaguePointPerecentage": 10.988888888888888888888888891,
+      "LeaguePositionPerecentage": 1.8,
+      "TotalPerecentage": 31.39
+    }
+  },
+  {
+    "Country": "Uruguay",
+    "League": "Clausura",
+    "Prediction": "Liverpool M (54,72 Win at 320,06%) - ( 4,47) Penarol",
+    "PredictionLabel": "Win at 320,06%",
+    "Percentage": 320.06,
+    "Date": "2022-09-15T20:30:00",
+    "UniqueId": "14331446",
+    "HomeTeam": {
+      "TeamName": "Liverpool M",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 22.0,
+      "HeadtoheadPerecentage": 2.0,
+      "LeaguePointPerecentage": 25.083333333333333333333333332,
+      "LeaguePositionPerecentage": 0.64,
+      "TotalPerecentage": 54.72
+    },
+    "AwayTeam": {
+      "TeamName": "Penarol",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 0.0,
+      "HeadtoheadPerecentage": 3.6666666666666666666666666665,
+      "LeaguePointPerecentage": 0.0,
+      "LeaguePositionPerecentage": 0.8,
+      "TotalPerecentage": 4.47
+    }
+  },
+  {
+    "Country": "Israel",
+    "League": "National League 22/23",
+    "Prediction": "Nir Ramat Hasharon (29,29 Win/Draw at 121,88%) - ( 20,88) Hapoel Nof Hagalil",
+    "PredictionLabel": "Win/Draw at 121,88%",
+    "Percentage": 121.88,
+    "Date": "2022-09-15T18:30:00",
+    "UniqueId": "34393449",
+    "HomeTeam": {
+      "TeamName": "Nir Ramat Hasharon",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 14.30,
+      "HeadtoheadPerecentage": 4.0,
+      "LeaguePointPerecentage": 2.3888888888888888888888888908,
+      "LeaguePositionPerecentage": 3.6,
+      "TotalPerecentage": 29.29
+    },
+    "AwayTeam": {
+      "TeamName": "Hapoel Nof Hagalil",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 16.50,
+      "HeadtoheadPerecentage": 0.6666666666666666666666666665,
+      "LeaguePointPerecentage": 1.9111111111111111111111111092,
+      "LeaguePositionPerecentage": 1.8,
+      "TotalPerecentage": 20.88
+    }
+  },
+  {
+    "Country": "Israel",
+    "League": "National League 22/23",
+    "Prediction": "Ramat Gan Givatayim (29,67 ) - ( 27,01) Maccabi Petah Tikva",
+    "Percentage": 0.0,
+    "Date": "2022-09-15T18:30:00",
+    "UniqueId": "34563457",
+    "HomeTeam": {
+      "TeamName": "Ramat Gan Givatayim",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 18.70,
+      "HeadtoheadPerecentage": 3.3333333333333333333333333335,
+      "LeaguePointPerecentage": 1.4333333333333333333333333319,
+      "LeaguePositionPerecentage": 1.2,
+      "TotalPerecentage": 29.67
+    },
+    "AwayTeam": {
+      "TeamName": "Maccabi Petah Tikva",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 9.90,
+      "HeadtoheadPerecentage": 3.3333333333333333333333333335,
+      "LeaguePointPerecentage": 4.7777777777777777777777777773,
+      "LeaguePositionPerecentage": 9.0,
+      "TotalPerecentage": 27.01
+    }
+  },
+  {
+    "Country": "Israel",
+    "League": "National League 22/23",
+    "Prediction": "H. Petah Tikva (30,53 Win at 105,29%) - ( 14,00) AS Ashdod",
+    "PredictionLabel": "Win at 105,29%",
+    "Percentage": 105.29,
+    "Date": "2022-09-15T18:30:00",
+    "UniqueId": "34613446",
+    "HomeTeam": {
+      "TeamName": "H. Petah Tikva",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 15.4,
+      "HeadtoheadPerecentage": 0.6666666666666666666666666665,
+      "LeaguePointPerecentage": 2.8666666666666666666666666681,
+      "LeaguePositionPerecentage": 6.6,
+      "TotalPerecentage": 30.53
+    },
+    "AwayTeam": {
+      "TeamName": "AS Ashdod",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 14.30,
+      "HeadtoheadPerecentage": 4.0,
+      "LeaguePointPerecentage": -4.3,
+      "LeaguePositionPerecentage": 0.0,
+      "TotalPerecentage": 14.00
+    }
+  },
+  {
+    "Country": "Israel",
+    "League": "National League 22/23",
+    "Prediction": "Hapoel Afula (29,09 ) - ( 27,41) Bnei Yehuda",
+    "Percentage": 0.0,
+    "Date": "2022-09-15T18:30:00",
+    "UniqueId": "34601412",
+    "HomeTeam": {
+      "TeamName": "Hapoel Afula",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 14.30,
+      "HeadtoheadPerecentage": 2.0,
+      "LeaguePointPerecentage": 2.3888888888888888888888888908,
+      "LeaguePositionPerecentage": 5.4,
+      "TotalPerecentage": 29.09
+    },
+    "AwayTeam": {
+      "TeamName": "Bnei Yehuda",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 13.2,
+      "HeadtoheadPerecentage": 3.6666666666666666666666666665,
+      "LeaguePointPerecentage": 3.3444444444444444444444444454,
+      "LeaguePositionPerecentage": 7.2,
+      "TotalPerecentage": 27.41
+    }
+  },
+  {
+    "Country": "Israel",
+    "League": "National League 22/23",
+    "Prediction": "Hapoel Umm AL Fah (28,41 ) - ( 26,80) Hapoel Kfar Saba",
+    "Percentage": 0.0,
+    "Date": "2022-09-15T18:30:00",
+    "UniqueId": "34441410",
+    "HomeTeam": {
+      "TeamName": "Hapoel Umm AL Fah",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 16.50,
+      "HeadtoheadPerecentage": 2.0,
+      "LeaguePointPerecentage": 1.9111111111111111111111111092,
+      "LeaguePositionPerecentage": 3.0,
+      "TotalPerecentage": 28.41
+    },
+    "AwayTeam": {
+      "TeamName": "Hapoel Kfar Saba",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 12.10,
+      "HeadtoheadPerecentage": 2.0,
+      "LeaguePointPerecentage": 4.3,
+      "LeaguePositionPerecentage": 8.4,
+      "TotalPerecentage": 26.80
+    }
+  },
+  {
+    "Country": "Cyprus",
+    "League": "1. Division 22/23",
+    "Prediction": "Aris Limassol (26,65 Win/Draw at 178,55%) - ( 14,33) Karmiotissa",
+    "PredictionLabel": "Win/Draw at 178,55%",
+    "Percentage": 178.55,
+    "Date": "2022-09-15T18:00:00",
+    "UniqueId": "21352137",
+    "HomeTeam": {
+      "TeamName": "Aris Limassol",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 6.6,
+      "HeadtoheadPerecentage": 3.3333333333333333333333333335,
+      "LeaguePointPerecentage": 4.9615384615384615384615384622,
+      "LeaguePositionPerecentage": 6.76,
+      "TotalPerecentage": 26.65
+    },
+    "AwayTeam": {
+      "TeamName": "Karmiotissa",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 11.0,
+      "HeadtoheadPerecentage": 3.3333333333333333333333333335,
+      "LeaguePointPerecentage": 0.0,
+      "LeaguePositionPerecentage": 0.0,
+      "TotalPerecentage": 14.33
+    }
+  },
+  {
+    "Country": "Chile",
+    "League": "Primera B",
+    "Prediction": "Magallanes (62,72 Win at 187,45%) - ( 33,29) Santiago Morn.",
+    "PredictionLabel": "Win at 187,45%",
+    "Percentage": 187.45,
+    "Date": "2022-09-15T17:30:00",
+    "UniqueId": "63436323",
+    "HomeTeam": {
+      "TeamName": "Magallanes",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 16.50,
+      "HeadtoheadPerecentage": 5.0,
+      "LeaguePointPerecentage": 25.979166666666666666666666668,
+      "LeaguePositionPerecentage": 10.24,
+      "TotalPerecentage": 62.72
+    },
+    "AwayTeam": {
+      "TeamName": "Santiago Morn.",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 18.70,
+      "HeadtoheadPerecentage": 1.6666666666666666666666666665,
+      "LeaguePointPerecentage": 11.645833333333333333333333332,
+      "LeaguePositionPerecentage": 1.28,
+      "TotalPerecentage": 33.29
+    }
+  },
+  {
+    "Country": "Chile",
+    "League": "Primera B",
+    "Prediction": "Deportes Recoleta (33,97 ) - (Win/Draw at 164,93% 45,35) Cobreloa",
+    "PredictionLabel": "Win/Draw at 164,93%",
+    "Percentage": 164.93,
+    "Date": "2022-09-15T17:30:00",
+    "UniqueId": "63386335",
+    "HomeTeam": {
+      "TeamName": "Deportes Recoleta",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 15.4,
+      "HeadtoheadPerecentage": 0.0,
+      "LeaguePointPerecentage": 11.645833333333333333333333332,
+      "LeaguePositionPerecentage": 1.92,
+      "TotalPerecentage": 33.97
+    },
+    "AwayTeam": {
+      "TeamName": "Cobreloa",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 9.90,
+      "HeadtoheadPerecentage": 1.6666666666666666666666666665,
+      "LeaguePointPerecentage": 24.1875,
+      "LeaguePositionPerecentage": 9.6,
+      "TotalPerecentage": 45.35
+    }
+  },
+  {
+    "Country": "Uruguay",
+    "League": "Clausura",
+    "Prediction": "Cerrito (7,47 Draw at 115,17%) - ( 4,13) Fenix",
+    "PredictionLabel": "Draw at 115,17%",
+    "Percentage": 115.17,
+    "Date": "2022-09-15T17:30:00",
+    "UniqueId": "74311432",
+    "HomeTeam": {
+      "TeamName": "Cerrito",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 0.0,
+      "HeadtoheadPerecentage": 1.6666666666666666666666666665,
+      "LeaguePointPerecentage": 0.0,
+      "LeaguePositionPerecentage": 0.8,
+      "TotalPerecentage": 7.47
+    },
+    "AwayTeam": {
+      "TeamName": "Fenix",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 0.0,
+      "HeadtoheadPerecentage": 3.3333333333333333333333333335,
+      "LeaguePointPerecentage": 0.0,
+      "LeaguePositionPerecentage": 0.8,
+      "TotalPerecentage": 4.13
+    }
+  },
+  {
+    "Country": "Kazakhstan",
+    "League": "Premier League",
+    "Prediction": "Maktaaral (29,55 ) - ( 32,20) Kyzyl-Zhar",
+    "Percentage": 0.0,
+    "Date": "2022-09-15T17:00:00",
+    "UniqueId": "51464488",
+    "HomeTeam": {
+      "TeamName": "Maktaaral",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 16.50,
+      "HeadtoheadPerecentage": 0.3333333333333333333333333335,
+      "LeaguePointPerecentage": 7.7179487179487179487179487185,
+      "LeaguePositionPerecentage": 0.0,
+      "TotalPerecentage": 29.55
+    },
+    "AwayTeam": {
+      "TeamName": "Kyzyl-Zhar",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 15.4,
+      "HeadtoheadPerecentage": 3.6666666666666666666666666665,
+      "LeaguePointPerecentage": 11.576923076923076923076923076,
+      "LeaguePositionPerecentage": 1.56,
+      "TotalPerecentage": 32.20
+    }
+  },
+  {
+    "Country": "Kazakhstan",
+    "League": "Premier League",
+    "Prediction": "Aksu (36,01 Win/Draw at 142,46%) - ( 26,18) Akzhaiyk Uralsk",
+    "PredictionLabel": "Win/Draw at 142,46%",
+    "Percentage": 142.46,
+    "Date": "2022-09-15T15:00:00",
+    "UniqueId": "49645145",
+    "HomeTeam": {
+      "TeamName": "Aksu",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 15.4,
+      "HeadtoheadPerecentage": 0.3333333333333333333333333335,
+      "LeaguePointPerecentage": 12.679487179487179487179487181,
+      "LeaguePositionPerecentage": 2.6,
+      "TotalPerecentage": 36.01
+    },
+    "AwayTeam": {
+      "TeamName": "Akzhaiyk Uralsk",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 15.4,
+      "HeadtoheadPerecentage": 0.3333333333333333333333333335,
+      "LeaguePointPerecentage": 9.923076923076923076923076924,
+      "LeaguePositionPerecentage": 0.52,
+      "TotalPerecentage": 26.18
+    }
+  },
+  {
+    "Country": "Kazakhstan",
+    "League": "Premier League",
+    "Prediction": "Kairat (43,27 ) - ( 43,31) Ordabasy",
+    "Percentage": 0.0,
+    "Date": "2022-09-15T15:00:00",
+    "UniqueId": "44864473",
+    "HomeTeam": {
+      "TeamName": "Kairat",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 13.2,
+      "HeadtoheadPerecentage": 3.3333333333333333333333333335,
+      "LeaguePointPerecentage": 16.538461538461538461538461538,
+      "LeaguePositionPerecentage": 5.2,
+      "TotalPerecentage": 43.27
+    },
+    "AwayTeam": {
+      "TeamName": "Ordabasy",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 22.0,
+      "HeadtoheadPerecentage": 3.3333333333333333333333333335,
+      "LeaguePointPerecentage": 14.333333333333333333333333332,
+      "LeaguePositionPerecentage": 3.64,
+      "TotalPerecentage": 43.31
+    }
+  },
+  {
+    "Country": "Kazakhstan",
+    "League": "Premier League",
+    "Prediction": "Atyrau (40,13 Win/Draw at 134,06%) - ( 30,88) FK Arys",
+    "PredictionLabel": "Win/Draw at 134,06%",
+    "Percentage": 134.06,
+    "Date": "2022-09-15T13:00:00",
+    "UniqueId": "496519632",
+    "HomeTeam": {
+      "TeamName": "Atyrau",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 13.2,
+      "HeadtoheadPerecentage": 2.3333333333333333333333333335,
+      "LeaguePointPerecentage": 15.435897435897435897435897437,
+      "LeaguePositionPerecentage": 4.16,
+      "TotalPerecentage": 40.13
+    },
+    "AwayTeam": {
+      "TeamName": "FK Arys",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 18.70,
+      "HeadtoheadPerecentage": 0.6666666666666666666666666665,
+      "LeaguePointPerecentage": 10.474358974358974358974358975,
+      "LeaguePositionPerecentage": 1.04,
+      "TotalPerecentage": 30.88
+    }
+  },
+  {
+    "Country": "Kazakhstan",
+    "League": "Premier League",
+    "Prediction": "Sh. Karagandy (39,45 ) - ( 37,89) Kaspiy Aktau",
+    "Percentage": 0.0,
+    "Date": "2022-09-15T13:00:00",
+    "UniqueId": "44894490",
+    "HomeTeam": {
+      "TeamName": "Sh. Karagandy",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 9.90,
+      "HeadtoheadPerecentage": 3.3333333333333333333333333335,
+      "LeaguePointPerecentage": 16.538461538461538461538461538,
+      "LeaguePositionPerecentage": 4.68,
+      "TotalPerecentage": 39.45
+    },
+    "AwayTeam": {
+      "TeamName": "Kaspiy Aktau",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 19.8,
+      "HeadtoheadPerecentage": 3.3333333333333333333333333335,
+      "LeaguePointPerecentage": 12.679487179487179487179487181,
+      "LeaguePositionPerecentage": 2.08,
+      "TotalPerecentage": 37.89
+    }
+  },
+  {
+    "Country": "USA",
+    "League": "Western Conference",
+    "Prediction": "Colorado (8,91 Draw at 230%) - ( 2,24) San Jose",
+    "PredictionLabel": "Draw at 230%",
+    "Percentage": 230.0,
+    "Date": "2022-09-15T04:00:00",
+    "UniqueId": "32463251",
+    "HomeTeam": {
+      "TeamName": "Colorado",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 0.0,
+      "HeadtoheadPerecentage": 3.6666666666666666666666666665,
+      "LeaguePointPerecentage": 0.0,
+      "LeaguePositionPerecentage": 0.24,
+      "TotalPerecentage": 8.91
+    },
+    "AwayTeam": {
+      "TeamName": "San Jose",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 0.0,
+      "HeadtoheadPerecentage": 2.0,
+      "LeaguePointPerecentage": 0.0,
+      "LeaguePositionPerecentage": 0.24,
+      "TotalPerecentage": 2.24
+    }
+  },
+  {
+    "Country": "USA",
+    "League": "Western Conference",
+    "Prediction": "Vancouver (8,91 Draw at 230%) - ( 2,24) Los Angeles",
+    "PredictionLabel": "Draw at 230%",
+    "Percentage": 230.0,
+    "Date": "2022-09-15T04:00:00",
+    "UniqueId": "32593250",
+    "HomeTeam": {
+      "TeamName": "Vancouver",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 0.0,
+      "HeadtoheadPerecentage": 3.6666666666666666666666666665,
+      "LeaguePointPerecentage": 0.0,
+      "LeaguePositionPerecentage": 0.24,
+      "TotalPerecentage": 8.91
+    },
+    "AwayTeam": {
+      "TeamName": "Los Angeles",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 0.0,
+      "HeadtoheadPerecentage": 2.0,
+      "LeaguePointPerecentage": 0.0,
+      "LeaguePositionPerecentage": 0.24,
+      "TotalPerecentage": 2.24
+    }
+  },
+  {
+    "Country": "Colombia",
+    "League": "Clausura",
+    "Prediction": "AD Cali (22,95 ) - (Win/Draw at 163,77% 34,25) Pasto",
+    "PredictionLabel": "Win/Draw at 163,77%",
+    "Percentage": 163.77,
+    "Date": "2022-09-15T03:15:00",
+    "UniqueId": "38233826",
+    "HomeTeam": {
+      "TeamName": "AD Cali",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 15.4,
+      "HeadtoheadPerecentage": 0.6666666666666666666666666665,
+      "LeaguePointPerecentage": 1.8859649122807017543859649113,
+      "LeaguePositionPerecentage": 0.0,
+      "TotalPerecentage": 22.95
+    },
+    "AwayTeam": {
+      "TeamName": "Pasto",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 13.2,
+      "HeadtoheadPerecentage": 4.0,
+      "LeaguePointPerecentage": 6.412280701754385964912280701,
+      "LeaguePositionPerecentage": 10.64,
+      "TotalPerecentage": 34.25
+    }
+  },
+  {
+    "Country": "USA",
+    "League": "Western Conference",
+    "Prediction": "Austin FC (6,91 Draw at 115,17%) - ( 3,57) Salt Lake",
+    "PredictionLabel": "Draw at 115,17%",
+    "Percentage": 115.17,
+    "Date": "2022-09-15T03:15:00",
+    "UniqueId": "2942594073254",
+    "HomeTeam": {
+      "TeamName": "Austin FC",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 0.0,
+      "HeadtoheadPerecentage": 1.6666666666666666666666666665,
+      "LeaguePointPerecentage": 0.0,
+      "LeaguePositionPerecentage": 0.24,
+      "TotalPerecentage": 6.91
+    },
+    "AwayTeam": {
+      "TeamName": "Salt Lake",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 0.0,
+      "HeadtoheadPerecentage": 3.3333333333333333333333333335,
+      "LeaguePointPerecentage": 0.0,
+      "LeaguePositionPerecentage": 0.24,
+      "TotalPerecentage": 3.57
+    }
+  },
+  {
+    "Country": "Argentina",
+    "League": "Liga Profesional 2022",
+    "Prediction": "Lanus (26,42 ) - (Win at 123,44% 45,80) Boca Juniors",
+    "PredictionLabel": "Win at 123,44%",
+    "Percentage": 123.44,
+    "Date": "2022-09-15T02:30:00",
+    "UniqueId": "29282940",
+    "HomeTeam": {
+      "TeamName": "Lanus",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 16.50,
+      "HeadtoheadPerecentage": 2.0,
+      "LeaguePointPerecentage": 2.9197530864197530864197530878,
+      "LeaguePositionPerecentage": 0.0,
+      "TotalPerecentage": 26.42
+    },
+    "AwayTeam": {
+      "TeamName": "Boca Juniors",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 8.8,
+      "HeadtoheadPerecentage": 3.6666666666666666666666666665,
+      "LeaguePointPerecentage": 8.493827160493827160493827161,
+      "LeaguePositionPerecentage": 24.84,
+      "TotalPerecentage": 45.80
+    }
+  },
+  {
+    "Country": "USA",
+    "League": "USL League One",
+    "Prediction": "Union Omaha SC (55,00 Draw at 209,66%) - ( 48,92) Richmond",
+    "PredictionLabel": "Draw at 209,66%",
+    "Percentage": 209.66,
+    "Date": "2022-09-15T02:00:00",
+    "UniqueId": "94283865",
+    "HomeTeam": {
+      "TeamName": "Union Omaha SC",
+      "AwayOrHomePerecentage": 5.0,
+      "LastGamesPerecentage": 15.4,
+      "HeadtoheadPerecentage": 2.3333333333333333333333333335,
+      "LeaguePointPerecentage": 28.666666666666666666666666668,
+      "LeaguePositionPerecentage": 3.6,
+      "TotalPerecentage": 55.00
+    },
+    "AwayTeam": {
+      "TeamName": "Richmond",
+      "AwayOrHomePerecentage": 0.0,
+      "LastGamesPerecentage": 13.2,
+      "HeadtoheadPerecentage": 2.3333333333333333333333333335,
+      "LeaguePointPerecentage": 29.383333333333333333333333332,
+      "LeaguePositionPerecentage": 4.0,
+      "TotalPerecentage": 48.92
+    }
+  }
+]

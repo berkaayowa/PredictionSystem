@@ -1,0 +1,17 @@
+[07-Mar-2016 22:11:36 UTC] PHP Deprecated:  Function split() is deprecated in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 472
+[07-Mar-2016 22:24:55 UTC] PHP Warning:  include_once(class.smtp.php): failed to open stream: No such file or directory in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 515
+[07-Mar-2016 22:24:55 UTC] PHP Warning:  include_once(): Failed opening 'class.smtp.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 515
+[07-Mar-2016 22:24:55 UTC] PHP Fatal error:  Class 'SMTP' not found in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 583
+[07-Mar-2016 22:25:49 UTC] PHP Warning:  include_once(class.smtp.php): failed to open stream: No such file or directory in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 515
+[07-Mar-2016 22:25:49 UTC] PHP Warning:  include_once(): Failed opening 'class.smtp.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 515
+[07-Mar-2016 22:25:49 UTC] PHP Fatal error:  Class 'SMTP' not found in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 583
+[07-Mar-2016 22:25:56 UTC] PHP Warning:  include_once(class.smtp.php): failed to open stream: No such file or directory in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 515
+[07-Mar-2016 22:25:56 UTC] PHP Warning:  include_once(): Failed opening 'class.smtp.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 515
+[07-Mar-2016 22:25:56 UTC] PHP Fatal error:  Class 'SMTP' not found in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 583
+[07-Mar-2016 22:27:05 UTC] PHP Warning:  include_once(class.smtp.php): failed to open stream: No such file or directory in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 515
+[07-Mar-2016 22:27:05 UTC] PHP Warning:  include_once(): Failed opening 'class.smtp.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 515
+[07-Mar-2016 22:27:05 UTC] PHP Fatal error:  Class 'SMTP' not found in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 583
+[07-Mar-2016 22:29:18 UTC] PHP Warning:  include_once(class.smtp.php): failed to open stream: No such file or directory in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 515
+[07-Mar-2016 22:29:18 UTC] PHP Warning:  include_once(): Failed opening 'class.smtp.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 515
+[07-Mar-2016 22:29:18 UTC] PHP Fatal error:  Class 'SMTP' not found in /home/pixpijma/public_html/email/_lib/class.phpmailer.php on line 583
+[07-Mar-2016 22:53:19 UTC] PHP Fatal error:  Call to undefined function redirect() in /home/pixpijma/public_html/email/sendOrder.php on line 52

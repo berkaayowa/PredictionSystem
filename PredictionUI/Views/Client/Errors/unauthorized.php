@@ -1,0 +1,1 @@
+<?= BerkaPhp\Helper\Element::Render("Error", "Client" ,['code'=>'401', 'message'=>'You are not authorized to access the request resource']) ?>

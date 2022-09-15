@@ -1,0 +1,294 @@
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+a {
+    background-color: transparent;
+}
+
+.btn-group>.btn:first-child {
+    margin-left: 0;
+}
+
+.btn-group-vertical>.btn, .btn-group>.btn {
+    position: relative;
+    float: left;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.brk-php-label {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 8px!important;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(243, 243, 243, 0.17) !important;
+}
+
+.label-default {
+    background-color: #777;
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.table-header {
+    background: #475058;
+    color: #fff;
+    font-weight: bold;
+}
+
+.flash {
+    position: fixed;
+    width: 96%;
+    top: 56px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.input-group .form-control, .input-group-addon, .input-group-btn {
+    display: table-cell;
+}
+
+.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-group-addon, .input-group-btn {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+input {
+    line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+/*.cr-boundary {*/
+    /*float: left;*/
+    /*width: 700px;*/
+    /*text-align: center;*/
+/*}*/
+
+/*.croppie-container .cr-slider-wrap {*/
+    /*float: left;*/
+    /*text-align: left!important;*/
+/*}*/
+
+/*.cr-image {*/
+    /*opacity: 0.7!important;*/
+/*}*/
+
+.hidden {
+    display: none;
+}
+
+.confirmation-content {
+    border: 3px solid #a09999;
+    border-radius: 10px;
+    box-shadow: 1px 2px 25px 11px #5d5e5f;
+}
+
+.dataTables_filter {
+    text-align: right!important;
+}
+
+.pagination{
+    float: right!important;
+}
+
+.dataTables_length {
+    text-align: left!important;
+}
+
+.dataTable  {
+    border: 1px solid #CCC;
+    border-collapse: collapse;
+}
+
+.dataTable tbody td {
+    border: none;
+}
+
+.dataTable thead td {
+    border: none;
+}
+
+.watermark {
+    background: url('/Views/Default/Assets/watermark.png') center center;
+    background-size: cover;
+}
+
+.card-header {
+
+    background-color: inherit;
+}
+
+.dataTables_wrapper {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.logo-img {
+    width: 101px;
+    border: 3px solid #ffffff!important;
+    border-radius: 18px;
+}
+
+.notification-container > i{
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.notification-container > span{
+    color: white;
+    font-size: 14px;
+}
+
+.notification-container {
+    text-align: center;
+}
+
+.order-label {
+    display: block;
+    width: 100%;
+    padding: 5px;
+}
+
+.bg-dark-theme{
+    background-color: #475058!important;
+}
+
+[data-ajax]:hover, th:hover, a > button:hover {
+    cursor: pointer!important;
+}
+
+@media (min-width: 1200px){
+
+    .table-responsive {
+        overflow-x: hidden;
+    }
+}
+
+.bootstrap-datetimepicker-widget {
+    padding: 20px!important;
+
+}
+
+.bootstrap-datetimepicker-widget *:hover{
+    cursor: pointer;
+}
+
+.bootstrap-datetimepicker-widget th  td{
+    /*padding: 10px!important;*/
+
+}
+
+.bootstrap-datetimepicker-widget *, .bootstrap-datetimepicker-widget *{
+    color: black!important;
+}
+
+.flash {
+    left: 257px!important;
+}
+
+
+
+
+
+
+
+
