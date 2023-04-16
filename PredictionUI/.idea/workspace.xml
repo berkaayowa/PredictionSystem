@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Client/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prediction/2022_09_14.prediction" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prediction/2022_09_15.prediction" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prediction/data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Pages/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +51,7 @@
       <workItem from="1663787346820" duration="706000" />
       <workItem from="1665343629934" duration="14000" />
       <workItem from="1681558434331" duration="76000" />
-      <workItem from="1681558704940" duration="1673000" />
+      <workItem from="1681558704940" duration="2989000" />
     </task>
     <servers />
   </component>
