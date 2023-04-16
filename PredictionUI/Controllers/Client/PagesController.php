@@ -23,9 +23,24 @@
 
 		}
 
-        function index() {
+        function index($params = '') {
 
-            $filePath = 'Prediction/'.date('Y_m_d').'.prediction';
+            $date = '';
+            $startDate = date(DATE_FORMAT);
+            $endDate = '';
+
+            if(array_key_exists("endDate", $params['args']['query']))
+                $endDate = $params['args']['query']['endDate'];
+
+            if(array_key_exists("startDate", $params['args']['query']))
+                $startDate = $params['args']['query']['startDate'];
+
+            if(array_key_exists("date", $params['args']['query']))
+                $date = $params['args']['query']['date'];
+
+            $startDateFile = strtotime($startDate);
+
+            $filePath = FILE_PATH.date('Y_m_d',$startDateFile).'.prediction';
 //            die($filePath);
             $data = Helper::GetFileContent($filePath);
 
@@ -35,6 +50,10 @@
                 $array = json_decode($data);
 
             $this->overWriteLayout('/Client/Layout/layoutNoMenu');
+
+            $this->view->set('StartDate', $startDate);
+            $this->view->set('EndDate', $endDate);
+            $this->view->set('Date', $date);
             $this->view->set('predictions', $array);
             $this->view->render();
         }

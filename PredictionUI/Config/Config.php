@@ -11,7 +11,16 @@ define('DATE_FORMAT', 'Y-m-d h:m:s' , true);
 define('DATE_SECOND_FORMAT', 'd-m-Y h:m' , true);
 define('DATE_THIRD_FORMAT', 'd-m-Y' , true);
 define('DATE_NOW', date(DATE_FORMAT) , true);
+define('FILE_PATH', 'C:/Projects/Mine/Other/PredictionApp/PredictionUI/Prediction/' , true);
 //Database settings
+
+switch ($_SERVER['SERVER_NAME']) {
+    case "soccer.isenduget.co.za" :
+        define('FILE_PATH', 'C:/PhpSites/Prediction/' , true);
+        break;
+    default :
+        break;
+}
 
 switch ($_SERVER['SERVER_NAME']) {
     case "msg.isenduget.co.za" :

@@ -1,20 +1,21 @@
-<div class="row hide">
+<div class="container"> <br>
+<div class="row">
     <div class="col-sm-12">
         <div class="box  box-default">
             <div class="box-body row">
                 <div class=" col-sm-9">
-                    <form class="frmSearch row" message="<?=Resource\Label::General("Searching")?>..."  method="GET" id="transactionSearch" ACTION="<?= BerkaPhp\Helper\Html::action('/dashboard/message')?>">
+                    <form class="frmSearch row" message="<?=Resource\Label::General("Searching")?>..."  method="GET" id="transactionSearch" ACTION="<?= BerkaPhp\Helper\Html::action('/pages/index')?>">
                         <div class="form-group col-sm-3 col-md-3 no-mg-b">
                             <div class="input-group">
-                                <input value="<?=$StartDate?>"  data-date="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("StartDate")?>" type="text" class="form-control" name="StartDate" id="StartDate">
+                                <input value="<?=$StartDate?>"  data-date="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("StartDate")?>" type="text" class="form-control" name="startDate" id="startDate">
                                 <span class="input-group-addon">
                                 <span class="fa fa-calendar"></span>
                             </span>
                             </div>
                         </div>
-                        <div class="form-group col-sm-3 col-md-3 no-mg-b">
-                            <div class="input-group">
-                                <input autocomplete="false" value="<?=$EndDate?>"  data-date="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("EndDate")?>" type="text" class="form-control" name="EndDate" id="EndDate">
+                        <div class="form-group col-sm-3 col-md-3 no-mg-b hidden">
+                            <div class="input-group ">
+                                <input autocomplete="false" value="<?=$EndDate?>"  data-date="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("EndDate")?>" type="text" class="form-control" name="endDate" id="endDate">
                                 <span class="input-group-addon">
                                 <span class="fa fa-calendar"></span>
                             </span>
@@ -27,7 +28,7 @@
                         </div>
                     </form>
                 </div>
-                <div class=" col-sm-3 right">
+                <div class=" col-sm-3 right hidden">
                     <a href="<?= BerkaPhp\Helper\Html::action('/message/add')?>" class="btn btn-primary w-45">
                         <i class="fa fa-plus-circle"></i> <?=Resource\Label::General("New Message")?>
                     </a>
@@ -221,4 +222,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>
