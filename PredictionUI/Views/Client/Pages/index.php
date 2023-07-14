@@ -1,5 +1,16 @@
-<div class="container"> <br>
+<div class="container-fluid">
+
 <div class="row">
+    <div class="col-sm-12 text-center headerSection">
+        <h4>Unlock your winning $$$ potential with our free daily soccer betting tips and predictions! </h4>
+        <p>
+            Join us for expert analysis, statistical insights, and strategic guidance to take your betting game to the next level.<br>
+            Our team of dedicated analysts works tirelessly to provide you with accurate predictions,
+            taking into account various factors such as team form, player performances, and historical data.<br><br>
+            <b>Let us be your trusted companion on your soccer betting journey, as we help you make informed decisions and celebrate those winning moments together.</b><br>
+            Don't miss out on the action, follow us now and stay ahead of the game! #SoccerBetting #WinningTips
+        </p>
+    </div>
     <div class="col-sm-12">
         <div class="box  box-default">
             <div class="box-body row">

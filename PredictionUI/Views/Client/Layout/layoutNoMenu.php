@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
     <?=isset($meta_data) && !empty($meta_data) ? $meta_data : "" ?>
-    <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="Computer repair, pc repair, laptop">
+    <meta name="description" content="Unlock your winning potential with our free daily soccer betting tips and predictions!">
+    <meta name="author" content="soccerprediction.co.za">
+    <meta name="keywords" content="soccertips, soccerprediction, soccerpredictor bettingtips, soccer, bettings, soccerbet, free">
     <meta name="robots" content="all">
-    <title><?= empty($title) ? 'Soccer Prediction' : ucfirst($title) ?></title>
+    <title><?= empty($title) ? SYS_NAME : ucfirst($title) ?></title>
     <link rel="shortcut icon" href="<?= LOGO_ICON ?>" type="image/x-icon">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
+            crossorigin="anonymous"></script>
 
     <?= BerkaPhp\Helper\Element::Render('css') ?>
     <?= BerkaPhp\Helper\Element::Render('Style') ?>

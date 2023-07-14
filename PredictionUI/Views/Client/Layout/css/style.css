@@ -490,6 +490,29 @@ option , select{
     border-top: solid 10px #7abd7a!important;
 }
 
+.headerSection {
+    background: #373737;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.headerSection > p {
+    color: #c4c4c4;
+    font-size: 14px;
+}
+
+.headerSection > h4 {
+    background: black;
+    display: block;
+    width: auto;
+    padding: 20px;
+    font-size: 25px;
+    color: #c6a556;
+    font-weight: bold;
+}
+
 
 
 

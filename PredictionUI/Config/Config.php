@@ -6,7 +6,7 @@ use BrkORM\BrkORMDatabase;
 
 define('DEBUG', false, true);
 define('LIVE_TEST', true, true);
-define('SYS_NAME', 'I-Send' , true);
+define('SYS_NAME', 'Free Daily Soccer Betting | Tips | Predictions' , true);
 define('DATE_FORMAT', 'Y-m-d h:m:s' , true);
 define('DATE_SECOND_FORMAT', 'd-m-Y h:m' , true);
 define('DATE_THIRD_FORMAT', 'd-m-Y' , true);
@@ -16,6 +16,7 @@ define('DATE_NOW', date(DATE_FORMAT) , true);
 
 switch ($_SERVER['SERVER_NAME']) {
     case "soccer.isenduget.co.za" :
+    case "soccerprediction.co.za" :
         define('FILE_PATH', 'C:/PhpSites/Prediction/' , true);
         break;
     default :
@@ -47,7 +48,7 @@ define('SITE_URL', 'http://'.$_SERVER['SERVER_NAME'] , true);
 
 //default prefix
 define('LOGIN_URL', '' , true);
-define('LOGO_ICON', '/Views/Client/Assets/ss.png' , true);
+define('LOGO_ICON', '/Views/Client/Assets/images/icon2.png' , true);
 define('LOGO', '/Views/Client/Assets/softclick.png' , true);
 define('EMAIL_LOGO', 'https://ia601508.us.archive.org/4/items/logo2_20180125/logo2.png' , true);
 
