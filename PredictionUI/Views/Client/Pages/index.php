@@ -11,16 +11,16 @@
             Don't miss out on the action, follow us now and stay ahead of the game! #SoccerBetting #WinningTips
         </p>
     </div>
-    <div class="col-sm-12">
-        <div class="box  box-default">
-            <div class="box-body row">
-                <div class=" col-sm-9">
+    <div class="col-sm-12 hide">
+        <div class="box  box-default ">
+            <div class="box-body row ">
+                <div class=" col-sm-9 colFrmSearch">
                     <form class="frmSearch row" message="<?=Resource\Label::General("Searching")?>..."  method="GET" id="transactionSearch" ACTION="<?= BerkaPhp\Helper\Html::action('/pages/index')?>">
                         <div class="form-group col-sm-3 col-md-3 no-mg-b">
                             <div class="input-group">
                                 <input value="<?=$StartDate?>"  data-date="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("StartDate")?>" type="text" class="form-control" name="startDate" id="startDate">
-                                <span class="input-group-addon">
-                                <span class="fa fa-calendar"></span>
+<!--                                <span class="input-group-addon">-->
+<!--                                <span class="fa fa-calendar"></span>-->
                             </span>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <div class="form-group col-sm-3 col-md-3 no-mg-b">
-                            <button type="submit" class="btn btn-primary w-45 pull-left">
+                            <button type="submit" class="searchBtn btn btn-primary w-45 pull-left">
                                 <?=Resource\Label::General("Search")?>
                             </button>
                         </div>
@@ -55,7 +55,7 @@
             <div class="box-body">
                 <div class="row">
                     <div class="col-sm-12">
-                        <?php if(sizeof($predictions) > 0): ?>
+                        <?php if(true): ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered " id="dataTable">
                                     <thead class="thead-inverse">
@@ -96,16 +96,16 @@
                                                                             <table class="table table-striped">
                                                                                 <thead class="thead-inverse">
                                                                                 <tr class=table-header">
-                                                                                    <th class="txt-capitalized w-20">
-                                                                                        Attribute
+                                                                                    <th class="txt-capitalized text-center w-20" style="color: #c8c8c8;">
+                                                                                        Attributes
                                                                                     </th>
-                                                                                    <th class="txt-capitalized text-right w-20">
+                                                                                    <th class="txt-capitalized text-right w-20 underline">
                                                                                         <?=$prediction->HomeTeam->TeamName?>
                                                                                     </th>
                                                                                     <th class="txt-capitalized text-center w-20">
                                                                                         VS
                                                                                     </th>
-                                                                                    <th class="txt-capitalized text-left w-20">
+                                                                                    <th class="txt-capitalized text-left w-20 underline">
                                                                                         <?=$prediction->AwayTeam->TeamName?>
                                                                                     </th>
                                                                                 </tr>
@@ -217,7 +217,7 @@
                                                     ?>
                                                 </td>
                                                 <td  style="border-radius:0 10px 0 0;" class="txt-capitalized text-center <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                    <button type="button" class="btn btn-default btn" data-toggle="modal" data-target="#myModal<?=$prediction->UniqueId?>">Show Details</button>
+                                                    <button type="button" class="btn btn-default btn " data-toggle="modal" data-target="#myModal<?=$prediction->UniqueId?>">Prediction Details</button>
                                                 </td>
                                             </tr>
                                             <?php endif ?>
@@ -235,3 +235,22 @@
     </div>
 </div>
 </div>
+
+<script>
+    $(document).ready(function (e) {
+
+        setTimeout(
+            function()
+            {
+                var colFrmSearch = $(".colFrmSearch").clone().html();
+                $("#dataTable_filter").append(colFrmSearch);
+
+                $('[data-date]').datepicker({
+                    autoclose: true,
+                    format: 'dd-mm-yyyy'
+                });
+
+            }, 600);
+
+    })
+</script>

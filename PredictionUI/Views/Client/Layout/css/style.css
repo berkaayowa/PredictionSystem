@@ -513,6 +513,19 @@ option , select{
     font-weight: bold;
 }
 
+.dataTables_filter .searchBtn {
+    left: 10px;
+    position: relative;
+}
+
+.btn-default {
+    /*background: #c6a556;*/
+    /*color: #e7ce91;*/
+    font-size: 12px;
+    font-weight: 700;
+    /*border-color: #e7ce91;*/
+}
+
 
 
 
