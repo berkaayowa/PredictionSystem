@@ -580,3 +580,14 @@ option , select{
 
 
 
+@media screen and (max-width: 714px) {
+    .vsHolder {
+        width: 150px;
+    }
+
+    .width_100px {
+        width: 120px;
+        display: block;
+    }
+}
+
