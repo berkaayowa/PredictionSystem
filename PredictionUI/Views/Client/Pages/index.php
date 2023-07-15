@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="col-sm-12 text-center headerSection">
-        <h4>Unlock your winning $$$ potential with our free daily soccer betting tips and predictions! </h4>
+        <h4 id="HeaderSectionH">Unlock your winning $$$ potential with our free daily soccer betting tips and predictions! </h4>
         <p>
             Join us for expert analysis, statistical insights, and strategic guidance to take your betting game to the next level.<br>
             Our team of dedicated analysts works tirelessly to provide you with accurate predictions,
@@ -251,6 +251,20 @@
                 });
 
             }, 600);
+
+
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+
+            //>=, not <=
+            if (scroll >= 200) {
+                //clearHeader, not clearheader - caps H
+                $("#HeaderSectionH").addClass("floatingHeaderSection");
+            }
+            else {
+                $("#HeaderSectionH").removeClass("floatingHeaderSection");
+            }
+        });
 
     })
 </script>

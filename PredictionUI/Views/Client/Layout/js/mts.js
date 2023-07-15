@@ -1018,7 +1018,8 @@ mts.initTable = function() {
     //});
 
     $('#dataTable').DataTable({
-        "order": []
+        "order": [],
+        paging: false
     });
 
 
