@@ -475,19 +475,34 @@ option , select{
     font-size: 11px!important;
 }
 
+.bg-low-risk {
+    border: none;
+    background: #0e0e0e !important;
+}
+
+.bg-safe {
+    border: none;
+    background: #bba200 !important;
+}
+
+.bg-no-risk {
+    border: none;
+    background: #7abd7a!important;
+}
+
 .p-low-risk {
     border: none;
-    border-top: solid 10px #0e0e0e !important;
+    border-top: solid 3px #0e0e0e !important;
 }
 
 .p-safe {
     border: none;
-    border-top: solid 10px #bba200 !important;
+    border-top: solid 3px #bba200 !important;
 }
 
 .p-no-risk {
     border: none;
-    border-top: solid 10px #7abd7a!important;
+    border-top: solid 3px #7abd7a!important;
 }
 
 .headerSection {
@@ -519,20 +534,48 @@ option , select{
 }
 
 .btn-default {
-    /*background: #c6a556;*/
-    /*color: #e7ce91;*/
+    background: #373737;
+    color: #e7ce91;
     font-size: 12px;
     font-weight: 700;
+
     /*border-color: #e7ce91;*/
 }
 
 .floatingHeaderSection   {
     position: fixed;
     top: 0;
-    width: 98%!important;
+    width: 100%!important;
     z-index: 99;
+    margin-top: 0;
+    left: 0;
+    right: 0;
 }
 
+.fixtureTable {
+    font-size: 12px!important;
+}
+
+.score > img {
+    width: 30px;
+    border-radius: 10px;
+}
+
+.predictionHolder {
+    /*margin-top: 10px;*/
+    padding-top: 5px;
+    border-top: solid #f3f3f3 2px;
+    color: white;
+}
+
+.score {
+    /*padding-top: 10px;*/
+}
+
+.fixtureTable > tbody > tr > td {
+    border-left: none!important;
+    border-right: none!important;
+}
 
 
 

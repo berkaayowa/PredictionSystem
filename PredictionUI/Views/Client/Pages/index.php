@@ -4,11 +4,9 @@
     <div class="col-sm-12 text-center headerSection">
         <h4 id="HeaderSectionH">Unlock your winning $$$ potential with our free daily soccer betting tips and predictions! </h4>
         <p>
-            Join us for expert analysis, statistical insights, and strategic guidance to take your betting game to the next level.<br>
-            Our team of dedicated analysts works tirelessly to provide you with accurate predictions,
-            taking into account various factors such as team form, player performances, and historical data.<br><br>
-            <b>Let us be your trusted companion on your soccer betting journey, as we help you make informed decisions and celebrate those winning moments together.</b><br>
-            Don't miss out on the action, follow us now and stay ahead of the game! #SoccerBetting #WinningTips
+            Our expert analysis, statistical insights, and strategic guidance to take your betting game to the next level.
+            <br>The platform combines accurate predictions from AI processing with detailed insights to empower you like never before.<br>
+
         </p>
     </div>
     <div class="col-sm-12 hide">
@@ -19,8 +17,8 @@
                         <div class="form-group col-sm-3 col-md-3 no-mg-b">
                             <div class="input-group">
                                 <input value="<?=$StartDate?>"  data-date="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("StartDate")?>" type="text" class="form-control" name="startDate" id="startDate">
-<!--                                <span class="input-group-addon">-->
-<!--                                <span class="fa fa-calendar"></span>-->
+                                <span class="input-group-addon hide">
+                                <span class="fa fa-calendar hide"></span>
                             </span>
                             </div>
                         </div>
@@ -57,15 +55,16 @@
                     <div class="col-sm-12">
                         <?php if(true): ?>
                             <div class="table-responsive">
-                                <table class="table table-bordered " id="dataTable">
+                                <table class="table table-bordered fixtureTable" id="dataTable">
                                     <thead class="thead-inverse">
                                     <tr class=table-header">
                                         <th class="txt-capitalized text-center">Date</th>
-                                        <th class="txt-capitalized text-center">Prediction</th>
-                                        <th class="txt-capitalized text-center">Description</th>
                                         <th class="txt-capitalized text-center">Country</th>
                                         <th class="txt-capitalized text-center">League</th>
-                                        <th class="txt-capitalized text-center">% of Prediction</th>
+                                        <th class="txt-capitalized text-center">Home Team</th>
+                                        <th class="txt-capitalized text-center">vs</th>
+                                        <th class="txt-capitalized text-center">Away Team</th>
+                                        <th class="txt-capitalized text-center">Prediction</th>
                                         <th class="txt-capitalized text-center">% Difference</th>
                                         <th class="txt-capitalized text-center">Action</th>
                                     </tr>
@@ -74,25 +73,62 @@
                                         <?php foreach ($predictions as $prediction ): ?>
                                         <?php if(property_exists($prediction, 'PredictionLabel') && strlen($prediction->PredictionLabel) > 0): ?>
                                             <tr>
-                                                <td style="border-radius:10px 0 0 0;" class="txt-capitalized text-center <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                    <?=$prediction->Date?>
+                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                    <?= date('d/m/Y h:i', strtotime($prediction->Date))?>
                                                 </td>
-                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                    <?=property_exists($prediction, 'PredictionLabel') ? $prediction->PredictionLabel : ''?>
+
+                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>"><?=$prediction->Country?></td>
+                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                    <?=$prediction->League?>
                                                 </td>
-                                                <th class="txt-capitalized text-center <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                    <?=$prediction->Prediction?>
+
+                                                <td class="txt-capitalized text-center bold <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                    <?=$prediction->HomeTeam->TeamName?>
+                                                </td>
+
+                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                   <div class="vsHolder">
+                                                       <div class="score">
+                                                           <img src=" <?= !empty($prediction->HomeTeam->TeamFlag) ? $prediction->HomeTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
+                                                           <label for=""><?= date('h:i', strtotime($prediction->Date))?></label>
+                                                           <img src=" <?= !empty($prediction->AwayTeam->TeamFlag) ? $prediction->AwayTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
+                                                       </div>
+                                                       <div class="predictionHolder hide <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
+                                                           <label class=""><?=$prediction->PredictionLabelFull?></label>
+                                                       </div>
+                                                   </div>
+                                                </td>
+                                                <td class="txt-capitalized text-center bold <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                    <?=$prediction->AwayTeam->TeamName?>
+                                                </td>
+
+                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                    <div class="predictionHolder <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
+                                                        <label class=""><?=$prediction->PredictionLabelFull?></label>
+                                                    </div>
+                                                </td>
+                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                    <?php
+
+                                                    if($prediction->HomeTeam->TotalPerecentage > $prediction->AwayTeam->TotalPerecentage) {
+                                                        echo  $prediction->HomeTeam->TotalPerecentage - $prediction->AwayTeam->TotalPerecentage;
+                                                    }
+                                                    else {
+                                                        echo  $prediction->AwayTeam->TotalPerecentage - $prediction->HomeTeam->TotalPerecentage;
+                                                    }
+                                                    ?>
+
                                                     <div id="myModal<?=$prediction->UniqueId?>" class="modal fade " role="dialog">
                                                         <div class="modal-dialog">
                                                             <!-- Modal content-->
-                                                            <div class="modal-content <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
+                                                            <div class="modal-content <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                                 <div class="modal-header">
                                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                    <h4 class="modal-title"><?=$prediction->Prediction?></h4>
+                                                                    <h4 class="modal-title"><?=$prediction->PredictionLabelFull?></h4>
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <div class="row">
-                                                                       <div class="col-sm-12">
+                                                                        <div class="col-sm-12">
                                                                             <table class="table table-striped">
                                                                                 <thead class="thead-inverse">
                                                                                 <tr class=table-header">
@@ -196,27 +232,8 @@
 
                                                         </div>
                                                     </div>
-                                                </th>
-
-                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>"><?=$prediction->Country?></td>
-                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                    <?=$prediction->League?>
                                                 </td>
-                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                    <?=$prediction->Percentage?>
-                                                </td>
-                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                    <?php
-
-                                                    if($prediction->HomeTeam->TotalPerecentage > $prediction->AwayTeam->TotalPerecentage) {
-                                                        echo  $prediction->HomeTeam->TotalPerecentage - $prediction->AwayTeam->TotalPerecentage;
-                                                    }
-                                                    else {
-                                                        echo  $prediction->AwayTeam->TotalPerecentage - $prediction->HomeTeam->TotalPerecentage;
-                                                    }
-                                                    ?>
-                                                </td>
-                                                <td  style="border-radius:0 10px 0 0;" class="txt-capitalized text-center <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
+                                                <td  style="" class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                     <button type="button" class="btn btn-default btn " data-toggle="modal" data-target="#myModal<?=$prediction->UniqueId?>">Prediction Details</button>
                                                 </td>
                                             </tr>

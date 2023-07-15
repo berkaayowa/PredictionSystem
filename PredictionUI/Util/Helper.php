@@ -489,6 +489,20 @@ class Helper {
     public static function GetPredictionBg($percentage) {
 
         if($percentage > 80 && $percentage < 95)
+            return "bg-low-risk";
+
+        else if($percentage > 94 && $percentage < 115)
+            return "bg-safe";
+
+        else if($percentage > 114)
+            return "bg-no-risk";
+
+        return "";
+    }
+
+    public static function GetPredictionToBorder($percentage) {
+
+        if($percentage > 80 && $percentage < 95)
             return "p-low-risk";
 
         else if($percentage > 94 && $percentage < 115)
