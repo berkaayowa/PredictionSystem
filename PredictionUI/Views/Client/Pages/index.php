@@ -74,7 +74,7 @@
                                         <?php if(property_exists($prediction, 'PredictionLabel') && strlen($prediction->PredictionLabel) > 0): ?>
                                             <tr>
                                                 <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
-                                                    <?= date('d/m/Y h:i', strtotime($prediction->Date))?>
+                                                    <?= date('d/m/Y h:i A', strtotime($prediction->Date))?>
                                                 </td>
 
                                                 <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>"><?=$prediction->Country?></td>
@@ -90,7 +90,7 @@
                                                    <div class="vsHolder">
                                                        <div class="score">
                                                            <img src=" <?= !empty($prediction->HomeTeam->TeamFlag) ? $prediction->HomeTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
-                                                           <label for=""><?= date('h:i', strtotime($prediction->Date))?></label>
+                                                           <label for=""><?= date('h:i A', strtotime($prediction->Date))?></label>
                                                            <img src=" <?= !empty($prediction->AwayTeam->TeamFlag) ? $prediction->AwayTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
                                                        </div>
                                                        <div class="predictionHolder hide <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
@@ -104,7 +104,7 @@
 
                                                 <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                     <div class="predictionHolder <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                        <label class=""><?=$prediction->PredictionLabelFull?></label>
+                                                        <label class=""><?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->PredictionLabel?></label>
                                                     </div>
                                                 </td>
                                                 <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
@@ -124,7 +124,7 @@
                                                             <div class="modal-content <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                                 <div class="modal-header">
                                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                    <h4 class="modal-title"><?=$prediction->PredictionLabelFull?></h4>
+                                                                    <h4 class="modal-title"> <?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->PredictionLabel?></h4>
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <div class="row">
