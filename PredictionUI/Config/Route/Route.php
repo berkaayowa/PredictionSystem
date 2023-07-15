@@ -72,8 +72,8 @@ class Router {
             }
             else {
                 if(!Auth::IsUserLogged()){
-                    $route['controller'] = 'users';
-                    $route['action'] = 'signin';
+                    $route['controller'] = 'pages';
+                    $route['action'] = 'index';
                 }
             }
 
