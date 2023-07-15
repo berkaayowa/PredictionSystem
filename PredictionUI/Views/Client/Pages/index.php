@@ -104,7 +104,7 @@
 
                                                 <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                     <div class="predictionHolder <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                        <label class=""><?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->PredictionLabel?></label>
+                                                        <label class=""><?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?></label>
                                                     </div>
                                                 </td>
                                                 <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
@@ -124,7 +124,7 @@
                                                             <div class="modal-content <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                                 <div class="modal-header">
                                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                    <h4 class="modal-title"> <?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->PredictionLabel?></h4>
+                                                                    <h4 class="modal-title"> <?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?></h4>
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     <div class="row">
