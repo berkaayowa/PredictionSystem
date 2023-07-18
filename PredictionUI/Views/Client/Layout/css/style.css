@@ -562,10 +562,19 @@ option , select{
 }
 
 .predictionHolder {
-    /*margin-top: 10px;*/
-    padding-top: 5px;
+    margin-top: 10px;
+    padding: 5px;
     border-top: solid #f3f3f3 2px;
     color: white;
+    /*padding-bottom: 5px;*/
+}
+
+.league {
+    display: block;
+    font-size: 10px;
+    width: 100%;
+    background-color: white;
+    color: black;
 }
 
 .score {
@@ -577,8 +586,9 @@ option , select{
     border-right: none!important;
 }
 
-
-
+.showOnMobile  {
+    display: none!important;
+}
 
 @media screen and (max-width: 714px) {
     .vsHolder {
@@ -589,5 +599,14 @@ option , select{
         width: 120px;
         display: block;
     }
+
+    .hideOnMobile {
+        display: none!important;
+    }
+
+    .showOnMobile  {
+        display: block!important;
+    }
+
 }
 

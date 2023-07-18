@@ -58,27 +58,27 @@
                                 <table class="table table-bordered fixtureTable" id="dataTable">
                                     <thead class="thead-inverse">
                                     <tr class=table-header">
-                                        <th class="txt-capitalized text-center ">Date</th>
-                                        <th class="txt-capitalized text-center">Country</th>
-                                        <th class="txt-capitalized text-center">League</th>
+                                        <th class="txt-capitalized text-center hideOnMobile">Date</th>
+                                        <th class="txt-capitalized text-center hideOnMobile">Country</th>
+                                        <th class="txt-capitalized text-center hideOnMobile">League</th>
                                         <th class="txt-capitalized text-center">Home Team</th>
                                         <th class="txt-capitalized text-center" style="width: 100px">vs</th>
                                         <th class="txt-capitalized text-center">Away Team</th>
-                                        <th class="txt-capitalized text-center">Prediction</th>
+                                        <th class="txt-capitalized text-center hideOnMobile">Prediction</th>
                                         <th class="txt-capitalized text-center hide">% Difference</th>
-                                        <th class="txt-capitalized text-center">Action</th>
+                                        <th class="txt-capitalized text-center hideOnMobile">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                         <?php foreach ($predictions as $prediction ): ?>
                                         <?php if(property_exists($prediction, 'PredictionLabel') && strlen($prediction->PredictionLabel) > 0): ?>
                                             <tr>
-                                                <td class="txt-capitalized text-center  <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
-                                                    <lable class="width_100px"><?= date('d/m/Y h:i A', strtotime($prediction->Date))?></lable>
+                                                <td class="txt-capitalized text-center hideOnMobile  <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                    <lable class="width_100px"><?= date('d/m/Y', strtotime($prediction->Date))?></lable>
                                                 </td>
 
-                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>"><?=$prediction->Country?></td>
-                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                <td class="txt-capitalized text-center hideOnMobile <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>"><?=$prediction->Country?></td>
+                                                <td class="txt-capitalized text-center hideOnMobile <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                     <?=$prediction->League?>
                                                 </td>
 
@@ -93,19 +93,14 @@
                                                            <label for=""><?= date('h:i A', strtotime($prediction->Date))?></label>
                                                            <img src=" <?= !empty($prediction->AwayTeam->TeamFlag) ? $prediction->AwayTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
                                                        </div>
-                                                       <div class="predictionHolder hide <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
+                                                       <div class="predictionHolder showOnMobile <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
+                                                           <label class="league"><?=$prediction->Country?> / <?=$prediction->League?></label>
                                                            <label class=""><?=$prediction->PredictionLabelFull?></label>
+                                                           <button type="button" class="btn btn-default btn " data-toggle="modal" data-target="#myModal<?=$prediction->UniqueId?>">Prediction Details</button>
                                                        </div>
-                                                   </div>
-                                                </td>
-                                                <td class="txt-capitalized text-center bold <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
-                                                    <?=$prediction->AwayTeam->TeamName?>
-                                                </td>
 
-                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
-                                                    <div class="predictionHolder <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                        <label class=""><?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?></label>
-                                                    </div>
+                                                   </div>
+
                                                     <div id="myModal<?=$prediction->UniqueId?>" class="modal fade " role="dialog">
                                                         <div class="modal-dialog">
                                                             <!-- Modal content-->
@@ -221,6 +216,16 @@
                                                         </div>
                                                     </div>
                                                 </td>
+                                                <td class="txt-capitalized text-center bold <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                    <?=$prediction->AwayTeam->TeamName?>
+                                                </td>
+
+                                                <td class="txt-capitalized text-center hideOnMobile <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                    <div class="predictionHolder <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
+                                                        <label class=""><?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?></label>
+                                                    </div>
+
+                                                </td>
                                                 <td class="txt-capitalized text-center hide <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                     <?php
 
@@ -233,7 +238,7 @@
                                                     ?>
 
                                                 </td>
-                                                <td  style="" class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                <td  style="" class="txt-capitalized text-center hideOnMobile <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                     <button type="button" class="btn btn-default btn " data-toggle="modal" data-target="#myModal<?=$prediction->UniqueId?>">Prediction Details</button>
                                                 </td>
                                             </tr>
