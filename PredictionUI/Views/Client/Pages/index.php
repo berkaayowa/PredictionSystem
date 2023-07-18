@@ -101,7 +101,7 @@
 
                                                    </div>
 
-                                                    <div id="myModal<?=$prediction->UniqueId?>" class="modal fade " role="dialog">
+                                                    <div id="myModal<?=$prediction->UniqueId?>" class="modal" role="dialog">
                                                         <div class="modal-dialog">
                                                             <!-- Modal content-->
                                                             <div class="modal-content <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
