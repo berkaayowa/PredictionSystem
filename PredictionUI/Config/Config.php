@@ -17,7 +17,7 @@ define('DATE_NOW', date(DATE_FORMAT) , true);
 switch ($_SERVER['SERVER_NAME']) {
     case "soccer.isenduget.co.za" :
     case "soccerprediction.co.za" :
-        define('FILE_PATH', 'C:/PhpSites/Prediction/' , true);
+        define('FILE_PATH', 'C:/SoccerPredictions/Predictions/' , true);
         break;
     default :
         define('FILE_PATH', 'C:/SoccerPredictions/Predictions/' , true);
