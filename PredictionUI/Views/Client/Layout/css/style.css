@@ -590,6 +590,11 @@ option , select{
     display: none!important;
 }
 
+.frmSearch .searchBtn {
+    width: 61%!important;
+    left: 66px;
+}
+
 @media screen and (max-width: 714px) {
     .vsHolder {
         width: 150px;
@@ -636,16 +641,8 @@ option , select{
     }
 
     .modal-dialog {
-        z-index: 999999!important;
+        /*z-index: 999999999999999999999999;*/
     }
-    .modal-content {
-        z-index: 999999!important;
-    }
-
-    .modal {
-        z-index: 9999!important;
-    }
-
 
 }
 

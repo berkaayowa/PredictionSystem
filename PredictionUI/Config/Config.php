@@ -20,7 +20,7 @@ switch ($_SERVER['SERVER_NAME']) {
         define('FILE_PATH', 'C:/PhpSites/Prediction/' , true);
         break;
     default :
-        define('FILE_PATH', 'C:/Projects/Mine/Other/PredictionApp/PredictionUI/Prediction/' , true);
+        define('FILE_PATH', 'C:/SoccerPredictions/Predictions/' , true);
         break;
 }
 

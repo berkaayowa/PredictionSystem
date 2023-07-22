@@ -90,7 +90,13 @@
                                                    <div class="vsHolder">
                                                        <div class="score">
                                                            <img src=" <?= !empty($prediction->HomeTeam->TeamFlag) ? $prediction->HomeTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
-                                                           <label for=""><?= date('h:i A', strtotime($prediction->Date))?></label>
+
+                                                           <?php if(property_exists($prediction, 'Score') ) :?>
+                                                                <label for=""><?= $prediction->Score->ft_score?></label>
+                                                           <?php else:?>
+                                                                <label for=""><?= date('h:i A', strtotime($prediction->Date))?></label>
+                                                           <?php endif?>
+
                                                            <img src=" <?= !empty($prediction->AwayTeam->TeamFlag) ? $prediction->AwayTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
                                                        </div>
                                                        <div class="predictionHolder showOnMobile <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
