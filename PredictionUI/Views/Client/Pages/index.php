@@ -1,8 +1,8 @@
-<div class="container-fluid">
+<div class="container">
 
 <div class="row">
     <div class="col-sm-12 text-center headerSection">
-        <h4 id="HeaderSectionH">Unlock your winning $$$ potential with our free daily soccer betting tips and predictions! </h4>
+        <h4 id="HeaderSectionH">Unlock your winning potential with our free daily soccer betting tips and predictions! </h4>
         <p>
             Our expert analysis, statistical insights, and strategic guidance to take your betting game to the next level.
             <br>The platform combines accurate predictions from AI processing with detailed insights to empower you like never before.<br>

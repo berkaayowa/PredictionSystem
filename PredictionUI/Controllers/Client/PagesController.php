@@ -58,6 +58,11 @@
             $this->view->render();
         }
 
+        function policy() {
+            $this->overWriteLayout('/Client/Layout/layoutNoMenu');
+            $this->view->render();
+        }
+
 
 	}
 
