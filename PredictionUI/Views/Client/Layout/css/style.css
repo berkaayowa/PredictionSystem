@@ -642,6 +642,10 @@ option , select{
         z-index: 999999!important;
     }
 
+    .modal {
+        z-index: 9999!important;
+    }
+
 
 }
 
