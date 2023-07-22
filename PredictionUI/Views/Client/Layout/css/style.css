@@ -636,8 +636,12 @@ option , select{
     }
 
     .modal-dialog {
-        /*z-index: 999999999999999999999999;*/
+        z-index: 999999!important;
     }
+    .modal-content {
+        z-index: 999999!important;
+    }
+
 
 }
 
