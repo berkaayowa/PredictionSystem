@@ -91,7 +91,7 @@
                                                        <div class="score">
                                                            <img src=" <?= !empty($prediction->HomeTeam->TeamFlag) ? $prediction->HomeTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
 
-                                                           <?php if(property_exists($prediction, 'Score') ) :?>
+                                                           <?php if(property_exists($prediction, 'Score')  && !empty($prediction->Score->ft_score)) :?>
                                                                 <label for=""><?= $prediction->Score->ft_score?></label>
                                                            <?php else:?>
                                                                 <label for=""><?= date('h:i A', strtotime($prediction->Date))?></label>
