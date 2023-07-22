@@ -595,6 +595,11 @@ option , select{
     left: 66px;
 }
 
+.score > label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
 @media screen and (max-width: 714px) {
     .vsHolder {
         width: 150px;
