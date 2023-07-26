@@ -1,13 +1,15 @@
 <div class="container">
 
 <div class="row">
-    <div class="col-sm-12 text-center headerSection">
+    <div class="col-sm-12 text-center">
+        <div class="headerSection">
         <h4 id="HeaderSectionH">Unlock your winning potential with our free daily soccer betting tips and predictions! </h4>
         <p>
             Our expert analysis, statistical insights, and strategic guidance to take your betting game to the next level.
             <br>The platform combines accurate predictions from AI processing with detailed insights to empower you like never before.<br>
 
         </p>
+        </div>
     </div>
     <div class="col-sm-12 hide">
         <div class="box  box-default ">
@@ -227,8 +229,11 @@
                                                 </td>
 
                                                 <td class="txt-capitalized text-center hideOnMobile <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
-                                                    <div class="predictionHolder <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                        <label class=""><?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?></label>
+                                                    <div class="predictionHolder">
+                                                        <label class="PredictionLabelFull"><?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->PredictionLabelFull): \Util\Helper::GetPredictionToBorder($prediction->Prediction)?></label>
+                                                        <div class="hint <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
+                                                            <label for=""><?=\Util\Helper::GetPredictionHint($prediction->Percentage)?></label>
+                                                        </div>
                                                     </div>
 
                                                 </td>

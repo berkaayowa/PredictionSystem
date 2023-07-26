@@ -508,7 +508,7 @@ option , select{
 .headerSection {
     background: #373737;
     color: white;
-    padding-top: 20px;
+    padding: 20px;
     padding-bottom: 20px;
     margin-bottom: 25px;
 }
@@ -557,16 +557,43 @@ option , select{
 }
 
 .score > img {
-    width: 30px;
-    border-radius: 10px;
+
+    width:31px;
+    border-radius:10px;
+    border: solid #dedede 2px;
+    padding:2px;
+
 }
 
 .predictionHolder {
     margin-top: 10px;
     padding: 5px;
-    border-top: solid #f3f3f3 2px;
-    color: white;
+    border: solid #dedede 1px;
+    color: #747474;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 35px;
+    position: relative;
     /*padding-bottom: 5px;*/
+}
+
+.PredictionLabelFull {
+    display: block;
+}
+
+.hint {
+    position: absolute;
+    background: red;
+    transform: rotate(-48deg);
+    top: -6px;
+    left: -27px;
+    color: white;
+    /* overflow: hidden; */
+    width: 70px;
+    padding-top: 10px;
+    /* height: 50px; */
+    display: inline-block;
+    font-size: 10px;
 }
 
 .league {

@@ -514,6 +514,28 @@ class Helper {
         return "";
     }
 
+    public static function GetPredictionHint($percentage) {
+
+        if($percentage > 80 && $percentage < 95)
+            return "Very risk";
+
+        else if($percentage > 94 && $percentage < 115)
+            return "risk";
+
+        else if($percentage > 114)
+            return "safe";
+
+        return "";
+    }
+
+    public static function GetPredictionLabel($label) {
+
+        if(strlen($label) > 10)
+            return substr($label,10);
+
+        return $label;
+    }
+
 
 
 } 
