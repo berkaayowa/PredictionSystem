@@ -566,6 +566,9 @@ class Helper {
 
         $label  = $prediction;
 
+        if(!property_exists($homeTeam, 'Score') || !property_exists($awayTeam, 'Score'))
+            return false;
+
         if(strpos($label, $homeTeam->TeamName) !== false) {
 
             $label = str_replace($homeTeam->TeamName, "", $label );
