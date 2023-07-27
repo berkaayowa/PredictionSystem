@@ -1,16 +1,5 @@
-<div class="container">
 
 <div class="row">
-    <div class="col-sm-12 text-center">
-        <div class="headerSection">
-        <h4 id="HeaderSectionH">Unlock your winning potential with our free daily soccer betting tips and predictions! </h4>
-        <p>
-            Our expert analysis, statistical insights, and strategic guidance to take your betting game to the next level.
-            <br>The platform combines accurate predictions from AI processing with detailed insights to empower you like never before.<br>
-
-        </p>
-        </div>
-    </div>
     <div class="col-sm-12 hide">
         <div class="box  box-default ">
             <div class="box-body row ">
@@ -84,8 +73,8 @@
                                                     <?=$prediction->League?>
                                                 </td>
 
-                                                <td class="txt-capitalized text-center bold <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
-                                                    <?=$prediction->HomeTeam->TeamName?>
+                                                <td title="<?=$prediction->HomeTeam->TeamName?>" class="txt-capitalized text-center bold <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                    <?=\Util\Helper::DisplayLabel(10, $prediction->HomeTeam->TeamName)?>
                                                 </td>
 
                                                 <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
@@ -102,14 +91,14 @@
                                                            <img src=" <?= !empty($prediction->AwayTeam->TeamFlag) ? $prediction->AwayTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
                                                        </div>
                                                        <div class="predictionHolder showOnMobile <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                           <label class="league"><?=$prediction->Country?> / <?=$prediction->League?></label>
+                                                           <label class="league"><?=\Util\Helper::DisplayLabel(25,$prediction->Country. ' / '. $prediction->League)?></label>
                                                            <label class=""><?=$prediction->PredictionLabelFull?></label>
                                                            <button type="button" class="btn btn-default btn " data-toggle="modal" data-target="#myModal<?=$prediction->UniqueId?>">Prediction Details</button>
                                                        </div>
 
                                                    </div>
 
-                                                    <div id="myModal<?=$prediction->UniqueId?>" class="modal fade " role="dialog">
+                                                    <div id="myModal<?=$prediction->UniqueId?>" class="modal" role="dialog">
                                                         <div class="modal-dialog">
                                                             <!-- Modal content-->
                                                             <div class="modal-content <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
@@ -224,13 +213,13 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="txt-capitalized text-center bold <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
-                                                    <?=$prediction->AwayTeam->TeamName?>
+                                                <td title="<?=$prediction->AwayTeam->TeamName?>" class="txt-capitalized text-center bold <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                    <?=\Util\Helper::DisplayLabel(10,$prediction->AwayTeam->TeamName)?>
                                                 </td>
 
                                                 <td class="txt-capitalized text-center hideOnMobile <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
-                                                    <div class="predictionHolder">
-                                                        <label class="PredictionLabelFull"><?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->PredictionLabelFull): \Util\Helper::GetPredictionToBorder($prediction->Prediction)?></label>
+                                                    <div class="predictionHolder" title="<?=$prediction->PredictionLabelFull?>">
+                                                        <label class="PredictionLabelFull"><?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?></label>
                                                         <div class="hint <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
                                                             <label for=""><?=\Util\Helper::GetPredictionHint($prediction->Percentage)?></label>
                                                         </div>
@@ -250,7 +239,7 @@
 
                                                 </td>
                                                 <td  style="" class="txt-capitalized text-center hideOnMobile <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
-                                                    <button type="button" class="btn btn-default btn " data-toggle="modal" data-target="#myModal<?=$prediction->UniqueId?>">Prediction Details</button>
+                                                    <button type="button" class="btn btn-default btn viewPredictionBtn" data-toggle="modal" title="<?=$prediction->PredictionLabelFull?>" data-target="#myModal<?=$prediction->UniqueId?>">Prediction Details</button>
                                                 </td>
                                             </tr>
                                             <?php endif ?>
@@ -267,7 +256,7 @@
         </div>
     </div>
 </div>
-</div>
+
 
 <script>
     $(document).ready(function (e) {

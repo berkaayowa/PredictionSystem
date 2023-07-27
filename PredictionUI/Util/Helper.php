@@ -528,13 +528,41 @@ class Helper {
         return "";
     }
 
-    public static function GetPredictionLabel($label) {
+    public static function GetPredictionLabel($homeTeam, $awayTeam, $label) {
 
-        if(strlen($label) > 10)
-            return substr($label,10);
+        $max = 30;
+
+        if(strpos($homeTeam, 'oper'))
+        {
+            $t = strpos($label, $homeTeam);
+            $tx = strpos($label, $homeTeam) >= 0;
+        }
+
+
+        if(strlen($label) > $max) {
+
+            if(strpos($label, $homeTeam) !== false) {
+                $label = str_replace($homeTeam, "", $label );
+                $label =  substr($homeTeam, 0, 8) . '..' .$label;
+            }
+            else if(strpos($label, $awayTeam) !== false) {
+                $label = str_replace($awayTeam, "", $label );
+                $label =  substr($awayTeam, 0, 8) . '..' .$label;
+            }
+        }
 
         return $label;
     }
+
+    public static function DisplayLabel($maxChar, $label) {
+
+        if(strlen($label) > $maxChar)
+            return substr($label,0, $maxChar) . '...';
+
+        return $label;
+    }
+
+
 
 
 
