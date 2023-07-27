@@ -555,12 +555,20 @@ option , select{
     font-size: 12px!important;
 }
 
-.score > img {
+.score > .flag > img {
+    width: 20px;
+    height: 20px;
+}
 
-    width:31px;
-    border-radius:10px;
+.score > .flag {
+
+    width: 31px;
+    height: 31px;
+    border-radius: 10px;
     border: solid #dedede 2px;
-    padding:2px;
+    padding: 2px;
+    display: inline-block;
+    padding-top: 4px;
 
 }
 
@@ -580,20 +588,33 @@ option , select{
     display: block;
 }
 
+.hintResult {
+    position: absolute;
+    top: 20px;
+    left: 164px;
+    color: white;
+    width: 40px;
+    display: inline-block;
+    font-size: 8px!important;
+    background: #455459!important;
+    color: #939393;
+
+}
+
 .hint {
     position: absolute;
     background: red;
-    transform: rotate(-48deg);
-    top: -6px;
-    left: -27px;
+    /* transform: rotate(-48deg); */
+    top: 20px;
+    left: -1px;
     color: white;
     /* overflow: hidden; */
-    width: 70px;
-    padding-top: 10px;
+    width: 59px;
+    /* padding-top: 10px; */
     /* height: 50px; */
     display: inline-block;
     font-size: 8px!important;
-    opacity: 0.8;
+    /* opacity: 0.8;
 }
 
 .league {
@@ -726,3 +747,15 @@ body{
 .viewPredictionBtn {
     height: 35px;
 }
+
+.scoreDetail {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    padding: 0 5px 0 5px;
+}
+
+.scoreDetail > label{
+    margin-bottom: 0;
+}
+

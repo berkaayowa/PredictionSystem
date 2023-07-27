@@ -562,6 +562,38 @@ class Helper {
         return $label;
     }
 
+    public static function CheckPrediction($homeTeam, $awayTeam, $prediction) {
+
+        $label  = $prediction;
+
+        if(strpos($label, $homeTeam->TeamName) !== false) {
+
+            $label = str_replace($homeTeam->TeamName, "", $label );
+
+            if (strpos($label, "Win/Draw") !== false)
+                return $homeTeam->Score >= $awayTeam->Score;
+            else if (strpos($label, "Win") !== false)
+                return $homeTeam->Score > $awayTeam->Score;
+            else if (strpos($label, "Draw") !== false)
+                return $homeTeam->Score == $awayTeam->Score;
+
+        }
+        else if(strpos($label, $awayTeam->TeamName) !== false) {
+
+            $label = str_replace($awayTeam->TeamName, "", $label );
+
+            if (strpos($label, "Win/Draw") !== false)
+                return $homeTeam->Score <= $awayTeam->Score;
+            else if (strpos($label, "Win") !== false)
+                return $homeTeam->Score < $awayTeam->Score;
+            else if (strpos($label, "Draw") !== false)
+                return $homeTeam->Score == $awayTeam->Score;
+        }
+
+        return false;
+
+    }
+
 
 
 

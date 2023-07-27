@@ -80,15 +80,28 @@
                                                 <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                    <div class="vsHolder">
                                                        <div class="score">
-                                                           <img src=" <?= !empty($prediction->HomeTeam->TeamFlag) ? $prediction->HomeTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
-
+                                                           <div class="flag">
+                                                                <img src=" <?= !empty($prediction->HomeTeam->TeamFlag) ? $prediction->HomeTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
+                                                           </div>
+                                                           <div class="scoreDetail">
                                                            <?php if(property_exists($prediction, 'Score')  && !empty($prediction->Score->ft_score)) :?>
+
                                                                 <label for=""><?= $prediction->Score->ft_score?></label>
+
+                                                               <?php if(\Util\Helper::CheckPrediction($prediction->HomeTeam, $prediction->AwayTeam, $prediction->PredictionLabelFull)):?>
+                                                                   <div class="pRate">
+                                                                       <span class="glyphicon glyphicon-check"></span>
+                                                                   </div>
+                                                               <?php endif?>
+
                                                            <?php else:?>
                                                                 <label for=""><?= date('h:i A', strtotime($prediction->Date))?></label>
                                                            <?php endif?>
+                                                           </div>
 
+                                                           <div class="flag">
                                                            <img src=" <?= !empty($prediction->AwayTeam->TeamFlag) ? $prediction->AwayTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
+                                                           </div>
                                                        </div>
                                                        <div class="predictionHolder showOnMobile <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
                                                            <label class="league"><?=\Util\Helper::DisplayLabel(25,$prediction->Country. ' / '. $prediction->League)?></label>
@@ -222,6 +235,10 @@
                                                         <label class="PredictionLabelFull"><?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?></label>
                                                         <div class="hint <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
                                                             <label for=""><?=\Util\Helper::GetPredictionHint($prediction->Percentage)?></label>
+                                                        </div>
+
+                                                        <div class=" hide hintResult <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
+                                                            <label for="">AI </label>
                                                         </div>
                                                     </div>
 
