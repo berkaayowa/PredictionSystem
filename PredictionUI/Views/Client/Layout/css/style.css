@@ -752,7 +752,7 @@ body{
     display: inline-block;
     position: relative;
     vertical-align: middle;
-    padding: 0 5px 0 5px;
+    padding: 0 3px 0 3px;
 }
 
 .scoreDetail > label{
