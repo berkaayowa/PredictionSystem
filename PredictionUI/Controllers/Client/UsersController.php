@@ -200,11 +200,12 @@ class UsersController extends BerkaPhpController
         return $resource;
     }
 
-    function activate($params = '') {
+    function activate($params = null) {
 
-        if(is_array($params) && isset($params['params'])) {
+        if(is_array($params) && sizeof($params['args']) > 0 && sizeof($params['args']['params']) > 0) {
 
-            $verificationCode = $params['params'];
+//            isset($params['params'])
+            $verificationCode = $params['args']['params'][0];
 
             $user = @T::Find('user')
                 ->Join(['user_role'=>'role'], 'role.id = user.userRoleId')
@@ -216,14 +217,14 @@ class UsersController extends BerkaPhpController
 
             if ($user->IsAny()) {
 
-                if ($user->isUserVerified == Check::True()) {
+                if ($user->isUserVerified == Check::$True) {
 
                     $this->view->set('error', true);
                     self::homeNotification('This account is activated already. click login on top :)');
 
                 } else {
 
-                    $user->isUserVerified = Check::True();
+                    $user->isUserVerified = Check::$True;
 
                     if($user->Save()) {
                         $this->view->set('success', true);

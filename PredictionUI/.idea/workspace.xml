@@ -6,8 +6,6 @@
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/Client/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/Util/Helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layout.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +87,7 @@
       <workItem from="1690393916878" duration="7591000" />
       <workItem from="1690420177885" duration="14867000" />
       <workItem from="1690509546040" duration="5537000" />
-      <workItem from="1691278036467" duration="23930000" />
+      <workItem from="1691278036467" duration="24633000" />
     </task>
     <servers />
   </component>
@@ -114,6 +112,11 @@
           <url>file://$PROJECT_DIR$/Util/Helper.php</url>
           <line>578</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Controllers/Client/UsersController.php</url>
+          <line>209</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
