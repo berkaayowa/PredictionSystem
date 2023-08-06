@@ -64,13 +64,13 @@ define('P_CASH', 'CSH' , true);
 define('P_BANK_DEPOSIT', 'BKD' , true);
 
 //mailer settings
-define('EMAIL_HOST', 'mail.softclicktech.com' , true);
-define('EMAIL_USER', 'noreply@softclicktech.com' , true);
+define('EMAIL_HOST', 'mail.soccerprediction.co.za' , true);
+define('EMAIL_USER', 'noreply@soccerprediction.co.za' , true);
 define('EMAIL_PASSWORD', 'none2017@' , true);
 define('WORDWRAP', 50 , true);
-define('NO_REPLY', 'noreply@softclicktech.com' , true);
+define('NO_REPLY', 'noreply@soccerprediction.co.za' , true);
 define('EMAIL_PAYMENT_CONFIRMATION', 'payment@softclicktech.com' , true);
-define('EMAIL_NOTICE', 'notice@softclicktech.com' , true);
+define('EMAIL_NOTICE', 'noreply@soccerprediction.co.za' , true);
 
 //email log settings
 define('EMAIL_CAT_CONTACT_US', 1 , true);
@@ -84,7 +84,7 @@ define('EMAIL_CAT_OTHER', 0 , true);
 //support
 define('EMAIL_SUPPORT', 'berka@softclicktech.com' , true);
 define('EMAIL_CONTACT', 'ayowaberk@gmail.com' , true);
-define('EMAIL_FROM_NAME', 'Softclicktech.com' , true);
+define('EMAIL_FROM_NAME', 'Soccer Prediction' , true);
 
 //Payment gateaway
 define('FULL_PAID', 3, true);

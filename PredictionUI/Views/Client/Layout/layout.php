@@ -43,9 +43,10 @@
                                                     <li><a href="/users/profile"><i class="glyphicon glyphicon-user"></i> Hi, <?= ucfirst( BerkaPhp\Helper\Auth::GetActiveUser()->name)?></a></li>
                                                     <li><a href="/users/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
                                                 <?php else: ?>
-                                                <li class=""><a data-toggle="modal" data-target="#mySigninModal"><span class=""></span> Sign Up</a></li>
-                                                <li class=""><a data-toggle="modal" data-target="#mySigninModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                                    <li class=""><a data-toggle="modal" data-target="#mySignupModal"><span class=""></span> Sign Up</a></li>
+                                                    <li class=""><a data-toggle="modal" data-target="#mySigninModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                                                 <?php endif ?>
+
                                             </ul>
                                         </div>
                                     </nav>
@@ -85,7 +86,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Log in</h4>
+                    <h4 class="modal-title center">Log in</h4>
                 </div>
                 <div class="modal-body">
                     <div class="login-form">
@@ -99,19 +100,58 @@
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-block">Log in</button>
                             </div>
-                            <div class="clearfix hidden">
-                                <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-                                <a href="#" class="pull-right">Forgot Password?</a>
+                            <div class="clearfix">
+                                <label class="pull-left"><input type="checkbox"> Remember me</label>
+                                <a href="#" class="pull-right bold">Forgot Password?</a>
                             </div>
                         </form>
                         <p class="text-center hidden"><a href="#">Create an Account</a></p>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer hide">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
-
+        </div>
+    </div>
+    <div id="mySignupModal" class="modal fade" role="dialog">
+        <div class="modal-dialog loginModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title center">Fill all the below fields & click 'Registration'</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="login-form">
+                        <form data-toggle="validator" message="Signing up..." request-type="POST" id="formLogin" data-request="/users/signup">
+                            <div class="form-group">
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="surname" id="surname" class="form-control" placeholder="Surname" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="emailAddress" id="emailAddress" class="form-control" placeholder="Email Address" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" autocomplete="false" name="password" id="password" class="form-control" placeholder="Password" required="required">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success btn-block">Register</button>
+                            </div>
+                            <div class="clearfix">
+                                <label class="pull-left">
+                                    <a href="">Sign in</a>
+                                </label>
+                                <a href="#" class="pull-right bold">Forgot Password ?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer hide">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

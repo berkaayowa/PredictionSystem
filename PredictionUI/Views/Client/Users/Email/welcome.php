@@ -16,11 +16,9 @@
                             <?php BerkaPhp\Helper\Element::Render('EmailHeader')?>
                             <tr>
                                 <td style="padding: 20px 0 30px 0; color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px;">
-                                    Hi <strong><?= $firstName ?></strong> welcome to <strong>bluetech oak</strong><br><br>
+                                    Hi <strong><?= $firstName ?></strong> welcome to <strong> soccerprediction.co.za</strong><br><br>
                                     To log in when visiting our site just click <a href="<?=SITE_URL?>/user/signin">Login</a>.
 
-                                    To view your oders in case you place any click <a href="<?=SITE_URL?>/orders">here</a>
-                                    or at the top of every page on your name and then on the popup box click on <strong>my orders</strong>.
                                     <br/>
                                     <br/>
                                     Please click the button bellow to activate your account.

@@ -12,8 +12,11 @@ use Util\Helper;
 class UsersController extends BerkaPhpController
 {
 
+    private $mailer;
+
     function __construct() {
         parent::__construct(false);
+        $this->mailer = $this->loadComponent("Email");
     }
 
     /* Display all users from database
@@ -25,18 +28,58 @@ class UsersController extends BerkaPhpController
         RedirectHelper::redirect('/users/login');
     }
 
-    function test($option =  null)
-    {
+    function signup() {
 
-        $data = json_encode($option);
+        if($this->is_set($this->getPost())) {
 
-        $log = T::Create('app_log');
-        $log->logData =  $data;
-        $log->createdDate = NOW;
-        @$log->Save();
+            $user = @T::Find('user')
+                ->Where('user.username' , '=', $this->getPost()['emailAddress'])
+                ->Where('user.isDeleted', '=', Check::$False)
+                ->FetchFirstOrDefault();
 
+            if (!$user->IsAny()) {
 
-        // Helper::SendPushNotification2();
+                $data = $this->getPost();
+                $activationCode = md5($data['emailAddress'] . $data['name']);
+
+                $user->name = $data['name'];
+                $user->surname = $data['surname'];
+                $user->password = md5($data['password']);
+                $user->username = $data['emailAddress'];
+                $user->emailAddress = $data['emailAddress'];
+                $user->confirmationCode = $activationCode;
+
+                $status = @T::Find('user_status')
+                    ->Where('code' , '=', 'PFC')
+                    ->Where('isDeleted', '=', Check::$False)
+                    ->FetchFirstOrDefault();
+
+                $role = @T::Find('user_role')
+                    ->Where('code' , '=', 'CLT')
+                    ->Where('isDeleted', '=', Check::$False)
+                    ->FetchFirstOrDefault();
+
+                $user->userStatusId = $status->id;
+                $user->userRoleId = $role->id;
+
+                if ($user->Save()) {
+
+                    $this->view->set('activationCode', $activationCode);
+                    $this->view->set('firstName', $data['name']);
+
+                    $content = $this->view->renderGetContent('Views/Client/Users/Email/welcome');
+                    $isSent = $this->mailer->send(EMAIL_FROM_NAME, "Welcome ".ucfirst($data['name']), "", $content, $this->getPost()['emailAddress']);
+
+                    return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Your account has been created successfully , and a verification email has been sent to your email (".$data['emailAddress'].")", 'link'=>'/pages']);
+                } else {
+                    return $this->jsonFormat(['error'=> true, 'message'=>'Error could not save this user', 'success'=>false]);
+                }
+
+            } else {
+                return $this->jsonFormat(['error'=> true,'message'=>'This email has been used already', 'success'=>false]);
+            }
+        }
+
     }
 
     function appsignin($option) {
