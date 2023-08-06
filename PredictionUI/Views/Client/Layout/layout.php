@@ -60,11 +60,11 @@
                 </div>
             </div>
 
-            <? if(!empty(\Util\Helper::GetNotificationMessage())) :?>
+            <?php if(\Util\Helper::GetNotificationMessage() !== false) :?>
                 <div class="container">
                     <div class="alert alert-info" role="alert"><?=\Util\Helper::GetNotificationMessage()?></div>
                 </div>
-            <? endif ?>
+            <?php endif ?>
 
             <div class="container">
                 {content}

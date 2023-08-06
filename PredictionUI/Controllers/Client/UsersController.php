@@ -242,7 +242,7 @@ class UsersController extends BerkaPhpController
 
     function homeNotification($message)
     {
-        RedirectHelper::redirect("/pages?notification=" . $message);
+        RedirectHelper::redirect("/pages?n=" . $message);
     }
 
     function profile() {

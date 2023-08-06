@@ -625,12 +625,12 @@ class Helper {
     public static function GetNotificationMessage() {
 
         if(sizeof($_GET) > 0) {
-            if(isset($_GET["n"])) {
+            if(key_exists("n", $_GET)) {
                 return $_GET["n"];
             }
         }
 
-        return  "";
+        return  false;
 
     }
 
