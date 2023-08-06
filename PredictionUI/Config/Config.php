@@ -18,29 +18,21 @@ switch ($_SERVER['SERVER_NAME']) {
     case "soccer.isenduget.co.za" :
     case "soccerprediction.co.za" :
         define('FILE_PATH', 'C:/SoccerPredictions/Predictions/' , true);
+        define('DB_USERNAME', 'root', true);
+        define('DB_PW',  '1234', true);
+        define('LIVE', false, true);
+        define('DB', 'sp_platform', true);
+        define('SERVER', 'localhost', true);
         break;
     default :
         define('FILE_PATH', 'C:/SoccerPredictions/Predictions/' , true);
-        break;
-}
-
-switch ($_SERVER['SERVER_NAME']) {
-    case "msg.isenduget.co.za" :
         define('DB_USERNAME', 'root', true);
         define('DB_PW',  '1234', true);
         define('LIVE', false, true);
-        define('DB', 'sms', true);
-        define('SERVER', 'localhost', true);
-        break;
-    default :
-        define('DB_USERNAME', 'root', true);
-        define('DB_PW',  '1234', true);
-        define('LIVE', false, true);
-        define('DB', 'sms', true);
+        define('DB', 'sp_platform', true);
         define('SERVER', 'localhost', true);
         break;
 }
-
 
 //default controller
 define('HOME', 'dashboard' , true);
@@ -94,50 +86,6 @@ define('EMAIL_SUPPORT', 'berka@softclicktech.com' , true);
 define('EMAIL_CONTACT', 'ayowaberk@gmail.com' , true);
 define('EMAIL_FROM_NAME', 'Softclicktech.com' , true);
 
-//Payment payfast
-
-if(SITE_URL == 'http://sms.softclick.xyz') {
-    define('PAYFAST_MERCHANT_ID', 12500391 , true);
-    define('PAYFAST_MERCHANT_KEY', 'htavfq7j0iv91' , true);
-    define('PAYFAST_TEST_URL', 'https://www.payfast.co.za/eng/process' , true);
-
-    define('PAYPAL_LIVE_URL', 'https://www.paypal.com/cgi-bin/webscr', true);
-    define('PAYPAL_LIVE_BUSINESS', 'ayowaberka@gmail.com', true);
-
-    define('PAYMENT_SUCCESS_URL', SITE_URL.'/client/payment/success' , true);
-    define('PAYMENT_NOTIFICATION_URL', SITE_URL.'/client/payment/notice' , true);
-    define('PAYMENT_ERROR_URL', SITE_URL.'/client/payment/cancel' , true);
-
-} else if(SITE_URL == 'http://api-test.softclicktech.com') {
-    define('PAYFAST_MERCHANT_ID', 12500391 , true);
-    define('PAYFAST_MERCHANT_KEY', 'htavfq7j0iv91' , true);
-    define('PAYFAST_TEST_URL', 'https://www.payfast.co.za/eng/process' , true);
-
-    define('PAYPAL_LIVE_URL', 'https://www.paypal.com/cgi-bin/webscr', true);
-    define('PAYPAL_LIVE_BUSINESS', 'ayowaberka@gmail.com', true);
-
-    define('PAYMENT_SUCCESS_URL', SITE_URL.'/client/payment/success' , true);
-    define('PAYMENT_NOTIFICATION_URL', SITE_URL.'/client/payment/notice' , true);
-    define('PAYMENT_ERROR_URL', SITE_URL.'/client/payment/cancel' , true);
-}else {
-    define('PAYFAST_MERCHANT_ID', 12500391 , true);
-    define('PAYFAST_MERCHANT_KEY', 'htavfq7j0iv91' , true);
-    define('PAYFAST_TEST_URL', 'https://sandbox.payfast.co.za/eng/process' , true);
-
-    define('PAYPAL_TEST_URL', 'https://www.sandbox.paypal.com/cgi-bin/webscr', true);
-    define('PAYPAL_TEST_BUSINESS', 'business@softclicktech.com', true);
-
-    define('PAYMENT_SUCCESS_URL', 'http://api-test.softclicktech.com/client/payment/success' , true);
-    define('PAYMENT_NOTIFICATION_URL', 'http://api-test.softclicktech.com/client/payment/notice' , true);
-    define('PAYMENT_ERROR_URL', 'http://api-test.softclicktech.com/client/payment/cancel' , true);
-}
-
-
-define('PAYFAST_POST_URL', LIVE ? PAYFAST_LIVE_URL : PAYFAST_TEST_URL, true);
-
-define('PAYPAL_POST_URL',  LIVE ? PAYPAL_LIVE_URL : PAYPAL_TEST_URL, true);
-define('PAYPAL_BUSINESS', LIVE ? PAYPAL_LIVE_BUSINESS : PAYPAL_TEST_BUSINESS, true);
-
 //Payment gateaway
 define('FULL_PAID', 3, true);
 define('NOT_PAID', 1, true);
@@ -152,17 +100,10 @@ define('PENDING', 'PDN', true);
 
 define('THEME_DEFAULT_CODE', 'DEF', true);
 
-
-
 define('SMS_SEND_URL', 'https://www.winsms.co.za/api/rest/v1/sms/outgoing/send', true);
 define('SMS_API_KEY', '61030DB5-52C3-4834-94AF-42FCC5AF1E2E', true);
 
-//BrkORMDatabase::Driver('mysqli')->Setup(SERVER, DB, DB_USERNAME, DB_PW,
-//    [
-//        'user'=>'user_log',
-//        'purchase'=>'purchase_log'
-//    ]
-//);
+BrkORMDatabase::Driver('mysqli')->Setup(SERVER, DB, DB_USERNAME, DB_PW);
 
 
 ?>

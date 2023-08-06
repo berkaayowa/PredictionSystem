@@ -528,6 +528,21 @@ class Helper {
         return "";
     }
 
+    public static function DisplayHint($homeTeam, $awayTeam) {
+
+        if($homeTeam->LeaguePointPerecentage == 0 && $awayTeam->LeaguePointPerecentage == 0)
+            return false;
+        else if($homeTeam->LeaguePositionPerecentage == 0 && $awayTeam->LeaguePositionPerecentage == 0)
+            return false;
+//        else if($homeTeam->HeadtoheadPerecentage == 0 && $awayTeam->HeadtoheadPerecentage == 0)
+//            return false;
+
+        else if($homeTeam->TotalPerecentage == 0 && $awayTeam->TotalPerecentage == 0)
+            return false;
+
+        return true;
+    }
+
     public static function GetPredictionLabel($homeTeam, $awayTeam, $label) {
 
         $max = 30;
@@ -552,6 +567,16 @@ class Helper {
         }
 
         return $label;
+    }
+
+    public static function MlCheck($result) {
+
+        if ($result->W > $result->WD)
+            return "Win ".strval($result->W)."%";
+        else if ($result->W < $result->WD)
+            return "Win/Draw ".strval($result->WD)."%";
+
+        return "";
     }
 
     public static function DisplayLabel($maxChar, $label) {

@@ -147,7 +147,7 @@
                                                                                     <td class="txt-capitalized text-right tSubItem">
                                                                                         <?=$prediction->HomeTeam->LeaguePointPerecentage?>%
                                                                                     </td>
-                                                                                    <td class="txt-capitalized tSubItem"></td>
+                                                                                    <td class="txt-capitalized tSubItem "></td>
                                                                                     <td class="txt-capitalized text-left tSubItem">
                                                                                         <?=$prediction->AwayTeam->LeaguePointPerecentage?>%
                                                                                     </td>
@@ -233,12 +233,15 @@
                                                 <td class="txt-capitalized text-center hideOnMobile <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                     <div class="predictionHolder" title="<?=$prediction->PredictionLabelFull?>">
                                                         <label class="PredictionLabelFull"><?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?></label>
-                                                        <div class="hint <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                            <label for=""><?=\Util\Helper::GetPredictionHint($prediction->Percentage)?></label>
-                                                        </div>
 
-                                                        <div class=" hide hintResult <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
-                                                            <label for="">AI </label>
+                                                        <?php if(\Util\Helper::DisplayHint($prediction->HomeTeam, $prediction->AwayTeam)):?>
+                                                            <div class="hint <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
+                                                                <label for=""><?=\Util\Helper::GetPredictionHint($prediction->Percentage)?></label>
+                                                            </div>
+                                                        <?php endif?>
+
+                                                        <div class=" hintResult <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
+                                                            <label for=""><?=\Util\Helper::MlCheck($prediction->MlPrediction)?></label>
                                                         </div>
                                                     </div>
 

@@ -510,7 +510,7 @@ option , select{
     color: white;
     /*padding: 20px;*/
     /*padding-bottom: 20px;*/
-    /*margin-bottom: 25px;*/
+    margin-top: 20px;
 }
 
 .headerSection > p {
@@ -591,9 +591,8 @@ option , select{
 .hintResult {
     position: absolute;
     top: 20px;
-    left: 164px;
-    color: white;
-    width: 40px;
+    left: 140px;
+    width: 50px;
     display: inline-block;
     font-size: 8px!important;
     background: #455459!important;
@@ -742,6 +741,7 @@ body{
 .containerMain {
     background: white;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 .viewPredictionBtn {
@@ -757,5 +757,111 @@ body{
 
 .scoreDetail > label{
     margin-bottom: 0;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #042029;
+    text-align: center;
+}
+
+.footerContainer{
+    padding-top: 25px;
+    color: #fff;
+    width: 100%;
+}
+
+.footerContainer > a {
+    font-size: 9px;
+    border: solid 1px #425960;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 5px;
+}
+
+.fa-twitter {
+    color: #4099FF;
+}
+
+.fa-facebook {
+    color: #3B5998;
+}
+
+.fa-youtube-play {
+    color: #e52d27;
+}
+
+.fa-rss {
+    color: #FF6600;
+}
+
+.fa-vine {
+    color: #00a478;
+}
+
+.fa-flickr {
+    color: #ff0084;
+}
+
+.fa-twitch {
+    color: #6441A5;
+}
+
+.fa-linkedin {
+    color: #007bb6;
+}
+
+.fa {
+    opacity: 0.7;
+    transition: 1s;
+    -webkit-transition: 1s;
+}
+
+.fa:hover {
+    opacity: 1;
+    transition: 1s;
+    -webkit-transition: 1s;
+}
+
+.copyRight{
+    border: solid 1px #425960;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 5px;
+    font-size: 11px;
+    height: 40px;
+    vertical-align: top;
+    padding-top: 12px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #bbbbbb;
+}
+
+.cookieInfo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.hFocus {
+    font-size: 25px;
+    display: block;
+    padding-bottom: 10px;
+    border-bottom: solid 2px #e5e5e5;
+    width: 500px;
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    /*padding-bottom: 2.5rem;    !* Footer height *!*/
+}
+.loginModal {
+    width: 350px;
 }
 

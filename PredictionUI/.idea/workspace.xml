@@ -2,10 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Controllers/Client/AboutusController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/Client/ContactController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Util/Check.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Client/Contact/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Client/Users/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/Route/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Route/Route.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/ContactsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/ContactsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/UsersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/Util/Helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Contacts/edit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Contacts/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/js/mts.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/js/mts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Pages/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Pages/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Pages/policy.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Pages/policy.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +52,11 @@
     <servers>
       <server host="localhost" id="942edf7a-2c36-4c87-9f86-06739dee1af0" name="localhost" port="9090" />
       <server host="localhost" id="3aba77b0-2039-43a1-946e-d74219fecad7" name="localhost (1)" port="8092" />
+      <server host="localhost" id="8bac37d0-6010-4c06-89e9-d166e769216e" name="localhost (2)" port="8093" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/BerkaPhp/Framework/Views/Framework/Page" remote-root="C:/Projects/Mine/Web/greenvalleydesign" />
+        </path_mappings>
+      </server>
     </servers>
   </component>
   <component name="ProjectId" id="2ErwlXLuVn7dIXCJndf0pBhewfa" />
@@ -46,12 +69,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Views/Client/Layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Util" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Util" />
+      <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Users" />
+      <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Controllers\Client" />
       <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Layout" />
       <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Assets\images" />
     </key>
@@ -78,6 +104,8 @@
       <workItem from="1690346726105" duration="5309000" />
       <workItem from="1690393916878" duration="7591000" />
       <workItem from="1690420177885" duration="14867000" />
+      <workItem from="1690509546040" duration="5537000" />
+      <workItem from="1691278036467" duration="16021000" />
     </task>
     <servers />
   </component>
@@ -94,5 +122,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Util/Helper.php</url>
+          <line>578</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

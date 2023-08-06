@@ -75,10 +75,10 @@ class Router {
 
             }
             else {
-                if(!Auth::IsUserLogged()){
-                    $route['controller'] = 'pages';
-                    $route['action'] = 'index';
-                }
+//                if(!Auth::IsUserLogged()){
+//                    $route['controller'] = 'pages';
+//                    $route['action'] = 'index';
+//                }
             }
 
             Route::to($route);

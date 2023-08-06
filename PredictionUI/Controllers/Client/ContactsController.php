@@ -14,7 +14,7 @@
 
 		function __construct() {
 			parent::__construct();
-            $this->view->set('breadcrumb', 'Contacts');
+            $this->view->set('breadcrumb', 'Contact');
 		}
 
 		function index() {

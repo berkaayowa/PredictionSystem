@@ -1018,8 +1018,8 @@ mts.initTable = function() {
     //});
 
     $('#dataTable').DataTable({
-        "order": [],
-        paging: false
+        "order": [0],
+        paging: true
     });
 
 

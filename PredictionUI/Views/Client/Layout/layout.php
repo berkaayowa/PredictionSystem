@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
+            crossorigin="anonymous"></script>
     <?=isset($meta_data) && !empty($meta_data) ? $meta_data : "" ?>
-    <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="Unlock your winning potential with our free daily soccer betting tips and predictions!">
@@ -12,214 +12,108 @@
     <meta name="robots" content="all">
     <title><?= empty($title) ? SYS_NAME : ucfirst($title) ?></title>
     <link rel="shortcut icon" href="<?= LOGO_ICON ?>" type="image/x-icon">
+
     <?= BerkaPhp\Helper\Element::Render('css') ?>
     <?= BerkaPhp\Helper\Element::Render('Style') ?>
-    <script src="/Views/Shared/Scripts/Other/jquery-1.10.2.min.js"></script>
-
-    <?php
-    $yes = BerkaPhp\Helper\SessionHelper::get('navigation') == "off";
-    $_body =  $yes ? "sidebar-collapse" : "";
-    $cwrapper = $yes ? "min-height: 440px" : "" ;
-    ?>
-
-
 </head>
-<body class="hold-transition skin-blue sidebar-mini <?=$_body?>" style="overflow-x: hidden;">
-<div class="se-pre-con"></div>
-<div class="wrapper">
-<header class="main-header">
-    <!-- Logo -->
-    <a href="<?= BerkaPhp\Helper\Html::action('/')?>" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini">
-            <b>I-S</b>
-        </span>
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg" style="text-align: left"><b>I-Send</b></span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-        <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-menu-toggle data-toggle="push-menu" role="button">
-            <span class="sr-only">Toggle navigation</span>
-        </a>
-        <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav ">
-                <!-- Messages: style can be found in dropdown.less-->
-                <li class="dropdown messages-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-envelope-o"></i>
-                        <span class="label label-success">4</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">You have 4 messages</li>
-                        <li>
-                            <!-- inner menu: contains the actual data -->
-                            <ul class="menu">
-                                <li><!-- start message -->
-                                    <a href="#">
+<body class="hold-transition ">
+    <div class="page-container">
+        <div class="content-wrap">
+            <div class="container-fluid headerWrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <div class="headerSection">
+                                <div class="navbarWrapper">
+                                    <nav class="navbar navbar-inverse navStyle">
+                                        <div class="container-fluid">
+                                            <div class="navbar-header">
+                                                <a class="navbar-brand" href="/">Soccer Prediction</a>
+                                            </div>
+                                            <ul class="nav navbar-nav navbar-left">
+                                                <li class="active"><a href="/">Today's Matches</a></li>
+                                                <li class=""><a href="/">Coupons</a></li>
+                                            </ul>
+                                            <ul class="nav navbar-nav navbar-right">
 
-                                        <h4>
-                                            Support Team
-                                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                        </h4>
-                                        <p>Why not buy a new awesome theme?</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="footer"><a href="#">See All Messages</a></li>
-                    </ul>
-                </li>
-                <!-- Notifications: style can be found in dropdown.less -->
-                <li class="dropdown notifications-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-bell-o"></i>
-                        <span class="label label-warning">10</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">You have 10 notifications</li>
-                        <li>
-                            <!-- inner menu: contains the actual data -->
-                            <ul class="menu">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="footer"><a href="#">View all</a></li>
-                    </ul>
-                </li>
-                <!-- Messages: style can be found in dropdown.less-->
+                                                <li class="hide"><a href="/contact">Contacts Us</a></li>
+                                                <li class=""><a href="/pages/about">About Us</a></li>
 
-                <!-- User Account: style can be found in dropdown.less -->
-                <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="icon fa fa-user"></i>
-                        <?=Resource\Label::General("Greet")?>
-                        <?= ucfirst(BerkaPhp\Helper\Auth::GetActiveUser(false)->name)?>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <!-- User image -->
-                        <li class="user-header">
-                            <p>
-                                <?= ucfirst(BerkaPhp\Helper\Auth::GetActiveUser(false)->name)?> <?= ucfirst(BerkaPhp\Helper\Auth::GetActiveUser(false)->surname)?>
-                                <small class="txt-lc"><?= BerkaPhp\Helper\Auth::GetActiveUser(false)->email?></small>
-
-                            </p>
-                        </li>
-                        <!-- Menu Footer-->
-                        <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="<?= BerkaPhp\Helper\Html::action('/users/profile')?>" class="btn btn-default btn-flat">Profile</a>
+                                                <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
+                                                    <li><a href="/users/profile"><i class="glyphicon glyphicon-user"></i> Hi, <?= ucfirst( BerkaPhp\Helper\Auth::GetActiveUser()->name)?></a></li>
+                                                    <li><a href="/users/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                                                <?php else: ?>
+                                                <li class=""><a data-toggle="modal" data-target="#mySigninModal"><span class=""></span> Sign Up</a></li>
+                                                <li class=""><a data-toggle="modal" data-target="#mySigninModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                                <?php endif ?>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                    <div class="headerSubTitle hide">Unlock your winning potential with our free daily soccer betting tips and predictions! Our expert analysis, statistical insights, and strategic guidance to take your betting game to the next level.
+                                        The platform combines accurate predictions from AI processing with detailed insights to empower you like never before. consider subscribing to get more out of soccer prediction platform
+                                    </div>
+                                </div>
                             </div>
-                            <div class="pull-right">
-                                <a href="/client/users/logout" class="btn btn-default btn-flat">
-                                    <?=Resource\Label::General("Logout")?>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                <!-- Control Sidebar Toggle Button -->
-            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                {content}
+            </div>
         </div>
-    </nav>
-</header>
 
-<!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar">
-
-    <section class="sidebar">
-        <!--sidebar menu : style can be found in sidebar.less-->
-        <ul class="sidebar-menu" data-widget="tree">
-            <li class="header" style="text-transform: uppercase;">
-                &nbsp;
-            </li>
-            <li class="active">
-                <a href="<?= BerkaPhp\Helper\Html::action('/dashboard')?>">
-                    <i class="fa fa-dashboard"></i>
-                    <span>
-                        <?=Resource\Label::General("DashBoard")?>
-                    </span>
-                </a>
-            </li>
-            <li class="header">&nbsp;</li>
-            <li>
-                <a href="<?= BerkaPhp\Helper\Html::action('/contacts')?>">
-                    <i class="fa fa-users"></i> <span><?=Resource\Label::General("Contacts")?></span>
-                </a>
-            </li>
-            <li>
-                <a href="<?= BerkaPhp\Helper\Html::action('/message')?>">
-                    <i class="fa fa-envelope"></i> <span><?=Resource\Label::General("Message")?></span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-phone"></i>
-                    <span><?=Resource\Label::General("Top-Up")?></span>
-                    <span class="pull-right-container">
-                     <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu" style="display: none;">
-                    <li>
-                        <a href="<?= BerkaPhp\Helper\Html::action('/credits/buycredit')?>">
-                            <i class="fa fa-circle-o"></i><span> <?=Resource\Label::General("Top-Up Now")?></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= BerkaPhp\Helper\Html::action('/credits/purchases')?>">
-                            <i class="fa fa-circle-o"></i> <span> <?=Resource\Label::General("Top-Up History")?></span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="header">&nbsp;</li>
-            <li>
-                <a href="<?= BerkaPhp\Helper\Html::action('/dashboard/api')?>">
-                    <i class="fa fa-connectdevelop"></i> <span><?=Resource\Label::General("API")?></span>
-                </a>
-            </li>
-
-            <li class="header">&nbsp;</li>
-            <li>
-                <a href="/client/users/logout">
-                    <i class="fa fa-sign-out"></i>
-                    <span>
-                         <?=Resource\Label::General("Logout")?>
-                    </span>
-                </a>
-            </li>
-        </ul>
-    </section>
-    <!-- /.sidebar -->
-</aside>
-<div class="content-wrapper" style="<?=$cwrapper?>">
-    <section class="content-header">
-        <h1>
-            <?=!empty($breadcrumb) ? $breadcrumb : ""?>
-            <small><?=!empty($menuTitle) ? $menuTitle : ""?></small>
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i><?=!empty($breadcrumb) ? $breadcrumb : ""?></a></li>
-            <li class="active"><?=!empty($menuTitle) ? $menuTitle : ""?></li>
-        </ol>
-    </section>
-    <section class="content">
-        <div data-notification-area></div>
-        {content}
-    </section>
-</div>
-<footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        <b>Powered By </b> <?=ucfirst("ISendUGet")?>
+        <div class="footer">
+            <div class="container footerContainer">
+        <!--        <a href='#'><i class="fa fa-twitch fa-3x fa-fw"></i></a>-->
+                <a target="_blank" href='https://www.facebook.com/profile.php?id=100094880164648'><i class="fa fa-facebook fa-3x fa-fw"></i></a>
+                <a target="_blank" href='https://www.youtube.com/@soccerprediction27/about'><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
+                <div class="copyRight">
+                    ©<?= date("Y").' '. $_SERVER['SERVER_NAME']?> All rights reserved. <a href="/pages/policy">Our Policy</a>
+                </div>
+                <div class="cookieInfo">
+                    This website uses cookies for content/ads personalization and to analyse our traffic.
+                </div>
+            </div>
+        </div>
     </div>
-    <strong><?=ucfirst("I-Send")?></strong>
-</footer>
-</div>
+
+    <div id="mySigninModal" class="modal fade" role="dialog">
+        <div class="modal-dialog loginModal">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Log in</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="login-form">
+                        <form data-toggle="validator" message="Login..." request-type="POST" id="formLogin" data-request="/users/login">
+                            <div class="form-group">
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Username" required="required">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" id="password"  class="form-control" placeholder="Password" required="required">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success btn-block">Log in</button>
+                            </div>
+                            <div class="clearfix hidden">
+                                <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
+                                <a href="#" class="pull-right">Forgot Password?</a>
+                            </div>
+                        </form>
+                        <p class="text-center hidden"><a href="#">Create an Account</a></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 
 </html>
@@ -261,6 +155,5 @@
 
 <script src="/Views/Shared/Scripts/Theme/Chart.js"></script>
 <script src="/Views/Client/Layout/js/mts.js"></script>
-
 
 

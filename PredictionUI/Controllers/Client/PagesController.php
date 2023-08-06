@@ -49,7 +49,7 @@
             if(strlen($data) > 0)
                 $array = json_decode($data);
 
-            $this->overWriteLayout('/Client/Layout/layoutMenu');
+            //$this->overWriteLayout('/Client/Layout/layoutMenu');
 
             $this->view->set('StartDate', $startDate);
             $this->view->set('EndDate', $endDate);
@@ -59,12 +59,11 @@
         }
 
         function policy() {
-            $this->overWriteLayout('/Client/Layout/layoutMenu');
             $this->view->render();
         }
 
         function about() {
-            $this->overWriteLayout('/Client/Layout/layoutMenu');
+            //$this->overWriteLayout('/Client/Layout/layoutMenu');
             $this->view->render();
         }
 
