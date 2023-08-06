@@ -622,6 +622,18 @@ class Helper {
 
     }
 
+    public static function GetNotificationMessage() {
+
+        if(sizeof($_GET) > 0) {
+            if(isset($_GET["n"])) {
+                return $_GET["n"];
+            }
+        }
+
+        return  "";
+
+    }
+
 
 
 

@@ -60,6 +60,12 @@
                 </div>
             </div>
 
+            <? if(!empty(\Util\Helper::GetNotificationMessage())) :?>
+                <div class="container">
+                    <div class="alert alert-info" role="alert"><?=\Util\Helper::GetNotificationMessage()?></div>
+                </div>
+            <? endif ?>
+
             <div class="container">
                 {content}
             </div>

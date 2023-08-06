@@ -82,7 +82,7 @@ define('EMAIL_CAT_FAIL_PAYMENT', 6 , true);
 define('EMAIL_CAT_OTHER', 0 , true);
 
 //support
-define('EMAIL_SUPPORT', 'berka@softclicktech.com' , true);
+define('EMAIL_SUPPORT', 'support@soccerprediction.co.za' , true);
 define('EMAIL_CONTACT', 'ayowaberk@gmail.com' , true);
 define('EMAIL_FROM_NAME', 'Soccer Prediction' , true);
 

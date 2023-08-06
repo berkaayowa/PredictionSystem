@@ -7,6 +7,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/Client/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/Util/Helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Client/Users/Email/welcome.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Users/Email/welcome.php" afterDir="false" />
     </list>
@@ -90,7 +92,7 @@
       <workItem from="1690393916878" duration="7591000" />
       <workItem from="1690420177885" duration="14867000" />
       <workItem from="1690509546040" duration="5537000" />
-      <workItem from="1691278036467" duration="21273000" />
+      <workItem from="1691278036467" duration="23683000" />
     </task>
     <servers />
   </component>

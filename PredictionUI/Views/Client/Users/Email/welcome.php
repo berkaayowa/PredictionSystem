@@ -18,14 +18,13 @@
                                 <td style="padding: 20px 0 30px 0; color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px;">
                                     Hi <strong><?= $firstName ?></strong> welcome to <strong> soccerprediction.co.za</strong><br><br>
                                     To log in when visiting our site just click <a href="<?=SITE_URL?>/user/signin">Login</a>.
-
                                     <br/>
                                     <br/>
                                     Please click the button bellow to activate your account.
                                     <br/>
                                     <br/>
                                     <br/>
-                                    <a href="<?=SITE_URL?>/users/activate/<?=$activationCode?>" style="padding: 15px;border: 2px solid;border-radius: 26px;color: white;background: #0083C1;font-weight: bold;">
+                                    <a href="https://<?=SITE_URL?>/users/activate/<?=$activationCode?>" style="padding: 15px;border: 2px solid;border-radius: 26px;color: white;background: #0083C1;font-weight: bold;">
                                         Activate now
                                     </a>
                                 </td>
@@ -38,7 +37,9 @@
                         <table border="0" cellpadding="0" cellspacing="0" width="100%">
                             <tr>
                                 <td style="color: #0753cf; font-family: Arial, sans-serif; font-size: 14px; text-align: center" width="75%">
-                                    Laptop | Desktop | Batteries | Gaming | Pc accessories | Tel : 021 917 1265 Email : support@bluetechoak.co.za
+                                    <a target="_blank" href='https://www.facebook.com/profile.php?id=100094880164648'>Facebook </a> |
+                                    <a target="_blank" href='https://www.youtube.com/@soccerprediction27/about'>Youtube</a> |
+                                    <a href="mailto:<?=EMAIL_SUPPORT?>"><?=EMAIL_SUPPORT?></a>
                                 </td>
                             </tr>
                         </table>
