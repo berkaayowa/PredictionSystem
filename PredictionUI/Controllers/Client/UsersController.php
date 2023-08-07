@@ -223,7 +223,7 @@ class UsersController extends BerkaPhpController
                 } else {
 
                     $status = @T::Find('user_status')
-                        ->Where('code' , '=', 'PFC')
+                        ->Where('code' , '=', 'PNC')
                         ->Where('isDeleted', '=', Check::$False)
                         ->FetchFirstOrDefault();
 
