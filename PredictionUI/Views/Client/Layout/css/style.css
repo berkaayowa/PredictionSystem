@@ -775,7 +775,7 @@ body{
 }
 
 .footerContainer > a {
-    font-size: 9px;
+    font-size: 5px;
     border: solid 1px #425960;
     border-radius: 10px;
     display: inline-block;
@@ -832,9 +832,9 @@ body{
     display: inline-block;
     padding: 5px;
     font-size: 11px;
-    height: 40px;
+    height: 27px;
     vertical-align: top;
-    padding-top: 12px;
+    padding-top: 5px;
     padding-right: 10px;
     padding-left: 10px;
     color: #bbbbbb;
