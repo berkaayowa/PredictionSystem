@@ -1,4 +1,20 @@
 
+<?php if(!\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="box  box-default">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-sm-12 center">
+                        <div class="label label-success" role="alert"><?=sizeof($predictions)?></div> Predictions are available, consider signing in to view all daily matches predictions and enjoy more other free features such daily coupons and more from our platform.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif ?>
+
 <div class="row">
     <div class="col-sm-12 hide">
         <div class="box  box-default ">
@@ -108,9 +124,9 @@
                                                            <label class=""><?=$prediction->PredictionLabelFull?></label>
                                                            <button type="button" class="btn btn-default btn " data-toggle="modal" data-target="#myModal<?=$prediction->UniqueId?>">Prediction Details</button>
                                                        </div>
-
                                                    </div>
 
+                                                    <?php if($maxPrediction > 0) : ?>
                                                     <div id="myModal<?=$prediction->UniqueId?>" class="modal" role="dialog">
                                                         <div class="modal-dialog">
                                                             <!-- Modal content-->
@@ -128,11 +144,11 @@
                                                                                     <th class="txt-capitalized text-center w-20" style="color: #c8c8c8;">
                                                                                         Attributes
                                                                                     </th>
+                                                                                    <th class="txt-capitalized text-center w-20" style="color: #c8c8c8;">
+                                                                                        Weight %
+                                                                                    </th>
                                                                                     <th class="txt-capitalized text-right w-20 underline">
                                                                                         <?=$prediction->HomeTeam->TeamName?>
-                                                                                    </th>
-                                                                                    <th class="txt-capitalized text-center w-20">
-                                                                                        VS
                                                                                     </th>
                                                                                     <th class="txt-capitalized text-left w-20 underline">
                                                                                         <?=$prediction->AwayTeam->TeamName?>
@@ -144,10 +160,12 @@
                                                                                     <td class="txt-capitalized tSubItem">
                                                                                         League Points
                                                                                     </td>
+                                                                                    <td class="txt-capitalized tSubItem">
+                                                                                        <?=$prediction->PredictionContribution->LeaguePointPercentage?>
+                                                                                    </td>
                                                                                     <td class="txt-capitalized text-right tSubItem">
                                                                                         <?=$prediction->HomeTeam->LeaguePointPerecentage?>%
                                                                                     </td>
-                                                                                    <td class="txt-capitalized tSubItem "></td>
                                                                                     <td class="txt-capitalized text-left tSubItem">
                                                                                         <?=$prediction->AwayTeam->LeaguePointPerecentage?>%
                                                                                     </td>
@@ -156,10 +174,12 @@
                                                                                     <td class="txt-capitalized tSubItem">
                                                                                         League Position
                                                                                     </td>
+                                                                                    <td class="txt-capitalized tSubItem">
+                                                                                        <?=$prediction->PredictionContribution->LeaguePositionPercentage?>
+                                                                                    </td>
                                                                                     <td class="txt-capitalized text-right tSubItem">
                                                                                         <?=$prediction->HomeTeam->LeaguePositionPerecentage?>%
                                                                                     </td>
-                                                                                    <td class="txt-capitalized tSubItem"></td>
                                                                                     <td class="txt-capitalized text-left tSubItem">
                                                                                         <?=$prediction->AwayTeam->LeaguePositionPerecentage?>%
                                                                                     </td>
@@ -168,10 +188,12 @@
                                                                                     <td class="txt-capitalized tSubItem">
                                                                                         Head 2 head
                                                                                     </td>
+                                                                                    <td class="txt-capitalized tSubItem">
+                                                                                        <?=$prediction->PredictionContribution->HeadtoheadPercentage?>
+                                                                                    </td>
                                                                                     <td class="txt-capitalized text-right tSubItem">
                                                                                         <?=$prediction->HomeTeam->HeadtoheadPerecentage?>%
                                                                                     </td>
-                                                                                    <td class="txt-capitalized tSubItem"></td>
                                                                                     <td class="txt-capitalized text-left tSubItem">
                                                                                         <?=$prediction->AwayTeam->HeadtoheadPerecentage?>%
                                                                                     </td>
@@ -180,10 +202,12 @@
                                                                                     <td class="txt-capitalized tSubItem">
                                                                                         Motivation
                                                                                     </td>
+                                                                                    <td class="txt-capitalized tSubItem">
+                                                                                        <?=$prediction->PredictionContribution->LastMatchPercentage?>
+                                                                                    </td>
                                                                                     <td class="txt-capitalized text-right tSubItem">
                                                                                         <?=$prediction->HomeTeam->LastGamesPerecentage?>%
                                                                                     </td>
-                                                                                    <td class="txt-capitalized tSubItem"></td>
                                                                                     <td class="txt-capitalized text-left tSubItem">
                                                                                         <?=$prediction->AwayTeam->LastGamesPerecentage?>%
                                                                                     </td>
@@ -192,10 +216,12 @@
                                                                                     <td class="txt-capitalized tSubItem">
                                                                                         Game Location
                                                                                     </td>
+                                                                                    <td class="txt-capitalized tSubItem">
+                                                                                        <?=$prediction->PredictionContribution->AwayHomePercentage?>
+                                                                                    </td>
                                                                                     <td class="txt-capitalized text-right">
                                                                                         <?=$prediction->HomeTeam->AwayOrHomePerecentage?>%
                                                                                     </td>
-                                                                                    <td class="txt-capitalized tSubItem"></td>
                                                                                     <td class="txt-capitalized text-left tSubItem">
                                                                                         <?=$prediction->AwayTeam->AwayOrHomePerecentage?>%
                                                                                     </td>
@@ -205,10 +231,12 @@
                                                                                     <td class="txt-capitalized tSubItem">
                                                                                         Total %
                                                                                     </td>
+                                                                                    <td class="txt-capitalized tSubItem">
+                                                                                        100%
+                                                                                    </td>
                                                                                     <td class="txt-capitalized text-right">
                                                                                         <?=$prediction->HomeTeam->TotalPerecentage?>%
                                                                                     </td>
-                                                                                    <td class="txt-capitalized tSubItem"></td>
                                                                                     <td class="txt-capitalized text-left tSubItem">
                                                                                         <?=$prediction->AwayTeam->TotalPerecentage?>%
                                                                                     </td>
@@ -225,6 +253,7 @@
 
                                                         </div>
                                                     </div>
+                                                    <?php endif ?>
                                                 </td>
                                                 <td title="<?=$prediction->AwayTeam->TeamName?>" class="txt-capitalized text-center bold <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                     <?=\Util\Helper::DisplayLabel(10,$prediction->AwayTeam->TeamName)?>
@@ -240,9 +269,11 @@
                                                             </div>
                                                         <?php endif?>
 
-                                                        <div class=" hintResult <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
+                                                        <?php if(property_exists($prediction, 'MlPrediction')) : ?>
+                                                        <div class=" hintResult >">
                                                             <label for=""><?=\Util\Helper::MlCheck($prediction->MlPrediction)?></label>
                                                         </div>
+                                                        <?php endif ?>
                                                     </div>
 
                                                 </td>
@@ -255,14 +286,21 @@
                                                     else {
                                                         echo  $prediction->AwayTeam->TotalPerecentage - $prediction->HomeTeam->TotalPerecentage;
                                                     }
+
                                                     ?>
 
                                                 </td>
                                                 <td  style="" class="txt-capitalized text-center hideOnMobile <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+                                                    <?php if($maxPrediction > 0) : ?>
                                                     <button type="button" class="btn btn-default btn viewPredictionBtn" data-toggle="modal" title="<?=$prediction->PredictionLabelFull?>" data-target="#myModal<?=$prediction->UniqueId?>">Prediction Details</button>
+                                                    <?php else : ?>
+                                                        <a data-toggle="modal" data-target="#mySigninModal">Sign in required</a>
+                                                    <?php endif ?>
                                                 </td>
                                             </tr>
                                             <?php endif ?>
+
+                                            <?php $maxPrediction = $maxPrediction - 1; ?>
                                         <?php endforeach ?>
                                     </tbody>
                                 </table>

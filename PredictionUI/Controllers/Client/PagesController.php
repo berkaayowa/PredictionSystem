@@ -41,7 +41,6 @@
             $startDateFile = strtotime($startDate);
 
             $filePath = FILE_PATH.date('Y_m_d',$startDateFile).'.prediction';
-//            die($filePath);
             $data = Helper::GetFileContent($filePath);
 
             $array = [];
@@ -49,16 +48,41 @@
             if(strlen($data) > 0)
                 $array = json_decode($data);
 
-            //$this->overWriteLayout('/Client/Layout/layoutMenu');
+            $maxPrediction = sizeof($array);
+
+            if(!\BerkaPhp\Helper\Auth::IsUserLogged())
+                $maxPrediction = 8;
 
             $this->view->set('StartDate', $startDate);
             $this->view->set('EndDate', $endDate);
             $this->view->set('Date', $date);
             $this->view->set('predictions', $array);
+            $this->view->set('maxPrediction', $maxPrediction);
             $this->view->render();
         }
 
         function policy() {
+            $this->view->render();
+        }
+
+        function coupons($params = null) {
+
+            $date = '';
+            $startDate = date(DATE_FORMAT);
+            $endDate = '';
+
+            if(array_key_exists("endDate", $params['args']['query']))
+                $endDate = $params['args']['query']['endDate'];
+
+            if(array_key_exists("startDate", $params['args']['query']))
+                $startDate = $params['args']['query']['startDate'];
+
+            if(array_key_exists("date", $params['args']['query']))
+                $date = $params['args']['query']['date'];
+
+            $this->view->set('StartDate', $startDate);
+            $this->view->set('EndDate', $endDate);
+            $this->view->set('Date', $date);
             $this->view->render();
         }
 

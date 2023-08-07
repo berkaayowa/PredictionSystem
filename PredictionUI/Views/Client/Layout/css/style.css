@@ -763,7 +763,7 @@ body{
     position: relative;
     bottom: 0;
     width: 100%;
-    height: 100px;
+    height: 110px;
     background-color: #042029;
     text-align: center;
 }
@@ -860,6 +860,7 @@ body{
 
 .content-wrap {
     /*padding-bottom: 2.5rem;    !* Footer height *!*/
+    /*height: 95vh!important;*/
 }
 .loginModal {
     width: 350px;
@@ -869,5 +870,10 @@ body{
     color: #31708f!important;
     background-color: #d9edf7!important;
     border-color: #bce8f1!important;
+}
+
+a {
+    color: #395268;
+    /*text-decoration: underline;*/
 }
 
