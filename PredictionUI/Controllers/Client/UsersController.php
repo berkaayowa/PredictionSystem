@@ -204,7 +204,6 @@ class UsersController extends BerkaPhpController
 
         if(is_array($params) && sizeof($params['args']) > 0 && sizeof($params['args']['params']) > 0) {
 
-//            isset($params['params'])
             $verificationCode = $params['args']['params'][0];
 
             $user = @T::Find('user')
@@ -212,7 +211,6 @@ class UsersController extends BerkaPhpController
                 ->Join(['user_status'=>'status'], 'status.id = user.userStatusId')
                 ->Where('user.confirmationCode' , '=', $verificationCode)
                 ->Where('user.isDeleted', '=', Check::$False)
-//                ->Where('status.code', '=', 'PFC')
                 ->FetchFirstOrDefault();
 
             if ($user->IsAny()) {
@@ -220,15 +218,21 @@ class UsersController extends BerkaPhpController
                 if ($user->isUserVerified == Check::$True) {
 
                     $this->view->set('error', true);
-                    self::homeNotification('This account is activated already. click login on top :)');
+                    self::homeNotification('This account is verified already. click login on top :)');
 
                 } else {
 
+                    $status = @T::Find('user_status')
+                        ->Where('code' , '=', 'PFC')
+                        ->Where('isDeleted', '=', Check::$False)
+                        ->FetchFirstOrDefault();
+
                     $user->isUserVerified = Check::$True;
+                    $user->userStatusId = $status->id;
 
                     if($user->Save()) {
                         $this->view->set('success', true);
-                        self::homeNotification('Account activated successfully, you can login now , enjoy :) ');
+                        self::homeNotification('Account has been verified successfully, you can login now , enjoy :) ');
                     } else {
                         $this->view->set('error', true);
                         self::homeNotification('Account could not be activated, try again');
