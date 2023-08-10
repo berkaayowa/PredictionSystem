@@ -30,7 +30,7 @@ class Router {
             [
                 'client'=>[
                     'name'=>'Client',
-                    'home'=>'pages'
+                    'home'=>'prediction'
                 ],
                 'email'=>[
                     'name'=>'Email',

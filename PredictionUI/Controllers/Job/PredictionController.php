@@ -1,5 +1,6 @@
 <?php
 namespace Controller\Job;
+use BerkaPhp\Helper\Auth;
 use BerkaPhp\Helper\Check;
 use BerkaPhp\Helper\Debug;
 use BrkORM\T;
@@ -8,7 +9,7 @@ use Util\ISendHelper;
 use Util\Request;
 use Util\SMS;
 
-class MessageController extends RestfulApiController
+class PredictionController extends RestfulApiController
 {
 
     function __construct() {
@@ -192,6 +193,128 @@ class MessageController extends RestfulApiController
 
             }
         }
+
+    }
+
+    function request($option) {
+
+        $requests = array();
+        //http://localhost:8091/job/prediction/request?code=run
+        if(isset($option['args']) && isset($option['args']['query']) && isset($option['args']['query']['code'])) {
+
+            $code = $option['args']['query']['code'];
+
+            if($code == 'run') {
+
+                $requests = @T::Find('prediction_request')
+                    ->Join(['prediction_request_status'=>'status'], 'status.id = prediction_request.predictionRequestStatusId')
+                    ->Join(['prediction_contribution'=>'configuration'], 'configuration.id = prediction_request.predictionContributionId')
+                    ->Where('status.code', '=', 'PG')
+                    ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
+                    ->FetchList();
+
+                $data = array();
+
+                foreach ($requests as $request) {
+
+                    $datRequest =
+                        [
+                            'id'=>$request->id, 'date'=>$request->requestedDate,
+                            'configuration'=>[
+                                'id'=> $request->configuration->id,
+                                'leaguePointsPercentage'=> $request->configuration->leaguePointsPercentage,
+                                'leaguePositionPercentage'=> $request->configuration->leaguePositionPercentage,
+                                'head2headPercentage'=> $request->configuration->head2headPercentage,
+                                'lastMatchPlayedPercentage'=> $request->configuration->lastMatchPlayedPercentage,
+                                'awayHomePercentage'=> $request->configuration->awayHomePercentage,
+                                'winDifference'=> $request->configuration->winDifference,
+                                'winDrawDifference'=> $request->configuration->winDrawDifference,
+                                'drawDifference'=> $request->configuration->drawDifference,
+                                'numberOfHeadtohead'=> $request->configuration->numberOfHeadtohead,
+                                'numberOfLastMatch'=> $request->configuration->numberOfLastMatch
+                            ]
+                        ];
+
+                    array_push($data, $datRequest );
+
+                }
+
+                $requests = $data;
+
+            }
+        }
+
+        return $this->jsonFormat(['error'=> sizeof($requests) == 0, 'data'=> $requests]);
+
+    }
+
+    function getleague($option) {
+
+        $requests = array();
+        //http://localhost:8091/job/prediction/getleague?code=run
+        if(isset($option['args']) && isset($option['args']['query']) && isset($option['args']['query']['code'])) {
+
+            $code = $option['args']['query']['code'];
+
+            if($code == 'run') {
+
+                $name = $option['args']['query']['name'];
+                $country = $option['args']['query']['name'];
+
+                $requests = @T::Find('league')
+                    ->Join('country', 'country.id = league.countryId')
+                    ->Where('league.name', '=', $name)
+                    ->Where('league.isDeleted', '=', \Helper\Check::$False)
+                    ->FetchFirstOrDefault();
+
+            }
+        }
+
+        return $this->jsonFormat(['error'=> sizeof($requests) == 0, 'data'=> $requests]);
+
+    }
+
+    function updaterequest($option) {
+
+        //http://localhost:8091/job/prediction/getleague?code=run
+        if(isset($option['args']) && isset($option['args']['query']) && isset($option['args']['query']['code'])) {
+
+            $code = $option['args']['query']['code'];
+
+            if($code == 'run') {
+
+                $statusCode = $option['args']['query']['statusCode'];
+                $id = $option['args']['query']['id'];
+                $filename = '';
+
+                if(array_key_exists('filename', $option['args']['query']))
+                    $filename =$option['args']['query']['filename'];
+
+                $request = @T::Find('prediction_request')
+                    ->Where('prediction_request.id', '=', $id)
+                    ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
+                    ->FetchFirstOrDefault();
+
+                if($request->IsAny()) {
+
+                    $status = @T::Find('prediction_request_status')
+                        ->Where('code' , '=', $statusCode)
+                        ->Where('isDeleted', '=', \Helper\Check::$False)
+                        ->FetchFirstOrDefault();
+
+                    $request->predictionRequestStatusId = $status->id;
+                    $request->modifiedDate = DATE_NOW;
+                    $request->fileName = $filename;
+
+                    if($request->Save())
+                        return $this->jsonFormat(['error'=> false]);
+
+                }
+
+            }
+        }
+
+        return $this->jsonFormat(['error'=> true]);
 
     }
 

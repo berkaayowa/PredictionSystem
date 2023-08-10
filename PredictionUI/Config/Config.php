@@ -10,6 +10,7 @@ define('SYS_NAME', 'Free Daily Soccer Betting | Tips | Predictions' , true);
 define('DATE_FORMAT', 'Y-m-d h:m:s' , true);
 define('DATE_SECOND_FORMAT', 'd-m-Y h:m' , true);
 define('DATE_THIRD_FORMAT', 'd-m-Y' , true);
+define('DB_DATE_FORMAT', 'Y-m-d' , true);
 define('DATE_NOW', date(DATE_FORMAT) , true);
 
 //Database settings

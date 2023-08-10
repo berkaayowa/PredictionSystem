@@ -63,6 +63,7 @@ class UsersController extends BerkaPhpController
 
                 $user->userStatusId = $status->id;
                 $user->userRoleId = $role->id;
+                $user->createdDate = DATE_NOW;
 
                 if ($user->Save()) {
 
@@ -229,6 +230,7 @@ class UsersController extends BerkaPhpController
 
                     $user->isUserVerified = Check::$True;
                     $user->userStatusId = $status->id;
+                    $user->modifiedDate = DATE_NOW;
 
                     if($user->Save()) {
                         $this->view->set('success', true);

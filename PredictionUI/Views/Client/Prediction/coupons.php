@@ -65,7 +65,6 @@
     </div>
 </div>
 
-
 <script>
     $(document).ready(function (e) {
 
@@ -85,7 +84,6 @@
 
         $(window).scroll(function() {
             var scroll = $(window).scrollTop();
-
             //>=, not <=
             if (scroll >= 200) {
                 //clearHeader, not clearheader - caps H
@@ -95,6 +93,13 @@
                 $("#HeaderSectionH").removeClass("floatingHeaderSection");
             }
         });
+
+        $('[data-img]').each(function (e){
+
+            var url = this.attr('data-img');
+            console.log(url);
+
+        })
 
     })
 </script>

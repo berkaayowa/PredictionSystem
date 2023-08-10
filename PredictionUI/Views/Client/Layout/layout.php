@@ -33,7 +33,7 @@
                                             <ul class="nav navbar-nav navbar-left">
                                                 <li class="active"><a href="/">Today's Matches</a></li>
                                                 <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
-                                                    <li class=""><a href="/pages/coupons">Coupons</a></li>
+                                                    <li class=""><a href="/prediction/coupons">Coupons</a></li>
                                                 <?php endif ?>
                                             </ul>
                                             <ul class="nav navbar-nav navbar-right">
@@ -43,6 +43,7 @@
 
                                                 <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
                                                     <li><a href=""><i class="glyphicon glyphicon-user"></i> Hi, <?= ucfirst( BerkaPhp\Helper\Auth::GetActiveUser()->name)?></a></li>
+                                                    <li class=""><a href="/prediction/mypredictions">My Predictions</a></li>
                                                     <li><a href="/users/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
                                                 <?php else: ?>
                                                     <li class=""><a data-toggle="modal" data-target="#mySignupModal"><span class=""></span> Sign Up</a></li>
