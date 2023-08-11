@@ -48,16 +48,21 @@
             if(!empty($requetcode)) {
 
                 $request = @T::Find('prediction_request')
+                    ->Join('user', 'user.id = prediction_request.userId')
                     ->Join(['prediction_request_status'=>'status'], 'status.id = prediction_request.predictionRequestStatusId')
                     ->Join(['prediction_contribution'=>'configuration'], 'configuration.id = prediction_request.predictionContributionId')
                     ->Where('prediction_request.id', '=', $requetcode)
                     ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
                     ->FetchFirstOrDefault();
 
-                if($request->IsAny())
-                    $filePath = FILE_PATH.$request->fileName;
+                if($request->IsAny()) {
+                    $filePath = FILE_PATH . $request->fileName;
+                    $request->views = $request->views + 1;
+                    $request->Save();
+                }
 
                 $shareCode = true;
+                $this->view->set('predictionRequest', $request);
 
             }
             else {
@@ -123,6 +128,9 @@
 
             if(sizeof($data) > 0) {
 
+                if(empty($data['date']))
+                    return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "Invalid fixtures date"]);
+
                 $date = date(DB_DATE_FORMAT, strtotime($data['date']));
 
                 $request = @T::Find('prediction_request')
@@ -147,6 +155,7 @@
                     $request->userId = Auth::GetActiveUser(true)->id;
                     $request->createdDate = DATE_NOW;
                     $request->predictionRequestStatusId = $status->id;
+                    $request->notify = $data['notify'];
 
                     if($request->Save())
                         return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Your request has been successfully received.", 'link'=>'/prediction/mypredictions']);

@@ -112,9 +112,8 @@
                                     <?=$emailContent?>
                                     <br/>
                                     <br/>
-
                                     Kind Regards,<br>
-                                    Softclick Tech (Pty) Ltd  Team
+                                    Soccer Prediction Team
                                 </td>
                             </tr>
                             <tr>
@@ -125,7 +124,9 @@
 
                             <tr>
                                 <td style="text-align: left; color: gray;">
-                                    Web | Mobile | Desktop | SMS & Hosting Solutions <a href="softclicktech.co.za"> Softclick Tech (Pty) Ltd</a>
+                                    <a target="_blank" href='https://www.facebook.com/profile.php?id=100094880164648'>Facebook </a> |
+                                    <a target="_blank" href='https://www.youtube.com/@soccerprediction27/about'>Youtube</a> |
+                                    <a href="mailto:<?=EMAIL_SUPPORT?>"><?=EMAIL_SUPPORT?></a>
                                 </td>
                             </tr>
                         </table>

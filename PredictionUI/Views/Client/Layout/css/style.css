@@ -885,4 +885,49 @@ a {
     color: #395268;
     /*text-decoration: underline;*/
 }
+.action-icon {
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+}
+
+.content-wrap {
+    /*height: 121vh!important;*/
+}
+.footerContainer {
+    padding-top: 15px!important;
+}
+.footer {
+    /*position: absolute!important;*/
+    /*background-color: #0f2d37!important;*/
+    background-color: #f4f4f4;
+}
+
+.emphasis h2
+{
+    margin-bottom:0;
+}
+
+figcaption.ratings
+{
+    /*margin-top:20px;*/
+}
+figcaption.ratings a
+{
+    color:#f1c40f;
+    font-size:11px;
+}
+figcaption.ratings a:hover
+{
+    color:#f39c12;
+    text-decoration:none;
+}
+
+.author-lbl {
+    position: absolute;
+}
+
+.full-width {
+    width: 100%;
+}
 

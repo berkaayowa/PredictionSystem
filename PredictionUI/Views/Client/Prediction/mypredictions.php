@@ -4,8 +4,6 @@
             <div class="box-body row ">
                 <div class=" col-sm-12 colFrmSearch">
                     <form class="frmSearch row" message="<?=Resource\Label::General("Requesting")?>..."  request-type="POST" id="request" data-request="<?= BerkaPhp\Helper\Html::action('/prediction/requestprediction')?>">
-                        <div class="col-sm-4 col-md-4">
-                        </div>
                         <div class="form-group col-sm-3 col-md-3 no-mg-b">
                             <div class="input-group">
                                 <input autocomplete="off" data-date="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("Fixtures Date")?>" type="text" class="form-control" name="date" id="date">
@@ -24,10 +22,34 @@
                             }) ?>
                         </div>
 
-                        <div class="form-group col-sm-2 col-md-2 no-mg-b">
-                            <button type="submit" class=" btn btn-primary pull-left">
-                                <?=Resource\Label::General("Request Prediction")?>
-                            </button>
+                        <div class="form-group col-sm-3 col-md-2 no-mg-b">
+                            <div class="input-group">
+                            <?= Util\Helper::select('notify', [['id'=>'0','label'=>'No'],['id'=>'1','label'=>'Yes']], ['value'=>'id', 'class'=>'form-control', 'data-dropdrown'=>true, 'required'=>true], function($data) {
+                                return $data['label'];
+                            }) ?>
+                                <span class="input-group-addon">
+                                    <span class="">Notify Me</span>
+                                </span>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-3 col-md-4 no-mg-b">
+                            <div class="row">
+
+                                <div class="col-sm-12 col-md-6">
+                                    <a class="full-width btn btn-primary">
+                                        <?=Resource\Label::General("View Template Details")?>
+                                    </a>
+                                </div>
+
+                                <div class="col-sm-12 col-md-6">
+                                    <button type="submit" class="full-width btn btn-primary">
+                                        <?=Resource\Label::General("Request Predictions")?>
+                                    </button>
+                                </div>
+
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -52,6 +74,7 @@
                                         <th class="txt-capitalized text-center">Created Date</th>
                                         <th class="txt-capitalized text-center">Status</th>
                                         <th class="txt-capitalized text-center">Configuration</th>
+                                        <th class="txt-capitalized text-center">Notify</th>
                                         <th class="txt-capitalized text-center hideOnMobile">Action</th>
                                     </tr>
                                     </thead>
@@ -73,17 +96,22 @@
                                                 <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>">
                                                     <?=$request->configuration->description?>
                                                 </td>
+                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>">
+                                                    <?=$request->notify == \Helper\Check::$True ? 'Yes' : 'No'?>
+                                                </td>
 
                                                 <td  style="" class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>">
 
                                                     <?php if($request->status->code == 'CNP') : ?>
-                                                        <a title="View Predictions" href="/prediction?requestcode=<?=$request->id?>" >
-                                                            <button type="button" class="btn btn-default btn viewPredictionBtn">View Predictions</button>
+                                                        <a target="_blank" title="View Predictions" href="/prediction?requestcode=<?=$request->id?>" >
+<!--                                                            <button type="button" class="btn btn-default btn viewPredictionBtn">-->
+                                                               <span class="glyphicon glyphicon-eye-open action-icon"></span> View Predictions
+<!--                                                            </button>-->
                                                         </a>
                                                     <?php elseif($request->status->code == 'PG') : ?>
-                                                        <a title="View Predictions">
-                                                            <button type="button" class="btn btn-default btn viewPredictionBtn">Delete</button>
-                                                        </a>
+<!--                                                        <a title="View Predictions">-->
+<!--                                                            <button type="button" class="btn btn-default btn viewPredictionBtn">Delete</button>-->
+<!--                                                        </a>-->
                                                     <?php endif ?>
 
                                                 </td>

@@ -165,7 +165,7 @@ class UsersController extends BerkaPhpController
                     elseif ($user->role->code = "ADM")
                         $prefix = 'admin';
 
-                    return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Successfully logged in", 'link'=>'/pages']);
+                    return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Successfully logged in", 'link'=>'/']);
                 } else if($user->status->code == 'PFC' || $user->isPhoneNumberConfirmed == Check::$False) {
                     return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> 'Your account is not verified yet']);
                 } else if($user->status->code == 'APD') {

@@ -11,9 +11,11 @@ use Util\SMS;
 
 class PredictionController extends RestfulApiController
 {
+    private $mailer;
 
     function __construct() {
         parent::__construct();
+        $this->mailer = $this->loadComponent("Email");
     }
 
     function Process($option) {
@@ -291,6 +293,7 @@ class PredictionController extends RestfulApiController
                     $filename =$option['args']['query']['filename'];
 
                 $request = @T::Find('prediction_request')
+                    ->Join('user', 'user.id = prediction_request.userId')
                     ->Where('prediction_request.id', '=', $id)
                     ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
                     ->FetchFirstOrDefault();
@@ -306,8 +309,20 @@ class PredictionController extends RestfulApiController
                     $request->modifiedDate = DATE_NOW;
                     $request->fileName = $filename;
 
-                    if($request->Save())
-                        return $this->jsonFormat(['error'=> false]);
+                    if($request->Save()) {
+
+                        if($request->notify == Check::$True) {
+
+                            $link = "<a href='https://".SITE_URL."/prediction?activate=".$request->id."'>click here to view it</a>";
+                            $emailContent = "Your requested prediction is ready, " . $link;
+                            $this->view->set('emailContent', $emailContent);
+
+                            $content = $this->view->renderGetContent('Views/Client/Email/default');
+                            $isSent = $this->mailer->send(EMAIL_FROM_NAME, "Your prediction # " . $request->id . " is ready", "", $content, $request->user->emailAddress);
+
+                        }
+                        return $this->jsonFormat(['error' => false]);
+                    }
 
                 }
 

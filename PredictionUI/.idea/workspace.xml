@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Client/Prediction/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/Route/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Route/Route.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/Client/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Job/MessageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Job/PredictionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Pages/coupons.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/coupons.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Job/PredictionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Job/PredictionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Email/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Email/default.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +100,8 @@
       <workItem from="1691439206822" duration="10598000" />
       <workItem from="1691548460920" duration="7393000" />
       <workItem from="1691570779879" duration="13316000" />
-      <workItem from="1691620275811" duration="6619000" />
+      <workItem from="1691620275811" duration="11006000" />
+      <workItem from="1691723279226" duration="9557000" />
     </task>
     <servers />
   </component>
@@ -120,21 +118,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Controllers/Client/PredictionController.php</url>
-          <line>144</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Controllers/Client/PredictionController.php</url>
-          <line>49</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
