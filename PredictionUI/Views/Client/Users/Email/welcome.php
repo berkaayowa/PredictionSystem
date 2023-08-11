@@ -24,7 +24,7 @@
                                     <br/>
                                     <br/>
                                     <br/>
-                                    <a href="https://<?=SITE_URL?>/users/activate/<?=$activationCode?>" style="padding: 15px;border: 2px solid;border-radius: 26px;color: white;background: #0083C1;font-weight: bold;">
+                                    <a href="<?=SITE_URL?>/users/activate/<?=$activationCode?>" style="padding: 15px;border: 2px solid;border-radius: 26px;color: white;background: #0083C1;font-weight: bold;">
                                         Activate now
                                     </a>
                                 </td>
