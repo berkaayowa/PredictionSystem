@@ -37,7 +37,7 @@ switch ($_SERVER['SERVER_NAME']) {
 
 //default controller
 define('HOME', 'dashboard' , true);
-define('SITE_URL', 'http://'.$_SERVER['SERVER_NAME'] , true);
+define('SITE_URL', 'https://'.$_SERVER['SERVER_NAME'] , true);
 
 //default prefix
 define('LOGIN_URL', '' , true);
