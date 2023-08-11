@@ -317,7 +317,7 @@ class PredictionController extends RestfulApiController
                             $emailContent = "Your requested prediction is ready, " . $link;
                             $this->view->set('emailContent', $emailContent);
 
-                            $content = $this->view->renderGetContent('Views/Client/Email/default');
+                            $content = $this->view->renderGetContent('Views/Email/default');
                             $isSent = $this->mailer->send(EMAIL_FROM_NAME, "Your prediction # " . $request->id . " is ready", "", $content, $request->user->emailAddress);
 
                         }
