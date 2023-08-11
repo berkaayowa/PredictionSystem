@@ -313,7 +313,7 @@ class PredictionController extends RestfulApiController
 
                         if($request->notify == Check::$True) {
 
-                            $link = "<a href='".SITE_URL."/prediction?activate=".$request->id."'>click here to view it</a>";
+                            $link = "<a href='".SITE_URL."/prediction?requestcode=".$request->id."'>click here to view it</a>";
                             $emailContent = "Your requested prediction is ready, " . $link;
                             $this->view->set('emailContent', $emailContent);
 
