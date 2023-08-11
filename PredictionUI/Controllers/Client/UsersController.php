@@ -72,8 +72,8 @@ class UsersController extends BerkaPhpController
 
                     $content = $this->view->renderGetContent('Views/Client/Users/Email/welcome');
                     $isSent = $this->mailer->send(EMAIL_FROM_NAME, "Welcome ".ucfirst($data['name']), "", $content, $this->getPost()['emailAddress']);
-
-                    return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Your account has been created successfully , and a verification email has been sent to your email (".$data['emailAddress'].")", 'link'=>'/prediction']);
+                    $msg = "Your account has been created successfully , and a verification email has been sent to your email (".$data['emailAddress'].")";
+                    return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> $msg, 'link'=>'/prediction?n='.$msg]);
                 } else {
                     return $this->jsonFormat(['error'=> true, 'message'=>'Error could not save this user', 'success'=>false]);
                 }
@@ -249,7 +249,7 @@ class UsersController extends BerkaPhpController
 
     function homeNotification($message)
     {
-        RedirectHelper::redirect("/pages?n=" . $message);
+        RedirectHelper::redirect("/prediction?n=" . $message);
     }
 
     function profile() {
