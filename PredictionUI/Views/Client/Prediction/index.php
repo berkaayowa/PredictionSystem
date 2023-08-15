@@ -54,18 +54,24 @@
         </div>
     </div>
 </div>
-<?php else: ?>
+<?php endif ?>
+
 <div class="row">
     <div class="col-sm-12">
         <div class="box  box-default">
-            <div class="box-body">
+            <?php if($shareCode): ?>
+            <div class="box-header btn-brd">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6  col-lg-6">
-                        <label class="label label-default author-lbl">Author</label>
-                        <h2 class="hFocus"><?=ucfirst($predictionRequest->user->name)?> <?=ucfirst($predictionRequest->user->surname)?></h2>
-                        <figure>
-                            <figcaption class="ratings">
-                                <p>Ratings
+<!--                        <label class="label label-default author-lbl">Author</label>-->
+                        <h2 class="hFocusSm">
+                            <label class="label label-info author-lbl">Custom Prediction</label>
+                            <label class="label label-default author-lbl">Author</label>&nbsp;
+                            <label class="label label-default author-lbl">
+                                <span class="fa fa-user"></span> <?=ucfirst($predictionRequest->user->name)?> <?=ucfirst($predictionRequest->user->surname)?>
+                            </label>&nbsp;
+                            <label class="label label-default author-lbl ratings">
+                               Ratings
                                     <a href="#">
                                         <span class="fa fa-star"></span>
                                     </a>
@@ -81,9 +87,10 @@
                                     <a href="#">
                                         <span class="fa fa-star-o"></span>
                                     </a>
-                                </p>
-                            </figcaption>
-                        </figure>
+
+                            </label>
+                        </h2>
+
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                         <div class="row">
@@ -92,12 +99,18 @@
                                 <p class="hide"><span class="fa fa-soccer-ball-o"></span> <small>Games</small></p>
                             </div>
                             <div class="col-xs-4 col-sm-4 emphasis text-center">
-                                <h2><strong><?=$predictionRequest->views?></strong></h2>
-                                <p><span class="fa fa-eye"></span> <small>Views</small></p>
+
                             </div>
                             <div class="col-xs-4 col-sm-4 emphasis text-center">
-                                <h2><strong><?=$predictionRequest->likes?></strong></h2>
-                                <p><span class="fa fa-heart"></span> <small>Likes</small></p>
+                                <h2 class="hFocusSm text-right">
+                                    <label class="label label-default author-lbl">
+                                        <span class="fa fa-heart"></span> <small>Likes</small> <strong><?=$predictionRequest->likes?></strong>
+                                    </label>
+                                    &nbsp;
+                                    <label class="label label-default author-lbl">
+                                        <span class="fa fa-eye"></span> <small>Views</small> <strong><?=$predictionRequest->views?></strong>
+                                    </label>
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -105,15 +118,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<?php endif ?>
-
-<div class="row">
-    <div class="col-sm-12">
-        <div class="box  box-default">
+            <?php endif ?>
             <div class="box-body">
                 <div class="row">
                     <div class="col-sm-12">

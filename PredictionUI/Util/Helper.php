@@ -91,6 +91,10 @@ class Helper {
 
         $i_select= "<select  id='{$id}' name='{$id}' ";
         $i_option = '';
+
+        if(key_exists('default',$options))
+            $i_option = '<option value="">'.$options['default'].'</option>';
+
         $selected = isset($options['selected']) ? $options['selected'] : '';
 
         $length = sizeof($data);
@@ -511,6 +515,9 @@ class Helper {
         else if($percentage > 114)
             return "p-no-risk";
 
+        else if($percentage == -100)
+            return "p-no-default";
+
         return "";
     }
 
@@ -631,6 +638,16 @@ class Helper {
         }
 
         return  false;
+
+    }
+
+    public static function ConvertStrToKey($value) {
+
+        $value = str_replace(" ", "_" , $value);
+        $value = str_replace(".", "_",$value );
+        $value = str_replace("/", "_", $value );
+
+        return $value;
 
     }
 

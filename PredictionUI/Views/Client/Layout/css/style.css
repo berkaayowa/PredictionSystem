@@ -912,22 +912,55 @@ figcaption.ratings
 {
     /*margin-top:20px;*/
 }
-figcaption.ratings a
+.ratings a
 {
     color:#f1c40f;
     font-size:11px;
 }
-figcaption.ratings a:hover
+.ratings a:hover
 {
     color:#f39c12;
     text-decoration:none;
 }
 
 .author-lbl {
-    position: absolute;
+    /*position: absolute;*/
 }
 
 .full-width {
     width: 100%;
 }
+
+.p-no-default {
+    border: none;
+    border-top: solid 3px #cacaca!important;
+}
+
+.tb-action {
+    padding: 5px;
+}
+
+.form-label-group {
+    margin-top: 10px;
+}
+
+.btn-themed {
+    line-height: 22px;
+}
+
+.select2-selection__rendered {
+    /*height: 115px;*/
+}
+
+.hFocusSm {
+    font-size: 15px;
+    display: block;
+    margin-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    /*border-bottom: solid 2px #e5e5e5;*/
+    /*width: 500px;*/
+}
+
+
 

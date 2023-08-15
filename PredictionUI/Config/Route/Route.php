@@ -60,25 +60,22 @@ class Router {
 
             if(strtolower($route['controller']) == 'payment' && strtolower($route['action']) == 'notice') {
 
-            } else if(strtolower($route['controller']) == 'request' && strtolower($route['action']) == 'send') {
-
             } else if(strtolower($route['prefix']['name']) == 'job') {
 
-            } else if(strtolower($route['prefix']['name']) == 'client' && strtolower($route['controller']) == 'pages' && strtolower($route['action']) == 'policy') {
+            } else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'pages' && $route['action'] == 'policy') {
 
             }
-            else if(strtolower($route['prefix']['name']) == 'client' && strtolower($route['controller']) == 'pages' && strtolower($route['action']) == 'about') {
+            else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'users' && $route['action'] == 'signup') {
 
             }
-
-            else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == '' && $route['action'] == '') {
+            else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'users' && $route['action'] == 'login') {
 
             }
             else {
-//                if(!Auth::IsUserLogged()){
-//                    $route['controller'] = 'pages';
-//                    $route['action'] = 'index';
-//                }
+                if(!Auth::IsUserLogged()){
+                    $route['controller'] = 'prediction';
+                    $route['action'] = 'index';
+                }
             }
 
             Route::to($route);

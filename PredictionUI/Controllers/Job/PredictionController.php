@@ -122,82 +122,6 @@ class PredictionController extends RestfulApiController
 
     }
 
-    function Reply($option) {
-
-        //http://localhost:8091/job/message/reply?code=SMS
-        if(isset($option['args']) && isset($option['args']['query']) && isset($option['args']['query']['code'])) {
-
-            $code = $option['args']['query']['code'];
-
-            if($code == 'SMS') {
-
-                $data = Request::GetData();
-
-                if(!empty($data['sentmessageid'])) {
-
-                    $message = T::Find('message')
-                        ->Join('contact', 'contact.contactId = message.contactId')
-                        ->Join(['message_type'=>'type'], 'type.messageTypeId = message.messageTypeId')
-                        ->Where('message.thirdPartyReference', '=', $data['sentmessageid'])
-                        ->FetchFirstOrDefault();
-
-                    if($message->IsAny()) {
-
-                        if ($data['type'] == 'deliver') {
-
-                            ISendHelper::LogMessage($message->messageId, 'Received reply');
-
-                            $messageType = T::Find('message_type')
-                                ->Where('isDeleted', '=', Check::$False)
-                                ->Where('code', '=', 'SMSRP')
-                                ->FetchFirstOrDefault();
-
-                            $message->response = json_encode($data);
-                            $message->creditCost = 0;
-                            $message->messageId = 0;
-                            $message->messageTypeId = $messageType->messageTypeId;
-                            $message->content = $data['text'];
-                            $message->createdDate = DATE_NOW;
-                            $message->isViewed = Check::$False;
-
-                            $messageStatus = T::Find('message_status')
-                                ->Where('isDeleted', '=', Check::$False)
-                                ->Where('code', '=', 'PSF')
-                                ->FetchFirstOrDefault();
-
-                            $message->messageStatusId = $messageStatus->messageStatusId;
-
-                            $message->Save();
-
-                            ISendHelper::LogMessage($message->messageId, 'Saved reply');
-                        }
-                        else if ($data['type'] == 'report') {
-
-                            ISendHelper::LogMessage($message->messageId, 'SMS Delivered');
-
-                            $messageStatus = T::Find('message_status')
-                                ->Where('isDeleted', '=', Check::$False)
-                                ->Where('code', '=', 'DLV')
-                                ->FetchFirstOrDefault();
-
-                            $message->messageStatusId = $messageStatus->messageStatusId;
-
-                            if ($message->Save()) {
-                                ISendHelper::LogMessage($message->messageId, 'SMS status updated (' . $messageStatus->name . ')');
-                            } else {
-                                ISendHelper::LogMessage($message->messageId, 'SMS status could not be updated (' . $messageStatus->name . ')');
-                            }
-
-                        }
-                    }
-
-                }
-
-            }
-        }
-
-    }
-
     function request($option) {
 
         $requests = array();
@@ -233,7 +157,8 @@ class PredictionController extends RestfulApiController
                                 'winDrawDifference'=> $request->configuration->winDrawDifference,
                                 'drawDifference'=> $request->configuration->drawDifference,
                                 'numberOfHeadtohead'=> $request->configuration->numberOfHeadtohead,
-                                'numberOfLastMatch'=> $request->configuration->numberOfLastMatch
+                                'numberOfLastMatch'=> $request->configuration->numberOfLastMatch,
+                                'matchSelectionPercentage'=> $request->configuration->matchSelectionPercentage
                             ]
                         ];
 

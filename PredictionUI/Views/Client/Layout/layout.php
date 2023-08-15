@@ -33,7 +33,7 @@
                                             <ul class="nav navbar-nav navbar-left">
                                                 <li class="active"><a href="/">Today's Matches</a></li>
                                                 <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
-                                                    <li class=""><a href="/prediction/coupons">Coupons</a></li>
+                                                    <li class="hide"><a href="/prediction/coupons">Coupons</a></li>
                                                 <?php endif ?>
                                             </ul>
                                             <ul class="nav navbar-nav navbar-right">

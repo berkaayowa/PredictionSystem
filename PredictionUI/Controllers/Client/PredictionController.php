@@ -107,22 +107,87 @@
                 $date = $params['args']['query']['date'];
 
             $config = T::Find('prediction_contribution')
-                ->Where("isDeleted", "=", \Helper\Check::$False)
-                ->FetchList(['assocArray'=>true]);
+                ->Where("isDeleted", "=", \Helper\Check::$False);
+
+            if(Auth::GetActiveUser(true)->role->code == 'CLT')
+                $config = $config->Where('userId', '=', Auth::GetActiveUser(true)->id);
+
+            $config = $config->FetchList(['assocArray'=>true]);
 
             $requests = @T::Find('prediction_request')
                 ->Join(['prediction_request_status'=>'status'], 'status.id = prediction_request.predictionRequestStatusId')
                 ->Join(['prediction_contribution'=>'configuration'], 'configuration.id = prediction_request.predictionContributionId')
                 ->Where('prediction_request.userId', '=', Auth::GetActiveUser(true)->id)
                 ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
+                ->OrderBy('prediction_request.id')
                 ->FetchList();
 
+            $leagues = @T::Find('league')
+                ->Where('league.isDeleted', '=', \Helper\Check::$False)
+                ->FetchList();
+
+            $this->view->set('leagues', $leagues);
             $this->view->set('predictionRequest', $requests);
             $this->view->set('pconfig', $config);
             $this->view->render();
         }
 
         function requestprediction($params = null) {
+
+            $data = $this->getPost();
+
+            if(sizeof($data) > 0) {
+
+                if(empty($data['date']))
+                    return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "Invalid fixtures date"]);
+
+                $date = date(DB_DATE_FORMAT, strtotime($data['date']));
+
+                $request = @T::Find('prediction_request')
+                    ->Join(['prediction_request_status'=>'status'], 'status.id = user.userStatusId')
+                    ->Where('requestedDate' , '=', $date)
+                    ->Where('predictionContributionId' , '=',  $data['configuration'])
+                    ->Where('prediction_request.userId', '=', Auth::GetActiveUser(true)->id)
+                    ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
+                    ->FetchFirstOrDefault();
+
+                if($request->IsAny())
+                    return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "This prediction request is already " . $request->status->name]);
+                else {
+
+                    $status = @T::Find('prediction_request_status')
+                        ->Where('code' , '=', 'PG')
+                        ->Where('isDeleted', '=', \Helper\Check::$False)
+                        ->FetchFirstOrDefault();
+
+                    $config = @T::Find('prediction_contribution')
+                        ->Where('prediction_contribution.id', '=', $data['configuration'])
+                        ->Where('isDeleted', '=', \Helper\Check::$False)
+                        ->FetchFirstOrDefault();
+
+                    if(!$config->IsAny())
+                        return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "The selected template doesn't exist , try again"]);
+
+                    $request->requestedDate = $date;
+                    $request->predictionContributionId = $config->id;
+                    $request->userId = Auth::GetActiveUser(true)->id;
+                    $request->createdDate = DATE_NOW;
+                    $request->predictionRequestStatusId = $status->id;
+                    $request->notify = $data['notify'];
+                    $request->description = $data['description'];
+
+                    if($request->Save())
+                        return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Your request has been successfully received.", 'link'=>'/prediction/mypredictions']);
+                    else
+                        return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "Your request couldn't be saved, try again"]);
+
+                }
+
+            }
+
+        }
+
+        function template($params = null) {
 
             $data = $this->getPost();
 
@@ -165,6 +230,18 @@
                 }
 
             }
+            else {
+
+                $templates = @T::Find('prediction_contribution')
+                    ->Where('prediction_contribution.userId', '=', Auth::GetActiveUser(true)->id)
+                    ->Where('prediction_contribution.isDeleted', '=', \Helper\Check::$False)
+                    ->FetchList();
+
+                $this->view->set('predictionTemplates', $templates);
+                $this->view->render();
+
+            }
+
 
         }
 
