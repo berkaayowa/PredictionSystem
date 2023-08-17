@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="format-detection" content="telephone=no">
-    <title>Roost Material Design Real Estate</title>
+    <title>Soccer Prediction</title>
 
     <!-- Client specific styles - DO NOT REMOVE -->
     <style type="text/css">
@@ -14,6 +14,7 @@
             padding: 0;
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%;
+            font-family: sans-serif!important;
         }
 
         table {
@@ -88,6 +89,17 @@
             color: #aaaaaa !important;
             text-decoration: underline;
         }
+        .footerlink  {
+            display: inline-block;
+            display: inline-block;
+            /* border: solid 2px #f6f6f6; */
+            padding: 7px 20px;
+            border-radius: 8px;
+            color: black;
+            text-decoration: none;
+            background: #f1f1f1;
+            font-size: 12px;
+        }
     </style>
 </head>
 
@@ -97,7 +109,7 @@
     <tr>
         <td align="center" valign="top">
 
-            <table bgcolor="#ffffff" border="0" width="650" cellpadding="0" cellspacing="0" class="container" style="width:601px;padding:15px; max-width:650px; background-color: #ffffff;">
+            <table bgcolor="#ffffff" border="0" width="650" cellpadding="0" cellspacing="0" class="container" style=" margin-top: 20px;width:650px;padding:15px; max-width:650px; background-color: #ffffff;">
                 <tr>
                     <td width="100%" border="0" style="padding-top:20px;padding-right:20px;padding-left:20px;background-color:#ffffff">
                         <table border="0" width="100%" cellpadding="0" cellspacing="0">
@@ -124,9 +136,11 @@
 
                             <tr>
                                 <td style="text-align: left; color: gray;">
-                                    <a target="_blank" href='https://www.facebook.com/profile.php?id=100094880164648'>Facebook </a> |
-                                    <a target="_blank" href='https://www.youtube.com/@soccerprediction27/about'>Youtube</a> |
-                                    <a href="mailto:<?=EMAIL_SUPPORT?>"><?=EMAIL_SUPPORT?></a>
+                                    <a class="footerlink" href="https://soccerprediction.co.za/">Website</a>
+                                    <a class="footerlink" target="_blank" href='https://www.facebook.com/profile.php?id=100094880164648'>Facebook </a>
+                                    <a class="footerlink" target="_blank" href='https://www.youtube.com/@soccerprediction27/about'>Youtube</a>
+                                    <a class="footerlink" href="https://www.tiktok.com/@soccerprediction.co.za">TikTok</a>
+                                    <a class="footerlink" href="mailto:<?=EMAIL_SUPPORT?>"><?=EMAIL_SUPPORT?></a>
                                 </td>
                             </tr>
                         </table>

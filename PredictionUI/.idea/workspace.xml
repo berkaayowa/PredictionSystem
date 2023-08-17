@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Views/Client/Pages/predictionfilters.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Client/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PagesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Job/PredictionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Job/PredictionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Contact/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Contact/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Coupons/filters.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Coupons/filters.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Coupons/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Coupons/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Email/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Email/default.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +102,7 @@
       <workItem from="1691723279226" duration="14467000" />
       <workItem from="1691809187986" duration="3053000" />
       <workItem from="1691858101974" duration="28707000" />
-      <workItem from="1692077510364" duration="31081000" />
+      <workItem from="1692077510364" duration="31976000" />
     </task>
     <servers />
   </component>

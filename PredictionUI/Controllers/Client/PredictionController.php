@@ -126,6 +126,14 @@
                 ->Where('league.isDeleted', '=', \Helper\Check::$False)
                 ->FetchList();
 
+
+            $freeTemplates = @T::Find('prediction_contribution')
+                ->Where('prediction_contribution.isDeleted', '=', \Helper\Check::$False)
+                ->Where('prediction_contribution.userId', '=', '0')
+                ->FetchList(['assocArray'=>true]);
+
+            $config = array_merge($config, $freeTemplates);
+
             $this->view->set('leagues', $leagues);
             $this->view->set('predictionRequest', $requests);
             $this->view->set('pconfig', $config);
