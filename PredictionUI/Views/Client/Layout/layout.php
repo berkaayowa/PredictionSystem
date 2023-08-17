@@ -79,6 +79,8 @@
         <!--        <a href='#'><i class="fa fa-twitch fa-3x fa-fw"></i></a>-->
                 <a target="_blank" href='https://www.facebook.com/profile.php?id=100094880164648'><i class="fa fa-facebook fa-3x fa-fw"></i></a>
                 <a target="_blank" href='https://www.youtube.com/@soccerprediction27/about'><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
+                <div class="copyRight"><a target="_blank" href='https://www.tiktok.com/@soccerprediction.co.za?_t=8etdqA0Hz9h&_r=1'>TikTok</i></a></div>
+                <div class="copyRight"><a data-toggle="modal" data-target="#myContactModal" >Our Contacts</i></a></div>
                 <div class="copyRight">
                     ©<?= date("Y").' '. $_SERVER['SERVER_NAME']?> All rights reserved. <a href="/pages/policy">Our Policy</a>
                 </div>
@@ -163,7 +165,6 @@
             </div>
         </div>
     </div>
-
     <div id="myAboutusModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -189,6 +190,23 @@
                     </p>
                 </div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myContactModal" class="modal fade" role="dialog">
+        <div class="modal-dialog loginModal">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title center">Our Contacts</h4>
+                </div>
+                <div class="modal-body text-center">
+                    Email:  <a href="mailto:soccerprediction.co.za@gmail.com">soccerprediction.co.za@gmail.com</a>
+                </div>
+                <div class="modal-footer hide">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>

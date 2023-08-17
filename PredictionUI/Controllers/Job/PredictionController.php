@@ -238,12 +238,12 @@ class PredictionController extends RestfulApiController
 
                         if($request->notify == Check::$True) {
 
-                            $link = "<a href='".SITE_URL."/prediction?requestcode=".$request->id."'>click here to view it</a>";
-                            $emailContent = "Your requested prediction is ready, " . $link;
+                            $link = "<a href='".SITE_URL."/prediction?requestcode=".$request->id."'>click here to view</a>";
+                            $emailContent = "Hi ".ucfirst($request->user->name)." " .ucfirst($request->user->surname). ",<br>Your prediction request #".$request->id." is ready, " . $link;
                             $this->view->set('emailContent', $emailContent);
 
                             $content = $this->view->renderGetContent('Views/Email/default');
-                            $isSent = $this->mailer->send(EMAIL_FROM_NAME, "Your prediction # " . $request->id . " is ready", "", $content, $request->user->emailAddress);
+                            $isSent = $this->mailer->send(EMAIL_FROM_NAME, "Your prediction #" . $request->id . " is ready", "", $content, $request->user->emailAddress);
 
                         }
                         return $this->jsonFormat(['error' => false]);

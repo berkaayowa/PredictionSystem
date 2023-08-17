@@ -2,6 +2,21 @@
     <div class="col-sm-12">
         <div class="box  box-default ">
             <div class="box-body ">
+                <h3 class="headerFocus">Coupon Prediction Filter</h3>
+                <p class="pSubHeaderx">
+                    The "Prediction Filter" is a filter used in our platforms to help users refine their selections for creating game coupons or teams.
+                    It offers several criteria to customize the predictions based on user preferences. <a href="/pages/predictionfilters" style="text-decoration: underline">Click here to read more </a>
+                    about our "Game Prediction Filter"
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="box  box-default ">
+            <div class="box-body ">
 
                 <form class="frmSearch row" message="<?=Resource\Label::General("Requesting")?>..."  method="get" id="requestx"  action="<?= BerkaPhp\Helper\Html::action('/coupons/index/'.$request->id)?>">
                     <div class="col-sm-12 colFrmSearch">
@@ -46,11 +61,19 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col-sm-12 ">
+                            <div class="form-group col-xs-12 col-sm-10 ">
                                 <div class="form-label-groupx">
                                     <label class="label label-default" for="firstName">Leagues</label>
                                     <?= Util\Helper::select('leagueId[]', $leagues, ['value'=>'value', 'class'=>'form-control h150px', 'multiple'=>'multiple', 'data-static-dropdown'=>true], function($data) {
                                         return $data['text'];
+                                    }) ?>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                <div class="form-group">
+                                    <label class="label label-default" for="firstName">Allow Duplicated Game</label>
+                                    <?= Util\Helper::select('allowedDuplicateGame', [['id'=>'2','label'=>'No'],['id'=>'1','label'=>'Yes']], ['value'=>'id', 'class'=>'form-control', 'data-dropdrown'=>true, 'required'=>true], function($data) {
+                                        return $data['label'];
                                     }) ?>
                                 </div>
                             </div>

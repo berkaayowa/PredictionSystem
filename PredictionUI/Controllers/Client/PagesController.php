@@ -65,24 +65,8 @@
             $this->view->render();
         }
 
-        function coupons($params = null) {
 
-            $date = '';
-            $startDate = date(DATE_FORMAT);
-            $endDate = '';
-
-            if(array_key_exists("endDate", $params['args']['query']))
-                $endDate = $params['args']['query']['endDate'];
-
-            if(array_key_exists("startDate", $params['args']['query']))
-                $startDate = $params['args']['query']['startDate'];
-
-            if(array_key_exists("date", $params['args']['query']))
-                $date = $params['args']['query']['date'];
-
-            $this->view->set('StartDate', $startDate);
-            $this->view->set('EndDate', $endDate);
-            $this->view->set('Date', $date);
+        function predictionfilters () {
             $this->view->render();
         }
 
