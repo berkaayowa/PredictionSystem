@@ -140,7 +140,6 @@
                                     <a class="footerlink" target="_blank" href='https://www.facebook.com/profile.php?id=100094880164648'>Facebook </a>
                                     <a class="footerlink" target="_blank" href='https://www.youtube.com/@soccerprediction27/about'>Youtube</a>
                                     <a class="footerlink" href="https://www.tiktok.com/@soccerprediction.co.za">TikTok</a>
-                                    <a class="footerlink" href="mailto:<?=EMAIL_SUPPORT?>"><?=EMAIL_SUPPORT?></a>
                                 </td>
                             </tr>
                         </table>
