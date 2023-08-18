@@ -388,7 +388,7 @@
     $(document).ready(function (e) {
         $('#coupon').DataTable({
             "order": false,
-            paging: true
+            paging: false
         });
     })
 </script>
