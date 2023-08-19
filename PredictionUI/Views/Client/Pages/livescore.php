@@ -64,3 +64,18 @@
     </div>
 </div>
 
+
+<script>
+
+    $(document).ready(function (e) {
+
+        setTimeout(function () {
+            if($('.gambling_widget').length > 0) {
+                //alert("yes");
+                $(".gambling_widget").remove();
+            }
+        }, 5000);
+
+    })
+
+</script>
