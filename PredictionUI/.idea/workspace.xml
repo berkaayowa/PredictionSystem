@@ -5,8 +5,7 @@
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Template/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Template/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/Route/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Route/Route.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +102,7 @@
       <workItem from="1691809187986" duration="3053000" />
       <workItem from="1691858101974" duration="28707000" />
       <workItem from="1692077510364" duration="32860000" />
-      <workItem from="1692378324705" duration="13279000" />
+      <workItem from="1692378324705" duration="14458000" />
     </task>
     <servers />
   </component>
@@ -133,11 +132,6 @@
           <url>file://$PROJECT_DIR$/Controllers/Client/UsersController.php</url>
           <line>207</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Config/Route/Route.php</url>
-          <line>75</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
