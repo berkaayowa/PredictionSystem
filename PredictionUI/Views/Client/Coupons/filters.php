@@ -2,12 +2,13 @@
     <div class="col-sm-12">
         <div class="box  box-default ">
             <div class="box-body ">
-                <h3 class="headerFocus">Coupon Prediction Filter</h3>
+                <h3 class="headerFocus">Coupon Prediction Filter </h3>
                 <p class="pSubHeaderx">
                     The "Prediction Filter" is a filter used in our platforms to help users refine their selections for creating game coupons or teams.
                     It offers several criteria to customize the predictions based on user preferences. <a href="/pages/predictionfilters" style="text-decoration: underline">Click here to read more </a>
                     about our "Game Prediction Filter"
                 </p>
+                <?= $request->IsAny() ? '<hr><h4 class="headerFocusx">Request: <span class="label label-info">' . $request->description . '</span> Prediction Template: <span class="label label-info">' . $request->configuration->name .'</span></h4>': ''?>
             </div>
         </div>
     </div>

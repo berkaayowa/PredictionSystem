@@ -30,6 +30,7 @@
             $endDate = '';
             $requetcode = '';
             $shareCode = false;
+            $filePath = '';
 
             if(array_key_exists("endDate", $params['args']['query']))
                 $endDate = $params['args']['query']['endDate'];
@@ -67,6 +68,7 @@
             }
             else {
                 $filePath = FILE_PATH.date('Y_m_d',$startDateFile).'.prediction';
+                $this->view->set('predictionRequest', null);
             }
 
 

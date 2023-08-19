@@ -219,9 +219,9 @@
 
                 $leagues = self::getUniqueLeagues($request);
 
-                $this->view->set('request', $request);
             }
 
+            $this->view->set('request', $request);
             $this->view->set('leagues', $leagues);
             $this->view->render();
         }

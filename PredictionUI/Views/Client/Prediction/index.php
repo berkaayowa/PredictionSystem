@@ -15,7 +15,7 @@
 </div>
 <?php endif ?>
 
-<?php if(!$shareCode): ?>
+<?php if(!$shareCode && $predictionRequest != null && $predictionRequest->IsAny()): ?>
 <div class="row">
     <div class="col-sm-12 hide">
         <div class="box  box-default ">
@@ -59,7 +59,7 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="box  box-default">
-            <?php if($shareCode): ?>
+            <?php if($shareCode && $predictionRequest != null && $predictionRequest->IsAny()): ?>
             <div class="box-header btn-brd">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6  col-lg-6">
