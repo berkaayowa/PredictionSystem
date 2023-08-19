@@ -44,17 +44,7 @@
                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
                         </div>
-                        <div class="adLeft">
-                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
-                                    crossorigin="anonymous"></script>
-                            <ins class="adsbygoogle"
-                                 style="display:inline-block;width:360px;height:140px"
-                                 data-ad-client="ca-pub-1836789549483504"
-                                 data-ad-slot="7649199465"></ins>
-                            <script>
-                                (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                        </div>
+
                         <div class="adLeft">
                             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
                                     crossorigin="anonymous"></script>
