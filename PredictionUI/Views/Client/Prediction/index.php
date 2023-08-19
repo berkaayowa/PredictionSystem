@@ -15,7 +15,7 @@
 </div>
 <?php endif ?>
 
-<?php if(!$shareCode && $predictionRequest != null && $predictionRequest->IsAny()): ?>
+<?php if(!$shareCode): ?>
 <div class="row">
     <div class="col-sm-12 hide">
         <div class="box  box-default ">
