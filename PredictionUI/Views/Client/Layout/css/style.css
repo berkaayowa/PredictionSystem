@@ -1004,7 +1004,7 @@ blockquote {
     padding: 3px;
 }
 
-.gambling_widget {
+iframe > div.gambling_widget {
     display: none;!important;
 }
 
