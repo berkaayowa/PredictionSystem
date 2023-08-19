@@ -93,7 +93,7 @@
             display: inline-block;
             display: inline-block;
             /* border: solid 2px #f6f6f6; */
-            padding: 7px 20px;
+            padding-right: 15px;
             border-radius: 8px;
             color: black;
             text-decoration: none;
@@ -122,8 +122,9 @@
                             <tr>
                                 <td style="font-family: Arial, sans-serif; font-size: 15px; color: #545454; text-align: left; line-height: 20px;">
                                     Hi <strong><?= $firstName ?></strong><br><br>
-                                    Welcome to <strong>soccerprediction.co.za</strong> a free soccer predictions platform, live score and more.<br><br>
-                                    Please click <a href="<?=SITE_URL?>/users/activate/<?=$activationCode?>" style="font-weight: bold;">here</a> to verify your account or copy and past the bellow to your browser.
+                                    Welcome to soccerprediction.co.za a free soccer predictions platform, live score and more.<br><br>
+                                    Please click <a href="<?=SITE_URL?>/users/activate/<?=$activationCode?>" style="">here</a> to verify your account or copy and past the bellow to your browser.
+                                    <br/>
                                     <br/>
                                     Verification link : <br>
                                     <?=SITE_URL?>/users/activate/<?=$activationCode?>
