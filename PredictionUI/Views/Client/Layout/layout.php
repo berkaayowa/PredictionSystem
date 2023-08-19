@@ -56,7 +56,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="Unlock your winning potential with our free daily soccer betting tips and predictions!">
     <meta name="author" content="soccerprediction.co.za">
-    <meta name="keywords" content="soccertips, soccerprediction, soccerpredictor bettingtips, soccer, bettings, soccerbet, free">
+    <meta name="keywords" content="soccertips, soccerprediction, soccerpredictor bettingtips, soccer, bettings, soccerbet, free, livescore, soccerlivescore">
     <meta name="robots" content="all">
     <title><?= empty($title) ? SYS_NAME : ucfirst($title) ?></title>
     <link rel="shortcut icon" href="<?= LOGO_ICON ?>" type="image/x-icon">
