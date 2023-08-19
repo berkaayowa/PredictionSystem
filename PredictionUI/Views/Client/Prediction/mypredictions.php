@@ -36,7 +36,7 @@
                         </div>
                         <div class="form-group col-sm-3 col-md-3 no-mg-b">
                             <div class="input-group">
-                                <input required autocomplete="off" data-date="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("Fixtures Date")?>" type="text" class="form-control" name="date" id="date">
+                                <input required autocomplete="off" data-date-max="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("Fixtures Date")?>" type="text" class="form-control" name="date" id="date">
                                 <span class="input-group-addon">
                                 <span class="fa fa-calendar"></span>
                             </span>
@@ -155,5 +155,15 @@
 
 
 <script>
+
+    $(document).ready(function (e) {
+        $('[data-date-max]').datepicker({
+            autoclose: true,
+            format: 'dd-mm-yyyy',
+            endDate: new Date()
+        });
+    })
+
+
 
 </script>
