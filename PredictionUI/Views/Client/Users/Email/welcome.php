@@ -97,7 +97,7 @@
             border-radius: 8px;
             color: black;
             text-decoration: none;
-            background: #f1f1f1;
+            /*background: #f1f1f1;*/
             font-size: 12px;
         }
     </style>
@@ -121,17 +121,15 @@
                             </tr>
                             <tr>
                                 <td style="font-family: Arial, sans-serif; font-size: 15px; color: #545454; text-align: left; line-height: 20px;">
-                                    Hi <strong><?= $firstName ?></strong> welcome to <strong> soccerprediction.co.za</strong><br><br>
-                                    To log in when visiting our site just click <a href="<?=SITE_URL?>/user/signin">Login</a>.
+                                    Hi <strong><?= $firstName ?></strong><br><br>
+                                    Welcome to <strong>soccerprediction.co.za</strong> a free soccer predictions platform, live score and more.<br><br>
+                                    Please click <a href="<?=SITE_URL?>/users/activate/<?=$activationCode?>" style="font-weight: bold;">here</a> to verify your account or copy and past the bellow to your browser.
+                                    <br/>
+                                    Verification link : <br>
+                                    <?=SITE_URL?>/users/activate/<?=$activationCode?>
                                     <br/>
                                     <br/>
-                                    Please click the button bellow to activate your account.
                                     <br/>
-                                    <br/>
-                                    <br/>
-                                    <a href="<?=SITE_URL?>/users/activate/<?=$activationCode?>" style="padding: 15px;border: 2px solid;border-radius: 26px;color: white;background: #0083C1;font-weight: bold;">
-                                        Activate now
-                                    </a>
                                     Kind Regards,<br>
                                     Soccer Prediction Team
                                 </td>
