@@ -1,18 +1,30 @@
 
 <div class="row">
     <div class="col-sm-12">
+        <div class="box  box-default ">
+            <div class="box-body ">
+                <h3 class="headerFocus">My Prediction Templates</h3>
+                <p class="pSubHeaderx">
+                    Empower your soccer predictions using your own templates! Optimize match analysis with expertly crafted tools.
+                    Click "Create Template" for custom ones and seamlessly integrate team variables that matter. these templates provide a winning advantage.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
         <div class="box  box-default">
             <div class="box-header btn-brd">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6">
 
-                    </div>
-                    <div class="col-sm-6 col-md-6 text-right">
-                        <a href="/template/update" class="btn btn-default">
-                            <i class="fa fa-plus-circle" aria-hidden="true"></i> <?=Resource\Label::General("Create New Template")?>
-                        </a>
-                    </div>
-                </div>
+                <a href="/template/update" class="btn btn-default">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i> <?=Resource\Label::General("Create Template")?>
+                </a>
+                <a class="btn btn-default pull-right" data-back-link>
+                    <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                    <?=Resource\Label::General("Back")?>
+                </a>
+
             </div>
             <div class="box-body">
                 <div class="row">

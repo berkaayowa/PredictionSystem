@@ -157,11 +157,23 @@
 <script>
 
     $(document).ready(function (e) {
+
         $('[data-date-max]').datepicker({
             autoclose: true,
             format: 'dd-mm-yyyy',
             endDate: new Date()
         });
+
+        if($('.p-safe').length > 0) {
+
+            setTimeout(function () {
+                // alert('Reloading Page');
+                location.reload(true);
+            }, 10000);
+
+        }
+
+
     })
 
 

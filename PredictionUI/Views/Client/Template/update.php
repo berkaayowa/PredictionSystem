@@ -21,7 +21,7 @@
                                 <div class="form-group row">
                                     <div class="col-md-12">
                                         <div class="form-label-group">
-                                            <label for="firstName">Name</label>
+                                            <label for="firstName">Template Name</label>
                                             <div class="input-group">
                                                 <input value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->name : ''?>" type="text" required autocomplete="off" class="form-control" name="name" id="name">
                                                 <span class="input-group-addon">
@@ -37,7 +37,7 @@
                                 <div class="form-group row">
                                     <div class="col-md-12">
                                         <div class="form-label-group">
-                                            <label for="lastName">Description</label>
+                                            <label for="lastName">Template Description</label>
                                             <textarea rows="1" class="form-control" required name="description" id="description"><?=$pTemplate->IsAny()  > 0 ? $pTemplate->description : ''?></textarea>
                                         </div>
                                     </div>
