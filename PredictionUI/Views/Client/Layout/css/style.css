@@ -996,5 +996,17 @@ blockquote {
     font-size: 19.5px!important
 }
 
+.livescoreBarIcon {
+    display: inline-block;
+    /* transform: rotate(-48deg); */
+    position: absolute;
+    top: 3px;
+    padding: 3px;
+}
+
+.gambling_widget {
+    display: none;!important;
+}
+
 
 

@@ -75,6 +75,11 @@
             $this->view->render();
         }
 
+        function livescore() {
+            //$this->overWriteLayout('/Client/Layout/layoutMenu');
+            $this->view->render();
+        }
+
 
 	}
 

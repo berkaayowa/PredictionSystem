@@ -65,6 +65,9 @@ class Router {
             } else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'pages' && $route['action'] == 'policy') {
 
             }
+            if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'pages' && $route['action'] == 'livescore') {
+
+            }
             else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'users' && $route['action'] == 'signup') {
 
             }

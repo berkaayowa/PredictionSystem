@@ -40,7 +40,6 @@
 
         window.__h82AlnkH6D91__("WyJwdWItMTgzNjc4OTU0OTQ4MzUwNCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi0xODM2Nzg5NTQ5NDgzNTA0Il0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hWRGM0NHlXQ1J5d2J0aDBfWTNVWWFMU1hseFJ3ak5VTTlNaUVmU21lSENqQ0p5LWJONnZGSGFFb2NhV3NjZ0JVcndYdnFZWkJ6eW41Wm1wRnBTdkg4UEJRXHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdDVWM2YnNjZlFId3UxVlZZaERBMkZ4UzRzeTVQNjBRUmRrcFpqb095UFl5bEphc0pmLWZfYnZITkFKYmY3eUxJVk9wb005X0pLTklqSlJscEJGYjNBZFFcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFctZWhGMmZRUG1Cdk1kb05nc3UwbzgyR0JtdTU0YmN5X0FGUTNsTVNkaVlGUEhFUF8wNXJhU3dwc3ZUMFdNeE9ZS3ptVW5iaElNZl80eWtTeUltLWs3cEFcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFV4OHpDWlR6aE5FVjRZcU5iT09ranc3MThURldJajB5NVd5VmdvLWhfZGlnNFNFQ3NzTkdGTXBndmhUakN5OE5ka1lHNmxLNUxTMDA3bWtIdldQZlZfVFFcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxURTRNelkzT0RrMU5EazBPRE0xTURRXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi0xODM2Nzg5NTQ5NDgzNTA0LmpzP3VzcXBcdTAwM2RDQWsiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4V1VzN1JaV1hIM0RDem9FSEZKTGRoTHJxN2R0UDRhcW9DTHlCeUJfRDhiWVBCM0NwX29hZ3l0amk3SWRiNkZVZGtsN3ZsWXFzMUlWUFZKX1dxRTNLNnBLUVx1MDAzZFx1MDAzZCJd");</script>
 
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RR4N007ZVK"></script>
     <script>
@@ -81,8 +80,13 @@
                                             </div>
                                             <ul class="nav navbar-nav navbar-left">
                                                 <li class="active"><a href="/">Today's Matches</a></li>
+                                                <li class="">
+                                                    <a href="/pages/livescore">
+                                                       <span class="label label-success livescoreBarIcon">New</span>Live Score <i class="fa fa-soccer-ball-o hide"></i>
+                                                    </a>
+                                                </li>
                                                 <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
-                                                    <li class="hide"><a href="/prediction/coupons">Coupons</a></li>
+
                                                 <?php endif ?>
                                             </ul>
                                             <ul class="nav navbar-nav navbar-right">
