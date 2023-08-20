@@ -19,18 +19,35 @@
                 <div class="row">
                     <div class="col-md-8">
                         <form data-toggle="validator" class="frmSearch" message="<?=Resource\Label::General("Sending your message")?>..."  request-type="POST" id="request" data-request="<?= BerkaPhp\Helper\Html::action('/contacts/index')?>">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="fullname">Full name</label>
-                                        <input required type="text" class="form-control" id="fullname" name="fullname">
+                            <?php if(!\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="fullname">Full name</label>
+                                            <input required type="text" class="form-control" id="fullname" name="fullname">
+                                        </div>
+
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" required class="form-control" id="email" name="email">
-                            </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" required class="form-control" id="email" name="email">
+                                </div>
+                            <?php else : ?>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="fullname">Full name</label>
+                                            <input disabled value="<?= ucfirst( BerkaPhp\Helper\Auth::GetActiveUser()->name)?> <?= ucfirst( BerkaPhp\Helper\Auth::GetActiveUser()->surname)?>" required type="text" class="form-control" id="fullname" name="fullname">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" disabled required class="form-control" id="email" name="email" value="<?=BerkaPhp\Helper\Auth::GetActiveUser()->emailAddress?>">
+                                </div>
+                            <?php endif ?>
                             <div class="form-group">
                                 <label for="message">Message</label>
                                 <textarea required cols="30" rows="10" class="form-control" id="message" name="message"></textarea>
