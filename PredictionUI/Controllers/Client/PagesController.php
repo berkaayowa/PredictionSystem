@@ -62,20 +62,19 @@
         }
 
         function policy() {
+            $this->view->set('title', ucfirst($_SERVER['SERVER_NAME']) . " | Policy");
             $this->view->render();
         }
 
-
-        function predictionfilters () {
-            $this->view->render();
-        }
 
         function about() {
-            //$this->overWriteLayout('/Client/Layout/layoutMenu');
+            $this->view->set('title', ucfirst($_SERVER['SERVER_NAME']) . " | About Us");
             $this->view->render();
         }
 
         function livescore() {
+            $this->view->set('title', "Soccer Live Scores | Soccer Latest Results | " .$_SERVER['SERVER_NAME']);
+            $this->view->set('titleDescription', "Football Live Scores | Football Latest Results | Daily Football Prediction");
             //$this->overWriteLayout('/Client/Layout/layoutMenu');
             $this->view->render();
         }

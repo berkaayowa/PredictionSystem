@@ -60,6 +60,9 @@
                     $filePath = FILE_PATH . $request->fileName;
                     $request->views = $request->views + 1;
                     $request->Save();
+
+                    $this->view->set('title', "Customized Soccer Predictions |  " .ucfirst($request->description) . ' | ' . ucfirst($request->configuration->name) . ' | Author | ' . ucfirst($request->user->name));
+
                 }
 
                 $shareCode = true;
@@ -69,8 +72,8 @@
             else {
                 $filePath = FILE_PATH.date('Y_m_d',$startDateFile).'.prediction';
                 $this->view->set('predictionRequest', null);
+                $this->view->set('title', "Free Soccer Predictions | Soccer Live Score | Latest Soccer Results");
             }
-
 
             $data = Helper::GetFileContent($filePath);
 
@@ -90,6 +93,7 @@
             $this->view->set('predictions', $array);
             $this->view->set('maxPrediction', $maxPrediction);
             $this->view->set('shareCode', $shareCode);
+            $this->view->set('breadcrumb', "Predictions");
             $this->view->render();
         }
 

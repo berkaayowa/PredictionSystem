@@ -4,7 +4,26 @@
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/Route/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Route/Route.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/ContactController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/ContactsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/ContactsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Contact/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Contacts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Pages/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Pages/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Pages/predictionfilters.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Pages/preview.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Pages/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Email/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Email/default.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Css/Other/jquery-confirm.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Css/Other/jquery-confirm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Scripts/Ckeditor/ckeditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Scripts/Ckeditor/ckeditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Scripts/Other/ckeditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Scripts/Other/ckeditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Scripts/Other/jquery-confirm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Scripts/Other/jquery-confirm.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +120,8 @@
       <workItem from="1691809187986" duration="3053000" />
       <workItem from="1691858101974" duration="28707000" />
       <workItem from="1692077510364" duration="32860000" />
-      <workItem from="1692378324705" duration="19112000" />
+      <workItem from="1692378324705" duration="20320000" />
+      <workItem from="1692528139457" duration="7133000" />
     </task>
     <servers />
   </component>

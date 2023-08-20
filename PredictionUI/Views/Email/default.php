@@ -93,12 +93,12 @@
             display: inline-block;
             display: inline-block;
             /* border: solid 2px #f6f6f6; */
-            padding: 7px 20px;
+            padding-right: 15px;
             border-radius: 8px;
             color: black;
             text-decoration: none;
-            background: #f1f1f1;
-            font-size: 12px;
+            /*background: #f1f1f1;*/
+            font-size: 13px;
         }
     </style>
 </head>

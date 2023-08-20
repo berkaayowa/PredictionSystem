@@ -25,7 +25,6 @@
 
         function index($params = array()) {
 
-
             $request = @T::Find('prediction_request')
                 ->Join(['prediction_request_status'=>'status'], 'status.id = prediction_request.predictionRequestStatusId')
                 ->Join(['prediction_contribution'=>'configuration'], 'configuration.id = prediction_request.predictionContributionId')
@@ -187,6 +186,8 @@
                 $this->view->set('selectedLeague', $leagues);
                 $this->view->set('predictionRequest', $request);
                 $this->view->set('request', $request);
+
+                $this->view->set('title', "Coupons Request " . ucfirst($request->description) . ' | ' . ucfirst($request->configuration->name));
             }
 
             $this->view->set('numberOfGamesPerCoupon', $numberOfGamesPerCoupon);
@@ -218,6 +219,7 @@
             if($request->IsAny()) {
 
                 $leagues = self::getUniqueLeagues($request);
+                $this->view->set('title', "Coupons Filters " . ucfirst($request->description) . ' | ' . ucfirst($request->configuration->name));
 
             }
 

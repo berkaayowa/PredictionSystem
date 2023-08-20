@@ -91,8 +91,7 @@
                                             </ul>
                                             <ul class="nav navbar-nav navbar-right">
 
-                                                <li class="hide"><a href="/contact">Contacts Us</a></li>
-                                                <li class=""><a data-toggle="modal" data-target="#myAboutusModal" >About Us</a></li>
+                                                <li class=""><a href="/pages/about" >About Us</a></li>
 
                                                 <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
                                                     <li><a href=""><i class="glyphicon glyphicon-user"></i> Hi, <?= ucfirst( BerkaPhp\Helper\Auth::GetActiveUser()->name)?></a></li>
@@ -133,7 +132,7 @@
                 <a target="_blank" href='https://www.facebook.com/profile.php?id=100094880164648'><i class="fa fa-facebook fa-3x fa-fw"></i></a>
                 <a target="_blank" href='https://www.youtube.com/@soccerprediction27/about'><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
                 <div class="copyRight"><a target="_blank" href='https://www.tiktok.com/@soccerprediction.co.za?_t=8etdqA0Hz9h&_r=1'>TikTok</i></a></div>
-                <div class="copyRight"><a data-toggle="modal" data-target="#myContactModal" >Our Contacts</i></a></div>
+                <div class="copyRight"><a href="/contacts" >Contacts Us</i></a></div>
                 <div class="copyRight">
                     ©<?= date("Y").' '. $_SERVER['SERVER_NAME']?> All rights reserved. <a href="/pages/policy">Our Policy</a>
                 </div>
@@ -226,40 +225,9 @@
                     <h4 class="modal-title center">Soccer Predictions</h4>
                 </div>
                 <div class="modal-body">
-                    <h3 class="hFocus">Soccer Predictions</h3>
-                    <p>
-                        Soccer predictions is a free daily soccer prediction platform, where the power of cutting-edge AI technology and expert analysis come together to provide you with accurate and reliable soccer predictions. Our mission is to enhance your betting experience and help you make well-informed decisions.
-                    </p>
-                    <h3 class="hFocus">How It Works</h3>
-                    <p class="hide">
-                        Our platform utilizes state-of-the-art artificial intelligence algorithms to process vast amounts of soccer data. From team form and player statistics to historical match outcomes, our AI crunches the numbers to identify patterns and trends that human analysis alone may miss.
-                    </p>
-                    <p>
-                       Our team of seasoned soccer analysts, with years of experience in the industry, adds an invaluable layer of insight to the predictions. They meticulously review the AI-generated data, consider various factors like injuries, suspensions, and weather conditions, and combine their knowledge to fine-tune the predictions further.
-                    </p>
-                    <h3 class="hFocus">Responsible Betting</h3>
-                    <p>
-                        While we strive to provide accurate predictions, we also emphasize responsible betting. Remember that no prediction is infallible, and gambling involves risks. Set your limits, and only bet what you can afford to lose. Soccer is a beautiful game, and we want you to enjoy it with a sense of excitement and fun.
-                    </p>
+
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="myContactModal" class="modal fade" role="dialog">
-        <div class="modal-dialog loginModal">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title center">Our Contacts</h4>
-                </div>
-                <div class="modal-body text-center">
-                    Email:  <a href="mailto:soccerprediction.co.za@gmail.com">soccerprediction.co.za@gmail.com</a>
-                </div>
-                <div class="modal-footer hide">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>

@@ -62,10 +62,8 @@ class Router {
 
             } else if(strtolower($route['prefix']['name']) == 'job') {
 
-            } else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'pages' && $route['action'] == 'policy') {
-
             }
-            else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'pages' && $route['action'] == 'livescore') {
+            else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'pages') {
 
             }
             else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'users' && $route['action'] == 'signup') {
@@ -75,6 +73,9 @@ class Router {
 
             }
             else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'users' && $route['action'] == 'login') {
+
+            }
+            else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'contacts') {
 
             }
             else {

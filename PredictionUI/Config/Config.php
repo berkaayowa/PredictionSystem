@@ -6,7 +6,7 @@ use BrkORM\BrkORMDatabase;
 
 define('DEBUG', false, true);
 define('LIVE_TEST', true, true);
-define('SYS_NAME', 'Free Daily Soccer Betting | Tips | Predictions' , true);
+define('SYS_NAME', 'Free Daily Soccer | Tips | Predictions | Soccer Live Score, Latest Results' , true);
 define('DATE_FORMAT', 'Y-m-d h:m:s' , true);
 define('DATE_SECOND_FORMAT', 'd-m-Y h:m' , true);
 define('DATE_THIRD_FORMAT', 'd-m-Y' , true);
