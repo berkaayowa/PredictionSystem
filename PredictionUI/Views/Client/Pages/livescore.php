@@ -44,6 +44,7 @@
                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
                         </div>
+                        <?php if(false) : ?>
                         <div class="adLeft">
                             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
                                     crossorigin="anonymous"></script>
@@ -66,6 +67,7 @@
                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
                         </div>
+                        <?php endif ?>
                     </div>
                 </div>
 
