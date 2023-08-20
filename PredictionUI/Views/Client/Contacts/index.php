@@ -38,14 +38,14 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="fullname">Full name</label>
-                                            <input disabled value="<?= ucfirst( BerkaPhp\Helper\Auth::GetActiveUser()->name)?> <?= ucfirst( BerkaPhp\Helper\Auth::GetActiveUser()->surname)?>" required type="text" class="form-control" id="fullname" name="fullname">
+                                            <input value="<?= ucfirst( BerkaPhp\Helper\Auth::GetActiveUser()->name)?> <?= ucfirst( BerkaPhp\Helper\Auth::GetActiveUser()->surname)?>" required type="text" class="form-control" id="fullname" name="fullname">
                                         </div>
 
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" disabled required class="form-control" id="email" name="email" value="<?=BerkaPhp\Helper\Auth::GetActiveUser()->emailAddress?>">
+                                    <input type="email"  required class="form-control" id="email" name="email" value="<?=BerkaPhp\Helper\Auth::GetActiveUser()->emailAddress?>">
                                 </div>
                             <?php endif ?>
                             <div class="form-group">
