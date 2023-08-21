@@ -17,38 +17,25 @@
 
 <?php if(!$shareCode): ?>
     <div class="row">
-        <div class="col-sm-12 hide">
+        <div class="col-sm-12 ">
             <div class="box  box-default ">
                 <div class="box-body row ">
                     <div class=" col-sm-9 colFrmSearch">
                         <form class="frmSearch row" message="<?=Resource\Label::General("Searching")?>..."  method="GET" id="transactionSearch" ACTION="<?= BerkaPhp\Helper\Html::action('/prediction/mobile')?>">
-                            <div class="form-group col-sm-3 col-md-3 no-mg-b">
+                            <div class="form-group col-xs-8 col-sm-4 col-md-4 no-mg-b">
                                 <div class="input-group">
                                     <input value="<?=$StartDate?>"  data-date="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("StartDate")?>" type="text" class="form-control" name="startDate" id="startDate">
-                                    <span class="input-group-addon hide">
-                                <span class="fa fa-calendar hide"></span>
-                            </span>
-                                </div>
-                            </div>
-                            <div class="form-group col-sm-3 col-md-3 no-mg-b hidden">
-                                <div class="input-group ">
-                                    <input autocomplete="false" value="<?=$EndDate?>"  data-date="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("EndDate")?>" type="text" class="form-control" name="endDate" id="endDate">
                                     <span class="input-group-addon">
-                                <span class="fa fa-calendar"></span>
-                            </span>
+                                        <span class="fa fa-calendar"></span>
+                                    </span>
                                 </div>
                             </div>
-                            <div class="form-group col-sm-3 col-md-3 no-mg-b">
+                            <div class="form-group col-xs-4 col-sm-4 col-md-4 no-mg-b">
                                 <button type="submit" class="searchBtn btn btn-primary w-45 pull-left">
                                     <?=Resource\Label::General("Search")?>
                                 </button>
                             </div>
                         </form>
-                    </div>
-                    <div class=" col-sm-3 right hidden">
-                        <a href="<?= BerkaPhp\Helper\Html::action('/message/add')?>" class="btn btn-primary w-45">
-                            <i class="fa fa-plus-circle"></i> <?=Resource\Label::General("New Message")?>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -124,7 +111,7 @@
                     <div class="col-sm-12">
                         <?php if(true): ?>
                             <div class="table-responsive">
-                                <table class="table table-bordered fixtureTable" id="dataTable">
+                                <table class="table table-bordered fixtureTable" id="">
                                     <thead class="thead-inverse">
                                     <tr class=table-header">
                                         <th class="txt-capitalized text-center"></th>
@@ -138,22 +125,21 @@
                                                     <div id="fixtures">
                                                         <div data-league="583" data-title="Premier League" data-favourite="true" data-toggle="collapse" data-target="#cl583" role="button" aria-controls="cl583" data-open="true" class="league league_">
 
-                                                            <img class="flag" loading="lazy" width="18" height="13" src="/Views/Client/Assets/images/icon2.png" alt="England" onerror="flagError(this)">
+                                                            <img class="flag" loading="lazy" width="18" height="13" src="/Views/Client/Assets/images/icon2.png" alt="England">
                                                             <div> <?=$prediction->Country?> <a href="/leagues/england/premier-league/583"> <?=$prediction->League?> </a></div>
-<!--                                                            <a data-flag="" href="javascript:void(0);" class="fav-star add-to-fav">-->
-<!--                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star star">-->
-<!--                                                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>-->
-<!--                                                                </svg>-->
-<!--                                                            </a>-->
                                                             <div class="counter_m">
-                                                                <span class="count_matches"></span>
-                                                                <span class="count_live inplay"></span>
+                                                                <span class="count_matches">
+
+                                                                </span>
+                                                                <span class="count_live inplay">
+
+                                                                </span>
                                                             </div>
                                                             <span class="css-c19m5y">
                                                             <i class="wf left"></i>
                                                           </span>
                                                         </div>
-                                                        <div class="collapse show" id="cl583">
+                                                        <div class="collapse show">
                                                             <div data-datetime="2023-08-21 19:00:00" data-match="1668978" data-status-id="0" class="match i">
                                                                 <div class="tm">
                                                                     <span class="time" data-time="<?= date('h:i A', strtotime($prediction->Date))?>"><?= date('h:i A', strtotime($prediction->Date))?></span>
@@ -195,16 +181,133 @@
                                                                 </span>
                                                                 <div class="wf info">
                                                                     <a>
-                                                                        <span class="live_btn" title="Live"><?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?></span>
-                                                                    </a>
-                                                                    <a class="live_stream" href="https://soccerprediction.co.za" target="_blank">
                                                                         <span class="live_btn" title="Live">
+                                                                            <?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?>
+                                                                        </span>
+                                                                    </a>
+                                                                    <a class="live_stream" data-toggle="collapse" data-target="#panel<?=$prediction->UniqueId?>">
+                                                                        <span class="live_btn" title="Prediction Details">
                                                                             Prediction Details
                                                                         </span>
                                                                     </a>
                                                                 </div>
                                                                 <a class="opmatch" href="/match/crystal-palace-arsenal-fc/1668978"></a>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel panel-default collapse" id="panel<?=$prediction->UniqueId?>">
+                                                        <div class="panel-body">
+
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                    <table class="table table-striped predictionTable">
+                                                                        <thead class="thead-inverse">
+                                                                        <tr class=table-header">
+                                                                            <th class="txt-capitalized text-center wtp" style="color: #c8c8c8;">
+                                                                                Attributes
+                                                                            </th>
+                                                                            <th class="txt-capitalized text-center wtp" style="color: #c8c8c8;">
+                                                                                Weight %
+                                                                            </th>
+                                                                            <th class="txt-capitalized text-right wtp underline">
+                                                                                <?=$prediction->HomeTeam->TeamName?>
+                                                                            </th>
+                                                                            <th class="txt-capitalized text-left wtp underline">
+                                                                                <?=$prediction->AwayTeam->TeamName?>
+                                                                            </th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td class="txt-capitalized tSubItem">
+                                                                                League Points
+                                                                            </td>
+                                                                            <td class="txt-capitalized tSubItem">
+                                                                                <?=$prediction->PredictionContribution->LeaguePointPercentage?>
+                                                                            </td>
+                                                                            <td class="txt-capitalized text-right tSubItem">
+                                                                                <?=number_format((float) $prediction->HomeTeam->LeaguePointPerecentage, 2, '.', '')?>%
+                                                                            </td>
+                                                                            <td class="txt-capitalized text-left tSubItem">
+                                                                                <?=number_format((float) $prediction->AwayTeam->LeaguePointPerecentage, 2, '.', '')?>%
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="txt-capitalized tSubItem">
+                                                                                League Position
+                                                                            </td>
+                                                                            <td class="txt-capitalized tSubItem">
+                                                                                <?=number_format((float) $prediction->PredictionContribution->LeaguePositionPercentage, 2, '.', '')?>
+                                                                            </td>
+                                                                            <td class="txt-capitalized text-right tSubItem">
+                                                                                <?=number_format((float) $prediction->HomeTeam->LeaguePositionPerecentage, 2, '.', '')?>%
+                                                                            </td>
+                                                                            <td class="txt-capitalized text-left tSubItem">
+                                                                                <?=number_format((float) $prediction->AwayTeam->LeaguePositionPerecentage, 2, '.', '')?>%
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="txt-capitalized tSubItem">
+                                                                                Head 2 head
+                                                                            </td>
+                                                                            <td class="txt-capitalized tSubItem">
+                                                                                <?=$prediction->PredictionContribution->HeadtoheadPercentage?>
+                                                                            </td>
+                                                                            <td class="txt-capitalized text-right tSubItem">
+                                                                                <?=number_format((float) $prediction->HomeTeam->HeadtoheadPerecentage, 2, '.', '')?>%
+                                                                            </td>
+                                                                            <td class="txt-capitalized text-left tSubItem">
+                                                                                <?=number_format((float) $prediction->AwayTeam->HeadtoheadPerecentage, 2, '.', '')?>%
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="txt-capitalized tSubItem">
+                                                                                Motivation
+                                                                            </td>
+                                                                            <td class="txt-capitalized tSubItem">
+                                                                                <?=$prediction->PredictionContribution->LastMatchPercentage?>
+                                                                            </td>
+                                                                            <td class="txt-capitalized text-right tSubItem">
+                                                                                <?=number_format((float) $prediction->HomeTeam->LastGamesPerecentage, 2, '.', '')?>%
+                                                                            </td>
+                                                                            <td class="txt-capitalized text-left tSubItem">
+                                                                                <?=number_format((float) $prediction->AwayTeam->LastGamesPerecentage, 2, '.', '')?>%
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="txt-capitalized tSubItem">
+                                                                                Game Location
+                                                                            </td>
+                                                                            <td class="txt-capitalized tSubItem">
+                                                                                <?=$prediction->PredictionContribution->AwayHomePercentage?>
+                                                                            </td>
+                                                                            <td class="txt-capitalized text-right">
+                                                                                <?=number_format((float) $prediction->HomeTeam->AwayOrHomePerecentage, 2, '.', '')?>%
+                                                                            </td>
+                                                                            <td class="txt-capitalized text-left tSubItem">
+                                                                                <?=number_format((float) $prediction->AwayTeam->AwayOrHomePerecentage, 2, '.', '')?>%
+                                                                            </td>
+                                                                        </tr>
+
+                                                                        <tr>
+                                                                            <td class="txt-capitalized tSubItem">
+                                                                                Total %
+                                                                            </td>
+                                                                            <td class="txt-capitalized tSubItem">
+                                                                                100%
+                                                                            </td>
+                                                                            <td class="txt-capitalized text-right">
+                                                                                <?=number_format((float) $prediction->HomeTeam->TotalPerecentage, 2, '.', '')?>%
+                                                                            </td>
+                                                                            <td class="txt-capitalized text-left tSubItem">
+                                                                                <?=number_format((float) $prediction->AwayTeam->TotalPerecentage, 2, '.', '')?>%
+                                                                            </td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+
                                                         </div>
                                                     </div>
 

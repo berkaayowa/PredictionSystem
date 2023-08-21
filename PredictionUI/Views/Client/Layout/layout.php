@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php if($_SERVER['SERVER_NAME'] == "soccerprediction.co.za") : ?>
+    <?php if(IS_LIVE_SITE) : ?>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
             crossorigin="anonymous"></script>
 
@@ -68,7 +68,7 @@
     <div class="page-container">
         <div class="content-wrap">
             <div class="container-fluid headerWrapper">
-                <div class="container">
+                <div class="container no-p-l-and-r">
                     <div class="row">
                         <div class="col-sm-12 text-center">
                             <div class="headerSection">
@@ -77,32 +77,35 @@
                                         <div class="container-fluid">
                                             <div class="navbar-header">
                                                 <a class="navbar-brand" href="/">Soccer Prediction</a>
+                                                <span class="glyphicon glyphicon-menu-hamburger hamburger"></span>
                                             </div>
-                                            <ul class="nav navbar-nav navbar-left">
-                                                <li class="active"><a href="/">Today's Matches</a></li>
-                                                <li class="">
-                                                    <a href="/pages/livescore">
-                                                       <span class="label label-success livescoreBarIcon">New</span>Live Score <i class="fa fa-soccer-ball-o hide"></i>
-                                                    </a>
-                                                </li>
-                                                <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
+                                            <div class="navbar-nav-menu">
+                                                <ul class="nav navbar-nav navbar-left">
+                                                    <li class="active"><a href="/">Today's Matches</a></li>
+                                                    <li class="">
+                                                        <a href="/pages/livescore">
+                                                           <span class="label label-success livescoreBarIcon">New</span>Live Score <i class="fa fa-soccer-ball-o hide"></i>
+                                                        </a>
+                                                    </li>
+                                                    <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
 
-                                                <?php endif ?>
-                                            </ul>
-                                            <ul class="nav navbar-nav navbar-right">
+                                                    <?php endif ?>
+                                                </ul>
+                                                <ul class="nav navbar-nav navbar-right ">
 
-                                                <li class=""><a href="/pages/about" >About Us</a></li>
+                                                    <li class=""><a href="/pages/about" >About Us</a></li>
 
-                                                <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
-                                                    <li><a href=""><i class="glyphicon glyphicon-user"></i> Hi, <?= ucfirst( BerkaPhp\Helper\Auth::GetActiveUser()->name)?></a></li>
-                                                    <li class=""><a href="/prediction/mypredictions">My Predictions</a></li>
-                                                    <li><a href="/users/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
-                                                <?php else: ?>
-                                                    <li class=""><a data-toggle="modal" data-target="#mySignupModal"><span class=""></span> Sign Up</a></li>
-                                                    <li class=""><a data-toggle="modal" data-target="#mySigninModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                                                <?php endif ?>
+                                                    <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
+                                                        <li><a href=""><i class="glyphicon glyphicon-user"></i> Hi, <?= ucfirst( BerkaPhp\Helper\Auth::GetActiveUser()->name)?></a></li>
+                                                        <li class=""><a href="/prediction/mypredictions">My Predictions</a></li>
+                                                        <li class="no-border"><a href="/users/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                                                    <?php else: ?>
+                                                        <li class=""><a data-toggle="modal" data-target="#mySignupModal"><span class=""></span> Sign Up</a></li>
+                                                        <li class="no-border"><a data-toggle="modal" data-target="#mySigninModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                                    <?php endif ?>
 
-                                            </ul>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </nav>
                                     <div class="headerSubTitle hide">Unlock your winning potential with our free daily soccer betting tips and predictions! Our expert analysis, statistical insights, and strategic guidance to take your betting game to the next level.
@@ -220,6 +223,22 @@
 </body>
 
 </html>
+
+<script>
+    $(document).ready(function (e) {
+        $('.hamburger').on('click', function (e) {
+
+            if($('.navbar-nav-menu').hasClass("showOnMobile")) {
+                $('.navbar-nav-menu').removeClass("showOnMobile");
+                $('.navbar-nav-menu').addClass("hideOnMobile");
+            }
+            else {
+                $('.navbar-nav-menu').addClass("showOnMobile");
+                $('.navbar-nav-menu').removeClass("hideOnMobile");
+            }
+        })
+    })
+</script>
 
 <script src="/Views/Shared/Scripts/Bootstrap/bootstrap.js"></script>
 <script src="/Views/Shared/Scripts/Bootstrap/jquery.bootstrap-growl.js"></script>

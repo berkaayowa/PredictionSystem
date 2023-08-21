@@ -12,11 +12,14 @@ define('DATE_SECOND_FORMAT', 'd-m-Y h:m' , true);
 define('DATE_THIRD_FORMAT', 'd-m-Y' , true);
 define('DB_DATE_FORMAT', 'Y-m-d' , true);
 define('DATE_NOW', date(DATE_FORMAT) , true);
+define('LIVE_SITE', 'soccerprediction.co.za' , true);
+
+define('IS_LIVE_SITE', $_SERVER['SERVER_NAME'] ==  LIVE_SITE, true);
 
 //Database settings
 
 switch ($_SERVER['SERVER_NAME']) {
-    case "soccer.isenduget.co.za" :
+    case "qa.soccerprediction.co.za" :
     case "soccerprediction.co.za" :
         define('FILE_PATH', 'C:/SoccerPredictions/Predictions/' , true);
         define('DB_USERNAME', 'root', true);
