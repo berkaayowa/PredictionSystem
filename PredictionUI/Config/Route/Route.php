@@ -78,6 +78,9 @@ class Router {
             else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'contacts') {
 
             }
+            else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'prediction') {
+
+            }
             else {
                 if(!Auth::IsUserLogged()){
                     $route['controller'] = 'prediction';

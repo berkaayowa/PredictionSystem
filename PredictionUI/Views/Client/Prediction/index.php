@@ -158,8 +158,8 @@
                                                 <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                    <div class="vsHolder">
                                                        <div class="score">
-                                                           <div class="flag">
-                                                                <img src="<?= !empty($prediction->HomeTeam->TeamFlag) ? $prediction->HomeTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
+                                                           <div class="mflag">
+                                                                <img class="lazy" data-original="<?= !empty($prediction->HomeTeam->TeamFlag) ? $prediction->HomeTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>">
                                                            </div>
                                                            <div class="scoreDetail">
                                                            <?php if(property_exists($prediction, 'Score')  && !empty($prediction->Score->ft_score)) :?>
@@ -177,8 +177,8 @@
                                                            <?php endif?>
                                                            </div>
 
-                                                           <div class="flag">
-                                                           <img src="<?= !empty($prediction->AwayTeam->TeamFlag) ? $prediction->AwayTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>" alt="">
+                                                           <div class="mflag">
+                                                                <img class="lazy" data-original="<?= !empty($prediction->AwayTeam->TeamFlag) ? $prediction->AwayTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>">
                                                            </div>
                                                        </div>
                                                        <div class="predictionHolder showOnMobile <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">
@@ -380,18 +380,6 @@
 
 <script>
 
-    function loadImage() {
-
-        $('[data-img]').each(function (e){
-
-            var url = $(this).attr('data-img');
-            $(this).attr('src', url);
-            // console.log(url);
-
-        });
-
-    }
-
     $(document).ready(function (e) {
 
         setTimeout(
@@ -405,13 +393,11 @@
                     format: 'dd-mm-yyyy'
                 });
 
-                loadImage();
-
                 $('.paginate_button').each(function (e) {
 
                     $(this).on('click', function(){
                         console.log($(this).text());
-                        loadImage();
+                        $("img.lazy").lazyload({effect : "fadeIn"});
                     });
 
                 })
@@ -419,5 +405,10 @@
             }, 600);
 
 
+        $("img.lazy").lazyload({effect : "fadeIn"});
+
+
     })
 </script>
+
+

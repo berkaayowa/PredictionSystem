@@ -259,11 +259,14 @@
 
         }
 
-        function coupons($params = null) {
+        function mobile($params = array()) {
 
             $date = '';
             $startDate = date(DATE_FORMAT);
             $endDate = '';
+            $requetcode = '';
+            $shareCode = false;
+            $filePath = '';
 
             if(array_key_exists("endDate", $params['args']['query']))
                 $endDate = $params['args']['query']['endDate'];
@@ -274,15 +277,59 @@
             if(array_key_exists("date", $params['args']['query']))
                 $date = $params['args']['query']['date'];
 
+            if(array_key_exists("requestcode", $params['args']['query']))
+                $requetcode = $params['args']['query']['requestcode'];
+
+            $startDateFile = strtotime($startDate);
+
+            if(!empty($requetcode)) {
+
+                $request = @T::Find('prediction_request')
+                    ->Join('user', 'user.id = prediction_request.userId')
+                    ->Join(['prediction_request_status'=>'status'], 'status.id = prediction_request.predictionRequestStatusId')
+                    ->Join(['prediction_contribution'=>'configuration'], 'configuration.id = prediction_request.predictionContributionId')
+                    ->Where('prediction_request.id', '=', $requetcode)
+                    ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
+                    ->FetchFirstOrDefault();
+
+                if($request->IsAny()) {
+                    $filePath = FILE_PATH . $request->fileName;
+                    $request->views = $request->views + 1;
+                    $request->Save();
+
+                    $this->view->set('title', "Customized Soccer Predictions |  " .ucfirst($request->description) . ' | ' . ucfirst($request->configuration->name) . ' | Author | ' . ucfirst($request->user->name));
+
+                }
+
+                $shareCode = true;
+                $this->view->set('predictionRequest', $request);
+
+            }
+            else {
+                $filePath = FILE_PATH.date('Y_m_d',$startDateFile).'.prediction';
+                $this->view->set('predictionRequest', null);
+                $this->view->set('title', "Free Soccer Predictions | Soccer Live Score | Latest Soccer Results");
+            }
+
+            $data = Helper::GetFileContent($filePath);
+
+            $array = [];
+
+            if(strlen($data) > 0)
+                $array = json_decode($data);
+
+            $maxPrediction = sizeof($array);
+
+            if(!\BerkaPhp\Helper\Auth::IsUserLogged())
+                $maxPrediction = 8;
+
             $this->view->set('StartDate', $startDate);
             $this->view->set('EndDate', $endDate);
             $this->view->set('Date', $date);
-
-            $this->view->render();
-        }
-
-        function about() {
-            //$this->overWriteLayout('/Client/Layout/layoutMenu');
+            $this->view->set('predictions', $array);
+            $this->view->set('maxPrediction', $maxPrediction);
+            $this->view->set('shareCode', $shareCode);
+            $this->view->set('breadcrumb', "Predictions");
             $this->view->render();
         }
 

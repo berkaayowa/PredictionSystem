@@ -217,22 +217,6 @@
             </div>
         </div>
     </div>
-    <div id="myAboutusModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header hide">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title center">Soccer Predictions</h4>
-                </div>
-                <div class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
@@ -271,7 +255,7 @@
 <script src="/Views/Client/Layout/js/colors.js"></script>
 <script src="/Views/Client/Layout/js/jqColorPicker.js"></script>
 <script src="/Views/Client/Layout/js/color-picker.js"></script>
-
+<script src="/Views/Client/Layout/js/lazyload.esm.min.js"></script>
 <script src="/Views/Shared/Scripts/Theme/Chart.js"></script>
 <script src="/Views/Client/Layout/js/mts.js"></script>
 
