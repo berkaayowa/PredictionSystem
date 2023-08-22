@@ -750,7 +750,7 @@ option , select{
     }
 
     .predictionTable {
-        width: auto!important;
+        /*width: auto!important;*/
     }
 
     .predictionOnDesktop {
