@@ -804,6 +804,7 @@ option , select{
     border: solid 1px black;
     padding: 2px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .predictionOnMobile {

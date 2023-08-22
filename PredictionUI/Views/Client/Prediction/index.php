@@ -110,13 +110,12 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <?php if(true): ?>
-                            <div class="table-responsive">
-                                <table class="table table-bordered fixtureTable" id="">
-                                    <tbody>
+                            <div class="table-responsive fixtureTable">
+<!--                                <table class="table table-bordered fixtureTable" id="">-->
+<!--                                    <tbody>-->
                                     <?php foreach ($predictions as $prediction ): ?>
                                         <?php if(property_exists($prediction, 'PredictionLabel') && strlen($prediction->PredictionLabel) > 0): ?>
-                                            <tr>
-                                                <td class="txt-capitalized text-center  <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
+
                                                     <div id="fixtures">
                                                         <div data-toggle="collapse" data-target="#cl583" role="button" aria-controls="cl583" data-open="true" class="league league_">
 
@@ -323,15 +322,15 @@
                                                     </div>
 
 
-                                                </td>
+<!--                                                </td>-->
 
-                                            </tr>
+<!--                                            </tr>-->
                                         <?php endif ?>
 
                                         <?php $maxPrediction = $maxPrediction - 1; ?>
                                     <?php endforeach ?>
-                                    </tbody>
-                                </table>
+<!--                                    </tbody>-->
+<!--                                </table>-->
                             </div>
                         <?php else: ?>
                             <div class="txt-capitalized text-center">No predictions available</div>
