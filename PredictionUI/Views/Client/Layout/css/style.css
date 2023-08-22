@@ -553,6 +553,7 @@ option , select{
 
 .fixtureTable {
     font-size: 12px!important;
+    border: none!important;
 }
 
 .score > .mflag > img {
