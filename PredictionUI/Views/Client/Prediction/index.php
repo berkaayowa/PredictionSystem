@@ -122,8 +122,8 @@
 
                                                             <img class="flag lazy" width="18" height="13" data-original="<?=$prediction->HomeTeam->CountryFlag?>" alt="England">
                                                             <div> <?=$prediction->Country?> <a href="/leagues/england/premier-league/583"> <?=$prediction->League?> </a></div>
-                                                            <div class="counter_m ">
-                                                                <span class="count_matches predictionOnMobile">
+                                                            <div class="counter_m hide">
+                                                                <span class="count_matches ">
                                                                     <?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?>
                                                                 </span>
                                                             </div>
@@ -191,6 +191,12 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
+
+                                                    <div class="prediction-holder predictionOnMobile">
+                                                        <span>
+                                                            <?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?>
+                                                        </span>
                                                     </div>
 
                                                     <div class="panel-group collapse cpanel-group" id="panel<?=$prediction->UniqueId?>">
@@ -315,6 +321,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
 
                                                 </td>
 

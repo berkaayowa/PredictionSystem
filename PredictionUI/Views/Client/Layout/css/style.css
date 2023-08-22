@@ -784,16 +784,26 @@ option , select{
     }
 
     .count_matches {
-        margin-left: 10px!important;
+        /*margin-left: 10px!important;*/
+    }
+
+    .cpanel-group {
+        margin-top: 10px;
     }
 
 }
 
 @media (max-width: 450px) {
     body {
-        font-size: 11px !important;
+        /*font-size: 11px !important;*/
         touch-action: pan-x pan-y;
     }
+}
+
+.prediction-holder {
+    border: solid 1px black;
+    padding: 2px;
+    text-transform: uppercase;
 }
 
 .predictionOnMobile {
@@ -823,12 +833,13 @@ span.count_matches, span.count_live {
 }
 
 .panel, .panel-group {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     border: none!important;
 }
 
 .cpanel-group {
     border-top: 2px solid rgb(224, 227, 230) !important;
+    margin-top: 10px;
 }
 
 .cpanel-header{
