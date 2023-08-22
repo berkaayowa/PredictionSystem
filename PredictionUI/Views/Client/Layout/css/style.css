@@ -792,6 +792,14 @@ option , select{
         margin-top: 10px;
     }
 
+    .cookieInfo {
+        height: 41px!important;
+    }
+
+    .footerContainer > div {
+        margin-bottom: 10px;
+    }
+
 }
 
 @media (max-width: 450px) {
@@ -799,6 +807,10 @@ option , select{
         /*font-size: 11px !important;*/
         touch-action: pan-x pan-y;
     }
+}
+
+.headerWrapper {
+    transition: width 2s, height 4s;
 }
 
 .prediction-holder {
@@ -842,6 +854,7 @@ span.count_matches, span.count_live {
 .cpanel-group {
     border-top: 2px solid rgb(224, 227, 230) !important;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .cpanel-header{
