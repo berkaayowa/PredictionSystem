@@ -120,7 +120,7 @@
                                                     <div id="fixtures">
                                                         <div data-league="583" data-title="Premier League" data-favourite="true" data-toggle="collapse" data-target="#cl583" role="button" aria-controls="cl583" data-open="true" class="league league_">
 
-                                                            <img class="flag" loading="lazy" width="18" height="13" src="<?=$prediction->HomeTeam->CountryFlag?>" alt="England">
+                                                            <img class="flag lazy" width="18" height="13" src="<?=$prediction->HomeTeam->CountryFlag?>" alt="England">
                                                             <div> <?=$prediction->Country?> <a href="/leagues/england/premier-league/583"> <?=$prediction->League?> </a></div>
                                                             <div class="counter_m ">
                                                                 <span class="count_matches predictionOnMobile">
