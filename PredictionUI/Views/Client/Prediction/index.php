@@ -49,15 +49,14 @@
             <?php if($shareCode && $predictionRequest != null && $predictionRequest->IsAny()): ?>
                 <div class="box-header btn-brd">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-6  col-lg-6">
-                            <!--                        <label class="label label-default author-lbl">Author</label>-->
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                             <h2 class="hFocusSm">
-                                <label class="label label-info author-lbl">Custom Prediction</label>
+                                <label class="label label-info author-lbl hide">Custom Prediction</label>
                                 <label class="label label-default author-lbl">Author</label>&nbsp;
                                 <label class="label label-default author-lbl">
                                     <span class="fa fa-user"></span> <?=ucfirst($predictionRequest->user->name)?> <?=ucfirst($predictionRequest->user->surname)?>
                                 </label>&nbsp;
-                                <label class="label label-default author-lbl ratings">
+                                <label class="label label-default author-lbl ratings hide">
                                     Ratings
                                     <a href="#">
                                         <span class="fa fa-star"></span>
@@ -77,31 +76,25 @@
 
                                 </label>
                             </h2>
-
                         </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                            <div class="row">
-                                <div class="col-xs-4 col-sm-4 emphasis text-center">
-                                    <h2 class="hide"><strong><?=sizeof($predictions)?></strong></h2>
-                                    <p class="hide"><span class="fa fa-soccer-ball-o"></span> <small>Games</small></p>
-                                </div>
-                                <div class="col-xs-4 col-sm-4 emphasis text-center">
-
-                                </div>
-                                <div class="col-xs-4 col-sm-4 emphasis text-center">
-                                    <h2 class="hFocusSm text-right">
-                                        <label class="label label-default author-lbl">
-                                            <span class="fa fa-heart"></span> <small>Likes</small> <strong><?=$predictionRequest->likes?></strong>
-                                        </label>
-                                        &nbsp;
-                                        <label class="label label-default author-lbl">
-                                            <span class="fa fa-eye"></span> <small>Views</small> <strong><?=$predictionRequest->views?></strong>
-                                        </label>
-                                    </h2>
-                                </div>
-                            </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <h2 class="hFocusSm text-right">
+                                <label class="label label-default author-lbl">
+                                    <span class="fa fa-heart"></span> <small>Likes</small> <strong><?=$predictionRequest->likes?></strong>
+                                </label>
+                                &nbsp;
+                                <label class="label label-default author-lbl">
+                                    <span class="fa fa-eye"></span> <small>Views</small> <strong><?=$predictionRequest->views?></strong>
+                                </label>
+                            </h2>
                         </div>
-                        <div class="col-xs-12">
+                        <div class="col-xs-12 hide">
+                            <br>
+                            <h2 class="hFocusSm">
+                            <label class="label label-default author-lbl">
+                                <span class="fa fa-clock-o"></span> <small>Likes</small> <strong>hhh</strong>
+                            </label>
+                            </h2>
                         </div>
                     </div>
                 </div>
@@ -192,46 +185,45 @@
 
                                         <div class="prediction-holder predictionOnMobile">
                                             <span>
-                                                <?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?>
+                                                <?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?>
                                             </span>
                                         </div>
 
                                         <div class="panel-group collapse cpanel-group" id="panel<?=$prediction->UniqueId?>">
                                             <div class="row">
-                                                <?php if($maxPrediction > 0) : ?>
-                                                <div class="col-xs-12 col-sm-6">
-                                                    <div class="panel panel-default panel-wrapper" >
-                                                        <div class="panel-heading text-left cpanel-header">Prediction Break Down</div>
-                                                        <div class="panel-body">
-
+                                                <?php if(true) : ?>
+                                                    <div class="col-xs-12 col-sm-6 no-p-r-lg">
+                                                        <div class="panel panel-default panel-wrapper" >
+                                                            <div class="panel-heading text-left cpanel-header">Prediction Break Down</div>
+                                                            <div class="panel-body">
                                                                 <div class="row">
                                                                     <div class="col-sm-12">
                                                                         <table class="table table-striped predictionTable">
                                                                             <thead class="thead-inverse">
-                                                                            <tr class=table-header">
-                                                                                <th class="txt-capitalized text-center wtp" style="color: #c8c8c8;">
-                                                                                    Attributes
-                                                                                </th>
-                                                                                <th class="txt-capitalized text-center wtp" style="color: #c8c8c8;">
-                                                                                    Weight %
-                                                                                </th>
-                                                                                <th class="txt-capitalized text-right wtp underline">
-                                                                                    <?=$prediction->HomeTeam->TeamName?>
-                                                                                </th>
-                                                                                <th class="txt-capitalized text-left wtp underline">
-                                                                                    <?=$prediction->AwayTeam->TeamName?>
-                                                                                </th>
-                                                                            </tr>
+                                                                                <tr class=table-header">
+                                                                                    <th class="txt-capitalized  wtp" style="color: #c8c8c8;">
+                                                                                        Attributes
+                                                                                    </th>
+                                                                                    <th class="txt-capitalized text-center wtp" style="color: #c8c8c8;">
+                                                                                        Weight %
+                                                                                    </th>
+                                                                                    <th class="txt-capitalized text-right wtp underline">
+                                                                                        <?=$prediction->HomeTeam->TeamName?>
+                                                                                    </th>
+                                                                                    <th class="txt-capitalized text-left wtp underline">
+                                                                                        <?=$prediction->AwayTeam->TeamName?>
+                                                                                    </th>
+                                                                                </tr>
                                                                             </thead>
                                                                             <tbody>
                                                                             <tr>
-                                                                                <td class="txt-capitalized tSubItem">
+                                                                                <td class="txt-capitalized tSubItem ">
                                                                                     League Points
                                                                                 </td>
-                                                                                <td class="txt-capitalized tSubItem">
+                                                                                <td class="txt-capitalized tSubItem text-center">
                                                                                     <?=$prediction->PredictionContribution->LeaguePointPercentage?>
                                                                                 </td>
-                                                                                <td class="txt-capitalized text-right tSubItem">
+                                                                                <td class="txt-capitalized text-right tSubItem ">
                                                                                     <?=number_format((float) $prediction->HomeTeam->LeaguePointPerecentage, 2, '.', '')?>%
                                                                                 </td>
                                                                                 <td class="txt-capitalized text-left tSubItem">
@@ -239,11 +231,11 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td class="txt-capitalized tSubItem">
+                                                                                <td class="txt-capitalized tSubItem ">
                                                                                     League Position
                                                                                 </td>
-                                                                                <td class="txt-capitalized tSubItem">
-                                                                                    <?=number_format((float) $prediction->PredictionContribution->LeaguePositionPercentage, 2, '.', '')?>
+                                                                                <td class="txt-capitalized tSubItem text-center">
+                                                                                    <?=$prediction->PredictionContribution->LeaguePositionPercentage?>
                                                                                 </td>
                                                                                 <td class="txt-capitalized text-right tSubItem">
                                                                                     <?=number_format((float) $prediction->HomeTeam->LeaguePositionPerecentage, 2, '.', '')?>%
@@ -256,7 +248,7 @@
                                                                                 <td class="txt-capitalized tSubItem">
                                                                                     Head 2 head
                                                                                 </td>
-                                                                                <td class="txt-capitalized tSubItem">
+                                                                                <td class="txt-capitalized tSubItem text-center">
                                                                                     <?=$prediction->PredictionContribution->HeadtoheadPercentage?>
                                                                                 </td>
                                                                                 <td class="txt-capitalized text-right tSubItem">
@@ -267,10 +259,10 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td class="txt-capitalized tSubItem">
+                                                                                <td class="txt-capitalized tSubItem ">
                                                                                     Motivation
                                                                                 </td>
-                                                                                <td class="txt-capitalized tSubItem">
+                                                                                <td class="txt-capitalized tSubItem text-center">
                                                                                     <?=$prediction->PredictionContribution->LastMatchPercentage?>
                                                                                 </td>
                                                                                 <td class="txt-capitalized text-right tSubItem">
@@ -281,10 +273,10 @@
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td class="txt-capitalized tSubItem">
+                                                                                <td class="txt-capitalized tSubItem ">
                                                                                     Game Location
                                                                                 </td>
-                                                                                <td class="txt-capitalized tSubItem">
+                                                                                <td class="txt-capitalized tSubItem text-center">
                                                                                     <?=$prediction->PredictionContribution->AwayHomePercentage?>
                                                                                 </td>
                                                                                 <td class="txt-capitalized text-right">
@@ -299,13 +291,13 @@
                                                                                 <td class="txt-capitalized tSubItem">
                                                                                     Total %
                                                                                 </td>
-                                                                                <td class="txt-capitalized tSubItem">
+                                                                                <td class="txt-capitalized tSubItem text-center">
                                                                                     100%
                                                                                 </td>
                                                                                 <td class="txt-capitalized text-right">
                                                                                     <?=number_format((float) $prediction->HomeTeam->TotalPerecentage, 2, '.', '')?>%
                                                                                 </td>
-                                                                                <td class="txt-capitalized text-left tSubItem">
+                                                                                <td class="txt-capitalized text-left">
                                                                                     <?=number_format((float) $prediction->AwayTeam->TotalPerecentage, 2, '.', '')?>%
                                                                                 </td>
                                                                             </tr>
@@ -313,10 +305,125 @@
                                                                         </table>
                                                                     </div>
                                                                 </div>
-
                                                             </div>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                    <div class="col-xs-12 col-sm-6 no-p-l-lg">
+                                                        <div class="panel panel-default panel-wrapper" >
+                                                            <div class="panel-heading text-left cpanel-header">Teams & Standing</div>
+                                                            <div class="panel-body">
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <table class="table table-striped predictionTable">
+                                                                            <thead class="thead-inverse">
+                                                                            <tr class=table-header">
+                                                                                <th class="txt-capitalized  wtp" style="color: #c8c8c8;">
+                                                                                    Description
+                                                                                </th>
+                                                                                <th class="txt-capitalized text-center wtp" style="color: white;">
+                                                                                    *******
+                                                                                </th>
+                                                                                <th class="txt-capitalized text-right wtp underline">
+                                                                                    <?=$prediction->HomeTeam->TeamName?>
+                                                                                </th>
+                                                                                <th class="txt-capitalized text-left wtp underline">
+                                                                                    <?=$prediction->AwayTeam->TeamName?>
+                                                                                </th>
+                                                                            </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td class="txt-capitalized tSubItem ">
+                                                                                    League Points
+                                                                                </td>
+                                                                                <td class="txt-capitalized tSubItem text-center">
+
+                                                                                </td>
+                                                                                <td class="txt-capitalized text-right tSubItem ">
+                                                                                    <?=property_exists($prediction->HomeTeam, 'Data') ? $prediction->HomeTeam->Data->LeaguePoints: 'Not Available'?>
+                                                                                </td>
+                                                                                <td class="txt-capitalized text-left tSubItem">
+                                                                                    <?=property_exists($prediction->AwayTeam, 'Data') ? $prediction->AwayTeam->Data->LeaguePoints: 'Not Available'?>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="txt-capitalized tSubItem ">
+                                                                                    League Position
+                                                                                </td>
+                                                                                <td class="txt-capitalized tSubItem text-center">
+
+                                                                                </td>
+                                                                                <td class="txt-capitalized text-right tSubItem">
+                                                                                    <?=property_exists($prediction->HomeTeam, 'Data') ? $prediction->HomeTeam->Data->LeaguePosition.'th': 'Not Available'?>
+                                                                                </td>
+                                                                                <td class="txt-capitalized text-left tSubItem">
+                                                                                    <?=property_exists($prediction->AwayTeam, 'Data') ? $prediction->AwayTeam->Data->LeaguePosition.'th': 'Not Available'?>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="txt-capitalized tSubItem">
+                                                                                    Head 2 Head
+                                                                                </td>
+                                                                                <td class="txt-capitalized tSubItem text-center">
+
+                                                                                </td>
+                                                                                <td class="txt-capitalized text-right tSubItem">
+                                                                                    <?=property_exists($prediction->HomeTeam, 'Data') ? $prediction->HomeTeam->Data->Headtohead: 'Not Available'?>
+                                                                                </td>
+                                                                                <td class="txt-capitalized text-left tSubItem">
+                                                                                    <?=property_exists($prediction->AwayTeam, 'Data') ? $prediction->AwayTeam->Data->Headtohead: 'Not Available'?>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="txt-capitalized tSubItem ">
+                                                                                    Recent Form
+                                                                                </td>
+                                                                                <td class="txt-capitalized tSubItem text-center">
+
+                                                                                </td>
+                                                                                <td class="txt-capitalized text-right tSubItem">
+                                                                                    <?=property_exists($prediction->HomeTeam, 'Data') ? $prediction->HomeTeam->Data->RecentForm: 'Not Available'?>
+                                                                                </td>
+                                                                                <td class="txt-capitalized text-left tSubItem">
+                                                                                    <?=property_exists($prediction->AwayTeam, 'Data') ? $prediction->AwayTeam->Data->RecentForm: 'Not Available'?>
+                                                                                </td>
+                                                                            </tr>
+
+                                                                            <tr>
+                                                                                <td class="txt-capitalized tSubItem">
+                                                                                    Odds
+                                                                                </td>
+                                                                                <td class="txt-capitalized tSubItem text-center">
+
+                                                                                </td>
+                                                                                <td class="txt-capitalized text-right">
+                                                                                    Not Available
+                                                                                </td>
+                                                                                <td class="txt-capitalized text-left tSubItem">
+                                                                                    Not Available
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="txt-capitalized tSubItem ">
+                                                                                    Teams In The League
+                                                                                </td>
+                                                                                <td class="txt-capitalized tSubItem text-center">
+
+                                                                                </td>
+                                                                                <td class="txt-capitalized text-right">
+
+                                                                                </td>
+                                                                                <td class="txt-capitalized text-left ">
+                                                                                    <?=property_exists($prediction->AwayTeam, 'Data') ? $prediction->AwayTeam->Data->NumberOfTeamsInTheLeague: 'Not Available'?>
+                                                                                </td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 <?php else: ?>
                                                 <div class="col-xs-12 text-center">
                                                     <a data-toggle="modal" data-target="#mySigninModal">Please sign in to view the prediction break down</a>
