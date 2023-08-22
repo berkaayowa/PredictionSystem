@@ -118,7 +118,7 @@
                                             <tr>
                                                 <td class="txt-capitalized text-center  <?=\Util\Helper::GetPredictionToBorder($prediction->Percentage)?>">
                                                     <div id="fixtures">
-                                                        <div data-league="583" data-title="Premier League" data-favourite="true" data-toggle="collapse" data-target="#cl583" role="button" aria-controls="cl583" data-open="true" class="league league_">
+                                                        <div data-toggle="collapse" data-target="#cl583" role="button" aria-controls="cl583" data-open="true" class="league league_">
 
                                                             <img class="flag lazy" width="18" height="13" data-original="<?=$prediction->HomeTeam->CountryFlag?>" alt="England">
                                                             <div> <?=$prediction->Country?> <a href="/leagues/england/premier-league/583"> <?=$prediction->League?> </a></div>
@@ -160,15 +160,19 @@
                                                                 <?php endif?>
 
                                                                 <span class="second_text status_info">
-
+                                                                    <div class="pRate">
                                                                     <?php if(property_exists($prediction, 'Score')  && !empty($prediction->Score->ft_score)) :?>
 
                                                                         <?php if(\Util\Helper::CheckPrediction($prediction->HomeTeam, $prediction->AwayTeam, $prediction->PredictionLabelFull)):?>
-                                                                            <div class="pRate">
-                                                                                <span class="glyphicon glyphicon-check"></span>
-                                                                            </div>
+                                                                            <span class="glyphicon glyphicon-check"></span>
+                                                                        <?php else:?>
+                                                                            <span style="color: white" class="glyphicon glyphicon-check"></span>
                                                                         <?php endif?>
+
+                                                                    <?php else:?>
+                                                                        <span style="color: white" class="glyphicon glyphicon-check"></span>
                                                                     <?php endif?>
+                                                                    </div>
 
                                                                 </span>
                                                                 <div class="wf info">
