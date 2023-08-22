@@ -751,7 +751,7 @@ option , select{
 
 
     .predictionTable {
-        width: auto!important;
+       /*/\ width: auto!important;*/
     }
 
 }
@@ -763,12 +763,38 @@ option , select{
     }
 }
 
-.panel {
-    margin-bottom: 5px
+.panel, .panel-group {
+    margin-bottom: 5px;
+    border: none!important;
+}
+
+.cpanel-group {
+    border-top: 2px solid rgb(224, 227, 230) !important;
+}
+
+.cpanel-header{
+    background: var(--light3) !important;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1em;
 }
 
 .predictionTable {
     margin-bottom: 0!important;
+}
+
+.predictionTable > tbody > tr > td {
+    border: none!important;
+    border-bottom: 1px solid #ddd!important;
+}
+
+.predictionTable > tbody > tr:last-of-type > td {
+    border: none!important;
+    border-bottom: none!important;
+}
+
+.panel-wrapper {
+    border: none!important;
 }
 
 .hamburger {

@@ -112,11 +112,6 @@
                         <?php if(true): ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered fixtureTable" id="">
-                                    <thead class="thead-inverse">
-                                    <tr class=table-header">
-                                        <th class="txt-capitalized text-center"></th>
-                                    </tr>
-                                    </thead>
                                     <tbody>
                                     <?php foreach ($predictions as $prediction ): ?>
                                         <?php if(property_exists($prediction, 'PredictionLabel') && strlen($prediction->PredictionLabel) > 0): ?>
@@ -125,7 +120,7 @@
                                                     <div id="fixtures">
                                                         <div data-league="583" data-title="Premier League" data-favourite="true" data-toggle="collapse" data-target="#cl583" role="button" aria-controls="cl583" data-open="true" class="league league_">
 
-                                                            <img class="flag" loading="lazy" width="18" height="13" src="/Views/Client/Assets/images/icon2.png" alt="England">
+                                                            <img class="flag" loading="lazy" width="18" height="13" src="<?=$prediction->HomeTeam->CountryFlag?>" alt="England">
                                                             <div> <?=$prediction->Country?> <a href="/leagues/england/premier-league/583"> <?=$prediction->League?> </a></div>
                                                             <div class="counter_m">
                                                                 <span class="count_matches">
@@ -181,13 +176,15 @@
                                                                 </span>
                                                                 <div class="wf info">
                                                                     <a>
-                                                                        <span class="live_btn" title="Live">
+                                                                        <span class="live_btn" title="Prediction">
+                                                                            <strong>
                                                                             <?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?>
+                                                                            </strong>
                                                                         </span>
                                                                     </a>
                                                                     <a class="live_stream" data-toggle="collapse" data-target="#panel<?=$prediction->UniqueId?>">
                                                                         <span class="live_btn" title="Prediction Details">
-                                                                            Prediction Details
+                                                                            Details
                                                                         </span>
                                                                     </a>
                                                                 </div>
@@ -195,119 +192,127 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="panel panel-default collapse" id="panel<?=$prediction->UniqueId?>">
-                                                        <div class="panel-body">
 
-                                                            <div class="row">
-                                                                <div class="col-sm-12">
-                                                                    <table class="table table-striped predictionTable">
-                                                                        <thead class="thead-inverse">
-                                                                        <tr class=table-header">
-                                                                            <th class="txt-capitalized text-center wtp" style="color: #c8c8c8;">
-                                                                                Attributes
-                                                                            </th>
-                                                                            <th class="txt-capitalized text-center wtp" style="color: #c8c8c8;">
-                                                                                Weight %
-                                                                            </th>
-                                                                            <th class="txt-capitalized text-right wtp underline">
-                                                                                <?=$prediction->HomeTeam->TeamName?>
-                                                                            </th>
-                                                                            <th class="txt-capitalized text-left wtp underline">
-                                                                                <?=$prediction->AwayTeam->TeamName?>
-                                                                            </th>
-                                                                        </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                        <tr>
-                                                                            <td class="txt-capitalized tSubItem">
-                                                                                League Points
-                                                                            </td>
-                                                                            <td class="txt-capitalized tSubItem">
-                                                                                <?=$prediction->PredictionContribution->LeaguePointPercentage?>
-                                                                            </td>
-                                                                            <td class="txt-capitalized text-right tSubItem">
-                                                                                <?=number_format((float) $prediction->HomeTeam->LeaguePointPerecentage, 2, '.', '')?>%
-                                                                            </td>
-                                                                            <td class="txt-capitalized text-left tSubItem">
-                                                                                <?=number_format((float) $prediction->AwayTeam->LeaguePointPerecentage, 2, '.', '')?>%
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="txt-capitalized tSubItem">
-                                                                                League Position
-                                                                            </td>
-                                                                            <td class="txt-capitalized tSubItem">
-                                                                                <?=number_format((float) $prediction->PredictionContribution->LeaguePositionPercentage, 2, '.', '')?>
-                                                                            </td>
-                                                                            <td class="txt-capitalized text-right tSubItem">
-                                                                                <?=number_format((float) $prediction->HomeTeam->LeaguePositionPerecentage, 2, '.', '')?>%
-                                                                            </td>
-                                                                            <td class="txt-capitalized text-left tSubItem">
-                                                                                <?=number_format((float) $prediction->AwayTeam->LeaguePositionPerecentage, 2, '.', '')?>%
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="txt-capitalized tSubItem">
-                                                                                Head 2 head
-                                                                            </td>
-                                                                            <td class="txt-capitalized tSubItem">
-                                                                                <?=$prediction->PredictionContribution->HeadtoheadPercentage?>
-                                                                            </td>
-                                                                            <td class="txt-capitalized text-right tSubItem">
-                                                                                <?=number_format((float) $prediction->HomeTeam->HeadtoheadPerecentage, 2, '.', '')?>%
-                                                                            </td>
-                                                                            <td class="txt-capitalized text-left tSubItem">
-                                                                                <?=number_format((float) $prediction->AwayTeam->HeadtoheadPerecentage, 2, '.', '')?>%
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="txt-capitalized tSubItem">
-                                                                                Motivation
-                                                                            </td>
-                                                                            <td class="txt-capitalized tSubItem">
-                                                                                <?=$prediction->PredictionContribution->LastMatchPercentage?>
-                                                                            </td>
-                                                                            <td class="txt-capitalized text-right tSubItem">
-                                                                                <?=number_format((float) $prediction->HomeTeam->LastGamesPerecentage, 2, '.', '')?>%
-                                                                            </td>
-                                                                            <td class="txt-capitalized text-left tSubItem">
-                                                                                <?=number_format((float) $prediction->AwayTeam->LastGamesPerecentage, 2, '.', '')?>%
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="txt-capitalized tSubItem">
-                                                                                Game Location
-                                                                            </td>
-                                                                            <td class="txt-capitalized tSubItem">
-                                                                                <?=$prediction->PredictionContribution->AwayHomePercentage?>
-                                                                            </td>
-                                                                            <td class="txt-capitalized text-right">
-                                                                                <?=number_format((float) $prediction->HomeTeam->AwayOrHomePerecentage, 2, '.', '')?>%
-                                                                            </td>
-                                                                            <td class="txt-capitalized text-left tSubItem">
-                                                                                <?=number_format((float) $prediction->AwayTeam->AwayOrHomePerecentage, 2, '.', '')?>%
-                                                                            </td>
-                                                                        </tr>
+                                                    <div class="panel-group collapse cpanel-group" id="panel<?=$prediction->UniqueId?>">
+                                                        <div class="row">
+                                                            <div class="col-xs-12 col-sm-6">
+                                                                <div class="panel panel-default panel-wrapper" >
+                                                                    <div class="panel-heading text-left cpanel-header">Prediction Break Down</div>
+                                                                    <div class="panel-body">
 
-                                                                        <tr>
-                                                                            <td class="txt-capitalized tSubItem">
-                                                                                Total %
-                                                                            </td>
-                                                                            <td class="txt-capitalized tSubItem">
-                                                                                100%
-                                                                            </td>
-                                                                            <td class="txt-capitalized text-right">
-                                                                                <?=number_format((float) $prediction->HomeTeam->TotalPerecentage, 2, '.', '')?>%
-                                                                            </td>
-                                                                            <td class="txt-capitalized text-left tSubItem">
-                                                                                <?=number_format((float) $prediction->AwayTeam->TotalPerecentage, 2, '.', '')?>%
-                                                                            </td>
-                                                                        </tr>
-                                                                        </tbody>
-                                                                    </table>
+                                                                            <div class="row">
+                                                                                <div class="col-sm-12">
+                                                                                    <table class="table table-striped predictionTable">
+                                                                                        <thead class="thead-inverse">
+                                                                                        <tr class=table-header">
+                                                                                            <th class="txt-capitalized text-center wtp" style="color: #c8c8c8;">
+                                                                                                Attributes
+                                                                                            </th>
+                                                                                            <th class="txt-capitalized text-center wtp" style="color: #c8c8c8;">
+                                                                                                Weight %
+                                                                                            </th>
+                                                                                            <th class="txt-capitalized text-right wtp underline">
+                                                                                                <?=$prediction->HomeTeam->TeamName?>
+                                                                                            </th>
+                                                                                            <th class="txt-capitalized text-left wtp underline">
+                                                                                                <?=$prediction->AwayTeam->TeamName?>
+                                                                                            </th>
+                                                                                        </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                        <tr>
+                                                                                            <td class="txt-capitalized tSubItem">
+                                                                                                League Points
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized tSubItem">
+                                                                                                <?=$prediction->PredictionContribution->LeaguePointPercentage?>
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized text-right tSubItem">
+                                                                                                <?=number_format((float) $prediction->HomeTeam->LeaguePointPerecentage, 2, '.', '')?>%
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized text-left tSubItem">
+                                                                                                <?=number_format((float) $prediction->AwayTeam->LeaguePointPerecentage, 2, '.', '')?>%
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="txt-capitalized tSubItem">
+                                                                                                League Position
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized tSubItem">
+                                                                                                <?=number_format((float) $prediction->PredictionContribution->LeaguePositionPercentage, 2, '.', '')?>
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized text-right tSubItem">
+                                                                                                <?=number_format((float) $prediction->HomeTeam->LeaguePositionPerecentage, 2, '.', '')?>%
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized text-left tSubItem">
+                                                                                                <?=number_format((float) $prediction->AwayTeam->LeaguePositionPerecentage, 2, '.', '')?>%
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="txt-capitalized tSubItem">
+                                                                                                Head 2 head
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized tSubItem">
+                                                                                                <?=$prediction->PredictionContribution->HeadtoheadPercentage?>
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized text-right tSubItem">
+                                                                                                <?=number_format((float) $prediction->HomeTeam->HeadtoheadPerecentage, 2, '.', '')?>%
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized text-left tSubItem">
+                                                                                                <?=number_format((float) $prediction->AwayTeam->HeadtoheadPerecentage, 2, '.', '')?>%
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="txt-capitalized tSubItem">
+                                                                                                Motivation
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized tSubItem">
+                                                                                                <?=$prediction->PredictionContribution->LastMatchPercentage?>
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized text-right tSubItem">
+                                                                                                <?=number_format((float) $prediction->HomeTeam->LastGamesPerecentage, 2, '.', '')?>%
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized text-left tSubItem">
+                                                                                                <?=number_format((float) $prediction->AwayTeam->LastGamesPerecentage, 2, '.', '')?>%
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="txt-capitalized tSubItem">
+                                                                                                Game Location
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized tSubItem">
+                                                                                                <?=$prediction->PredictionContribution->AwayHomePercentage?>
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized text-right">
+                                                                                                <?=number_format((float) $prediction->HomeTeam->AwayOrHomePerecentage, 2, '.', '')?>%
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized text-left tSubItem">
+                                                                                                <?=number_format((float) $prediction->AwayTeam->AwayOrHomePerecentage, 2, '.', '')?>%
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <td class="txt-capitalized tSubItem">
+                                                                                                Total %
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized tSubItem">
+                                                                                                100%
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized text-right">
+                                                                                                <?=number_format((float) $prediction->HomeTeam->TotalPerecentage, 2, '.', '')?>%
+                                                                                            </td>
+                                                                                            <td class="txt-capitalized text-left tSubItem">
+                                                                                                <?=number_format((float) $prediction->AwayTeam->TotalPerecentage, 2, '.', '')?>%
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </div>
                                                                 </div>
                                                             </div>
-
                                                         </div>
                                                     </div>
 
