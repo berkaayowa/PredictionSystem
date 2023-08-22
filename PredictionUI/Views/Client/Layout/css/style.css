@@ -749,9 +749,16 @@ option , select{
         padding-right: 0
     }
 
-
     .predictionTable {
        /*/\ width: auto!important;*/
+    }
+
+    .predictionOnDesktop {
+        display: none!important;
+    }
+
+    .predictionOnMobile {
+        display: block!important;
     }
 
 }
@@ -761,6 +768,32 @@ option , select{
         font-size: 11px !important;
         touch-action: pan-x pan-y;
     }
+}
+
+.predictionOnMobile {
+    display: none;
+}
+
+.predictionOnDesktop {
+    display: block;
+}
+
+.counter_m {
+    flex: 1;
+    justify-content: flex-end;
+    flex-direction: row !important;
+    /* padding: 3px 5px; */
+    /* max-width: 100px; */
+}
+
+span.count_matches, span.count_live {
+    padding: 3px 5px;
+    background: var(--content-bg);
+    border-radius: 3px;
+    margin: 0 2px;
+    min-width: 22px;
+    text-align: center;
+    color: var(--primary-color);
 }
 
 .panel, .panel-group {

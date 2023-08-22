@@ -122,12 +122,9 @@
 
                                                             <img class="flag" loading="lazy" width="18" height="13" src="<?=$prediction->HomeTeam->CountryFlag?>" alt="England">
                                                             <div> <?=$prediction->Country?> <a href="/leagues/england/premier-league/583"> <?=$prediction->League?> </a></div>
-                                                            <div class="counter_m">
-                                                                <span class="count_matches">
-
-                                                                </span>
-                                                                <span class="count_live inplay">
-
+                                                            <div class="counter_m ">
+                                                                <span class="count_matches predictionOnMobile">
+                                                                    <?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?>
                                                                 </span>
                                                             </div>
                                                             <span class="css-c19m5y">
@@ -175,7 +172,7 @@
 
                                                                 </span>
                                                                 <div class="wf info">
-                                                                    <a>
+                                                                    <a class="predictionOnDesktop">
                                                                         <span class="live_btn" title="Prediction">
                                                                             <strong>
                                                                             <?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?>
@@ -188,7 +185,6 @@
                                                                         </span>
                                                                     </a>
                                                                 </div>
-                                                                <a class="opmatch" href="/match/crystal-palace-arsenal-fc/1668978"></a>
                                                             </div>
                                                         </div>
                                                     </div>
