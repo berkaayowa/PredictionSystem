@@ -259,13 +259,13 @@
                 //
                 //     $(this).trigger('click');
                 // });
-
+                var iframe = $('iframe'); // or some other selector to get the iframe
                 var link = $(this).attr('href');
 
                 // window.open(link,'_blank');
 
-                var numBtnItems = $('[data-asoch-targets]').length;
-                var numSideItems = $('[data-google-av-cxn]').length;
+                var numBtnItems = $('[data-asoch-targets]', iframe.contents()).length;
+                var numSideItems = $('[data-google-av-cxn]', iframe.contents()).length;
 
                 console.log("data-google-av-cxn|" + numSideItems);
                 console.log("data-asoch-targets|" + numBtnItems);
