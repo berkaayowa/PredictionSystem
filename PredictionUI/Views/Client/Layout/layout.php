@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php if(IS_LIVE_SITE) : ?>
+    <?php if(true || IS_LIVE_SITE) : ?>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
             crossorigin="anonymous"></script>
 
