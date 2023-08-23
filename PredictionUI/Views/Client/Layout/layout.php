@@ -79,14 +79,14 @@
                                     <nav class="navbar navbar-inverse navStyle">
                                         <div class="container-fluid">
                                             <div class="navbar-header">
-                                                <a class="navbar-brand" href="/">Soccer Prediction</a>
+                                                <a class="navbar-brand adsOpen" href="/">Soccer Prediction</a>
                                                 <span class="glyphicon glyphicon-menu-hamburger hamburger"></span>
                                             </div>
                                             <div class="navbar-nav-menu">
                                                 <ul class="nav navbar-nav navbar-left">
-                                                    <li class="active"><a href="/">Today's Matches</a></li>
+                                                    <li class="active"><a class="adsOpen" href="/">Today's Matches</a></li>
                                                     <li class="">
-                                                        <a href="/pages/livescore">
+                                                        <a class="adsOpen" href="/pages/livescore">
                                                            <span class="label label-success livescoreBarIcon">New</span>Live Score <i class="fa fa-soccer-ball-o hide"></i>
                                                         </a>
                                                     </li>
@@ -96,11 +96,11 @@
                                                 </ul>
                                                 <ul class="nav navbar-nav navbar-right ">
 
-                                                    <li class=""><a href="/pages/about" >About Us</a></li>
+                                                    <li class=""><a class="adsOpen" href="/pages/about" >About Us</a></li>
 
                                                     <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
                                                         <li><a href=""><i class="glyphicon glyphicon-user"></i> Hi, <?= ucfirst( BerkaPhp\Helper\Auth::GetActiveUser()->name)?></a></li>
-                                                        <li class=""><a href="/prediction/mypredictions">My Predictions</a></li>
+                                                        <li class=""><a class="adsOpen" href="/prediction/mypredictions">My Predictions</a></li>
                                                         <li class="no-border"><a href="/users/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
                                                     <?php else: ?>
                                                         <li class=""><a data-toggle="modal" data-target="#mySignupModal"><span class=""></span> Sign Up</a></li>
@@ -239,6 +239,40 @@
                 $('.navbar-nav-menu').addClass("showOnMobile");
                 $('.navbar-nav-menu').removeClass("hideOnMobile");
             }
+        })
+
+        $('.adsOpen').each(function (e) {
+
+            $(this).on('click', function(){
+
+                // $('.clickable').each(function (e) {
+                //
+                //     $(this).trigger('click');
+                // });
+
+                var link = $(this).attr('href');
+
+                // window.open(link,'_blank');
+
+                var numItems = $('a[data-asoch-targets]').length;
+
+                console.log("data-asoch-targets|" + numItems);
+
+                numItems = $('[data-google-av-cxn]').length;
+
+                console.log("data-google-av-cxn|" + numItems);
+
+
+
+                // $('a[data-asoch-targets]').each(function (e) {
+                //
+                //     var link = $(this).attr('href');
+                //
+                //     window.open(link,'_blank')
+                // });
+
+            });
+
         })
     })
 </script>
