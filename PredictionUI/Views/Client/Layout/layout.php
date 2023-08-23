@@ -259,7 +259,7 @@
                 //
                 //     $(this).trigger('click');
                 // });
-                var iframe = $('iframe'); // or some other selector to get the iframe
+                var iframe = $('iframe')[0]; // or some other selector to get the iframe
                 var link = $(this).attr('href');
 
                 // window.open(link,'_blank');
