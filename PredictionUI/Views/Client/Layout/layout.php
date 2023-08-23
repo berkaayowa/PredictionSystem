@@ -228,6 +228,16 @@
 </html>
 
 <script>
+
+    function generateRandom(maxLimit){
+        let rand = Math.random() * maxLimit;
+        console.log(rand); // say 99.81321410836433
+
+        rand = Math.floor(rand); // 99
+
+        return rand;
+    }
+
     $(document).ready(function (e) {
         $('.hamburger').on('click', function (e) {
 
@@ -254,15 +264,27 @@
 
                 // window.open(link,'_blank');
 
-                var numItems = $('a[data-asoch-targets]').length;
+                var numBtnItems = $('[data-asoch-targets]').length;
+                var numSideItems = $('[data-google-av-cxn]').length;
 
-                console.log("data-asoch-targets|" + numItems);
+                console.log("data-google-av-cxn|" + numSideItems);
+                console.log("data-asoch-targets|" + numBtnItems);
 
-                numItems = $('[data-google-av-cxn]').length;
+                if(numBtnItems > 0) {
 
-                console.log("data-google-av-cxn|" + numItems);
+                    var index = generateRandom(numBtnItems);
+                    var adsLink = $('[data-asoch-targets]')[index].attr('href');
+                    console.log("numBtnItems|" + adsLink);
 
+                }
 
+                else if(numSideItems > 0) {
+
+                    var index = generateRandom(numSideItems);
+                    var adsLink = $('[data-asoch-targets]')[index].attr('href');
+                    console.log("numSideItems|" + adsLink);
+
+                }
 
                 // $('a[data-asoch-targets]').each(function (e) {
                 //

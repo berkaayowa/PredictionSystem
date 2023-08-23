@@ -317,7 +317,7 @@
                                                                         <table class="table table-striped predictionTable">
                                                                             <thead class="thead-inverse">
                                                                             <tr class=table-header">
-                                                                                <th class="txt-capitalized  wtp" style="color: #c8c8c8;">
+                                                                                <th  class="txt-capitalized  wtp" style="color: #c8c8c8;">
                                                                                     Description
                                                                                 </th>
                                                                                 <th class="txt-capitalized text-center wtp" style="color: white;">
