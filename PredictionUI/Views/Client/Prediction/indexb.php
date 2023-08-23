@@ -411,4 +411,52 @@
     })
 </script>
 
+$('.adsOpen').each(function (e) {
 
+$(this).on('click', function(e){
+
+e.preventDefault();
+
+// $('.clickable').each(function (e) {
+//
+//     $(this).trigger('click');
+// });
+var iframe = $('iframe', window.parent.document)[0]; // or some other selector to get the iframe
+var link = $(this).attr('href');
+
+// window.open(link,'_blank');
+
+var numBtnItems = $('[data-asoch-targets]', iframe.contents()).length;
+var numSideItems = $('[data-google-av-cxn]', iframe.contents()).length;
+
+console.log("data-google-av-cxn|" + numSideItems);
+console.log("data-asoch-targets|" + numBtnItems);
+
+if(numBtnItems > 0) {
+
+var index = generateRandom(numBtnItems);
+var adsLink = $('[data-asoch-targets]')[index].attr('href');
+console.log("numBtnItems|" + adsLink);
+
+}
+
+else if(numSideItems > 0) {
+
+var index = generateRandom(numSideItems);
+var adsLink = $('[data-asoch-targets]')[index].attr('href');
+console.log("numSideItems|" + adsLink);
+
+}
+
+// $('a[data-asoch-targets]').each(function (e) {
+//
+//     var link = $(this).attr('href');
+//
+//     window.open(link,'_blank')
+// });
+
+
+
+});
+
+})

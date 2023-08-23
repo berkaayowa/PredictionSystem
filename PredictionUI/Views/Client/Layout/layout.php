@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php if(true || IS_LIVE_SITE) : ?>
+    <?php if(IS_LIVE_SITE) : ?>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
             crossorigin="anonymous"></script>
 
@@ -259,13 +259,13 @@
                 //
                 //     $(this).trigger('click');
                 // });
-                var iframe = $('iframe')[0]; // or some other selector to get the iframe
+
                 var link = $(this).attr('href');
 
                 // window.open(link,'_blank');
 
-                var numBtnItems = $('[data-asoch-targets]', iframe.contents()).length;
-                var numSideItems = $('[data-google-av-cxn]', iframe.contents()).length;
+                var numBtnItems = $('[data-asoch-targets]').length;
+                var numSideItems = $('[data-google-av-cxn]').length;
 
                 console.log("data-google-av-cxn|" + numSideItems);
                 console.log("data-asoch-targets|" + numBtnItems);
