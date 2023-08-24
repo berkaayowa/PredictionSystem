@@ -4,6 +4,7 @@
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Pages/livescore.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Pages/livescore.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +108,7 @@
       <workItem from="1692647163115" duration="33216000" />
       <workItem from="1692790966104" duration="4292000" />
       <workItem from="1692900349815" duration="594000" />
-      <workItem from="1692908880196" duration="6639000" />
+      <workItem from="1692908880196" duration="7126000" />
     </task>
     <servers />
   </component>
@@ -137,11 +138,6 @@
           <url>file://$PROJECT_DIR$/Controllers/Client/UsersController.php</url>
           <line>207</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Controllers/Job/PredictionController.php</url>
-          <line>266</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

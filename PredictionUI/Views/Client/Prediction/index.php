@@ -443,6 +443,7 @@
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-3">
 
+                        <?php if(sizeof($predictions)): ?>
                         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
                                 crossorigin="anonymous"></script>
                         <!-- Home Vertical Ads Unit -->
@@ -470,6 +471,8 @@
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
+
+                        <?php endif ?>
 
                     </div>
                 </div>
