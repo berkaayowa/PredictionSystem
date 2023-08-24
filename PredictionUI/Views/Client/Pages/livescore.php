@@ -8,6 +8,21 @@
                         <script type="text/javascript" src="https://ls.soccersapi.com/widget/res/w14638_64e0092a2488c/widget.js"></script>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-3">
+
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
+                                crossorigin="anonymous"></script>
+                        <!-- Home Vertical Ads Unit -->
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-1836789549483504"
+                             data-ad-slot="8416637603"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+
+                        <?php if(false) : ?>
                         <div class="adLeft">
                             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
                                     crossorigin="anonymous"></script>
@@ -44,7 +59,7 @@
                                 (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
                         </div>
-                        <?php if(false) : ?>
+
                         <div class="adLeft">
                             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
                                     crossorigin="anonymous"></script>

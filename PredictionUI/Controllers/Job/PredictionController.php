@@ -258,6 +258,76 @@ class PredictionController extends RestfulApiController
 
     }
 
+    function requestprediction($option = null) {
+
+        if(isset($option['args']) && isset($option['args']['query']) && isset($option['args']['query']['code'])) {
+
+            $date = $option['args']['query']['date'];
+            $configuration = $option['args']['query']['config'];
+            $username = $option['args']['query']['username'];
+            $name = $option['args']['query']['name'];
+
+            if(empty($date))
+                return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "Invalid fixtures date"]);
+
+            $date = date(DB_DATE_FORMAT, strtotime($date));
+
+            $request = @T::Find('prediction_request')
+                ->Join(['prediction_request_status'=>'status'], 'status.id = prediction_request.predictionRequestStatusId')
+                ->Join('user', 'user.id = prediction_request.userId')
+                ->Join(['prediction_contribution'=>'configuration'], 'configuration.id = prediction_request.predictionContributionId')
+                ->Where('requestedDate' , '=', $date)
+                ->Where('configuration.code' , '=',  $configuration)
+                ->Where('user.username', '=', $username)
+                ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
+                ->FetchFirstOrDefault();
+
+            if($request->IsAny())
+                return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "This prediction request is already " . $request->status->name]);
+            else {
+
+                $status = @T::Find('prediction_request_status')
+                    ->Where('code' , '=', 'PG')
+                    ->Where('isDeleted', '=', \Helper\Check::$False)
+                    ->FetchFirstOrDefault();
+
+                $config = @T::Find('prediction_contribution')
+                    ->Where('prediction_contribution.code', '=', $configuration)
+                    ->Where('isDeleted', '=', \Helper\Check::$False)
+                    ->FetchFirstOrDefault();
+
+                if(!$config->IsAny())
+                    return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "The selected template doesn't exist , try again"]);
+
+                $user = @T::Find('user')
+                    ->Join(['user_role'=>'role'], 'role.id = user.userRoleId')
+                    ->Join(['user_status'=>'status'], 'status.id = user.userStatusId')
+                    ->Where('user.username' , '=', $username)
+                    ->Where('user.isDeleted', '=', \Helper\Check::$False)
+                    ->FetchFirstOrDefault();
+
+                if (!$user->IsAny())
+                    return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "Invalid username"]);
+
+                $request->requestedDate = $date;
+                $request->predictionContributionId = $config->id;
+                $request->userId = $user->id;
+                $request->createdDate = DATE_NOW;
+                $request->predictionRequestStatusId = $status->id;
+//                $request->notify = $data['notify'];
+                $request->description = $name;
+
+                if($request->Save())
+                    return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Your request has been successfully received."]);
+                else
+                    return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "Your request couldn't be saved, try again"]);
+
+            }
+
+        }
+
+    }
+
 }
 
 ?>

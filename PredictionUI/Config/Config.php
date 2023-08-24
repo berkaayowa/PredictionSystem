@@ -13,8 +13,10 @@ define('DATE_THIRD_FORMAT', 'd-m-Y' , true);
 define('DB_DATE_FORMAT', 'Y-m-d' , true);
 define('DATE_NOW', date(DATE_FORMAT) , true);
 define('LIVE_SITE', 'soccerprediction.co.za' , true);
+define('QA_SITE', 'qa.soccerprediction.co.za' , true);
+define('SYSTEM_USER', 'system' , true);
 
-define('IS_LIVE_SITE', $_SERVER['SERVER_NAME'] ==  LIVE_SITE, true);
+define('IS_LIVE_SITE', ($_SERVER['SERVER_NAME'] ==  LIVE_SITE || $_SERVER['SERVER_NAME'] ==  QA_SITE), true);
 
 //Database settings
 

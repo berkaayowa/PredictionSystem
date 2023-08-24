@@ -15,7 +15,7 @@
     </div>
 <?php endif ?>
 
-<?php if(!$shareCode): ?>
+<?php if(true || !$shareCode): ?>
     <div class="row">
         <div class="col-sm-12 ">
             <div class="box box-default ">

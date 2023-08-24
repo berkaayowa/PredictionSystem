@@ -46,6 +46,22 @@
 
             $startDateFile = strtotime($startDate);
 
+            if(empty($requetcode)) {
+
+                $systemRequest = @T::Find('prediction_request')
+                    ->Join(['prediction_request_status'=>'status'], 'status.id = prediction_request.predictionRequestStatusId')
+                    ->Join('user', 'user.id = prediction_request.userId')
+                    ->Join(['prediction_contribution'=>'configuration'], 'configuration.id = prediction_request.predictionContributionId')
+                    ->Where('requestedDate' , '=', date(DB_DATE_FORMAT, $startDateFile))
+                    ->Where('user.username', '=', SYSTEM_USER)
+                    ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
+                    ->FetchFirstOrDefault();
+
+                if($systemRequest->IsAny())
+                    $requetcode = $systemRequest->id;
+
+            }
+
             if(!empty($requetcode)) {
 
                 $request = @T::Find('prediction_request')
