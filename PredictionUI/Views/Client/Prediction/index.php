@@ -489,13 +489,29 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+
                                                     </div>
+
                                                 <?php else: ?>
                                                 <div class="col-xs-12 text-center">
                                                     <a data-toggle="modal" data-target="#mySigninModal">Please sign in to view the prediction break down</a>
                                                 </div>
                                                 <?php endif ?>
                                             </div>
+                                        </div>
+
+                                        <div class="adsHolder">
+                                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
+                                                    crossorigin="anonymous"></script>
+                                            <ins class="adsbygoogle"
+                                                 style="display:block; text-align:center;"
+                                                 data-ad-layout="in-article"
+                                                 data-ad-format="fluid"
+                                                 data-ad-client="ca-pub-1836789549483504"
+                                                 data-ad-slot="1472805361"></ins>
+                                            <script>
+                                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                            </script>
                                         </div>
 
                                     <?php endif ?>
@@ -524,19 +540,6 @@
                         </script>
 
                         <br>
-
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
-                                crossorigin="anonymous"></script>
-                        <!-- Home Vertical Ads Unit 2 -->
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-1836789549483504"
-                             data-ad-slot="4272807642"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true"></ins>
-                        <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
 
                         <?php endif ?>
 
