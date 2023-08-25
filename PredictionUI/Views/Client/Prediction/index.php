@@ -500,6 +500,8 @@
                                             </div>
                                         </div>
 
+
+                                        <?php if($maxPrediction == 0): ?>
                                         <div class="adsHolder">
                                             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
                                                     crossorigin="anonymous"></script>
@@ -513,6 +515,8 @@
                                                 (adsbygoogle = window.adsbygoogle || []).push({});
                                             </script>
                                         </div>
+                                            <?php $maxPrediction = 10; ?>
+                                        <?php endif ?>
 
                                     <?php endif ?>
 
@@ -522,27 +526,6 @@
                         <?php else: ?>
                             <div class="txt-capitalized text-center">No predictions available</div>
                         <?php endif ?>
-                    </div>
-                    <div class="col-sm-12 col-md-12">
-
-                        <?php if(false): ?>
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
-                                crossorigin="anonymous"></script>
-                        <!-- Home Vertical Ads Unit -->
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-1836789549483504"
-                             data-ad-slot="8416637603"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true"></ins>
-                        <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-
-                        <br>
-
-                        <?php endif ?>
-
                     </div>
                 </div>
             </div>
