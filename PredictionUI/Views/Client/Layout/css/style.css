@@ -838,6 +838,34 @@ option , select{
         touch-action: pan-x pan-y;
     }
 }
+
+.recentFormWrapper > label {
+
+    display: inline-block;
+    padding: 2px 2px 2px 4px;
+    margin-right: 2px;
+    color: #ffffff;
+    font-size: 9px;
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 2px;
+    margin-bottom: 0;
+    margin-top: 0;
+
+}
+
+.recentFormWrapper > .L {
+    background: #f14c45;;
+}
+
+.recentFormWrapper > .D {
+    background: #ff9800;
+}
+
+.recentFormWrapper > .W {
+    background: #70c94f;
+}
+
 li.active {
     border-bottom: solid 3px #00a65a;
 }

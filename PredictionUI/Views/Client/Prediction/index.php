@@ -6,7 +6,7 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-sm-12 center">
-                            <div class="label label-success" role="alert"><?=sizeof($predictions)?></div> Predictions are available, consider signing in to view all daily matches predictions and enjoy more other free features such daily coupons and more from our platform.
+                            <div class="label label-success" role="alert"><?=sizeof($predictions)?></div> Predictions are available, consider signing in to enjoy more free features such daily coupons and more from our platform.
                         </div>
                     </div>
                 </div>
@@ -52,10 +52,10 @@
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                             <h2 class="hFocusSm">
                                 <label class="label label-info author-lbl hide">Custom Prediction</label>
-                                <label class="label label-default author-lbl">Author</label>&nbsp;
+                                <label class="label label-default author-lbl hide">Author</label>
                                 <label class="label label-default author-lbl">
                                     <span class="fa fa-user"></span> <?=ucfirst($predictionRequest->user->name)?> <?=ucfirst($predictionRequest->user->surname)?>
-                                </label>&nbsp;
+                                </label>
                                 <label class="label label-default author-lbl ratings hide">
                                     Ratings
                                     <a href="#">
@@ -79,10 +79,9 @@
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                             <h2 class="hFocusSm text-right">
-                                <label class="label label-default author-lbl">
+                                <label class="label label-default author-lbl hide">
                                     <span class="fa fa-heart"></span> <small>Likes</small> <strong><?=$predictionRequest->likes?></strong>
                                 </label>
-                                &nbsp;
                                 <label class="label label-default author-lbl">
                                     <span class="fa fa-eye"></span> <small>Views</small> <strong><?=$predictionRequest->views?></strong>
                                 </label>
@@ -368,10 +367,42 @@
 
                                                                                 </td>
                                                                                 <td class="txt-capitalized text-right tSubItem">
-                                                                                    <?=property_exists($prediction->HomeTeam, 'Data') ? $prediction->HomeTeam->Data->Headtohead: 'Not Available'?>
+                                                                                    <?php
+
+                                                                                    if(property_exists($prediction->HomeTeam, 'Data')) {
+
+                                                                                        $chars = str_split($prediction->HomeTeam->Data->Headtohead);
+                                                                                        $element = "";
+                                                                                        foreach ($chars as $char) {
+                                                                                            $element = $element . "<label class='recentForm ".$char."'>".$char."</label>";
+                                                                                        }
+
+                                                                                        echo "<div class='recentFormWrapper'>".$element."</div>";
+
+                                                                                    } else {
+                                                                                        echo 'Not Available';
+                                                                                    }
+
+                                                                                    ?>
                                                                                 </td>
                                                                                 <td class="txt-capitalized text-left tSubItem">
-                                                                                    <?=property_exists($prediction->AwayTeam, 'Data') ? $prediction->AwayTeam->Data->Headtohead: 'Not Available'?>
+                                                                                    <?php
+
+                                                                                    if(property_exists($prediction->AwayTeam, 'Data')) {
+
+                                                                                        $chars = str_split($prediction->AwayTeam->Data->Headtohead);
+                                                                                        $element = "";
+                                                                                        foreach ($chars as $char) {
+                                                                                            $element = $element . "<label class='recentForm ".$char."'>".$char."</label>";
+                                                                                        }
+
+                                                                                        echo "<div class='recentFormWrapper'>".$element."</div>";
+
+                                                                                    } else {
+                                                                                        echo 'Not Available';
+                                                                                    }
+
+                                                                                    ?>
                                                                                 </td>
                                                                             </tr>
                                                                             <tr>
@@ -382,10 +413,45 @@
 
                                                                                 </td>
                                                                                 <td class="txt-capitalized text-right tSubItem">
-                                                                                    <?=property_exists($prediction->HomeTeam, 'Data') ? $prediction->HomeTeam->Data->RecentForm: 'Not Available'?>
+
+                                                                                    <?php
+
+                                                                                    if(property_exists($prediction->HomeTeam, 'Data')) {
+
+                                                                                        $chars = str_split($prediction->HomeTeam->Data->RecentForm);
+                                                                                        $element = "";
+                                                                                        foreach ($chars as $char) {
+                                                                                            $element = $element . "<label class='recentForm ".$char."'>".$char."</label>";
+                                                                                        }
+
+                                                                                        echo "<div class='recentFormWrapper'>".$element."</div>";
+
+                                                                                    } else {
+                                                                                        echo 'Not Available';
+                                                                                    }
+
+                                                                                    ?>
                                                                                 </td>
                                                                                 <td class="txt-capitalized text-left tSubItem">
-                                                                                    <?=property_exists($prediction->AwayTeam, 'Data') ? $prediction->AwayTeam->Data->RecentForm: 'Not Available'?>
+
+                                                                                    <?php
+
+                                                                                    if(property_exists($prediction->AwayTeam, 'Data')) {
+
+                                                                                        $chars = str_split($prediction->AwayTeam->Data->RecentForm);
+                                                                                        $element = "";
+                                                                                        foreach ($chars as $char) {
+                                                                                            $element = $element . "<label class='recentForm ".$char."'>".$char."</label>";
+                                                                                        }
+
+                                                                                        echo "<div class='recentFormWrapper'>".$element."</div>";
+
+                                                                                    } else {
+                                                                                        echo 'Not Available';
+                                                                                    }
+
+                                                                                    ?>
+
                                                                                 </td>
                                                                             </tr>
 
