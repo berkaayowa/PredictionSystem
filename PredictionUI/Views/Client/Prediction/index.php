@@ -104,7 +104,7 @@
                         <?php if(sizeof($predictions)): ?>
                             <div class="table-responsive fixtureTable">
                                 <?php foreach ($predictions as $prediction ): ?>
-                                    <?php if(property_exists($prediction, 'PredictionLabel') && strlen($prediction->PredictionLabel) > 0): ?>
+                                    <?php if(true): ?>
 
                                         <div id="fixtures">
                                             <div data-toggle="collapse" data-target="#cl583" role="button" aria-controls="cl583" data-open="true" class="league league_">
@@ -499,7 +499,6 @@
                                                 <?php endif ?>
                                             </div>
                                         </div>
-
 
                                         <?php if($maxPrediction == 0): ?>
                                         <div class="adsHolder">
