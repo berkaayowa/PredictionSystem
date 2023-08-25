@@ -100,7 +100,7 @@
             <?php endif ?>
             <div class="box-body">
                 <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-9">
+                    <div class="col-sm-12 col-md-12">
                         <?php if(sizeof($predictions)): ?>
                             <div class="table-responsive fixtureTable">
                                 <?php foreach ($predictions as $prediction ): ?>
@@ -523,9 +523,9 @@
                             <div class="txt-capitalized text-center">No predictions available</div>
                         <?php endif ?>
                     </div>
-                    <div class="col-sm-12 col-md-12 col-lg-3">
+                    <div class="col-sm-12 col-md-12">
 
-                        <?php if(sizeof($predictions)): ?>
+                        <?php if(false): ?>
                         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
                                 crossorigin="anonymous"></script>
                         <!-- Home Vertical Ads Unit -->
