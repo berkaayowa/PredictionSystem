@@ -114,29 +114,6 @@ $count = 1;
 <script>
 
     $(document).ready(function (e) {
-
-        setTimeout(
-            function()
-            {
-
-
-            }, 600);
-
         $("img.lazy").lazyload({effect : "fadeIn"});
-
-        // $('.adsOpen').each(function (e) {
-        //
-        //     $(this).on('click', function(){
-        //
-        //         $('.clickable').each(function (e) {
-        //
-        //             $(this).trigger('click');
-        //         });
-        //
-        //     });
-        //
-        // })
-
-
     })
 </script>

@@ -104,28 +104,7 @@ $maxPrediction = array_key_exists('maxPrediction', $model) ? $model['maxPredicti
 
     $(document).ready(function (e) {
 
-        setTimeout(
-            function()
-            {
-
-
-            }, 600);
-
         $("img.lazy").lazyload({effect : "fadeIn"});
-
-        // $('.adsOpen').each(function (e) {
-        //
-        //     $(this).on('click', function(){
-        //
-        //         $('.clickable').each(function (e) {
-        //
-        //             $(this).trigger('click');
-        //         });
-        //
-        //     });
-        //
-        // })
-
 
     })
 </script>

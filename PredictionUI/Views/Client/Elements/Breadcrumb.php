@@ -1,4 +1,4 @@
-<div class="breadcrumb">
+<div class="breadcrumb hide">
     <div class="container">
         <div class="breadcrumb-inner">
             <ul class="list-inline list-unstyled">
