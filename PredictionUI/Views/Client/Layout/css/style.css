@@ -816,6 +816,11 @@ option , select{
         margin-bottom: 10px!important;
     }
 
+    .btn-themed {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
 }
 
 @media (min-width: 768px) {
@@ -1639,4 +1644,12 @@ span.second_text.status_info {
     align-items: center;
     justify-content: center;
     display: flex;
+}
+
+.coupon{
+    padding: 10px;
+    background: #0f2d37;
+    margin-bottom: 12px;
+    color: #00a65a;
+    font-weight: bold;
 }

@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Views/Client/Elements/CouponPredictions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Client/Elements/Prediction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Client/Elements/Predictions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Coupons/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Coupons/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,17 +58,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Views/Client/Prediction" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Views/Client/Elements" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Elements" />
       <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Prediction" />
       <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Layout\js" />
       <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Pages" />
       <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Controllers\Client" />
-      <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Template" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Coupons" />
@@ -110,12 +117,22 @@
       <workItem from="1692900349815" duration="594000" />
       <workItem from="1692908880196" duration="11188000" />
       <workItem from="1692943692293" duration="851000" />
-      <workItem from="1692985246857" duration="706000" />
+      <workItem from="1692985246857" duration="7554000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -140,11 +157,6 @@
           <url>file://$PROJECT_DIR$/Controllers/Client/UsersController.php</url>
           <line>207</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/Views/Client/Prediction/index.php</url>
-          <line>516</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

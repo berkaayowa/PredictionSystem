@@ -25,6 +25,7 @@
 
         function index($params = '') {
 
+            $title = "";
             $date = '';
             $startDate = date(DATE_FORMAT);
             $endDate = '';
@@ -57,8 +58,10 @@
                     ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
                     ->FetchFirstOrDefault();
 
-                if($systemRequest->IsAny())
+                if($systemRequest->IsAny()) {
                     $requetcode = $systemRequest->id;
+                    $title = "Free Soccer Predictions | Soccer Live Score | Latest Soccer Results";
+                }
 
             }
 
@@ -77,8 +80,8 @@
                     $request->views = $request->views + 1;
                     $request->Save();
 
-                    $this->view->set('title', "Customized Soccer Predictions |  " .ucfirst($request->description) . ' | ' . ucfirst($request->configuration->name) . ' | Author | ' . ucfirst($request->user->name));
-
+                    if(empty($title))
+                        $title ="Customized Soccer Predictions |  " .ucfirst($request->description) . ' | ' . ucfirst($request->configuration->name) . ' | Author | ' . ucfirst($request->user->name);
                 }
 
                 $shareCode = true;
@@ -88,7 +91,7 @@
             else {
                 $filePath = FILE_PATH.date('Y_m_d',$startDateFile).'.prediction';
                 $this->view->set('predictionRequest', null);
-                $this->view->set('title', "Free Soccer Predictions | Soccer Live Score | Latest Soccer Results");
+                $title = "Free Soccer Predictions | Soccer Live Score | Latest Soccer Results";
             }
 
             $data = Helper::GetFileContent($filePath);
@@ -110,6 +113,7 @@
             $this->view->set('maxPrediction', $maxPrediction);
             $this->view->set('shareCode', $shareCode);
             $this->view->set('breadcrumb', "Predictions");
+            $this->view->set('title', $title);
             $this->view->render();
         }
 

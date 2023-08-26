@@ -26,15 +26,15 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="box  box-default ">
-            <form class="frmSearch " message="<?=Resource\Label::General("Requesting")?>..."  request-type="POST" id="request" data-request="<?= BerkaPhp\Helper\Html::action('/prediction/requestprediction')?>">
+            <form class=" " message="<?=Resource\Label::General("Requesting")?>..."  request-type="POST" id="request" data-request="<?= BerkaPhp\Helper\Html::action('/prediction/requestprediction')?>">
 
                 <div class="box-body">
 
                     <div class="row">
-                        <div class="form-group col-sm-3 col-md-3 no-mg-b">
+                        <div class="form-group col-sm-3 col-md-3 ">
                             <input type="text" required placeholder="Prediction Request Name" autocomplete="off" class="form-control" name="description" id="description">
                         </div>
-                        <div class="form-group col-sm-3 col-md-3 no-mg-b">
+                        <div class="form-group col-sm-3 col-md-3 ">
                             <div class="input-group">
                                 <input required autocomplete="off" data-date-max="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("Fixtures Date")?>" type="text" class="form-control" name="date" id="date">
                                 <span class="input-group-addon">
@@ -42,7 +42,7 @@
                             </span>
                             </div>
                         </div>
-                        <div class="form-group col-sm-3 col-md-3 no-mg-b">
+                        <div class="form-group col-sm-3 col-md-3 ">
                             <?= Util\Helper::select('configuration', $pconfig, ['default'=>'Select Template','value'=>'id', 'class'=>'form-control', 'data-dropdrown'=>true, 'required'=>true], function($data) {
                                 if(empty($data['description']))
                                     return $data['name'];
@@ -50,7 +50,7 @@
                                     return $data['name'];
                             }) ?>
                         </div>
-                        <div class="form-group col-sm-3 col-md-3 no-mg-b">
+                        <div class="form-group col-sm-3 col-md-3 ">
                             <div class="input-group">
                             <?= Util\Helper::select('notify', [['id'=>'0','label'=>'No'],['id'=>'1','label'=>'Yes']], ['value'=>'id', 'class'=>'form-control', 'data-dropdrown'=>true, 'required'=>true], function($data) {
                                 return $data['label'];
