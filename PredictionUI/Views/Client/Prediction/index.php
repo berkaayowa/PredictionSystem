@@ -1,5 +1,6 @@
 
-<?=\BerkaPhp\Helper\Element::Render("Breadcrumb", "Client")?>
+<?=\BerkaPhp\Helper\Element::Render("Breadcrumb", "Client", array("breadcrumb"=>$breadcrumb))?>
+
 <?php if(!\BerkaPhp\Helper\Auth::IsUserLogged() && sizeof($predictions) > 0): ?>
     <div class="row">
         <div class="col-sm-12">

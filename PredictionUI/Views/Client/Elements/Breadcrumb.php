@@ -1,10 +1,16 @@
-<div class="breadcrumb hide">
-    <div class="container">
+
+<div class="box  box-default breadcrumb-box">
+    <div class="box-body">
         <div class="breadcrumb-inner">
             <ul class="list-inline list-unstyled">
-                <li><a href="home.html">Home</a></li>
-                <li class='active'>Login</li>
+                <?php foreach ($model["breadcrumb"] as $prediction ): ?>
+                    <?php if ($prediction == end($model["breadcrumb"])):?>
+                        <li class='activec'><?=$prediction?><span class="breadcrumb-divider last"></span></li>
+                    <?php else: ?>
+                        <li><?=$prediction?><span class="breadcrumb-divider">/</span></li>
+                    <?php endif ?>
+                <?php endforeach ?>
             </ul>
         </div><!-- /.breadcrumb-inner -->
-    </div><!-- /.container -->
-</div><!-- /.breadcrumb -->
+    </div>
+</div>

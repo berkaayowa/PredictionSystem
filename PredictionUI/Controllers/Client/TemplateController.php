@@ -32,6 +32,7 @@
 
             $templates = $templates->FetchList();
 
+            $this->view->set('breadcrumb', array("Prediction Template", "All"));
             $this->view->set('predictionTemplates', $templates);
             $this->view->render();
 
@@ -112,6 +113,7 @@
                     ->Where('league.isDeleted', '=', \Helper\Check::$False)
                     ->FetchList();
 
+                $this->view->set('breadcrumb', array("Prediction Template", "Updating"));
                 $this->view->set('leagues', $leagues);
                 $this->view->set('pTemplate', $template);
                 $this->view->render();

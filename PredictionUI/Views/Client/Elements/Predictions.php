@@ -66,7 +66,7 @@ $maxPrediction = array_key_exists('maxPrediction', $model) ? $model['maxPredicti
                 <div class="row">
                     <div class="col-sm-12 col-md-12">
                         <?php if(sizeof($predictions)): ?>
-                            <div class="table-responsive fixtureTable">
+                            <div class="fixtureTable">
                                 <?php foreach ($predictions as $prediction ): ?>
                                     <?php if(true): ?>
                                         <?php \BerkaPhp\Helper\Element::Render("Prediction", "Client", array('prediction'=>$prediction))?>

@@ -49,6 +49,7 @@
 
             }
 
+            $this->view->set('breadcrumb', array("Page", "Contact Us"));
             $this->view->set('title', ucfirst($_SERVER['SERVER_NAME']) . ' | Contact Us');
             $this->view->set('titleDescription', "Football Live Scores | Football Latest Results | Daily Football Prediction");
             $this->view->render();

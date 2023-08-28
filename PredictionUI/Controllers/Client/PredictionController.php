@@ -106,13 +106,14 @@
             if(!\BerkaPhp\Helper\Auth::IsUserLogged())
                 $maxPrediction = 8;
 
+            $this->view->set('breadcrumb', array("Predictions", "All", date('d-m-Y', strtotime($startDate))));
             $this->view->set('StartDate', $startDate);
             $this->view->set('EndDate', $endDate);
             $this->view->set('Date', $date);
             $this->view->set('predictions', $array);
             $this->view->set('maxPrediction', $maxPrediction);
             $this->view->set('shareCode', $shareCode);
-            $this->view->set('breadcrumb', "Predictions");
+
             $this->view->set('title', $title);
             $this->view->render();
         }
@@ -160,6 +161,7 @@
 
             $config = array_merge($config, $freeTemplates);
 
+            $this->view->set('breadcrumb', array("My Predictions", "Custom Request & Templates"));
             $this->view->set('leagues', $leagues);
             $this->view->set('predictionRequest', $requests);
             $this->view->set('pconfig', $config);

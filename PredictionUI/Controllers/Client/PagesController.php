@@ -62,17 +62,21 @@
         }
 
         function policy() {
+            $this->view->set('breadcrumb', array("Page", "Our Policies"));
             $this->view->set('title', ucfirst($_SERVER['SERVER_NAME']) . " | Policy");
             $this->view->render();
         }
 
 
         function about() {
+            $this->view->set('breadcrumb', array("Page", "About Us"));
             $this->view->set('title', ucfirst($_SERVER['SERVER_NAME']) . " | About Us");
             $this->view->render();
         }
 
         function livescore() {
+
+            $this->view->set('breadcrumb', array("Soccer", "Live Score"));
             $this->view->set('title', "Soccer Live Scores | Soccer Latest Results | " .$_SERVER['SERVER_NAME']);
             $this->view->set('titleDescription', "Football Live Scores | Football Latest Results | Daily Football Prediction");
             //$this->overWriteLayout('/Client/Layout/layoutMenu');
