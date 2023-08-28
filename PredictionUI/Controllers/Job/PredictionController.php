@@ -314,6 +314,8 @@ class PredictionController extends RestfulApiController
                 $request->userId = $user->id;
                 $request->createdDate = DATE_NOW;
                 $request->predictionRequestStatusId = $status->id;
+                $request->isPublic = \Helper\Check::$True;
+
 //                $request->notify = $data['notify'];
                 $request->description = $name;
 

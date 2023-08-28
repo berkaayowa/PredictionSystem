@@ -83,6 +83,13 @@
             $this->view->render();
         }
 
+        function unauthorized() {
+
+            $this->view->set('title', ucfirst($_SERVER['SERVER_NAME']) . " | Unauthorized Access");
+            $this->view->set('breadcrumb', array("Resource", "Unauthorized Access"));
+            $this->view->render();
+        }
+
 
 	}
 

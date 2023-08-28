@@ -26,9 +26,10 @@
         function index($params = array()) {
 
             $request = @T::Find('prediction_request')
+                ->Join('user', 'user.id = prediction_request.userId')
                 ->Join(['prediction_request_status'=>'status'], 'status.id = prediction_request.predictionRequestStatusId')
                 ->Join(['prediction_contribution'=>'configuration'], 'configuration.id = prediction_request.predictionContributionId')
-                ->Where('prediction_request.userId', '=', Auth::GetActiveUser(true)->id)
+//                ->Where('user.id', '=', Auth::GetActiveUser(true)->id)
                 ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
                 ->Where('prediction_request.id', '=', $params['args']['params'][0])
                 ->FetchFirstOrDefault();
@@ -37,8 +38,13 @@
             $couponGenerated = array();
             $gameGroupedByLeague = array();
 
-
             if($request->IsAny()) {
+
+                if(!\BerkaPhp\Helper\Auth::IsUserLogged() && $request->isPublic != Check::$True)
+                    RedirectHelper::redirect('/pages/unauthorized');
+
+                if(\BerkaPhp\Helper\Auth::IsUserLogged() && ($request->isPublic != Check::$True && $request->user->id !=Auth::GetActiveUser(true)->id))
+                    RedirectHelper::redirect('/pages/unauthorized');
 
                 $leagues = null;
 

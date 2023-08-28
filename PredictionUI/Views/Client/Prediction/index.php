@@ -22,9 +22,9 @@
         <div class="col-sm-12 ">
             <div class="box box-default ">
                 <div class="box-body row ">
-                    <div class="col-xm-12 colFrmSearch col-lg-6">
+                    <div class="col-xm-12 colFrmSearch col-lg-8">
                         <form class="frmSearch row" message="<?=Resource\Label::General("Searching")?>..."  method="GET" id="transactionSearch" ACTION="<?= BerkaPhp\Helper\Html::action('/prediction')?>">
-                            <div class="form-group col-xs-8 col-sm-8 col-md-8 col-lg-8 no-mg-b">
+                            <div class="form-group col-xs-12 col-sm-6 col-md-5 col-lg-5 no-mg-b">
                                 <div class="input-group">
                                     <input value="<?=$StartDate?>"  data-date="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("StartDate")?>" type="text" class="form-control" name="startDate" id="startDate">
                                     <span class="input-group-addon">
@@ -32,11 +32,17 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="form-group col-xs-4 col-sm-4 col-md-4 col-lg-4 no-mg-b">
-                                <button type="submit" class="searchBtn btn btn-primary w-45 pull-left">
+                            <div class="form-group col-xs-12 col-sm-6 col-md-7 col-lg-7 no-mg-b">
+                                <button type="submit" class="searchBtnHome btn btn-primary">
                                     <?=Resource\Label::General("Search")?>
                                 </button>
+                                <?php if($predictionRequest != null && $predictionRequest->IsAny()) :?>
+                                    <a class="searchBtnHome btn btn-success" href="/coupons/index/<?=$predictionRequest->id?>?numberOfGamesPerCoupon=7&numberOfGamesPerLeague=1&leaguePointPercentageOverOREqual=2&gameMotivation=3&h2hPercentage=3&gameLocation=0&allowedDuplicateGame=2" >
+                                        <?=Resource\Label::General("View Recommended Coupons")?>
+                                    </a>
+                                <?php endif;?>
                             </div>
+
                         </form>
                     </div>
                 </div>

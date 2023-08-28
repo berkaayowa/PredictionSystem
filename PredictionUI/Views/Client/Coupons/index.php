@@ -7,7 +7,7 @@
                 <h3 class="headerFocus">Prediction Coupons</h3>
                 <p class="pSubHeaderx">
                     You can always update/change your filters below, it helps to refine your selections for creating game coupons and .
-                    It offers several criteria to customize the predictions based on user preferences. <a href="/pages/predictionfilters" style="text-decoration: underline">Click here to read more </a>
+                    It offers several criteria to customize the predictions based on user preferences. <a class="hide" href="/pages/predictionfilters" style="text-decoration: underline">Click here to read more </a>
                 </p>
                 <?= $request->IsAny() ? '<hr><h4 class="headerFocusx">Request: <span class="label label-info">' . $request->description . '</span> Prediction Template: <span class="label label-info">' . $request->configuration->name .'</span></h4>': ''?>
             </div>
@@ -95,4 +95,4 @@
     </div>
 </div>
 
-<?php \BerkaPhp\Helper\Element::Render("CouponPredictions", "Client", array('predictionRequest'=>$request, 'couponGenerated'=>$couponGenerated))?>
+<?php \BerkaPhp\Helper\Element::Render("CouponPredictions", "Client", array('shareCode'=>'5', 'predictionRequest'=>$request, 'couponGenerated'=>$couponGenerated))?>

@@ -75,6 +75,9 @@ class Router {
             else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'users' && $route['action'] == 'login') {
 
             }
+            else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'coupons' && $route['action'] == 'index') {
+
+            }
             else if(strtolower($route['prefix']['name']) == 'client' && $route['controller'] == 'contacts') {
 
             }
