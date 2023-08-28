@@ -9,7 +9,7 @@
                     You can always update/change your filters below, it helps to refine your selections for creating game coupons and .
                     It offers several criteria to customize the predictions based on user preferences. <a class="hide" href="/pages/predictionfilters" style="text-decoration: underline">Click here to read more </a>
                 </p>
-                <?= $request->IsAny() ? '<hr><h4 class="headerFocusx">Request: <span class="label label-success">' . $request->description . '</span> Prediction Template: <span class="label label-success">' . $request->configuration->name .'</span></h4>': ''?>
+                <?= $request->IsAny() ? '<hr><h4 class="headerFocusx">Request: <span class="lbl-c label label-success">' . $request->description . '</span> Prediction Template: <span class="lbl-c label label-success">' . $request->configuration->name .'</span></h4>': ''?>
             </div>
         </div>
     </div>

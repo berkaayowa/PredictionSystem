@@ -832,6 +832,12 @@ option , select{
         margin-bottom: 10px;
     }
 
+    .headerFocusx > .lbl-c {
+        display: block;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
 }
 
 @media (min-width: 768px) {
