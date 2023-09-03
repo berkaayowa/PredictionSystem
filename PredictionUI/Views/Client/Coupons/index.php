@@ -71,7 +71,7 @@
                         </div>
                         <div class="form-group col-xs-12 col-sm-4 ">
                             <div class="form-label-groupx">
-                                <label class="label label-default" for="firstName">Options</label>
+                                <label class="label label-default" for="firstName">Prediction</label>
                                 <?= Util\Helper::MultipleSelect('options[]', [['id'=>'Win_at','label'=>'Win'],['id'=>'Win/Draw_at','label'=>'Win/Draw'], ['id'=>'Draw_at','label'=>'Draw']], ['selected'=> $options, 'value'=>'id', 'class'=>'form-control', 'multiple'=>'multiple', 'data-static-dropdown'=>true, 'required'=>true], function($data) {
                                     return $data['label'];
                                 }) ?>
