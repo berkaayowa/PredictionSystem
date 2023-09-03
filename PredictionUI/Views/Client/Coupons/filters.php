@@ -62,11 +62,19 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col-xs-12 col-sm-10 ">
+                            <div class="form-group col-xs-12 col-sm-6 ">
                                 <div class="form-label-groupx">
                                     <label class="label label-default" for="firstName">Leagues</label>
-                                    <?= Util\Helper::select('leagueId[]', $leagues, ['value'=>'value', 'class'=>'form-control h150px', 'multiple'=>'multiple', 'data-static-dropdown'=>true], function($data) {
+                                    <?= Util\Helper::MultipleSelect('leagueId[]', $leagues, ['value'=>'value', 'class'=>'form-control h150px', 'multiple'=>'multiple', 'data-static-dropdown'=>true], function($data) {
                                         return $data['text'];
+                                    }) ?>
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-4 ">
+                                <div class="form-label-groupx">
+                                    <label class="label label-default" for="firstName">Options</label>
+                                    <?= Util\Helper::MultipleSelect('options[]', [['id'=>'Win_at','label'=>'Win'],['id'=>'Win/Draw_at','label'=>'Win/Draw'], ['id'=>'Draw_at','label'=>'Draw']], ['value'=>'id', 'class'=>'form-control', 'multiple'=>'multiple', 'data-static-dropdown'=>true, 'required'=>true], function($data) {
+                                        return $data['label'];
                                     }) ?>
                                 </div>
                             </div>

@@ -651,6 +651,54 @@ class Helper {
 
     }
 
+    public static function MultipleSelect($id,  $data = array(), $options, $callback = null) {
+
+        $i_select= "<select  id='{$id}' name='{$id}' ";
+        $i_option = '';
+
+        if(key_exists('default',$options))
+            $i_option = '<option value="">'.$options['default'].'</option>';
+
+        $selected = isset($options['selected']) ? $options['selected'] : array();
+
+        $length = sizeof($data);
+        $option_length = sizeof($options);
+
+        if($option_length > 0) {
+
+            foreach($options as $_option => $values) {
+                if($_option != 'selected' && $_option != 'value' && $_option != 'text' ) {
+                    $i_select.=" {$_option} ='{$values}''";
+                }
+            }
+
+        }
+
+        if($length > 0) {
+
+            foreach($data as $data_option) {
+
+                $sel = '';
+
+                $data_option = (array) $data_option;
+
+                if(key_exists($options['value'], $data_option) && in_array($data_option[$options['value']], $selected))
+                {
+                    $sel = 'selected';
+                }
+                if($callback == null)
+                    $i_option.='<option '.$sel.' value ='.$data_option[$options['value']].'>'.$data_option[$options['text']].'</option>';
+                else
+                    $i_option.='<option '.$sel.' value ='.$data_option[$options['value']].'>'.(call_user_func($callback, $data_option)).'</option>';
+            }
+
+        } else {
+            $i_option.='<option></option>';
+        }
+
+        return $i_select.'>'.$i_option.'</select>';
+    }
+
 
 
 

@@ -47,9 +47,16 @@
                     RedirectHelper::redirect('/pages/unauthorized');
 
                 $leagues = null;
+                $options = array();
 
                 if(array_key_exists('leagueId', $params['args']['query']))
                     $leagues = $params['args']['query']['leagueId'];
+
+                if(array_key_exists('options', $params['args']['query']))
+                    $options = $params['args']['query']['options'];
+
+//                var_dump($options);
+//                die();
 
                 $numberOfGamesPerCoupon = (int)$params['args']['query']['numberOfGamesPerCoupon'];
                 $numberOfGamesPerLeague = (int)$params['args']['query']['numberOfGamesPerLeague'];
@@ -70,6 +77,7 @@
                         $leagues = self::getUniqueLeagueIds($request);
 
                     $predictions = json_decode($data);
+                    $found = true;
 
                     foreach ($predictions as $prediction) {
 
@@ -79,28 +87,50 @@
 
                             if ($league == Helper::ConvertStrToKey($prediction->League)) {
 
-                                if($prediction->HomeTeam->LeaguePointPerecentage >= $leaguePointPercentageOverOREqual || $prediction->AwayTeam->LeaguePointPerecentage >= $leaguePointPercentageOverOREqual) {
+                                if(sizeof($options) > 0) {
 
-                                    if($prediction->HomeTeam->HeadtoheadPerecentage >= $h2hPercentage || $prediction->AwayTeam->HeadtoheadPerecentage >= $h2hPercentage) {
+                                    foreach ($options as $option) {
 
-                                        if($prediction->HomeTeam->AwayOrHomePerecentage >= $gameMotivation || $prediction->AwayTeam->AwayOrHomePerecentage >= $gameMotivation) {
+                                        $key = str_replace("_", " ", $option);
 
-                                            $selectThisGame = true;
+                                        if(property_exists($prediction, 'PredictionLabel') && strpos($prediction->PredictionLabel, $key) !== false)
+                                        {
+                                            $found = true;
+                                            break;
+                                        }
+                                        else {
+                                            $found = false;
+                                        }
+                                    }
 
-                                            if($gameLocation == "1") {
+                                }
 
-                                                if($prediction->HomeTeam->TotalPerecentage < $prediction->AwayTeam->TotalPerecentage)
-                                                    $selectThisGame = false;
+                                if($found) {
 
-                                            } else if($gameLocation == "2") {
+                                    if ($prediction->HomeTeam->LeaguePointPerecentage >= $leaguePointPercentageOverOREqual || $prediction->AwayTeam->LeaguePointPerecentage >= $leaguePointPercentageOverOREqual) {
 
-                                                if ($prediction->HomeTeam->TotalPerecentage > $prediction->AwayTeam->TotalPerecentage)
-                                                    $selectThisGame = false;
+                                        if ($prediction->HomeTeam->HeadtoheadPerecentage >= $h2hPercentage || $prediction->AwayTeam->HeadtoheadPerecentage >= $h2hPercentage) {
+
+                                            if ($prediction->HomeTeam->AwayOrHomePerecentage >= $gameMotivation || $prediction->AwayTeam->AwayOrHomePerecentage >= $gameMotivation) {
+
+                                                $selectThisGame = true;
+
+                                                if ($gameLocation == "1") {
+
+                                                    if ($prediction->HomeTeam->TotalPerecentage < $prediction->AwayTeam->TotalPerecentage)
+                                                        $selectThisGame = false;
+
+                                                } else if ($gameLocation == "2") {
+
+                                                    if ($prediction->HomeTeam->TotalPerecentage > $prediction->AwayTeam->TotalPerecentage)
+                                                        $selectThisGame = false;
+                                                }
+
+                                                if ($selectThisGame)
+                                                    array_push($selectedGames, $prediction);
+
+
                                             }
-
-                                            if($selectThisGame)
-                                                array_push($selectedGames, $prediction);
-
 
                                         }
 
@@ -196,6 +226,7 @@
                 $this->view->set('title', "Coupons Request " . ucfirst($request->description) . ' | ' . ucfirst($request->configuration->name));
             }
 
+            $this->view->set('options', $options);
             $this->view->set('numberOfGamesPerCoupon', $numberOfGamesPerCoupon);
             $this->view->set('numberOfGamesPerLeague', $numberOfGamesPerLeague);
             $this->view->set('leaguePointPercentageOverOREqual', $leaguePointPercentageOverOREqual);
