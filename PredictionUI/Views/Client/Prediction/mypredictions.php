@@ -101,7 +101,7 @@
                                         <th class="txt-capitalized text-center">Status</th>
                                         <th class="txt-capitalized text-center">Configuration</th>
                                         <th class="txt-capitalized text-center">Notify</th>
-                                        <th class="txt-capitalized text-center hideOnMobile">Action</th>
+                                        <th class="txt-capitalized text-center " style="width: 30%;">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -129,15 +129,17 @@
                                                     <?=$request->notify == \Helper\Check::$True ? 'Yes' : 'No'?>
                                                 </td>
 
-                                                <td  style="" class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>">
+                                                <td  class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>">
+                                                   <div style="width: 200px;">
                                                     <?php if($request->status->code == 'CNP') : ?>
                                                         <a target="_blank" class="tb-action" title="View Predictions" href="/prediction?requestcode=<?=$request->id?>" >
                                                             <span class="glyphicon glyphicon-eye-open action-icon"></span> View Games
                                                         </a>
-                                                        <a target="_blank" class="tb-action" title="View Predictions" href="/coupons/filters?configId=<?=$request->configuration->id?>&predictionId=<?=$request->id?>" >
-                                                            <span class="glyphicon glyphicon-edit action-icon"></span> Create Coupons
+                                                        <a target="_blank" class="tb-action" title="Create Coupons" href="/coupons/filters?configId=<?=$request->configuration->id?>&predictionId=<?=$request->id?>" >
+                                                            <span class="glyphicon glyphicon-edit action-icon"></span> Coupons
                                                         </a>
                                                     <?php endif ?>
+                                                   </div>
                                                 </td>
                                             </tr>
                                         <?php endforeach ?>

@@ -362,10 +362,10 @@
 
                                         </td>
                                         <td class="txt-capitalized text-right">
-                                            Not Available
+                                            <?=property_exists($prediction->HomeTeam->Data, 'Odd')  && !empty($prediction->HomeTeam->Data->Odd) ? $prediction->HomeTeam->Data->Odd : ' Not Available'?>
                                         </td>
                                         <td class="txt-capitalized text-left tSubItem">
-                                            Not Available
+                                            <?=property_exists($prediction->AwayTeam->Data, 'Odd') && !empty($prediction->AwayTeam->Data->Odd) ? $prediction->AwayTeam->Data->Odd : ' Not Available'?>
                                         </td>
                                     </tr>
                                     <tr>
