@@ -65,7 +65,7 @@
             </span>
             <div class="wf info">
                 <a class="predictionOnDesktop">
-                    <span class="live_btn" title="Prediction">
+                    <span class="live_btn" title="Prediction" data-toggle="collapse" data-target="#panel<?=$prediction->UniqueId?>">
                         <strong>
                         <?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?>
                         </strong>
@@ -81,7 +81,7 @@
     </div>
 </div>
 
-<div class="prediction-holder predictionOnMobile">
+<div class="prediction-holder predictionOnMobile" data-toggle="collapse" data-target="#panel<?=$prediction->UniqueId?>">
     <span>
         <?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?>
     </span>

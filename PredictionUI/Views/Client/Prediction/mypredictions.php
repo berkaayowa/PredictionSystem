@@ -135,7 +135,7 @@
                                                         <a target="_blank" class="tb-action" title="View Predictions" href="/prediction?requestcode=<?=$request->id?>" >
                                                             <span class="glyphicon glyphicon-eye-open action-icon"></span> View Games
                                                         </a>
-                                                        <a target="_blank" class="tb-action" title="Create Coupons" href="/coupons/filters?configId=<?=$request->configuration->id?>&predictionId=<?=$request->id?>" >
+                                                        <a target="_blank" class="tb-action" title="Create Coupons" href="/coupons/index/<?=$request->id?>?oddDifference=0&numberOfGamesPerCoupon=10&numberOfGamesPerLeague=1&leaguePointPercentageOverOREqual=0&gameMotivation=0&h2hPercentage=0&gameLocation=0&options%5B%5D=Win_at&options%5B%5D=Win%2FDraw_at&options%5B%5D=Draw_at&allowedDuplicateGame=2" >
                                                             <span class="glyphicon glyphicon-edit action-icon"></span> Coupons
                                                         </a>
                                                     <?php endif ?>

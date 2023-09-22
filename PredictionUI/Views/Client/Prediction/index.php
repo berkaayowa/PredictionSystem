@@ -37,7 +37,7 @@
                                     <?=Resource\Label::General("Search")?>
                                 </button>
                                 <?php if($predictionRequest != null && $predictionRequest->IsAny()) :?>
-                                    <a class="searchBtnHome btn btn-success" href="/coupons/index/<?=$predictionRequest->id?>?numberOfGamesPerCoupon=8&numberOfGamesPerLeague=1&leaguePointPercentageOverOREqual=2&gameMotivation=3&h2hPercentage=3&gameLocation=0&allowedDuplicateGame=2&&options%5B%5D=Win_at&options%5B%5D=Win%2FDraw_at" >
+                                    <a class="searchBtnHome btn btn-success" href="/coupons/index/<?=$predictionRequest->id?>?oddDifference=2&numberOfGamesPerCoupon=5&numberOfGamesPerLeague=1&leaguePointPercentageOverOREqual=2&gameMotivation=3&h2hPercentage=3&gameLocation=0&allowedDuplicateGame=2&&options%5B%5D=Win_at&options%5B%5D=Win%2FDraw_at" >
                                         <?=Resource\Label::General("View Recommended Coupons")?>
                                     </a>
                                 <?php endif;?>

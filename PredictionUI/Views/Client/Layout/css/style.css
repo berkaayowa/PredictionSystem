@@ -1683,3 +1683,12 @@ span.second_text.status_info {
     color: #00a65a;
     font-weight: bold;
 }
+
+.form-label-groupx > .label-default {
+    display: block;
+    width: fit-content;
+}
+
+.form-label-groupx  .select2-container {
+    width: 100%!important;
+}

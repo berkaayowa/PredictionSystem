@@ -66,6 +66,7 @@
                 $h2hPercentage = $params['args']['query']['h2hPercentage'];
                 $gameLocation = $params['args']['query']['gameLocation'];
                 $allowedDuplicateGame = $params['args']['query']['allowedDuplicateGame'] == '1';
+                $oddDifference = $params['args']['query']['oddDifference'];
 
                 $filePath = FILE_PATH . $request->fileName;
                 $data = Helper::GetFileContent($filePath);
@@ -124,6 +125,20 @@
 
                                                     if ($prediction->HomeTeam->TotalPerecentage > $prediction->AwayTeam->TotalPerecentage)
                                                         $selectThisGame = false;
+                                                }
+
+                                                if($selectThisGame && $oddDifference > 0) {
+
+                                                    $homeOdd = atan($prediction->HomeTeam->Data->Odd);
+                                                    $awayOdd = atan($prediction->AwayTeam->Data->Odd);
+
+                                                    if($homeOdd >= $awayOdd) {
+                                                        $selectThisGame = $homeOdd == $oddDifference || $homeOdd > $oddDifference;
+                                                    }
+                                                    else {
+                                                        $selectThisGame = $awayOdd == $oddDifference || $awayOdd > $oddDifference;
+                                                    }
+
                                                 }
 
                                                 if ($selectThisGame)
@@ -234,6 +249,7 @@
             $this->view->set('h2hPercentage', $h2hPercentage);
             $this->view->set('gameLocation', $gameLocation);
             $this->view->set('allowedDuplicateGame', $allowedDuplicateGame);
+            $this->view->set('oddDifference', $oddDifference);
 
             $this->view->set('predictions', $selectedGames);
             $this->view->set('maxPrediction', sizeof($selectedGames));

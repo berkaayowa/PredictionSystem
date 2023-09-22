@@ -5,7 +5,12 @@
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Coupons/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Coupons/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Elements/Prediction.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Elements/Prediction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +126,8 @@
       <workItem from="1693980759478" duration="1101000" />
       <workItem from="1694636973377" duration="625000" />
       <workItem from="1694671749634" duration="2336000" />
-      <workItem from="1695231619983" duration="308000" />
+      <workItem from="1695231619983" duration="716000" />
+      <workItem from="1695336047882" duration="4477000" />
     </task>
     <servers />
   </component>
