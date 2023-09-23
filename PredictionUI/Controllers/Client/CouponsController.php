@@ -61,10 +61,10 @@
                 $numberOfGamesPerCoupon = (int)$params['args']['query']['numberOfGamesPerCoupon'];
                 $numberOfGamesPerLeague = (int)$params['args']['query']['numberOfGamesPerLeague'];
 
-                $leaguePointPercentageOverOREqual = $params['args']['query']['leaguePointPercentageOverOREqual'];
-                $gameMotivation = $params['args']['query']['gameMotivation'];
-                $h2hPercentage = $params['args']['query']['h2hPercentage'];
-                $gameLocation = $params['args']['query']['gameLocation'];
+                $leaguePointPercentageOverOREqual = floatval($params['args']['query']['leaguePointPercentageOverOREqual']);
+                $gameMotivation = floatval($params['args']['query']['gameMotivation']);
+                $h2hPercentage = floatval($params['args']['query']['h2hPercentage']);
+                $gameLocation = floatval($params['args']['query']['gameLocation']);
                 $allowedDuplicateGame = $params['args']['query']['allowedDuplicateGame'] == '1';
                 $oddDifference = floatval($params['args']['query']['oddDifference']);
 
