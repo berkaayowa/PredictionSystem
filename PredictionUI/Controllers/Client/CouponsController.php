@@ -133,11 +133,14 @@
                                                     $homeOdd = floatval($prediction->HomeTeam->Data->Odd);
                                                     $awayOdd = floatval($prediction->AwayTeam->Data->Odd);
 
-                                                    if($homeOdd >= $awayOdd) {
-                                                        $selectThisGame = $homeOdd == $oddDifference || $homeOdd > $oddDifference;
+                                                    if($homeOdd > $awayOdd) {
+                                                        $selectThisGame = ($homeOdd - $awayOdd) >= $oddDifference;
+                                                    }
+                                                    else if($homeOdd < $awayOdd) {
+                                                        $selectThisGame = ($awayOdd - $homeOdd) >= $oddDifference;
                                                     }
                                                     else {
-                                                        $selectThisGame = $awayOdd == $oddDifference || $awayOdd > $oddDifference;
+                                                        $selectThisGame = $homeOdd >= $oddDifference;
                                                     }
 
                                                 }
