@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Views/Client/Layout/layoutEmpty.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Client/Pages/prediction_widget.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Client/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layout.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +123,7 @@
       <workItem from="1694671749634" duration="2336000" />
       <workItem from="1695231619983" duration="716000" />
       <workItem from="1695336047882" duration="4922000" />
-      <workItem from="1695466183627" duration="3953000" />
+      <workItem from="1695466183627" duration="6784000" />
     </task>
     <servers />
   </component>

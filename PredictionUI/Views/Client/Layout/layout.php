@@ -90,11 +90,17 @@
                                                            <span class="label label-success livescoreBarIcon">New</span>Live Score <i class="fa fa-soccer-ball-o hide"></i>
                                                         </a>
                                                     </li>
+
                                                     <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()): ?>
 
                                                     <?php endif ?>
                                                 </ul>
                                                 <ul class="nav navbar-nav navbar-right ">
+                                                    <li class="">
+                                                        <a class="adsOpen" data-toggle="modal" data-target="#myPrediction_widgetModal">
+                                                            <span class="label label-success livescoreBarIcon">New</span>Free Predictions Widget
+                                                        </a>
+                                                    </li>
 
                                                     <li class=""><a class="adsOpen" href="/pages/about" >About Us</a></li>
 
@@ -217,6 +223,26 @@
                             </div>
                         </form>
                     </div>
+                </div>
+                <div class="modal-footer hide">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myPrediction_widgetModal" class="modal fade" role="dialog">
+        <div class="modal-dialog loginModal">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title center">Free Predictions Widget</h4>
+                </div>
+                <div class="modal-body">
+                    Cope and Past the below generated code on your website.
+                    <br>
+                    <textarea id="get_it_2" class="form-c" rows="4" style="text-align:left; width: 100%;background: #cdcdcd; border: navajowhite; font-weight: bold;"><iframe src="<?=SITE_URL?>/pages/prediction_widget" title="Soccer Predictions"></iframe></textarea>
                 </div>
                 <div class="modal-footer hide">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
