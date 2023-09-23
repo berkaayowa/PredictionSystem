@@ -66,7 +66,7 @@
                 $h2hPercentage = $params['args']['query']['h2hPercentage'];
                 $gameLocation = $params['args']['query']['gameLocation'];
                 $allowedDuplicateGame = $params['args']['query']['allowedDuplicateGame'] == '1';
-                $oddDifference = $params['args']['query']['oddDifference'];
+                $oddDifference = floatval($params['args']['query']['oddDifference']);
 
                 $filePath = FILE_PATH . $request->fileName;
                 $data = Helper::GetFileContent($filePath);
@@ -129,8 +129,9 @@
 
                                                 if($selectThisGame && $oddDifference > 0) {
 
-                                                    $homeOdd = atan($prediction->HomeTeam->Data->Odd);
-                                                    $awayOdd = atan($prediction->AwayTeam->Data->Odd);
+
+                                                    $homeOdd = floatval($prediction->HomeTeam->Data->Odd);
+                                                    $awayOdd = floatval($prediction->AwayTeam->Data->Odd);
 
                                                     if($homeOdd >= $awayOdd) {
                                                         $selectThisGame = $homeOdd == $oddDifference || $homeOdd > $oddDifference;
