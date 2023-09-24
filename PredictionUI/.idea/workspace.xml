@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/Util/Helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Client/Elements/Predictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Elements/Predictions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +125,7 @@
       <workItem from="1695231619983" duration="716000" />
       <workItem from="1695336047882" duration="4922000" />
       <workItem from="1695466183627" duration="6784000" />
-      <workItem from="1695539420264" duration="3565000" />
+      <workItem from="1695539420264" duration="3946000" />
     </task>
     <servers />
   </component>
