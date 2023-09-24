@@ -106,14 +106,14 @@ $maxPrediction = array_key_exists('maxPrediction', $model) ? $model['maxPredicti
 
         $("img.lazy").lazyload({effect : "fadeIn"});
 
-        // $('[data-details]').on('click', function (e) {
-        //
-        //     var id = "ads-wrapper-" + $(this).attr("data-details");
-        //
-        //     if($('#' + id).length > 0) {
-        //         $('#' + id).trigger('click');
-        //     }
-        // })
+        $('[data-details]').on('click', function (e) {
+
+            var id = "adswrapper" + $(this).attr("data-details");
+
+            if($('.' + id).length > 0) {
+                $('.' + id).trigger('click');
+            }
+        })
 
     })
 </script>
