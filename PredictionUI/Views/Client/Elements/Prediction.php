@@ -12,13 +12,13 @@
         <img class="flag lazy" width="18" height="13" data-original="<?=$prediction->HomeTeam->CountryFlag?>" alt="England">
         <div> <?=$prediction->Country?> <a href="/leagues/england/premier-league/583"> <?=$prediction->League?> </a></div>
         <div class="counter_m hide">
-                                                    <span class="count_matches ">
-                                                        <?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?>
-                                                    </span>
+            <span class="count_matches ">
+                <?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?>
+            </span>
         </div>
         <span class="css-c19m5y">
-                                                <i class="wf left"></i>
-                                              </span>
+            <i class="wf left"></i>
+          </span>
     </div>
     <div class="collapse show">
         <div data-datetime="2023-08-21 19:00:00" data-match="1668978" data-status-id="0" class="match i">
@@ -65,13 +65,13 @@
             </span>
             <div class="wf info">
                 <a class="predictionOnDesktop">
-                    <span class="live_btn" title="Prediction" data-toggle="collapse" data-target="#panel<?=$prediction->UniqueId?>">
+                    <span class="live_btn" title="Prediction" data-toggle="collapse" data-target="#panel<?=$prediction->UniqueId?>" data-details="<?=$prediction->UniqueId?>">
                         <strong>
                         <?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?>
                         </strong>
                     </span>
                 </a>
-                <a class="live_stream" data-toggle="collapse" data-target="#panel<?=$prediction->UniqueId?>">
+                <a class="live_stream" data-toggle="collapse" data-target="#panel<?=$prediction->UniqueId?>" data-details="<?=$prediction->UniqueId?>">
                     <span class="live_btn" title="Prediction Details">
                         Details
                     </span>
@@ -81,7 +81,7 @@
     </div>
 </div>
 
-<div class="prediction-holder predictionOnMobile" data-toggle="collapse" data-target="#panel<?=$prediction->UniqueId?>">
+<div class="prediction-holder predictionOnMobile" data-toggle="collapse" data-target="#panel<?=$prediction->UniqueId?>" data-details="<?=$prediction->UniqueId?>">
     <span>
         <?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?>
     </span>

@@ -699,7 +699,15 @@ class Helper {
         return $i_select.'>'.$i_option.'</select>';
     }
 
+    public static function HasPrediction($result) {
 
+        if(strpos($result, 'Win'))
+            return true;
+        else if(strpos($result, 'Draw'))
+            return true;
+
+        return false;
+    }
 
 
 
