@@ -68,7 +68,7 @@ $maxPrediction = array_key_exists('maxPrediction', $model) ? $model['maxPredicti
                         <?php if(sizeof($predictions)): ?>
                             <div class="fixtureTable">
                                 <?php foreach ($predictions as $prediction ): ?>
-                                    <?php if(property_exists($prediction, 'PredictionLabelFull')): ?>
+                                    <?php if(true): ?>
                                         <?php \BerkaPhp\Helper\Element::Render("Prediction", "Client", array('prediction'=>$prediction))?>
                                         <?php if($maxPrediction == 0 && !(\BerkaPhp\Helper\Auth::IsUserLogged() && BerkaPhp\Helper\Auth::GetActiveUser()->role->code == 'ADM')): ?>
                                             <div class="adsHolder adswrapper<?=$prediction->UniqueId?>">
