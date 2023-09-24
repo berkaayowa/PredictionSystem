@@ -111,7 +111,7 @@ $maxPrediction = array_key_exists('maxPrediction', $model) ? $model['maxPredicti
             var id = "adswrapper" + $(this).attr("data-details");
 
             if($('.' + id).length > 0) {
-                $('.' + id)[0].trigger('click');
+                $('.' + id)[0].trigger("click")
             }
         })
 
