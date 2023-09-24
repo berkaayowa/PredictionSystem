@@ -240,7 +240,7 @@
                     <h4 class="modal-title center">Free Predictions Widget</h4>
                 </div>
                 <div class="modal-body">
-                    Cope and Past the below generated code on your website.
+                    Copy and Past the below code on your website where you want predictions to be displayed.
                     <br>
                     <textarea id="get_it_2" class="form-c" rows="4" style="text-align:left; width: 100%;background: #cdcdcd; border: navajowhite; font-weight: bold;"><iframe src="<?=SITE_URL?>/pages/prediction_widget" title="Soccer Predictions"></iframe></textarea>
                 </div>
