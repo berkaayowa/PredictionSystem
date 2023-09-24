@@ -71,7 +71,7 @@ $maxPrediction = array_key_exists('maxPrediction', $model) ? $model['maxPredicti
                                     <?php if(property_exists($prediction, 'PredictionLabelFull')): ?>
                                         <?php \BerkaPhp\Helper\Element::Render("Prediction", "Client", array('prediction'=>$prediction))?>
                                         <?php if($maxPrediction == 0 && !(\BerkaPhp\Helper\Auth::IsUserLogged() && BerkaPhp\Helper\Auth::GetActiveUser()->role->code == 'ADM')): ?>
-                                            <div class="adsHolder" x="ads-wrapper-<?=$prediction->UniqueId?>">
+                                            <div class="adsHolder" id="ads-wrapper-<?=$prediction->UniqueId?>">
                                                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
                                                         crossorigin="anonymous"></script>
                                                 <ins class="adsbygoogle"
@@ -106,14 +106,14 @@ $maxPrediction = array_key_exists('maxPrediction', $model) ? $model['maxPredicti
 
         $("img.lazy").lazyload({effect : "fadeIn"});
 
-        $('[data-details]').on('click', function (e) {
-
-            var id = "ads-wrapper-" + $(this).attr("data-details");
-
-            if($('#' + id).length > 0) {
-                $('#' + id).trigger('click');
-            }
-        })
+        // $('[data-details]').on('click', function (e) {
+        //
+        //     var id = "ads-wrapper-" + $(this).attr("data-details");
+        //
+        //     if($('#' + id).length > 0) {
+        //         $('#' + id).trigger('click');
+        //     }
+        // })
 
     })
 </script>
