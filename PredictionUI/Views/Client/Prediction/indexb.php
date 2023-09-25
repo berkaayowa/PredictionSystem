@@ -159,7 +159,7 @@
                                                    <div class="vsHolder">
                                                        <div class="score">
                                                            <div class="mflag">
-                                                                <img class="lazy" data-original="<?= !empty($prediction->HomeTeam->TeamFlag) ? $prediction->HomeTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>">
+                                                                <img class="lazy" data-original="<?= !empty($prediction->HomeTeam->TeamFlag) ? $prediction->HomeTeam->TeamFlag : "/Views/Client/Assets/images/icon3.png"?>">
                                                            </div>
                                                            <div class="scoreDetail">
                                                            <?php if(property_exists($prediction, 'Score')  && !empty($prediction->Score->ft_score)) :?>
@@ -178,7 +178,7 @@
                                                            </div>
 
                                                            <div class="mflag">
-                                                                <img class="lazy" data-original="<?= !empty($prediction->AwayTeam->TeamFlag) ? $prediction->AwayTeam->TeamFlag : "/Views/Client/Assets/images/icon2.png"?>">
+                                                                <img class="lazy" data-original="<?= !empty($prediction->AwayTeam->TeamFlag) ? $prediction->AwayTeam->TeamFlag : "/Views/Client/Assets/images/icon3.png"?>">
                                                            </div>
                                                        </div>
                                                        <div class="predictionHolder showOnMobile <?=\Util\Helper::GetPredictionBg($prediction->Percentage)?>">

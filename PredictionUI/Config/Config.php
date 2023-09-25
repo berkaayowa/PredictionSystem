@@ -46,7 +46,7 @@ define('SITE_URL', 'https://'.$_SERVER['SERVER_NAME'] , true);
 
 //default prefix
 define('LOGIN_URL', '' , true);
-define('LOGO_ICON', '/Views/Client/Assets/images/icon2.png' , true);
+define('LOGO_ICON', '/Views/Client/Assets/images/icon3.png' , true);
 define('LOGO', '/Views/Client/Assets/softclick.png' , true);
 define('EMAIL_LOGO', 'https://ia601508.us.archive.org/4/items/logo2_20180125/logo2.png' , true);
 

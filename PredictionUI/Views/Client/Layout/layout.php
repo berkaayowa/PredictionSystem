@@ -79,7 +79,9 @@
                                     <nav class="navbar navbar-inverse navStyle">
                                         <div class="container-fluid">
                                             <div class="navbar-header">
-                                                <a class="navbar-brand adsOpen" href="/">Soccer Prediction</a>
+                                                <a class="navbar-brand adsOpen" href="/">
+                                                    <img class="imgLogo" src="/Views/Client/Assets/logo.png" alt="">
+                                                </a>
                                                 <span class="glyphicon glyphicon-menu-hamburger hamburger"></span>
                                             </div>
                                             <div class="navbar-nav-menu">
@@ -98,7 +100,7 @@
                                                 <ul class="nav navbar-nav navbar-right ">
                                                     <li class="">
                                                         <a class="adsOpen" data-toggle="modal" data-target="#myPrediction_widgetModal">
-                                                            <span class="label label-success livescoreBarIcon">New</span>Free Predictions Widget
+                                                            <span class="label label-success livescoreBarIcon">Free</span>Predictions Widget
                                                         </a>
                                                     </li>
 

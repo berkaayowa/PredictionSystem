@@ -5,7 +5,7 @@
 
             <h3 class="hFocus">Soccer Predictions</h3>
             <p>
-                Soccer predictions is a free daily soccer prediction platform, where the power of cutting-edge AI technology and expert analysis come together to provide you with reliable soccer predictions. Our mission is to enhance your betting experience and help you make well-informed decisions.
+                Soccer predictions is a free daily soccer prediction platform, where the power of cutting-edge AI technology and expert analysis come together to provide you with reliable soccer predictions. Our mission is to enhance your predictions experience with insight details and help you make well-informed decisions.
             </p>
             <h3 class="hFocus">How It Works</h3>
             <p class="hide">

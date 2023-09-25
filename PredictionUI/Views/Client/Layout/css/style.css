@@ -1692,3 +1692,9 @@ span.second_text.status_info {
 .form-label-groupx  .select2-container {
     width: 100%!important;
 }
+
+.imgLogo{
+    width: 190px;
+    position: relative;
+    top: -19px;
+}
