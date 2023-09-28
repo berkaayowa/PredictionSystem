@@ -95,10 +95,11 @@
             /* border: solid 2px #f6f6f6; */
             padding-right: 15px;
             border-radius: 8px;
-            color: white;
+            color: white!important;
             text-decoration: none;
             /*background: #f1f1f1;*/
             font-size: 13px;
+            font-weight: bold!important;
         }
     </style>
 </head>
@@ -115,13 +116,12 @@
                         <table border="0" width="100%" cellpadding="0" cellspacing="0">
 
                             <tr>
-                                <td style="text-align: left;background: #0f2d37;padding-bottom:20px">
+                                <td style="text-align: left;background: #0f2d37;">
                                     <img style="width: 240px;" src="https://soccerprediction.co.za/Views/Client/Assets/logo.png" alt="">
                                 </td>
                             </tr>
                             <tr>
-                                <td style="font-family: Arial, sans-serif; font-size: 15px; color: #545454; text-align: left; line-height: 20px;padding-right:20px;padding-left:20px;">
-                                    d
+                                <td style="padding-top:20px;font-family: Arial, sans-serif; font-size: 15px; color: #545454; text-align: left; line-height: 20px;padding-right:20px;padding-left:20px;">
                                     <?=$emailContent?>
                                     <br/>
                                     <br/>
