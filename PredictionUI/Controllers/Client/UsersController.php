@@ -67,10 +67,10 @@ class UsersController extends BerkaPhpController
 
                 if ($user->Save()) {
 
-                    $this->view->set('activationCode', $activationCode);
-                    $this->view->set('firstName',  ucfirst($data['name']));
+                    $emailContent = 'Hi <strong>'.ucfirst($data['name']).'</strong><br><br>Welcome to soccerprediction.co.za a free soccer predictions platform, live score and more,click <a href="'.SITE_URL.'/users/activate/'.$activationCode.'" style="">here</a> to verify your account or copy and past the bellow to your browser.<br/><br/>Verification link : <br>'.SITE_URL.'/users/activate/'.$activationCode;
+                    $this->view->set('emailContent', $emailContent);
+                    $content = $this->view->renderGetContent('Views/Email/default');
 
-                    $content = $this->view->renderGetContent('Views/Client/Users/Email/welcome');
                     $isSent = $this->mailer->send(EMAIL_FROM_NAME, "Welcome ".ucfirst($data['name']), "", $content, $this->getPost()['emailAddress']);
                     $msg = "Your account has been created successfully , and a verification email has been sent to your email (".$data['emailAddress'].")";
                     return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> $msg, 'link'=>'/prediction?n='.$msg]);

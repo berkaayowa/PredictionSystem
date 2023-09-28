@@ -4,8 +4,7 @@
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Email/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Email/default.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/UsersController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +126,7 @@
       <workItem from="1695466183627" duration="6784000" />
       <workItem from="1695539420264" duration="5923000" />
       <workItem from="1695665705453" duration="4189000" />
-      <workItem from="1695896287256" duration="2113000" />
+      <workItem from="1695896287256" duration="2810000" />
     </task>
     <servers />
   </component>
