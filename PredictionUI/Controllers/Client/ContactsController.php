@@ -31,7 +31,7 @@
 
                     $emailContent = "Hi,<br><br>You have new message from the contact form below are the details<br><br>";
                     $emailContent = $emailContent."Name: ".ucfirst($data["fullname"])."<br>Email: ".$data["email"].'<br><br>';
-                    $emailContent = $emailContent."<blockquote>".$data["message"]."</blockquote>";
+                    $emailContent = $emailContent."".$data["message"]."";
                     $this->view->set('emailContent', $emailContent);
 
                     $content = $this->view->renderGetContent('Views/Email/default');

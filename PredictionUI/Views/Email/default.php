@@ -115,12 +115,13 @@
                         <table border="0" width="100%" cellpadding="0" cellspacing="0">
 
                             <tr>
-                                <td style="text-align: left;background: #0f2d37;">
+                                <td style="text-align: left;background: #0f2d37;padding-bottom:20px">
                                     <img style="width: 240px;" src="https://soccerprediction.co.za/Views/Client/Assets/logo.png" alt="">
                                 </td>
                             </tr>
                             <tr>
                                 <td style="font-family: Arial, sans-serif; font-size: 15px; color: #545454; text-align: left; line-height: 20px;padding-right:20px;padding-left:20px;">
+                                    d
                                     <?=$emailContent?>
                                     <br/>
                                     <br/>

@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/ContactsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/ContactsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Email/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Email/default.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Email/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Email/default.php" afterDir="false" />
     </list>
@@ -128,7 +129,7 @@
       <workItem from="1695466183627" duration="6784000" />
       <workItem from="1695539420264" duration="5923000" />
       <workItem from="1695665705453" duration="4189000" />
-      <workItem from="1695896287256" duration="1691000" />
+      <workItem from="1695896287256" duration="2092000" />
     </task>
     <servers />
   </component>
