@@ -97,6 +97,7 @@
                                         </div>
                                     </div>
 
+                                    <?php if(true) :?>
                                     <div class="form-group col-xs-12 col-sm-12 ">
                                         <div class="form-label-groupx">
                                             <label class="label label-default" for="firstName">Leagues</label>
@@ -105,6 +106,7 @@
                                             }) ?>
                                         </div>
                                     </div>
+                                    <?php endif?>
 
                                     <div class="col-sm-12">
                                         <div class="panel-footerx">

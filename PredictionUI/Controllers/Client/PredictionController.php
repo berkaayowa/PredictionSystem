@@ -98,8 +98,12 @@
 
             $array = [];
 
-            if(strlen($data) > 0)
+            if(strlen($data) > 0) {
                 $array = json_decode($data);
+                usort($array, function ($a, $b) {
+                    return $a->Percentage < $b->Percentage;
+                });
+            }
 
             $maxPrediction = sizeof($array);
 

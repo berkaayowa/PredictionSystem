@@ -651,6 +651,10 @@ class Helper {
 
     }
 
+    public static function isMobile() {
+        return is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+    }
+
     public static function MultipleSelect($id,  $data = array(), $options, $callback = null) {
 
         $i_select= "<select  id='{$id}' name='{$id}' ";

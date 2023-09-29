@@ -80,6 +80,11 @@
                     $predictions = json_decode($data);
                     $found = true;
 
+
+                    usort($predictions, function ($a, $b) {
+                        return $a->Percentage < $b->Percentage;
+                    });
+
                     foreach ($predictions as $prediction) {
 
                         $selectedLeague = false;
