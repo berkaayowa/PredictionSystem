@@ -148,12 +148,14 @@
                 <a target="_blank" href='https://www.youtube.com/@soccerprediction27/about'><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
                 <div class="copyRight"><a target="_blank" href='https://www.tiktok.com/@soccerprediction.co.za?_t=8etdqA0Hz9h&_r=1'>TikTok</i></a></div>
                 <div class="copyRight"><a href="/contacts" >Contacts Us</i></a></div>
+                <div class="copyRight"><a href="https://www.paypal.com/donate/?hosted_button_id=3EUXREY22UMGQ" >Donate</i></a></div>
                 <div class="copyRight">
                     ©<?= date("Y").' '. $_SERVER['SERVER_NAME']?> All rights reserved. <a href="/pages/policy">Our Policy</a>
                 </div>
                 <div class="cookieInfo">
                     This website uses cookies for content/ads personalization and to analyse our traffic.
                 </div>
+
             </div>
         </div>
     </div>
