@@ -703,6 +703,29 @@ class Helper {
         return $i_select.'>'.$i_option.'</select>';
     }
 
+    static function GetOddDiff($val) {
+
+        $bOddDifference = 0;
+
+        if(property_exists($val->HomeTeam, 'Data')) {
+            if(property_exists($val->HomeTeam->Data, 'Odd')) {
+
+                $homeOdd = floatval($val->HomeTeam->Data->Odd);
+                $awayOdd = floatval($val->AwayTeam->Data->Odd);
+
+                if($homeOdd > $awayOdd) {
+                    $bOddDifference = ($homeOdd - $awayOdd);
+                }
+                else if($homeOdd < $awayOdd) {
+                    $bOddDifference = ($awayOdd - $homeOdd);
+                }
+
+            }
+        }
+
+        return $bOddDifference;
+    }
+
 
 
 

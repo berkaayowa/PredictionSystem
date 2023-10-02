@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Client/Pages/text.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Widgets/predictions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/Util/Helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layoutEmpty.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layoutEmpty.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layoutNoMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layoutNoMenu.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +22,14 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -38,6 +55,11 @@
           <mapping local-root="$PROJECT_DIR$/BerkaPhp/Framework/Views/Framework/Page" remote-root="C:/Projects/Mine/Web/greenvalleydesign" />
         </path_mappings>
       </server>
+      <server host="localhost" id="2f7e65f1-df62-4e0d-98a5-2f4c0e1a3dd4" name="localhost (3)" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/BerkaPhp/Framework/Views/Framework/Page" remote-root="C:/Projects/Mine/Web/sms" />
+        </path_mappings>
+      </server>
     </servers>
   </component>
   <component name="ProjectId" id="2ErwlXLuVn7dIXCJndf0pBhewfa" />
@@ -47,6 +69,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -128,7 +151,8 @@
       <workItem from="1695665705453" duration="4189000" />
       <workItem from="1695896287256" duration="7472000" />
       <workItem from="1695976949586" duration="594000" />
-      <workItem from="1695988263320" duration="2755000" />
+      <workItem from="1695988263320" duration="3758000" />
+      <workItem from="1696160578226" duration="7041000" />
     </task>
     <servers />
   </component>

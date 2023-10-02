@@ -103,6 +103,15 @@
                 usort($array, function ($a, $b) {
                     return $a->Percentage < $b->Percentage;
                 });
+
+//                usort($array, function ($a, $b) {
+//
+//                    $aOddDifference = Helper::GetOddDiff($a);
+//                    $bOddDifference = Helper::GetOddDiff($b);
+//
+//                    return ($a->Percentage + ($aOddDifference * 10)) < ($b->Percentage + ($bOddDifference * 10));
+//                });
+
             }
 
             $maxPrediction = sizeof($array);

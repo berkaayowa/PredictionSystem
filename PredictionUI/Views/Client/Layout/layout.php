@@ -246,6 +246,7 @@
                 <div class="modal-body">
                     Copy and Past the below code on your website where you want predictions to be displayed.
                     <br>
+                    <br>
                     <textarea id="get_it_2" class="form-c" rows="4" style="text-align:left; width: 100%;background: #cdcdcd; border: navajowhite; font-weight: bold;"><iframe src="<?=SITE_URL?>/pages/prediction_widget" title="Soccer Predictions"></iframe></textarea>
                 </div>
                 <div class="modal-footer hide">

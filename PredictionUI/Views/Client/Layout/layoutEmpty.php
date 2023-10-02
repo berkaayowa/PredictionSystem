@@ -77,18 +77,7 @@
 
     <div class="footer">
         <div class="container footerContainer">
-            <!--        <a href='#'><i class="fa fa-twitch fa-3x fa-fw"></i></a>-->
-            <a target="_blank" title="follow our whatsapp channel" href='https://whatsapp.com/channel/0029Va8uH1ALNSa7RcphK42r'><i class="fa fa-whatsapp fa-3x fa-fw"></i></a>
-            <a target="_blank" href='https://www.facebook.com/profile.php?id=100094880164648'><i class="fa fa-facebook fa-3x fa-fw"></i></a>
-            <a target="_blank" href='https://www.youtube.com/@soccerprediction27/about'><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
-            <div class="copyRight"><a target="_blank" href='https://www.tiktok.com/@soccerprediction.co.za?_t=8etdqA0Hz9h&_r=1'>TikTok</i></a></div>
-            <div class="copyRight hide"><a href="/contacts" >Contacts Us</i></a></div>
-            <div class="copyRight hide">
-                ©<?= date("Y").' '. $_SERVER['SERVER_NAME']?> All rights reserved. <a href="/pages/policy">Our Policy</a>
-            </div>
-            <div class="cookieInfo hide">
-                This website uses cookies for content/ads personalization and to analyse our traffic.
-            </div>
+            <div class="copyRight">Powered By <a href="https://www.soccerprediction.co.za" >www.soccerprediction.co.za</i></a></div>
         </div>
     </div>
 </div>
