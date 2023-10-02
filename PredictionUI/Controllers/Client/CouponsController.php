@@ -80,17 +80,17 @@
                     $predictions = json_decode($data);
                     $found = true;
 
-//                    usort($predictions, function ($a, $b) {
-//                        return $a->Percentage < $b->Percentage;
-//                    });
-
                     usort($predictions, function ($a, $b) {
-
-                        $aOddDifference = Helper::GetOddDiff($a);
-                        $bOddDifference = Helper::GetOddDiff($b);
-
-                        return ($a->Percentage + ($aOddDifference * 10)) < ($b->Percentage + ($bOddDifference * 10));
+                        return $a->Percentage < $b->Percentage;
                     });
+
+//                    usort($predictions, function ($a, $b) {
+//
+//                        $aOddDifference = Helper::GetOddDiff($a);
+//                        $bOddDifference = Helper::GetOddDiff($b);
+//
+//                        return ($a->Percentage + ($aOddDifference * 10)) < ($b->Percentage + ($bOddDifference * 10));
+//                    });
 
                     foreach ($predictions as $prediction) {
 

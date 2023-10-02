@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Client/Pages/text.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Widgets/predictions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/Util/Helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layoutEmpty.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layoutEmpty.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layoutNoMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layoutNoMenu.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +142,7 @@
       <workItem from="1695896287256" duration="7472000" />
       <workItem from="1695976949586" duration="594000" />
       <workItem from="1695988263320" duration="3758000" />
-      <workItem from="1696160578226" duration="7041000" />
+      <workItem from="1696160578226" duration="7559000" />
     </task>
     <servers />
   </component>
