@@ -157,6 +157,13 @@
 
                                                 }
 
+                                                if($selectThisGame && property_exists($prediction->AwayTeam, 'Data')) {
+
+                                                    if($prediction->AwayTeam->Data->NumberOfTeamsInTheLeague < 5)
+                                                        $selectThisGame = false;
+
+                                                }
+
                                                 if ($selectThisGame)
                                                     array_push($selectedGames, $prediction);
 
