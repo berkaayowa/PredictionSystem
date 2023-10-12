@@ -836,6 +836,32 @@ mts.InitAjaxText = function () {
         });
     });
 
+    $('[data-post-action]').each(function (e) {
+
+        $(this).on("click", function (e) {
+
+            var target = $(this).attr('target');
+            var url = $(this).data('post-action');
+
+            berkaPhpJs.request({
+                url: url,
+                type: "GET",
+                hasFile: false,
+                showLoader: true,
+            }, function (success, result) {
+                if(success) {
+                    $(target).html(result['data']);
+                    //$(target).text(result['data']);
+
+                    //$(target).text("gdddgdg");
+                }
+            });
+
+        })
+
+
+    });
+
 };
 
 mts.initActionButton = function() {
@@ -990,7 +1016,7 @@ mts.initAll = function() {
     mts.InitAjaxText();
     //mts.initAction();
     mts.initButton();
-    mts.InitAjaxText();
+    //mts.InitAjaxText();
 
 
     $('[data-static-dropdown]').each(function (e) {

@@ -391,6 +391,19 @@
 
             </div>
 
+            <?php if(true) : ?>
+                <div class="col-xs-12" id="cmt<?=$prediction->UniqueId?>">
+                    <div class="cmt text-right" target="#cmt<?=$prediction->UniqueId?>" data-post-action="/prediction/comments/<?=$prediction->UniqueId?>">
+                        <?php if(\Util\Helper::CountComments($prediction->UniqueId) > 0) : ?>
+                            <a><?=\Util\Helper::CountComments($prediction->UniqueId)?> <i class="fa fa-comment"></i> Comment/s</a>
+                        <?php else : ?>
+                            <a><i class="fa fa-comment"></i> Comment</a>
+                        <?php endif ?>
+                    </div>
+                </div>
+
+            <?php endif ?>
+
         <?php else: ?>
             <div class="col-xs-12 text-center">
                 <a data-toggle="modal" data-target="#mySigninModal">Please sign in to view the prediction break down</a>

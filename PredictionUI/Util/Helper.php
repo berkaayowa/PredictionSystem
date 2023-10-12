@@ -726,6 +726,16 @@ class Helper {
         return $bOddDifference;
     }
 
+    static function CountComments($predictionId) {
+        $comments = @T::Find('prediction_comment')
+            ->Join('user', 'user.id = prediction_comment.userId')
+            ->Where('prediction_comment.isDeleted', '=', \Helper\Check::$False)
+            ->Where('prediction_comment.predictionId', '=', $predictionId)
+            ->FetchList();
+
+        return sizeof($comments);
+    }
+
 
 
 

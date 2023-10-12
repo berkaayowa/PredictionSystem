@@ -368,6 +368,41 @@
             $this->view->render();
         }
 
+        function comments($params = array()) {
+
+            $id = $params['args']['params'][0];
+
+            $data = $this->getPost();
+
+            if(sizeof($data) > 0) {
+
+                $comment = @T::Create('prediction_comment');
+                $comment->userId = Auth::GetActiveUser(true)->id;
+                $comment->createdDate = DATE_NOW;
+                $comment->predictionId = $id;
+                $comment->content =$data["comment"];
+
+                if($comment->Save())
+                    return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Your comments has been successfully saved."]);
+                else
+                    return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "Your comments couldn't be saved, try again"]);
+
+
+            }
+
+            $comments = @T::Find('prediction_comment')
+                ->Join('user', 'user.id = prediction_comment.userId')
+                ->Where('prediction_comment.isDeleted', '=', \Helper\Check::$False)
+                ->Where('prediction_comment.predictionId', '=', $id)
+                ->FetchList();
+
+            $this->view->set("comments", $comments);
+            $this->view->set("predictionId", $id);
+            $data = $this->view->renderGetContent();
+
+            return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> false,  'data'=> $data]);
+
+        }
 
 	}
 
