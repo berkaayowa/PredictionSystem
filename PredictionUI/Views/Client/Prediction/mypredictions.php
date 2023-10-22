@@ -12,13 +12,13 @@
                     <div class="box  box-default ">
                         <div class="box-body ">
                             <div class="markdown prose w-full break-words dark:prose-invert light">
-                                <blockquote>
+
                                 <p>To request custom prediction, follow these steps:
                                 <strong>'Request setup':</strong> enter the prediction request's name and the game's fixture date.
                                 <strong>Template selection:</strong> choose a suitable prediction template from the available options. If none fits, create a custom one.
                                 <strong>Notification preference:</strong> opt for notifications by selecting "Notify: Yes" if you wish to be alerted upon prediction completion.
                                 <strong>Submission:</strong> finalize the process by clicking on 'Request Predictions'.</p>
-                                </blockquote>
+
                             </div>
                         </div>
                     </div>
