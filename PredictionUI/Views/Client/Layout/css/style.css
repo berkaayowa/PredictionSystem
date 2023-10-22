@@ -1801,3 +1801,13 @@ span.second_text.status_info {
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
 }
+
+.cardHolder {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #656565 !important;
+}

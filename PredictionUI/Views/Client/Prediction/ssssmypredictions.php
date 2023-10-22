@@ -5,7 +5,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#collapse1"><i class="fa fa-info-circle "></i> Click here if you need help.</a>
+                        <a data-toggle="collapse" href="#collapse1"><i class="fa fa-question-circle"></i> Click here if you need help.</a>
                     </h4>
                 </div>
                 <div id="collapse1" class="panel-collapse collapse">
@@ -13,7 +13,7 @@
                         <div class="box-body ">
                             <div class="markdown prose w-full break-words dark:prose-invert light">
                                 <blockquote>
-                                <p>To request custom prediction, follow these steps:
+                                <p><i class="fa fa-info-circle fa-3x fa-fw iconInq"></i> To request custom prediction, follow these steps:
                                 <strong>'Request setup':</strong> enter the prediction request's name and the game's fixture date.
                                 <strong>Template selection:</strong> choose a suitable prediction template from the available options. If none fits, create a custom one.
                                 <strong>Notification preference:</strong> opt for notifications by selecting "Notify: Yes" if you wish to be alerted upon prediction completion.
@@ -95,48 +95,45 @@
                         <?php if(true): ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered fixtureTable" id="dataTable">
-<!--                                    <thead class="thead-inverse">-->
-<!--                                    <tr class=table-header">-->
-<!--                                        <th class="txt-capitalized text-center"></th>-->
-<!--                                    </tr>-->
-<!--                                    </thead>-->
                                     <tbody>
                                         <?php foreach ($predictionRequest as $request ): ?>
-<!--                                            <tr>-->
-<!--                                                <td>-->
-                                                <div class="d-flex cardHolder" title="<?=ucfirst($request->description)?> | <?=$request->configuration->description?>">
-                                                    <div class="card m-2 <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>" style="">
-                                                        <div class="row g-0">
-                                                            <div class="col-sm-12">
-                                                                <div class="card-body">
-                                                                    <h5 class="card-title">#<?=$request->id?> <?=$request->status->name?> | <?= date('d-m-Y', strtotime($request->requestedDate))?></h5>
-                                                                    <p class="card-text">
-                                                                        <?=ucfirst($request->description)?>, Requested Date: <?= date('d-m-Y', strtotime($request->requestedDate))?>
-                                                                        ,Template: <?=$request->configuration->name?>, (Notify) <?=$request->notify == \Helper\Check::$True ? 'Yes' : 'No'?>
-                                                                    </p>
-                                                                    <div class="card-text">
-                                                                        <?php if($request->status->code == 'CNP') : ?>
-                                                                            <a target="_blank" class="tb-action" title="View Predictions" href="/prediction?requestcode=<?=$request->id?>" >
-                                                                                <span class="fa fa-list-alt action-icon"></span> Games
-                                                                            </a>
-                                                                            <a target="_blank" class="tb-action" title="Create Coupons" href="/coupons/index/<?=$request->id?>?oddDifference=0&numberOfGamesPerCoupon=10&numberOfGamesPerLeague=1&leaguePointPercentageOverOREqual=0&gameMotivation=0&h2hPercentage=0&gameLocation=0&options%5B%5D=Win_at&options%5B%5D=Win%2FDraw_at&options%5B%5D=Draw_at&allowedDuplicateGame=2" >
-                                                                                <span class="glyphicon glyphicon-edit action-icon"></span> Coupons
-                                                                            </a>
-                                                                        <?php endif ?>
-                                                                        <a class="tb-action" title="<?=$request->views?> Views" href="/coupons/index/<?=$request->id?>?oddDifference=0&numberOfGamesPerCoupon=10&numberOfGamesPerLeague=1&leaguePointPercentageOverOREqual=0&gameMotivation=0&h2hPercentage=0&gameLocation=0&options%5B%5D=Win_at&options%5B%5D=Win%2FDraw_at&options%5B%5D=Draw_at&allowedDuplicateGame=2" >
-                                                                            <span class="glyphicon glyphicon-eye-open action-icon"></span><?=$request->views?> Views
-                                                                        </a>
-                                                                        <a class="tb-action hideOnMobile" title="Created Date">
-                                                                            <span class="glyphicon glyphicon-time action-icon"></span> Created Date <?= date(DATE_SECOND_FORMAT, strtotime($request->createdDate))?>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-<!--                                                </td>-->
-<!--                                            </tr>-->
+                                            <tr>
+
+                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>">
+                                                    <lable class="width_100px"><?=$request->id?></lable>
+                                                </td>
+                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>">
+                                                    <lable class="width_100px"><?=$request->description?></lable>
+                                                </td>
+                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>">
+                                                    <?= date('d/m/Y', strtotime($request->requestedDate))?>
+                                                </td>
+                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>">
+                                                    <?= date(DATE_SECOND_FORMAT, strtotime($request->createdDate))?>
+                                                </td>
+                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>">
+                                                    <?=$request->status->name?>
+                                                </td>
+                                                <td title="<?=$request->configuration->description?>" class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>">
+                                                    <?=$request->configuration->name?>
+                                                </td>
+                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>">
+                                                    <?=$request->notify == \Helper\Check::$True ? 'Yes' : 'No'?>
+                                                </td>
+
+                                                <td  class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>">
+                                                   <div style="width: 200px;">
+                                                    <?php if($request->status->code == 'CNP') : ?>
+                                                        <a target="_blank" class="tb-action" title="View Predictions" href="/prediction?requestcode=<?=$request->id?>" >
+                                                            <span class="glyphicon glyphicon-eye-open action-icon"></span> View Games
+                                                        </a>
+                                                        <a target="_blank" class="tb-action" title="Create Coupons" href="/coupons/index/<?=$request->id?>?oddDifference=0&numberOfGamesPerCoupon=10&numberOfGamesPerLeague=1&leaguePointPercentageOverOREqual=0&gameMotivation=0&h2hPercentage=0&gameLocation=0&options%5B%5D=Win_at&options%5B%5D=Win%2FDraw_at&options%5B%5D=Draw_at&allowedDuplicateGame=2" >
+                                                            <span class="glyphicon glyphicon-edit action-icon"></span> Coupons
+                                                        </a>
+                                                    <?php endif ?>
+                                                   </div>
+                                                </td>
+                                            </tr>
                                         <?php endforeach ?>
                                     </tbody>
                                 </table>

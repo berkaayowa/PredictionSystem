@@ -20,7 +20,7 @@
                 <a href="/template/update" class="btn btn-default">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i> <?=Resource\Label::General("Create Template")?>
                 </a>
-                <a class="btn btn-default pull-right" data-back-link>
+                <a class="btn btn-default pull-right hide" data-back-link>
                     <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
                     <?=Resource\Label::General("Back")?>
                 </a>
@@ -37,7 +37,6 @@
                                         <th class="txt-capitalized text-center">#</th>
                                         <th class="txt-capitalized text-center">Name</th>
                                         <th class="txt-capitalized text-center">Description</th>
-                                        <th class="txt-capitalized text-center">Created Date</th>
                                         <th class="txt-capitalized text-center hideOnMobile">Action</th>
                                     </tr>
                                     </thead>
@@ -52,9 +51,6 @@
                                                 </td>
                                                 <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder(-100)?>">
                                                     <?=\Util\Helper::DisplayLabel(20, $template->description)?>
-                                                </td>
-                                                <td class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder(-100)?>">
-                                                    <?= date(DATE_SECOND_FORMAT, strtotime($template->createdDate))?>
                                                 </td>
                                                 <td  style="" class="txt-capitalized text-center <?=\Util\Helper::GetPredictionToBorder(-100)?>">
                                                     <a class="tb-action" title="Edit Prediction Template" href="/template/update/<?=$template->id?>" >

@@ -391,7 +391,7 @@
 
             </div>
 
-            <?php if(true) : ?>
+            <?php if(false) : ?>
                 <div class="col-xs-12" id="cmt<?=$prediction->UniqueId?>">
                     <div class="cmt text-right" target="#cmt<?=$prediction->UniqueId?>" data-post-action="/prediction/comments/<?=$prediction->UniqueId?>">
                         <?php if(\Util\Helper::CountComments($prediction->UniqueId) > 0) : ?>
