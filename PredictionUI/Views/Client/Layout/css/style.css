@@ -842,6 +842,10 @@ option , select{
         text-align: center!important;
     }
 
+    .headerFocus {
+        width: auto!important;
+    }
+
 }
 
 @media (min-width: 768px) {
