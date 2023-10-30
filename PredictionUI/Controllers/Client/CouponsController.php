@@ -124,7 +124,7 @@
 
                                         if ($prediction->HomeTeam->HeadtoheadPerecentage >= $h2hPercentage || $prediction->AwayTeam->HeadtoheadPerecentage >= $h2hPercentage) {
 
-                                            if ($prediction->HomeTeam->AwayOrHomePerecentage >= $gameMotivation || $prediction->AwayTeam->AwayOrHomePerecentage >= $gameMotivation) {
+                                            if ($prediction->HomeTeam->LastGamesPerecentage >= $gameMotivation || $prediction->AwayTeam->LastGamesPerecentage >= $gameMotivation) {
 
                                                 $selectThisGame = true;
 
