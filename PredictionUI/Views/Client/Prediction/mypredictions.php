@@ -100,7 +100,7 @@
                                             <div class="row g-0">
                                                 <div class="col-sm-12">
                                                     <div class="card-body">
-                                                        <h5 class="card-title"><span class="sp-item <?= $request->status->code == 'PG' || $request->status->code == 'INP' ? \Util\Helper::GetPredictionBg( 100) : ""?>">#<?=$request->id?> <?=$request->status->name?></span>  | <span class="glyphicon glyphicon-time action-icon"></span> Created On <?= date(DATE_SECOND_FORMAT, strtotime($request->createdDate))?>
+                                                        <h5 class="card-title"><span class="sp-item <?= $request->status->code == 'PG' || $request->status->code == 'INP' ? \Util\Helper::GetPredictionBg( 100) : ""?>">#<?=$request->id?> <?=$request->status->name?></span>  <span class="hideOnMobile">| <span class="glyphicon glyphicon-time action-icon"></span> Created On <?= date(DATE_SECOND_FORMAT, strtotime($request->createdDate))?></span>
                                                             | Created By <a><span class="glyphicon glyphicon-user "></span> <?=ucfirst($request->user->name)?> <?=ucfirst($request->user->surname)?></a></h5>
                                                         <p class="card-text">
                                                             <?=ucfirst($request->description)?>, Requested Date: <?= date('d-m-Y', strtotime($request->requestedDate))?>

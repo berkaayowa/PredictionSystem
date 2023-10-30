@@ -53,7 +53,7 @@
                                                         <div class="col-sm-12">
                                                             <div class="card-body">
                                                                 <h5 class="card-title">
-                                                                    #<?=$template->id?> | <?=ucfirst($template->name)?> | Created On <?= date(DATE_SECOND_FORMAT, strtotime($template->createdDate))?>
+                                                                    #<?=$template->id?> | <?=ucfirst($template->name)?> <span class="hideOnMobile">| Created On <?= date(DATE_SECOND_FORMAT, strtotime($template->createdDate))?></span>
                                                                     | Created By <a><span class="glyphicon glyphicon-user "></span> <?=ucfirst($template->user->name)?> <?=ucfirst($template->user->surname)?></a>
                                                                 </h5>
                                                                 <p class="card-text">
