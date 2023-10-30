@@ -315,6 +315,30 @@ berkaPhpJs.initUtility = function( ) {
         //})
     }
 
+    $('[data-ajax-confirmation]').confirmation({
+        onClick: function(id, event) {
+            if(id == 'yes') {
+                event.preventDefault();
+
+                berkaPhpJs.request({
+                    url: event.target.getAttribute('href'),
+                    type: "get",
+                    data: [],
+                    hasFile: false,
+                    message: "Processing..."
+                }, function(success, result) {
+
+                    if(result['link'] != null) {
+                        setTimeout(function () {
+                            window.location = result['link'];
+                        }, 1000);
+                    }
+
+                });
+            }
+        }
+    });
+
 };
 
 berkaPhpJs.initEqualizer = function(selector) {

@@ -25,12 +25,14 @@
         function index($params = null) {
 
             $templates = @T::Find('prediction_contribution')
+                ->Join('user', 'user.id = prediction_contribution.userId')
                 ->Where('prediction_contribution.isDeleted', '=', \Helper\Check::$False);
 
             if(Auth::GetActiveUser(true)->role->code == 'CLT')
                 $templates = $templates->Where('prediction_contribution.userId', '=', Auth::GetActiveUser(true)->id);
 
-            $templates = $templates->FetchList();
+            $templates = $templates->OrderBy('prediction_contribution.id')
+                ->FetchList();
 
             $this->view->set('breadcrumb', array("Prediction Template", "All"));
             $this->view->set('predictionTemplates', $templates);
@@ -117,6 +119,75 @@
                 $this->view->set('leagues', $leagues);
                 $this->view->set('pTemplate', $template);
                 $this->view->render();
+            }
+
+        }
+
+        function duplicate($params = null) {
+
+            $templateId = 0;
+
+            if(is_array($params) && sizeof($params['args']) > 0 && sizeof($params['args']['params']) > 0)
+                $templateId = $params['args']['params'][0];
+
+            $template = @T::Find('prediction_contribution');
+
+            if (Auth::GetActiveUser(true)->role->code == 'CLT')
+                $template = $template->Where('prediction_contribution.userId', '=', Auth::GetActiveUser(true)->id);
+
+            $template = $template->Where('prediction_contribution.id', '=', $templateId)->Where('prediction_contribution.isDeleted', '=', \Helper\Check::$False)
+                ->FetchFirstOrDefault();
+
+            if ($template->IsAny()) {
+
+                $template->id = 0;
+                $template->createdDate = DATE_NOW;
+                $template->createdBy = Auth::GetActiveUser(true)->username;
+                $template->name = "Duplicated - " . $template->name;
+                $template->description = "Duplicated - " . date(DATE_SECOND_FORMAT, strtotime(DATE_NOW)) . " - " . $template->description;
+
+                if($template->Save()) {
+                    $template->code =  $template->id.$template->code;
+                    $template->Save();
+                    return $this->jsonFormat(['success' => true, 'error' => false, 'message' => "Template has been successfully duplicated.", 'link' => '/template']);
+                }
+                else
+                    return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "Your template couldn't be duplicated, try again"]);
+            }
+            else {
+                return $this->jsonFormat(['success' => false, 'error' => true, 'message' => "No template found to update"]);
+            }
+
+        }
+
+        function delete($params = null) {
+
+            $templateId = 0;
+
+            if(is_array($params) && sizeof($params['args']) > 0 && sizeof($params['args']['params']) > 0)
+                $templateId = $params['args']['params'][0];
+
+            $template = @T::Find('prediction_contribution');
+
+            if (Auth::GetActiveUser(true)->role->code == 'CLT')
+                $template = $template->Where('prediction_contribution.userId', '=', Auth::GetActiveUser(true)->id);
+
+            $template = $template->Where('prediction_contribution.id', '=', $templateId)->Where('prediction_contribution.isDeleted', '=', \Helper\Check::$False)
+                ->FetchFirstOrDefault();
+
+            if ($template->IsAny()) {
+
+                $template->modifiedDate = DATE_NOW;
+                $template->modifiedBy = Auth::GetActiveUser(true)->username;
+                $template->isDeleted = 1;
+
+                if($template->Save())
+                    return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Template has been successfully deleted.", 'link'=>'/template']);
+                else
+                    return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "Your template couldn't be deleted, try again"]);
+            }
+            else {
+                return $this->jsonFormat(['success' => false, 'error' => true, 'message' => "No template found to update"]);
             }
 
         }

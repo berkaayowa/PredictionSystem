@@ -838,6 +838,10 @@ option , select{
         text-align: left;
     }
 
+    .center-on-mobile {
+        text-align: center!important;
+    }
+
 }
 
 @media (min-width: 768px) {
@@ -857,6 +861,18 @@ option , select{
         /*font-size: 11px !important;*/
         touch-action: pan-x pan-y;
     }
+}
+
+.action-holder {
+    border-top: solid 3px #ededed!important;
+    padding-top: 5px!important;
+    padding-bottom: 5px!important;
+    background: rgb(224 227 230) !important;
+}
+
+.cardHolder {
+    padding-right: 0px!important;
+    padding-left: 0px!important;
 }
 
 .breadcrumb-divider {
@@ -1810,4 +1826,8 @@ span.second_text.status_info {
 
 .card-text {
     color: #656565 !important;
+}
+
+.bg-white {
+    background-color: white!important;
 }

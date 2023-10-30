@@ -35,10 +35,10 @@
             <form class=" " message="<?=Resource\Label::General("Requesting")?>..."  request-type="POST" id="request" data-request="<?= BerkaPhp\Helper\Html::action('/prediction/requestprediction')?>">
                 <div class="box-body">
                     <div class="row">
-                        <div class="form-group col-sm-3 col-md-3 ">
-                            <input type="text" required placeholder="Prediction Request Name" autocomplete="off" class="form-control" name="description" id="description">
+                        <div class="form-group col-sm-3 col-md-3 col-lg-2">
+                            <input type="text" required placeholder="Request Name" autocomplete="off" class="form-control" name="description" id="description">
                         </div>
-                        <div class="form-group col-sm-3 col-md-3 ">
+                        <div class="form-group col-sm-3 col-md-3 col-lg-3">
                             <div class="input-group">
                                 <input required autocomplete="off" data-date-max="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("Fixtures Date")?>" type="text" class="form-control" name="date" id="date">
                                 <span class="input-group-addon">
@@ -46,7 +46,7 @@
                             </span>
                             </div>
                         </div>
-                        <div class="form-group col-sm-3 col-md-3 ">
+                        <div class="form-group col-sm-3 col-md-3 col-lg-3">
                             <?= Util\Helper::select('configuration', $pconfig, ['default'=>'Select Template','value'=>'id', 'class'=>'form-control', 'data-dropdrown'=>true, 'required'=>true], function($data) {
                                 if(empty($data['description']))
                                     return $data['name'];
@@ -54,7 +54,7 @@
                                     return $data['name'];
                             }) ?>
                         </div>
-                        <div class="form-group col-sm-3 col-md-3 ">
+                        <div class="form-group col-sm-3 col-md-3 col-lg-2">
                             <div class="input-group">
                             <?= Util\Helper::select('notify', [['id'=>'0','label'=>'No'],['id'=>'1','label'=>'Yes']], ['value'=>'id', 'class'=>'form-control', 'data-dropdrown'=>true, 'required'=>true], function($data) {
                                 return $data['label'];
@@ -65,17 +65,17 @@
 
                             </div>
                         </div>
+                        <div class="form-group col-sm-3 col-md-3 col-lg-2">
+                            <button type="submit" class="btn btn-primary btn-themed">
+                                <?=Resource\Label::General("Request Predictions")?>
+                            </button>
+                        </div>
                     </div>
-                    <br>
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="panel-footer ">
-                                <button type="submit" class="btn btn-primary btn-themed">
-                                    <?=Resource\Label::General("Request Predictions")?>
-                                </button>
-
-                                <a href="/template" class="btn btn-primary btn-themed">
-                                    <?=Resource\Label::General("View/Create My Prediction Templates")?>
+                            <div class="panel-footer bg-white center-on-mobile">
+                                <a href="/template" class="">
+                                    <?=Resource\Label::General("View Or Create Prediction Templates")?>
                                 </a>
                             </div>
                         </div>
@@ -93,53 +93,41 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <?php if(true): ?>
-                            <div class="table-responsive">
-                                <table class="table table-bordered fixtureTable" id="dataTable">
-<!--                                    <thead class="thead-inverse">-->
-<!--                                    <tr class=table-header">-->
-<!--                                        <th class="txt-capitalized text-center"></th>-->
-<!--                                    </tr>-->
-<!--                                    </thead>-->
-                                    <tbody>
-                                        <?php foreach ($predictionRequest as $request ): ?>
-<!--                                            <tr>-->
-<!--                                                <td>-->
-                                                <div class="d-flex cardHolder" title="<?=ucfirst($request->description)?> | <?=$request->configuration->description?>">
-                                                    <div class="card m-2 <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>" style="">
-                                                        <div class="row g-0">
-                                                            <div class="col-sm-12">
-                                                                <div class="card-body">
-                                                                    <h5 class="card-title">#<?=$request->id?> <?=$request->status->name?> | <?= date('d-m-Y', strtotime($request->requestedDate))?></h5>
-                                                                    <p class="card-text">
-                                                                        <?=ucfirst($request->description)?>, Requested Date: <?= date('d-m-Y', strtotime($request->requestedDate))?>
-                                                                        ,Template: <?=$request->configuration->name?>, (Notify) <?=$request->notify == \Helper\Check::$True ? 'Yes' : 'No'?>
-                                                                    </p>
-                                                                    <div class="card-text">
-                                                                        <?php if($request->status->code == 'CNP') : ?>
-                                                                            <a target="_blank" class="tb-action" title="View Predictions" href="/prediction?requestcode=<?=$request->id?>" >
-                                                                                <span class="fa fa-list-alt action-icon"></span> Games
-                                                                            </a>
-                                                                            <a target="_blank" class="tb-action" title="Create Coupons" href="/coupons/index/<?=$request->id?>?oddDifference=0&numberOfGamesPerCoupon=10&numberOfGamesPerLeague=1&leaguePointPercentageOverOREqual=0&gameMotivation=0&h2hPercentage=0&gameLocation=0&options%5B%5D=Win_at&options%5B%5D=Win%2FDraw_at&options%5B%5D=Draw_at&allowedDuplicateGame=2" >
-                                                                                <span class="glyphicon glyphicon-edit action-icon"></span> Coupons
-                                                                            </a>
-                                                                        <?php endif ?>
-                                                                        <a class="tb-action" title="<?=$request->views?> Views" href="/coupons/index/<?=$request->id?>?oddDifference=0&numberOfGamesPerCoupon=10&numberOfGamesPerLeague=1&leaguePointPercentageOverOREqual=0&gameMotivation=0&h2hPercentage=0&gameLocation=0&options%5B%5D=Win_at&options%5B%5D=Win%2FDraw_at&options%5B%5D=Draw_at&allowedDuplicateGame=2" >
-                                                                            <span class="glyphicon glyphicon-eye-open action-icon"></span><?=$request->views?> Views
-                                                                        </a>
-                                                                        <a class="tb-action hideOnMobile" title="Created Date">
-                                                                            <span class="glyphicon glyphicon-time action-icon"></span> Created Date <?= date(DATE_SECOND_FORMAT, strtotime($request->createdDate))?>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                            <div class="">
+                                <?php foreach ($predictionRequest as $request ): ?>
+                                    <div class="d-flex cardHolder" title="<?=ucfirst($request->description)?> | <?=$request->configuration->description?>">
+                                        <div class="card m-2 <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>" style="">
+                                            <div class="row g-0">
+                                                <div class="col-sm-12">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">#<?=$request->id?> <?=$request->status->name?> | <span class="glyphicon glyphicon-time action-icon"></span> Created On <?= date(DATE_SECOND_FORMAT, strtotime($request->createdDate))?>
+                                                            | Created By <a><span class="glyphicon glyphicon-user "></span> <?=ucfirst($request->user->name)?> <?=ucfirst($request->user->surname)?></a></h5>
+                                                        <p class="card-text">
+                                                            <?=ucfirst($request->description)?>, Requested Date: <?= date('d-m-Y', strtotime($request->requestedDate))?>
+                                                            ,Template: <?=$request->configuration->name?>, (Notify) <?=$request->notify == \Helper\Check::$True ? 'Yes' : 'No'?>
+                                                        </p>
+                                                        <div class="card-text action-holder">
+                                                            <?php if($request->status->code == 'CNP') : ?>
+                                                                <a target="_blank" class="tb-action" title="View Predictions" href="/prediction?requestcode=<?=$request->id?>" >
+                                                                    <span class="fa fa-list-alt action-icon"></span> Games
+                                                                </a>
+                                                                <a target="_blank" class="tb-action" title="Create Coupons" href="/coupons/index/<?=$request->id?>?oddDifference=0&numberOfGamesPerCoupon=10&numberOfGamesPerLeague=1&leaguePointPercentageOverOREqual=0&gameMotivation=0&h2hPercentage=0&gameLocation=0&options%5B%5D=Win_at&options%5B%5D=Win%2FDraw_at&options%5B%5D=Draw_at&allowedDuplicateGame=2" >
+                                                                    <span class="glyphicon glyphicon-edit action-icon"></span> Coupons
+                                                                </a>
+                                                            <?php endif ?>
+                                                            <a class="tb-action" target="_blank" title="<?=$request->views?> Views" href="/prediction?requestcode=<?=$request->id?>" >
+                                                                <span class="glyphicon glyphicon-eye-open action-icon"></span><?=$request->views?> Views
+                                                            </a>
+                                                            <a data-ajax-confirmation confirmation-title="Confirmation" confirmation-message="Please confirm to delete this prediction request (<?=ucfirst($request->description)?>)" class="tb-action" title="Delete" href="/prediction/delete/<?=$request->id?>">
+                                                                <span class="glyphicon glyphicon-remove action-icon"></span> Delete
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
-<!--                                                </td>-->
-<!--                                            </tr>-->
-                                        <?php endforeach ?>
-                                    </tbody>
-                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endforeach ?>
                             </div>
                         <?php else: ?>
                             <div class="txt-capitalized text-center">No predictions available</div>

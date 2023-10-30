@@ -2,12 +2,12 @@
     $.fn.confirmation = function(options) {
         var settings = {
             title: "Please confirm",
-            message: "Confimatiom message",
+            message: "Confirmation message",
             id: "confirmation",
             onClick: null
         };
 
-        var options = $.extend(settings, options);
+        options = $.extend(settings, options);
 
         function initialize(event) {
 

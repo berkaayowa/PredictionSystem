@@ -156,6 +156,7 @@
 
             $requests = @T::Find('prediction_request')
                 ->Join(['prediction_request_status'=>'status'], 'status.id = prediction_request.predictionRequestStatusId')
+                ->Join('user', 'user.id = prediction_request.userId')
                 ->Join(['prediction_contribution'=>'configuration'], 'configuration.id = prediction_request.predictionContributionId')
                 ->Where('prediction_request.userId', '=', Auth::GetActiveUser(true)->id)
                 ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
@@ -179,6 +180,39 @@
             $this->view->set('predictionRequest', $requests);
             $this->view->set('pconfig', $config);
             $this->view->render();
+        }
+
+        function delete($params = null) {
+
+            $id = 0;
+
+            if(is_array($params) && sizeof($params['args']) > 0 && sizeof($params['args']['params']) > 0)
+                $id = $params['args']['params'][0];
+
+            $request = @T::Find('prediction_request')
+                ->Join('user', 'user.id = prediction_request.userId')
+                ->Join(['prediction_request_status'=>'status'], 'status.id = prediction_request.predictionRequestStatusId')
+                ->Join(['prediction_contribution'=>'configuration'], 'configuration.id = prediction_request.predictionContributionId')
+                ->Where('prediction_request.id', '=', $id)
+                ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
+                ->Where('prediction_request.userId', '=', Auth::GetActiveUser(true)->id)
+                ->FetchFirstOrDefault();
+
+            if ($request->IsAny()) {
+
+                $request->modifiedDate = DATE_NOW;
+                $request->modifiedBy = Auth::GetActiveUser(true)->id;
+                $request->isDeleted = 1;
+
+                if($request->Save())
+                    return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Your prediction request has been successfully deleted.", 'link'=>'/prediction/mypredictions']);
+                else
+                    return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "Your prediction request couldn't be deleted, try again"]);
+            }
+            else {
+                return $this->jsonFormat(['success' => false, 'error' => true, 'message' => "No prediction request found to update"]);
+            }
+
         }
 
         function requestprediction($params = null) {

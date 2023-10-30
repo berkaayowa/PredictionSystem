@@ -49,7 +49,7 @@
                                         <div class="form-label-group">
                                             <label for="firstName">League Points Percentage</label>
                                             <div class="input-group">
-                                                <input value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->leaguePointsPercentage : ''?>" required autocomplete="off" type="number" class="form-control" name="leaguePointsPercentage" id="leaguePointsPercentage">
+                                                <input step="any" value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->leaguePointsPercentage : ''?>" required autocomplete="off" type="number" class="form-control" name="leaguePointsPercentage" id="leaguePointsPercentage">
                                                 <span class="input-group-addon">
                                                     <span class="fa fa-earlybirds">%</span>
                                                 </span>
@@ -60,7 +60,7 @@
                                         <div class="form-label-group">
                                             <label for="firstName">League Position Percentage</label>
                                             <div class="input-group">
-                                                <input value="<?=$pTemplate->IsAny() > 0 ? $pTemplate->leaguePositionPercentage : ''?>" required autocomplete="off" type="number" class="form-control" name="leaguePositionPercentage" id="leaguePositionPercentage">
+                                                <input step="any" value="<?=$pTemplate->IsAny() > 0 ? $pTemplate->leaguePositionPercentage : ''?>" required autocomplete="off" type="number" class="form-control" name="leaguePositionPercentage" id="leaguePositionPercentage">
                                                 <span class="input-group-addon">
                                                     <span class="fa fa-earlybirds">%</span>
                                                 </span>
@@ -71,7 +71,7 @@
                                         <div class="form-label-group">
                                             <label for="firstName">Game Location</label>
                                             <div class="input-group">
-                                                <input value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->awayHomePercentage : ''?>" required autocomplete="off" type="number" class="form-control" name="awayHomePercentage" id="awayHomePercentage">
+                                                <input step="any" value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->awayHomePercentage : ''?>" required autocomplete="off" type="number" class="form-control" name="awayHomePercentage" id="awayHomePercentage">
                                                 <span class="input-group-addon">
                                                     <span class="fa fa-earlybirds">%</span>
                                                 </span>
@@ -82,7 +82,7 @@
                                         <div class="form-label-group">
                                             <label for="firstName">Head 2 Head Percentage</label>
                                             <div class="input-group">
-                                                <input value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->head2headPercentage : ''?>" required autocomplete="off" type="number" class="form-control" name="head2headPercentage" id="head2headPercentage">
+                                                <input step="any" value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->head2headPercentage : ''?>" required autocomplete="off" type="number" class="form-control" name="head2headPercentage" id="head2headPercentage">
                                                 <span class="input-group-addon">
                                                     <span class="fa fa-earlybirds">%</span>
                                                 </span>
@@ -99,7 +99,7 @@
                                         <div class="form-label-group">
                                             <label for="firstName">Motivation Based On Last Games Played</label>
                                             <div class="input-group">
-                                                <input value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->lastMatchPlayedPercentage : ''?>" required autocomplete="off" type="number" class="form-control" name="lastMatchPlayedPercentage" id="lastMatchPlayedPercentage">
+                                                <input step="any" value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->lastMatchPlayedPercentage : ''?>" required autocomplete="off" type="number" class="form-control" name="lastMatchPlayedPercentage" id="lastMatchPlayedPercentage">
                                                 <span class="input-group-addon">
                                                     <span class="fa fa-earlybirds">%</span>
                                                 </span>
@@ -120,7 +120,7 @@
                                         <div class="form-label-group">
                                             <label for="firstName">Win Difference</label>
                                             <div class="input-group">
-                                                <input value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->winDifference : ''?>" required autocomplete="off" type="number" class="form-control" name="winDifference" id="winDifference">
+                                                <input step="any" value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->winDifference : ''?>" required autocomplete="off" type="number" class="form-control" name="winDifference" id="winDifference">
                                                 <span class="input-group-addon">
                                                     <span class="fa fa-earlybirds">%</span>
                                                 </span>
@@ -131,7 +131,7 @@
                                         <div class="form-label-group">
                                             <label for="firstName">Win/Draw Difference</label>
                                             <div class="input-group">
-                                                <input value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->winDrawDifference : ''?>" required autocomplete="off" type="number" class="form-control" name="winDrawDifference" id="winDrawDifference">
+                                                <input step="any" value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->winDrawDifference : ''?>" required autocomplete="off" type="number" class="form-control" name="winDrawDifference" id="winDrawDifference">
                                                 <span class="input-group-addon">
                                                     <span class="fa fa-earlybirds">%</span>
                                                 </span>
@@ -142,7 +142,7 @@
                                         <div class="form-label-group">
                                             <label for="firstName">Draw Difference</label>
                                             <div class="input-group">
-                                                <input value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->drawDifference : ''?>" required autocomplete="off" type="number" class="form-control" name="drawDifference" id="drawDifference">
+                                                <input step="any" value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->drawDifference : ''?>" required autocomplete="off" type="number" class="form-control" name="drawDifference" id="drawDifference">
                                                 <span class="input-group-addon">
                                                     <span class="fa fa-earlybirds">%</span>
                                                 </span>
@@ -153,7 +153,7 @@
                                         <div class="form-label-group">
                                             <label for="firstName">Match Pickup Percentage</label>
                                             <div class="input-group">
-                                                <input value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->matchSelectionPercentage : ''?>" required autocomplete="off" type="number" class="form-control" name="matchSelectionPercentage" id="matchSelectionPercentage">
+                                                <input step="any" value="<?=$pTemplate->IsAny()  > 0 ? $pTemplate->matchSelectionPercentage : ''?>" required autocomplete="off" type="number" class="form-control" name="matchSelectionPercentage" id="matchSelectionPercentage">
                                                 <span class="input-group-addon">
                                                     <span class="fa fa-earlybirds">%</span>
                                                 </span>
