@@ -96,11 +96,11 @@
                             <div class="">
                                 <?php foreach ($predictionRequest as $request ): ?>
                                     <div class="d-flex cardHolder" title="<?=ucfirst($request->description)?> | <?=$request->configuration->description?>">
-                                        <div class="card m-2 <?=\Util\Helper::GetPredictionToBorder($request->status->code == 'CNP' ? 200 : 100)?>" style="">
+                                        <div class="card m-2 " style="">
                                             <div class="row g-0">
                                                 <div class="col-sm-12">
                                                     <div class="card-body">
-                                                        <h5 class="card-title">#<?=$request->id?> <?=$request->status->name?> | <span class="glyphicon glyphicon-time action-icon"></span> Created On <?= date(DATE_SECOND_FORMAT, strtotime($request->createdDate))?>
+                                                        <h5 class="card-title"><span class="sp-item <?= $request->status->code == 'PG' || $request->status->code == 'INP' ? \Util\Helper::GetPredictionBg( 100) : ""?>">#<?=$request->id?> <?=$request->status->name?></span>  | <span class="glyphicon glyphicon-time action-icon"></span> Created On <?= date(DATE_SECOND_FORMAT, strtotime($request->createdDate))?>
                                                             | Created By <a><span class="glyphicon glyphicon-user "></span> <?=ucfirst($request->user->name)?> <?=ucfirst($request->user->surname)?></a></h5>
                                                         <p class="card-text">
                                                             <?=ucfirst($request->description)?>, Requested Date: <?= date('d-m-Y', strtotime($request->requestedDate))?>
@@ -150,7 +150,7 @@
             endDate: new Date()
         });
 
-        if($('.p-safe').length > 0) {
+        if($('.bg-safe').length > 0) {
 
             setTimeout(function () {
                 // alert('Reloading Page');

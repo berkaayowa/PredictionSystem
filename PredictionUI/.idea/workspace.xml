@@ -5,7 +5,8 @@
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +152,7 @@
       <workItem from="1697375253975" duration="21000" />
       <workItem from="1697924451518" duration="8600000" />
       <workItem from="1698465194012" duration="1399000" />
-      <workItem from="1698545435129" duration="11733000" />
+      <workItem from="1698545435129" duration="12932000" />
     </task>
     <servers />
   </component>

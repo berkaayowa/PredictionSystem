@@ -863,6 +863,15 @@ option , select{
     }
 }
 
+.sp-item {
+    display: inline-block!important;
+    padding: 4px;
+}
+
+.sp-item.bg-safe {
+    color: #d3d3d3 !important;
+}
+
 .action-holder {
     border-top: solid 3px #ededed!important;
     padding-top: 5px!important;
