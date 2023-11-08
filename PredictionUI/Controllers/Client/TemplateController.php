@@ -28,7 +28,7 @@
                 ->Join('user', 'user.id = prediction_contribution.userId')
                 ->Where('prediction_contribution.isDeleted', '=', \Helper\Check::$False);
 
-            if(Auth::GetActiveUser(true)->role->code == 'CLT')
+//            if(Auth::GetActiveUser(true)->role->code == 'CLT')
                 $templates = $templates->Where('prediction_contribution.userId', '=', Auth::GetActiveUser(true)->id);
 
             $templates = $templates->OrderBy('prediction_contribution.id')
