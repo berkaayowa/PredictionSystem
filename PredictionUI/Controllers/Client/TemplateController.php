@@ -28,7 +28,7 @@
                 ->Join('user', 'user.id = prediction_contribution.userId')
                 ->Where('prediction_contribution.isDeleted', '=', \Helper\Check::$False);
 
-//            if(Auth::GetActiveUser(true)->role->code == 'CLT')
+            if(Auth::GetActiveUser(true)->role->code == 'CLT')
                 $templates = $templates->Where('prediction_contribution.userId', '=', Auth::GetActiveUser(true)->id);
 
             $templates = $templates->OrderBy('prediction_contribution.id')
@@ -145,6 +145,7 @@
                 $template->createdBy = Auth::GetActiveUser(true)->username;
                 $template->name = "Duplicated - " . $template->name;
                 $template->description = "Duplicated - " . date(DATE_SECOND_FORMAT, strtotime(DATE_NOW)) . " - " . $template->description;
+                $template->userId = Auth::GetActiveUser(true)->id);
 
                 if($template->Save()) {
                     $template->code =  $template->id.$template->code;
