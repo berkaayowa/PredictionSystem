@@ -146,6 +146,7 @@ class PredictionController extends RestfulApiController
                     $datRequest =
                         [
                             'id'=>$request->id, 'date'=>$request->requestedDate,
+                            'cache'=>$request->cache,
                             'configuration'=>[
                                 'id'=> $request->configuration->id,
                                 'leaguePointsPercentage'=> $request->configuration->leaguePointsPercentage,

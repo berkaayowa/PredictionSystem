@@ -62,6 +62,8 @@
                 $numberOfGamesPerLeague = (int)$params['args']['query']['numberOfGamesPerLeague'];
 
                 $leaguePointPercentageOverOREqual = floatval($params['args']['query']['leaguePointPercentageOverOREqual']);
+                $leaguePositionPercentageOverOREqual = floatval($params['args']['query']['leaguePositionPercentageOverOREqual']);
+
                 $gameMotivation = floatval($params['args']['query']['gameMotivation']);
                 $h2hPercentage = floatval($params['args']['query']['h2hPercentage']);
                 $gameLocation = floatval($params['args']['query']['gameLocation']);
@@ -120,58 +122,59 @@
 
                                 if($found) {
 
-                                    if ($prediction->HomeTeam->LeaguePointPerecentage >= $leaguePointPercentageOverOREqual || $prediction->AwayTeam->LeaguePointPerecentage >= $leaguePointPercentageOverOREqual) {
+                                    if ($prediction->HomeTeam->LeaguePositionPerecentage >= $leaguePositionPercentageOverOREqual || $prediction->AwayTeam->LeaguePositionPerecentage >= $leaguePositionPercentageOverOREqual) {
 
-                                        if ($prediction->HomeTeam->HeadtoheadPerecentage >= $h2hPercentage || $prediction->AwayTeam->HeadtoheadPerecentage >= $h2hPercentage) {
+                                        if ($prediction->HomeTeam->LeaguePointPerecentage >= $leaguePointPercentageOverOREqual || $prediction->AwayTeam->LeaguePointPerecentage >= $leaguePointPercentageOverOREqual) {
 
-                                            if ($prediction->HomeTeam->LastGamesPerecentage >= $gameMotivation || $prediction->AwayTeam->LastGamesPerecentage >= $gameMotivation) {
+                                            if ($prediction->HomeTeam->HeadtoheadPerecentage >= $h2hPercentage || $prediction->AwayTeam->HeadtoheadPerecentage >= $h2hPercentage) {
 
-                                                $selectThisGame = true;
+                                                if ($prediction->HomeTeam->LastGamesPerecentage >= $gameMotivation || $prediction->AwayTeam->LastGamesPerecentage >= $gameMotivation) {
 
-                                                if ($gameLocation == "1") {
+                                                    $selectThisGame = true;
 
-                                                    if ($prediction->HomeTeam->TotalPerecentage < $prediction->AwayTeam->TotalPerecentage)
-                                                        $selectThisGame = false;
+                                                    if ($gameLocation == "1") {
 
-                                                } else if ($gameLocation == "2") {
+                                                        if ($prediction->HomeTeam->TotalPerecentage < $prediction->AwayTeam->TotalPerecentage)
+                                                            $selectThisGame = false;
 
-                                                    if ($prediction->HomeTeam->TotalPerecentage > $prediction->AwayTeam->TotalPerecentage)
-                                                        $selectThisGame = false;
-                                                }
+                                                    } else if ($gameLocation == "2") {
 
-                                                if($selectThisGame && $oddDifference > 0) {
-
-
-                                                    $homeOdd = floatval($prediction->HomeTeam->Data->Odd);
-                                                    $awayOdd = floatval($prediction->AwayTeam->Data->Odd);
-
-                                                    if($homeOdd > $awayOdd) {
-                                                        $selectThisGame = ($homeOdd - $awayOdd) >= $oddDifference;
-                                                    }
-                                                    else if($homeOdd < $awayOdd) {
-                                                        $selectThisGame = ($awayOdd - $homeOdd) >= $oddDifference;
-                                                    }
-                                                    else {
-                                                        $selectThisGame = $homeOdd >= $oddDifference;
+                                                        if ($prediction->HomeTeam->TotalPerecentage > $prediction->AwayTeam->TotalPerecentage)
+                                                            $selectThisGame = false;
                                                     }
 
+                                                    if ($selectThisGame && $oddDifference > 0) {
+
+
+                                                        $homeOdd = floatval($prediction->HomeTeam->Data->Odd);
+                                                        $awayOdd = floatval($prediction->AwayTeam->Data->Odd);
+
+                                                        if ($homeOdd > $awayOdd) {
+                                                            $selectThisGame = ($homeOdd - $awayOdd) >= $oddDifference;
+                                                        } else if ($homeOdd < $awayOdd) {
+                                                            $selectThisGame = ($awayOdd - $homeOdd) >= $oddDifference;
+                                                        } else {
+                                                            $selectThisGame = $homeOdd >= $oddDifference;
+                                                        }
+
+                                                    }
+
+                                                    if ($selectThisGame && property_exists($prediction->AwayTeam, 'Data')) {
+
+                                                        if ($prediction->AwayTeam->Data->NumberOfTeamsInTheLeague < 5)
+                                                            $selectThisGame = false;
+
+                                                    }
+
+                                                    if ($selectThisGame)
+                                                        array_push($selectedGames, $prediction);
+
+
                                                 }
-
-                                                if($selectThisGame && property_exists($prediction->AwayTeam, 'Data')) {
-
-                                                    if($prediction->AwayTeam->Data->NumberOfTeamsInTheLeague < 5)
-                                                        $selectThisGame = false;
-
-                                                }
-
-                                                if ($selectThisGame)
-                                                    array_push($selectedGames, $prediction);
-
 
                                             }
 
                                         }
-
                                     }
 
                                 }
@@ -273,6 +276,7 @@
             $this->view->set('gameLocation', $gameLocation);
             $this->view->set('allowedDuplicateGame', $allowedDuplicateGame);
             $this->view->set('oddDifference', $oddDifference);
+            $this->view->set('leaguePositionPercentageOverOREqual', $leaguePositionPercentageOverOREqual);
 
             $this->view->set('predictions', $selectedGames);
             $this->view->set('maxPrediction', sizeof($selectedGames));

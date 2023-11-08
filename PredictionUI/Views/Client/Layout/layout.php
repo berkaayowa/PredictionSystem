@@ -89,7 +89,7 @@
                                                     <li class="active"><a class="adsOpen" href="/">Today's Matches</a></li>
                                                     <li class="">
                                                         <a class="adsOpen" href="/pages/livescore">
-                                                           <span class="label label-success livescoreBarIcon">New</span>Live Score <i class="fa fa-soccer-ball-o hide"></i>
+                                                           <span class="label label-success livescoreBarIcon">Live</span>Live Score <i class="fa fa-soccer-ball-o hide"></i>
                                                         </a>
                                                     </li>
 
@@ -144,8 +144,10 @@
             <div class="container footerContainer">
         <!--        <a href='#'><i class="fa fa-twitch fa-3x fa-fw"></i></a>-->
                 <a target="_blank" title="follow our whatsapp channel" href='https://whatsapp.com/channel/0029Va8uH1ALNSa7RcphK42r'><i class="fa fa-whatsapp fa-3x fa-fw"></i></a>
-                <a target="_blank" href='https://www.facebook.com/profile.php?id=100094880164648'><i class="fa fa-facebook fa-3x fa-fw"></i></a>
-                <a target="_blank" href='https://www.youtube.com/@soccerprediction27/about'><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
+                <a target="_blank" title="facebook" href='https://www.facebook.com/profile.php?id=100094880164648'><i class="fa fa-facebook fa-3x fa-fw"></i></a>
+                <a target="_blank" title="instagram" href='https://www.instagram.com/soccerprediction.co.za'><i class="fa fa-instagram fa-3x fa-fw"></i></a>
+                <a target="_blank" title="youtube" href='https://www.youtube.com/@soccerprediction27/about'><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
+
                 <div class="copyRight"><a target="_blank" href='https://www.tiktok.com/@soccerprediction.co.za?_t=8etdqA0Hz9h&_r=1'>TikTok</i></a></div>
                 <div class="copyRight"><a href="/contacts" >Contacts Us</i></a></div>
                 <div class="copyRight"><a href="https://www.paypal.com/donate/?hosted_button_id=3EUXREY22UMGQ" >Donate</i></a></div>

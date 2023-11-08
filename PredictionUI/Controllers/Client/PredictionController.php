@@ -215,6 +215,47 @@
 
         }
 
+        function regenerate($params = null) {
+
+            $id = 0;
+
+            if(is_array($params) && sizeof($params['args']) > 0 && sizeof($params['args']['params']) > 0)
+                $id = $params['args']['params'][0];
+
+            $request = @T::Find('prediction_request')
+                ->Join('user', 'user.id = prediction_request.userId')
+                ->Join(['prediction_request_status'=>'status'], 'status.id = prediction_request.predictionRequestStatusId')
+                ->Join(['prediction_contribution'=>'configuration'], 'configuration.id = prediction_request.predictionContributionId')
+                ->Where('prediction_request.id', '=', $id)
+                ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
+                ->Where('prediction_request.userId', '=', Auth::GetActiveUser(true)->id)
+                ->FetchFirstOrDefault();
+
+            if ($request->IsAny()) {
+
+                $status = @T::Find('prediction_request_status')
+                    ->Where('code' , '=', "PG")
+                    ->Where('isDeleted', '=', \Helper\Check::$False)
+                    ->FetchFirstOrDefault();
+
+                $request->modifiedDate = DATE_NOW;
+                $request->modifiedBy = Auth::GetActiveUser(true)->id;
+                $request->predictionRequestStatusId = $status->id;
+
+                if(array_key_exists("cache", $params['args']['query']))
+                    $request->cache = 0;
+
+                if($request->Save())
+                    return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Your prediction request is being regenerated.", 'link'=>'/prediction/mypredictions']);
+                else
+                    return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "Your prediction request couldn't be regenerated, try again"]);
+            }
+            else {
+                return $this->jsonFormat(['success' => false, 'error' => true, 'message' => "No prediction request found to update"]);
+            }
+
+        }
+
         function requestprediction($params = null) {
 
             $data = $this->getPost();

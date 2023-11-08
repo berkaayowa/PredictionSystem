@@ -1844,3 +1844,53 @@ span.second_text.status_info {
 .bg-white {
     background-color: white!important;
 }
+
+.progressBox {
+    border: 1px solid #ccc!important;
+    width: 100%;
+    display: inline-block!important;
+}
+
+.progressBoxItem {
+    color: #000!important;
+    background-color: #9e9e9e!important;
+    height: 20px;
+}
+
+#progress {
+    width: 100px;
+    border: 1px solid #e3e3e3;
+    position: relative;
+    /*padding: 3px;*/
+}
+
+#percent {
+    position: absolute;
+    /*left: 60%;*/
+}
+
+#percent.home {
+    left: 60%!important;
+}
+
+#percent.away {
+    left: 2%!important;
+}
+
+#bar {
+    height: 20px;
+    background-color: green;
+    /*width: 30%;*/
+}
+
+.right {
+    float: right;
+}
+
+.barHome {
+    float: right;
+}
+
+#no {
+    font-size: 14px!important;
+}

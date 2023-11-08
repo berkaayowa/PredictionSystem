@@ -111,9 +111,19 @@
                                                                 <a target="_blank" class="tb-action" title="View Predictions" href="/prediction?requestcode=<?=$request->id?>" >
                                                                     <span class="fa fa-list-alt action-icon"></span> Games
                                                                 </a>
-                                                                <a target="_blank" class="tb-action" title="Create Coupons" href="/coupons/index/<?=$request->id?>?oddDifference=0&numberOfGamesPerCoupon=10&numberOfGamesPerLeague=1&leaguePointPercentageOverOREqual=0&gameMotivation=0&h2hPercentage=0&gameLocation=0&options%5B%5D=Win_at&options%5B%5D=Win%2FDraw_at&options%5B%5D=Draw_at&allowedDuplicateGame=2" >
+                                                                <a target="_blank" class="tb-action" title="Create Coupons" href="/coupons/index/<?=$request->id?>?oddDifference=0&numberOfGamesPerCoupon=10&numberOfGamesPerLeague=1&leaguePointPercentageOverOREqual=0&gameMotivation=0&h2hPercentage=0&gameLocation=0&options%5B%5D=Win_at&options%5B%5D=Win%2FDraw_at&options%5B%5D=Draw_at&allowedDuplicateGame=2&leaguePositionPercentageOverOREqual=0" >
                                                                     <span class="glyphicon glyphicon-edit action-icon"></span> Coupons
                                                                 </a>
+                                                                <a data-ajax-confirmation confirmation-title="Confirmation" confirmation-message="Please confirm to regenerate (<?=ucfirst($request->description)?>)" class="tb-action" title="Delete" href="/prediction/regenerate/<?=$request->id?>">
+                                                                    <span class="glyphicon glyphicon-refresh action-icon"></span> Regenerate
+                                                                </a>
+
+                                                                <?php if((\BerkaPhp\Helper\Auth::IsUserLogged() && BerkaPhp\Helper\Auth::GetActiveUser()->role->code == 'ADM')): ?>
+                                                                    <a data-ajax-confirmation confirmation-title="Confirmation" confirmation-message="Please confirm to regenerate (No caching) (<?=ucfirst($request->description)?>)" class="tb-action" title="Delete" href="/prediction/regenerate/<?=$request->id?>?cache=true">
+                                                                        <span class="glyphicon glyphicon-warning-sign action-icon"></span> Regenerate (No caching)
+                                                                    </a>
+                                                                <?php endif ?>
+
                                                             <?php endif ?>
                                                             <a class="tb-action" target="_blank" title="<?=$request->views?> Views" href="/prediction?requestcode=<?=$request->id?>" >
                                                                 <span class="glyphicon glyphicon-eye-open action-icon"></span><?=$request->views?> Views

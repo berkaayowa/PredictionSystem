@@ -51,6 +51,12 @@
                                     </div>
                                     <div class="col-xs-12 col-sm-2 col-md-2">
                                         <div class="form-group">
+                                            <label class="label label-default" for="firstName">League Position % >=</label>
+                                            <input value="<?=$leaguePositionPercentageOverOREqual?>" step="any" required autocomplete="off" type="number" class="form-control" name="leaguePositionPercentageOverOREqual" id="leaguePositionPercentageOverOREqual">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        <div class="form-group">
                                             <label class="label label-default" for="firstName">Game Motivation % >=</label>
                                             <input value="<?=$gameMotivation?>" step="any" required autocomplete="off" type="number" class="form-control" name="gameMotivation" id="gameMotivation">
                                         </div>
@@ -59,15 +65,6 @@
                                         <div class="form-group">
                                             <label class="label label-default" for="firstName">Head 2 Head % >=</label>
                                             <input value="<?=$h2hPercentage?>" step="any" required autocomplete="off" type="number" class="form-control" name="h2hPercentage" id="h2hPercentage">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xs-12 col-sm-2 col-md-2">
-                                        <div class="form-group">
-                                            <label class="label label-default" for="firstName">Game Location</label>
-                                            <?= Util\Helper::select('gameLocation', [['id'=>'0','label'=>'Default'],['id'=>'1','label'=>'Home'],['id'=>'2','label'=>'Away']], ['selected'=>$gameLocation, 'value'=>'id', 'class'=>'form-control', 'data-dropdrown'=>true, 'required'=>true], function($data) {
-                                                return $data['label'];
-                                            }) ?>
                                         </div>
                                     </div>
 
@@ -81,7 +78,16 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
+                                        <div class="form-group">
+                                            <label class="label label-default" for="firstName">Game Location</label>
+                                            <?= Util\Helper::select('gameLocation', [['id'=>'0','label'=>'Default'],['id'=>'1','label'=>'Home'],['id'=>'2','label'=>'Away']], ['selected'=>$gameLocation, 'value'=>'id', 'class'=>'form-control', 'data-dropdrown'=>true, 'required'=>true], function($data) {
+                                                return $data['label'];
+                                            }) ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
                                         <div class="form-group">
                                             <label class="label label-default" for="firstName">Allow Duplicated Game</label>
                                             <?= Util\Helper::select('allowedDuplicateGame', [['id'=>'1','label'=>'Yes'],['id'=>'2','label'=>'No']], ['selected'=> $allowedDuplicateGame === true ? '1' : '2','value'=>'id', 'class'=>'form-control', 'data-dropdrown'=>true, 'required'=>true], function($data) {
@@ -90,7 +96,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                    <div class="col-xs-12 col-sm-2 col-md-2">
                                         <div class="form-group">
                                             <label class="label label-default" for="firstName">Odd Difference >=</label>
                                             <input value="<?=$oddDifference?>" required autocomplete="off" type="number" step="any" class="form-control" name="oddDifference" id="oddDifference">

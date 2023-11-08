@@ -47,7 +47,7 @@ $maxPrediction = array_key_exists('maxPrediction', $model) ? $model['maxPredicti
                                     <span class="fa fa-heart"></span> <small>Likes</small> <strong><?=$predictionRequest->likes?></strong>
                                 </label>
                                 <label class="label label-default author-lbl">
-                                    <span class="fa fa-eye"></span> <small>Views</small> <strong><?=$predictionRequest->views?></strong>
+                                    <span class="fa fa-clock-o"></span> <strong><?= date('d-m-Y', strtotime($predictionRequest->requestedDate))?></strong>
                                 </label>
                             </h2>
                         </div>
