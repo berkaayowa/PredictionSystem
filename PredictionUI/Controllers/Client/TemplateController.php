@@ -145,7 +145,7 @@
                 $template->createdBy = Auth::GetActiveUser(true)->username;
                 $template->name = "Duplicated - " . $template->name;
                 $template->description = "Duplicated - " . date(DATE_SECOND_FORMAT, strtotime(DATE_NOW)) . " - " . $template->description;
-                $template->userId = Auth::GetActiveUser(true)->id);
+                $template->userId = Auth::GetActiveUser(true)->id;
 
                 if($template->Save()) {
                     $template->code =  $template->id.$template->code;
