@@ -43,7 +43,7 @@ $count = 1;
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                             <h2 class="hFocusSm text-right">
-                                <label class="label label-default author-lbl hide">
+                                <label class="label label-default author-lbl hide hide">
                                     <span class="fa fa-heart"></span> <small>Likes</small> <strong><?=$predictionRequest->likes?></strong>
                                 </label>
                                 <label class="label label-default author-lbl">
