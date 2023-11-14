@@ -4,7 +4,7 @@
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Elements/CouponPredictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Elements/CouponPredictions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +51,7 @@
           <mapping local-root="$PROJECT_DIR$/BerkaPhp/Framework/Views/Framework/Page" remote-root="C:/Projects/Mine/Web/sms" />
         </path_mappings>
       </server>
+      <server host="localhost" id="46d7d7db-f67c-4a1f-9301-d753433a4ea2" name="localhost (4)" port="8091" />
     </servers>
   </component>
   <component name="ProjectId" id="2ErwlXLuVn7dIXCJndf0pBhewfa" />
@@ -153,7 +154,17 @@
       <workItem from="1698545435129" duration="12932000" />
       <workItem from="1698693573174" duration="2258000" />
       <workItem from="1698980800646" duration="5932000" />
-      <workItem from="1699400572948" duration="7727000" />
+      <workItem from="1699400572948" duration="8350000" />
+      <workItem from="1699655790711" duration="1552000" />
+      <workItem from="1699657642133" duration="188000" />
+      <workItem from="1699657920271" duration="17000" />
+      <workItem from="1699658826212" duration="97000" />
+      <workItem from="1699659407574" duration="100000" />
+      <workItem from="1699659872956" duration="208000" />
+      <workItem from="1699661152227" duration="6000" />
+      <workItem from="1699663887483" duration="1647000" />
+      <workItem from="1699791189168" duration="8000" />
+      <workItem from="1699852332845" duration="786000" />
     </task>
     <servers />
   </component>
