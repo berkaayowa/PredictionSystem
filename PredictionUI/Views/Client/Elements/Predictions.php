@@ -47,6 +47,7 @@ $maxPrediction = array_key_exists('maxPrediction', $model) ? $model['maxPredicti
                                 <label class="label label-default author-lbl">
                                     <span class="fa fa-soccer-ball-o"></span> <strong><?=$predictionRequest->correctPredictions?>/<?=$predictionRequest->totalPredictions?></strong>
                                 </label>
+                                &nbsp;
                                 <?php endif ?>
                                 <label class="label label-default author-lbl">
                                     <span class="fa fa-clock-o"></span> <strong><?= date('d-m-Y', strtotime($predictionRequest->requestedDate))?></strong>
