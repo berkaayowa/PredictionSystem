@@ -43,9 +43,11 @@ $maxPrediction = array_key_exists('maxPrediction', $model) ? $model['maxPredicti
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                             <h2 class="hFocusSm text-right">
-                                <label class="label label-default author-lbl hide">
-                                    <span class="fa fa-heart"></span> <small>Likes</small> <strong><?=$predictionRequest->likes?></strong>
+                                <?php if($predictionRequest->totalPredictions > 0) :?>
+                                <label class="label label-default author-lbl">
+                                    <span class="fa fa-soccer-ball-o"></span><strong><?=$predictionRequest->correctPredictions?>/<?=$predictionRequest->totalPredictions?></strong>
                                 </label>
+                                <?php endif ?>
                                 <label class="label label-default author-lbl">
                                     <span class="fa fa-clock-o"></span> <strong><?= date('d-m-Y', strtotime($predictionRequest->requestedDate))?></strong>
                                 </label>
