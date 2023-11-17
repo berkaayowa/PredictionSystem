@@ -127,8 +127,8 @@
                                                             <?php endif ?>
                                                             <a class="tb-action" target="_blank" title="<?=$request->views?> Views" href="/prediction?requestcode=<?=$request->id?>" >
                                                                 <span class="glyphicon glyphicon-eye-open action-icon"></span><?=$request->views?> Views
-                                                                <?php if($predictionRequest->totalPredictions > 0) :?>
-                                                                    | <?=$predictionRequest->correctPredictions?> out of <?=$predictionRequest->totalPredictions?></strong>
+                                                                <?php if($request->totalPredictions > 0) :?>
+                                                                    | <strong><?=$request->correctPredictions?> out of <?=$request->totalPredictions?></strong>
                                                                 <?php endif ?>
                                                             </a>
                                                             <a data-ajax-confirmation confirmation-title="Confirmation" confirmation-message="Please confirm to delete this prediction request (<?=ucfirst($request->description)?>)" class="tb-action" title="Delete" href="/prediction/delete/<?=$request->id?>">
