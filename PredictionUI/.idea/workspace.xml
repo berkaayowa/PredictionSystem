@@ -4,7 +4,6 @@
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Client/Elements/Predictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Elements/Predictions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +165,7 @@
       <workItem from="1699663887483" duration="1647000" />
       <workItem from="1699791189168" duration="8000" />
       <workItem from="1699852332845" duration="786000" />
-      <workItem from="1700191032924" duration="7613000" />
+      <workItem from="1700191032924" duration="7788000" />
     </task>
     <servers />
   </component>
