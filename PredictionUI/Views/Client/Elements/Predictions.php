@@ -44,7 +44,7 @@ $maxPrediction = array_key_exists('maxPrediction', $model) ? $model['maxPredicti
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                             <h2 class="hFocusSm text-right">
                                 <?php if($predictionRequest->totalPredictions > 0) :?>
-                                <label class="label label-default author-lbl">
+                                <label class="label label-default author-lbl hide">
                                     <span class="fa fa-soccer-ball-o"></span> <strong><?=$predictionRequest->correctPredictions?>/<?=$predictionRequest->totalPredictions?></strong>
                                 </label>
                                 &nbsp;
