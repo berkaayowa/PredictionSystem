@@ -122,6 +122,8 @@ class PredictionController extends RestfulApiController
 
     }
 
+
+
     function request($option) {
 
         $requests = array();
@@ -199,6 +201,43 @@ class PredictionController extends RestfulApiController
         }
 
         return $this->jsonFormat(['error'=> sizeof($requests) == 0, 'data'=> $requests]);
+
+    }
+
+    function updatecorrectpredictions($option) {
+
+        //http://localhost:8091/job/prediction/getleague?code=run
+        if(isset($option['args'])) {
+
+            $filename = $option['args']['query']['filename'];
+            $correctPrediction = $option['args']['query']['correctPrediction'];
+            $maxPredictions = $option['args']['query']['maxPredictions'];
+
+            if(!empty($filename)) {
+
+                $request = @T::Find('prediction_request')
+                    ->Join('user', 'user.id = prediction_request.userId')
+                    ->Where('prediction_request.fileName', '=', $filename)
+                    ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
+                    ->FetchFirstOrDefault();
+
+                if($request->IsAny()) {
+
+                    $request->correctPredictions = $correctPrediction;
+                    $request->totalPredictions = $maxPredictions;
+                    $request->modifiedDate = DATE_NOW;
+
+                    if($request->Save()) {
+
+                        return $this->jsonFormat(['error' => false]);
+                    }
+
+                }
+
+            }
+        }
+
+        return $this->jsonFormat(['error'=> true]);
 
     }
 

@@ -32,6 +32,10 @@ class Router {
                     'name'=>'Client',
                     'home'=>'prediction'
                 ],
+                'admin'=>[
+                    'name'=>'Admin',
+                    'home'=>'pages'
+                ],
                 'email'=>[
                     'name'=>'Email',
                     'home'=>'request'
@@ -89,6 +93,16 @@ class Router {
                     $route['controller'] = 'prediction';
                     $route['action'] = 'index';
                 }
+            }
+
+            if(strtolower($route['prefix']['name']) == 'admin') {
+
+                if(!Auth::IsUserLogged() || !Auth::GetActiveUser(true)->role->code == 'ADM'){
+                    $route['prefix']['name'] = "Client";
+                    $route['controller'] = 'pages';
+                    $route['action'] = 'unauthorized';
+                }
+
             }
 
             Route::to($route);

@@ -35,7 +35,8 @@ $paths = array(
         "Controllers/Base/",
         "Controllers/Job/",
         "Controllers/Email/",
-        "Controllers/Sms/"
+        "Controllers/Sms/",
+        "Controllers/Admin/"
 
     ],
 

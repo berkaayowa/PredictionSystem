@@ -2,9 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Controllers/Admin/PagesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Admin/Layout/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Admin/Layout/css/vendor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Admin/Layout/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Admin/Layout/js/vendor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Admin/Layout/layout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Admin/Pages/indexs.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" beforeDir="false" afterPath="$PROJECT_DIR$/../PredictionJob/PredictionApp.exe.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutoLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/AutoLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/Route/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Route/Route.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Job/PredictionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Job/PredictionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/Layout/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/Layout/fonts/FontAwesome.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/Layout/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/Layout/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/Layout/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/Layout/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/Layout/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/Layout/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/Layout/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/Layout/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/Layout/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/Layout/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/Pages/home.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Admin/Pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Admin/Pages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,17 +84,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Views/Client/Elements" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Controllers/Admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Controllers\Admin" />
+      <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Admin\Layout\css" />
+      <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Admin\Layout\js" />
+      <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Admin\Layout\fonts" />
       <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Elements" />
-      <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Prediction" />
-      <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Assets" />
-      <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Layout" />
-      <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\Mine\Other\PredictionSystem\PredictionUI\Views\Client\Assets\images" />
@@ -165,6 +184,7 @@
       <workItem from="1699663887483" duration="1647000" />
       <workItem from="1699791189168" duration="8000" />
       <workItem from="1699852332845" duration="786000" />
+      <workItem from="1700191032924" duration="6187000" />
     </task>
     <servers />
   </component>
