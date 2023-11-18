@@ -120,7 +120,7 @@
                                             </div>
                                         </div>
 
-                                        <?php if(false) :?>
+                                        <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()) :?>
                                         <div class="form-group col-sm-12 ">
                                             <div class="form-label-groupx">
                                                 <label class="label label-default" for="firstName">Leagues</label>
