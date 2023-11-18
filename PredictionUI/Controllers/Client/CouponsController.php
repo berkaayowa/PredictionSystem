@@ -58,6 +58,15 @@
 //                var_dump($options);
 //                die();
 
+                $teamsLeaguePointsDiff = 0;
+                $teamsLeaguePositionDiff = 0;
+
+                if(array_key_exists('teamsLeaguePointsDiff', $params['args']['query']))
+                    $teamsLeaguePointsDiff = floatval($params['args']['query']['teamsLeaguePointsDiff']);
+
+                if(array_key_exists('teamsLeaguePositionDiff', $params['args']['query']))
+                    $teamsLeaguePositionDiff = floatval($params['args']['query']['teamsLeaguePositionDiff']);
+
                 $numberOfGamesPerCoupon = (int)$params['args']['query']['numberOfGamesPerCoupon'];
                 $numberOfGamesPerLeague = (int)$params['args']['query']['numberOfGamesPerLeague'];
 
@@ -157,6 +166,21 @@
                                                             $selectThisGame = $homeOdd >= $oddDifference;
                                                         }
 
+                                                    }
+
+
+                                                    if($selectThisGame && $teamsLeaguePositionDiff > 0) {
+
+                                                        if(!($teamsLeaguePositionDiff <= self::getDifference($prediction->HomeTeam->LeaguePositionPerecentage, $prediction->AwayTeam->LeaguePositionPerecentage))) {
+                                                            $selectThisGame = false;
+                                                        }
+                                                    }
+
+                                                    if($selectThisGame && $teamsLeaguePointsDiff > 0) {
+
+                                                        if(!($teamsLeaguePointsDiff <= self::getDifference($prediction->HomeTeam->LeaguePointPerecentage, $prediction->AwayTeam->LeaguePointPerecentage))) {
+                                                            $selectThisGame = false;
+                                                        }
                                                     }
 
                                                     if ($selectThisGame && property_exists($prediction->AwayTeam, 'Data')) {
@@ -277,11 +301,23 @@
             $this->view->set('allowedDuplicateGame', $allowedDuplicateGame);
             $this->view->set('oddDifference', $oddDifference);
             $this->view->set('leaguePositionPercentageOverOREqual', $leaguePositionPercentageOverOREqual);
+            $this->view->set('teamsLeaguePointsDiff', $teamsLeaguePointsDiff);
+            $this->view->set('teamsLeaguePositionDiff', $teamsLeaguePositionDiff);
 
             $this->view->set('predictions', $selectedGames);
             $this->view->set('maxPrediction', sizeof($selectedGames));
 
             $this->view->render();
+        }
+
+        private static function getDifference($a, $b) {
+
+            if($a > $b)
+                return $a - $b;
+            else if($a < $b)
+                return $b - $a;
+            else
+                return 0;
         }
 
         function filters($params = array()) {
