@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/CouponsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Client/Coupons/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Coupons/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +168,7 @@
       <workItem from="1699791189168" duration="8000" />
       <workItem from="1699852332845" duration="786000" />
       <workItem from="1700191032924" duration="8216000" />
-      <workItem from="1700301712918" duration="5094000" />
+      <workItem from="1700301712918" duration="5789000" />
     </task>
     <servers />
   </component>

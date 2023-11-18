@@ -67,16 +67,22 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-12 col-md-3">
+                                        <div class="col-sm-12 col-md-2">
                                             <div class="form-group">
                                                 <label class="label label-default" for="firstName">League Points Difference in % >=</label>
                                                 <input value="<?=$teamsLeaguePointsDiff?>" step="any" required autocomplete="off" type="number" class="form-control" name="teamsLeaguePointsDiff" id="teamsLeaguePointsDiff">
                                             </div>
                                         </div>
-                                        <div class="col-sm-12 col-md-3">
+                                        <div class="col-sm-12 col-md-2">
                                             <div class="form-group">
                                                 <label class="label label-default" for="firstName">League Position Difference in % >=</label>
                                                 <input value="<?=$teamsLeaguePositionDiff?>" step="any" required autocomplete="off" type="number" class="form-control" name="teamsLeaguePositionDiff" id="teamsLeaguePositionDiff">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-2">
+                                            <div class="form-group">
+                                                <label class="label label-default" for="firstName">Head 2 Head Difference in % >=</label>
+                                                <input value="<?=$teamsh2hDiff?>" step="any" required autocomplete="off" type="number" class="form-control" name="teamsh2hDiff" id="teamsh2hDiff">
                                             </div>
                                         </div>
 

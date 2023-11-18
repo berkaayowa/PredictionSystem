@@ -60,12 +60,16 @@
 
                 $teamsLeaguePointsDiff = 0;
                 $teamsLeaguePositionDiff = 0;
+                $teamsh2hDiff = 0;
 
                 if(array_key_exists('teamsLeaguePointsDiff', $params['args']['query']))
                     $teamsLeaguePointsDiff = floatval($params['args']['query']['teamsLeaguePointsDiff']);
 
                 if(array_key_exists('teamsLeaguePositionDiff', $params['args']['query']))
                     $teamsLeaguePositionDiff = floatval($params['args']['query']['teamsLeaguePositionDiff']);
+
+                if(array_key_exists('teamsh2hDiff', $params['args']['query']))
+                    $teamsh2hDiff = floatval($params['args']['query']['teamsh2hDiff']);
 
                 $numberOfGamesPerCoupon = (int)$params['args']['query']['numberOfGamesPerCoupon'];
                 $numberOfGamesPerLeague = (int)$params['args']['query']['numberOfGamesPerLeague'];
@@ -182,6 +186,15 @@
                                                             $selectThisGame = false;
                                                         }
                                                     }
+
+                                                    if($selectThisGame && $teamsh2hDiff > 0) {
+
+                                                        if(!($teamsh2hDiff <= self::getDifference($prediction->HomeTeam->HeadtoheadPerecentage, $prediction->AwayTeam->HeadtoheadPerecentage))) {
+                                                            $selectThisGame = false;
+                                                        }
+                                                    }
+
+                                                    //$teamsh2hDiff
 
                                                     if ($selectThisGame && property_exists($prediction->AwayTeam, 'Data')) {
 
@@ -303,6 +316,7 @@
             $this->view->set('leaguePositionPercentageOverOREqual', $leaguePositionPercentageOverOREqual);
             $this->view->set('teamsLeaguePointsDiff', $teamsLeaguePointsDiff);
             $this->view->set('teamsLeaguePositionDiff', $teamsLeaguePositionDiff);
+            $this->view->set('teamsh2hDiff', $teamsh2hDiff);
 
             $this->view->set('predictions', $selectedGames);
             $this->view->set('maxPrediction', sizeof($selectedGames));
