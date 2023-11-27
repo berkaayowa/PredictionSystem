@@ -85,6 +85,47 @@ class UsersController extends BerkaPhpController
 
     }
 
+    function resendverification()
+    {
+
+        $user = @T::Find('user')
+            ->Join(['user_role' => 'role'], 'role.id = user.userRoleId')
+            ->Join(['user_status' => 'status'], 'status.id = user.userStatusId')
+            ->Where('user.username', '=', \BerkaPhp\Helper\Auth::GetActiveUser()->username)
+            ->Where('user.isDeleted', '=', Check::$False)
+            ->FetchFirstOrDefault();
+
+        if ($user->IsAny()) {
+
+            $activationCode = md5($user->emailAddress . $user->name);
+            $user->confirmationCode = $activationCode;
+
+            $user->modifiedDate = DATE_NOW;
+
+            if ($user->status->code == 'PNC') {
+                return $this->jsonFormat(['error' => true, 'message' => 'This email is verified already', 'success' => false]);
+            } else {
+
+                if ($user->Save()) {
+
+                    $emailContent = 'Hi <strong>' . ucfirst($user->name) . '</strong><br><br>Welcome to soccerprediction.co.za a free soccer predictions platform, live score and more,click <a href="' . SITE_URL . '/users/activate/' . $activationCode . '" style="">here</a> to verify your account or copy and past the bellow to your browser.<br/><br/>Verification link : <br>' . SITE_URL . '/users/activate/' . $activationCode;
+                    $this->view->set('emailContent', $emailContent);
+                    $content = $this->view->renderGetContent('Views/Email/default');
+
+                    $isSent = $this->mailer->send(EMAIL_FROM_NAME, "Welcome " . ucfirst($user->name), "", $content, $user->emailAddress);
+                    $msg = "A verification email has been sent to your email (" . $user->emailAddress . ")";
+                    return $this->jsonFormat(['success' => true, 'error' => false, 'message' => $msg]);
+                } else {
+                    return $this->jsonFormat(['error' => true, 'message' => 'Error could not save this user', 'success' => false]);
+                }
+
+            }
+
+        } else {
+            return $this->jsonFormat(['error' => true, 'message' => 'Not active account found', 'success' => false]);
+        }
+    }
+
     function appsignin($option) {
 
         $user = @T::Find('user')
@@ -147,7 +188,7 @@ class UsersController extends BerkaPhpController
 
             if ($user->IsAny()) {
 
-                if($user->status->code == 'PNC') {
+                if($user->status->code == 'PNC' || $user->status->code == 'PFC') {
 
                     if (SessionHelper::exist(Auth::GetDefaultUsername())) {
                         SessionHelper::remove(Auth::GetDefaultUsername());
@@ -166,9 +207,8 @@ class UsersController extends BerkaPhpController
                         $prefix = 'admin';
 
                     return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Successfully logged in", 'link'=>'/']);
-                } else if($user->status->code == 'PFC' || $user->isPhoneNumberConfirmed == Check::$False) {
-                    return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> 'Your account is not verified yet']);
-                } else if($user->status->code == 'APD') {
+                }
+                else if($user->status->code == 'APD') {
                     return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> 'Your account has been suspended, contact support']);
                 } else {
                     return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> 'Your account status is invalid, contact support']);

@@ -5,7 +5,7 @@
 
 ?>
 
-<div id="fixtures">
+<div id="fixtures" class="prediction<?=$prediction->UniqueId?>">
 
     <div data-toggle="collapse" data-target="#cl583" role="button" aria-controls="cl583" data-open="true" class="league league_">
 
@@ -81,13 +81,13 @@
     </div>
 </div>
 
-<div class="prediction-holder predictionOnMobile" data-toggle="collapse" data-target="#panel<?=$prediction->UniqueId?>" data-details="<?=$prediction->UniqueId?>">
+<div class="prediction-holder predictionOnMobile mobile-prediction<?=$prediction->UniqueId?>" data-toggle="collapse" data-target="#panel<?=$prediction->UniqueId?>" data-details="<?=$prediction->UniqueId?>">
     <span>
         <?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?>
     </span>
 </div>
 
-<div class="panel-group collapse cpanel-group" id="panel<?=$prediction->UniqueId?>">
+<div class="panel-group collapse cpanel-group panel<?=$prediction->UniqueId?>" id="panel<?=$prediction->UniqueId?>">
     <div class="row">
         <?php if(true) : ?>
             <div class="col-xs-12 col-sm-6 no-p-r-lg">

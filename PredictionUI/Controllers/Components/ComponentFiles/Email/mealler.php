@@ -14,11 +14,15 @@ class Email {
 			    'verify_peer_name' => false,
 			    'allow_self_signed' => true
 			));
+
 		$this->mail->Host = EMAIL_HOST;
 		$this->mail->SMTPAuth = true;
 		$this->mail->Username = EMAIL_USER;
 		$this->mail->Password = EMAIL_PASSWORD;
        // $this->mail->Debugoutput = true;
+
+        $this->mail->SMTPSecure = 'tls';
+        $this->mail->Port = 587;
 
 	}
 

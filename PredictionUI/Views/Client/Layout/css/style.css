@@ -1905,3 +1905,28 @@ span.second_text.status_info {
 #no {
     font-size: 14px!important;
 }
+
+.blur {
+    filter: blur(3px);
+}
+
+.update-notification {
+
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 15px;
+
+}
+
+.un-title {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.un-description {
+    display: block;
+}
+
+.update-notification a {
+    text-decoration: underline!important;
+}

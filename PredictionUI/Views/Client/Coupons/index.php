@@ -1,4 +1,7 @@
-<?php $count = 1;?>
+<?php
+$subscription = \Util\Helper::GetCurrentUserSubscription();
+$count = 1;
+;?>
 
 <div class="row">
     <div class="col-sm-12">
@@ -120,7 +123,7 @@
                                             </div>
                                         </div>
 
-                                        <?php if(\BerkaPhp\Helper\Auth::IsUserLogged()) :?>
+                                        <?php if($subscription->canEditLeagueFromCoupon = \Helper\Check::$True) :?>
                                         <div class="form-group col-sm-12 ">
                                             <div class="form-label-groupx">
                                                 <label class="label label-default" for="firstName">Leagues</label>
@@ -138,7 +141,11 @@
                                                         <button type="submit" class="searchBtnHome btn btn-primary btn-themed">
                                                             <?=Resource\Label::General("Create Coupons")?>
                                                         </button>
+                                                        <button type="reset" class="searchBtnHome btn btn-primary btn-themed">
+                                                            <?=Resource\Label::General("Clear Filter")?>
+                                                        </button>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>

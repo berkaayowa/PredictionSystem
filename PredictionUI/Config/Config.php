@@ -4,6 +4,7 @@ namespace berkaPhp\config;
 use BerkaPhp\Database\DB;
 use BrkORM\BrkORMDatabase;
 
+define('SYSTEM_NOTIFICATION', '' , true);
 define('DEBUG', false, true);
 define('LIVE_TEST', true, true);
 define('SYS_NAME', 'Free Daily Soccer | Tips | Predictions | Soccer Live Score, Latest Results' , true);
@@ -70,11 +71,19 @@ define('P_CASH', 'CSH' , true);
 define('P_BANK_DEPOSIT', 'BKD' , true);
 
 //mailer settings
-define('EMAIL_HOST', 'mail.soccerprediction.co.za' , true);
-define('EMAIL_USER', 'noreply@soccerprediction.co.za' , true);
-define('EMAIL_PASSWORD', 'none2017@' , true);
+
 define('WORDWRAP', 50 , true);
-define('NO_REPLY', 'noreply@soccerprediction.co.za' , true);
+//define('EMAIL_HOST', 'mail.soccerprediction.co.za' , true);
+//define('EMAIL_USER', 'noreply@soccerprediction.co.za' , true);
+//define('EMAIL_PASSWORD', 'none2017@' , true);
+//define('NO_REPLY', 'noreply@soccerprediction.co.za' , true);
+
+define('EMAIL_HOST', 'smtp.gmail.com' , true);
+define('EMAIL_USER', 'soccerprediction.co.za@gmail.com' , true);
+//zaky rxvg zfuj rgsm
+define('EMAIL_PASSWORD', 'zakyrxvgzfujrgsm' , true);
+define('NO_REPLY', 'soccerprediction.co.za@gmail.com' , true);
+
 define('EMAIL_PAYMENT_CONFIRMATION', 'payment@softclicktech.com' , true);
 define('EMAIL_NOTICE', 'noreply@soccerprediction.co.za' , true);
 

@@ -129,8 +129,16 @@
                 </div>
             </div>
 
-            <?php if(\Util\Helper::GetNotificationMessage() !== false) :?>
+            <?php if(\BerkaPhp\Helper\Auth::IsUserLogged() && \BerkaPhp\Helper\Auth::GetActiveUser()->status->code == 'PFC') :?>
                 <div class="container">
+                    <div class="alert alert-danger center" role="alert">
+                        Your account is not verified yet, a verification email was sent to your email (<?=\BerkaPhp\Helper\Auth::GetActiveUser()->emailAddress?>)
+                    </div>
+                </div>
+            <?php endif ?>
+
+            <?php if(\Util\Helper::GetNotificationMessage() !== false) :?>
+                <div class="container center">
                     <div class="alert alert-warning" role="alert"><?=\Util\Helper::GetNotificationMessage()?></div>
                 </div>
             <?php endif ?>

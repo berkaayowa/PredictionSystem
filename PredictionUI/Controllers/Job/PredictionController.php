@@ -122,8 +122,6 @@ class PredictionController extends RestfulApiController
 
     }
 
-
-
     function request($option) {
 
         $requests = array();
@@ -355,8 +353,8 @@ class PredictionController extends RestfulApiController
                 $request->createdDate = DATE_NOW;
                 $request->predictionRequestStatusId = $status->id;
                 $request->isPublic = \Helper\Check::$True;
-
-//                $request->notify = $data['notify'];
+                $request->notify = 1;
+                $request->cache = 0;
                 $request->description = $name;
 
                 if($request->Save())

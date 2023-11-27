@@ -748,6 +748,43 @@ class Helper {
 
     }
 
+    public static function GetCurrentUserSubscription() {
+
+        $subscription = @T::Find('subscription')
+            ->Where('code', '=', 'DFT')
+            ->Where('isDeleted', '=', \Helper\Check::$False)
+            ->FetchFirstOrDefault();
+
+        if(Auth::IsUserLogged()) {
+
+            $userSubscription = @T::Find('user_subscription')
+                ->Join('subscription', 'subscription.id = user_subscription.subscriptionid')
+                ->Where('user_subscription.userId', '=', Auth::GetActiveUser(true)->id)
+                ->Where('user_subscription.isDeleted', '=', \Helper\Check::$False)
+                ->FetchFirstOrDefault();
+
+            if($userSubscription->IsAny())
+                $subscription = $userSubscription->subscription;
+            else {
+
+                $code = 'DFTVU';
+
+                if(Auth::GetActiveUser(false)->status->code == 'PFC')
+                    $code = 'DFTUU';
+
+                $subscription = @T::Find('subscription')
+                    ->Where('code', '=', $code)
+                    ->Where('isDeleted', '=', \Helper\Check::$False)
+                    ->FetchFirstOrDefault();
+
+            }
+
+        }
+
+        return $subscription;
+
+    }
+
 
 
 
