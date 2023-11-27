@@ -19,7 +19,8 @@ class Email {
 		$this->mail->SMTPAuth = true;
 		$this->mail->Username = EMAIL_USER;
 		$this->mail->Password = EMAIL_PASSWORD;
-       // $this->mail->Debugoutput = true;
+        $this->mail->Debugoutput = true;
+        $this->mail->SMTPDebug = 2;
 
         $this->mail->SMTPSecure = 'tls';
         $this->mail->Port = 587;
