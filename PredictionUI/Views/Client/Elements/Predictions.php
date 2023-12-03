@@ -125,8 +125,7 @@ $maxAdsPredictionCounter = 0;
                                                     if(\BerkaPhp\Helper\Auth::GetActiveUser()->status->code == 'PFC')
                                                         $unTitle = 'Verify your account to see more predictions <a data-ajax-confirmation confirmation-title="Confirmation" confirmation-message="Resent a verification email to your email address ('.\BerkaPhp\Helper\Auth::GetActiveUser()->emailAddress.') ?" class="tb-action" title="Resend verification email" href="/users/resendverification">resend verification email</a>';
                                                     else
-                                                        $unTitle = '';
-
+                                                        $unTitle = 'Your current subscription has a limit of maximum '.$subscription->numOfPredition.' predictions. <br><a href="/contacts">Contact us </a>to request a free upgrade';
                                                 }
 
                                             ?>

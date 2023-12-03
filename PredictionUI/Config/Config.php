@@ -73,16 +73,16 @@ define('P_BANK_DEPOSIT', 'BKD' , true);
 //mailer settings
 
 define('WORDWRAP', 50 , true);
-//define('EMAIL_HOST', 'mail.soccerprediction.co.za' , true);
-//define('EMAIL_USER', 'noreply@soccerprediction.co.za' , true);
-//define('EMAIL_PASSWORD', 'none2017@' , true);
-//define('NO_REPLY', 'noreply@soccerprediction.co.za' , true);
+define('EMAIL_HOST', 'mail.soccerprediction.co.za' , true);
+define('EMAIL_USER', 'noreply@soccerprediction.co.za' , true);
+define('EMAIL_PASSWORD', 'none2017@' , true);
+define('NO_REPLY', 'noreply@soccerprediction.co.za' , true);
 
-define('EMAIL_HOST', 'smtp.gmail.com' , true);
-define('EMAIL_USER', 'soccerprediction.co.za@gmail.com' , true);
-//zaky rxvg zfuj rgsm
-define('EMAIL_PASSWORD', 'zakyrxvgzfujrgsm' , true);
-define('NO_REPLY', 'soccerprediction.co.za@gmail.com' , true);
+//https://myaccount.google.com/u/1/apppasswords
+//define('EMAIL_HOST', 'smtp.gmail.com' , true);
+//define('EMAIL_USER', 'soccerprediction.co.za@gmail.com' , true);
+//define('EMAIL_PASSWORD', 'zakyrxvgzfujrgsm' , true);
+//define('NO_REPLY', 'soccerprediction.co.za@gmail.com' , true);
 
 define('EMAIL_PAYMENT_CONFIRMATION', 'payment@softclicktech.com' , true);
 define('EMAIL_NOTICE', 'noreply@soccerprediction.co.za' , true);

@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/Config/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Client/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Components/ComponentFiles/Email/mealler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Components/ComponentFiles/Email/mealler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Elements/CouponPredictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Elements/CouponPredictions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Elements/Predictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Elements/Predictions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +170,9 @@
       <workItem from="1699852332845" duration="786000" />
       <workItem from="1700191032924" duration="8216000" />
       <workItem from="1700301712918" duration="7556000" />
-      <workItem from="1700786875884" duration="26843000" />
+      <workItem from="1700786875884" duration="29523000" />
+      <workItem from="1701387614426" duration="4547000" />
+      <workItem from="1701491458660" duration="603000" />
     </task>
     <servers />
   </component>
@@ -198,12 +205,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/Controllers/Client/UsersController.php</url>
-          <line>258</line>
+          <line>275</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/Controllers/Client/UsersController.php</url>
-          <line>247</line>
+          <line>264</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

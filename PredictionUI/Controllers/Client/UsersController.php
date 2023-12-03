@@ -66,6 +66,23 @@ class UsersController extends BerkaPhpController
                 $user->createdDate = DATE_NOW;
 
                 if ($user->Save()) {
+                    
+                    $user = @T::Find('user')
+                        ->Join(['user_role'=>'role'], 'role.id = user.userRoleId')
+                        ->Join(['user_status'=>'status'], 'status.id = user.userStatusId')
+                        ->Where('user.username' , '=', $user->username)
+                        ->Where('user.isDeleted', '=', Check::$False)
+                        ->FetchFirstOrDefault();
+
+                    if($user->IsAny()) {
+
+                        if (SessionHelper::exist(Auth::GetDefaultUsername())) {
+                            SessionHelper::remove(Auth::GetDefaultUsername());
+                        }
+
+                        SessionHelper::add(Auth::GetDefaultUsername(), serialize($user));
+
+                    }
 
                     $emailContent = 'Hi <strong>'.ucfirst($data['name']).'</strong><br><br>Welcome to soccerprediction.co.za a free soccer predictions platform, live score and more,click <a href="'.SITE_URL.'/users/activate/'.$activationCode.'" style="">here</a> to verify your account or copy and past the bellow to your browser.<br/><br/>Verification link : <br>'.SITE_URL.'/users/activate/'.$activationCode;
                     $this->view->set('emailContent', $emailContent);
