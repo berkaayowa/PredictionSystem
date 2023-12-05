@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php if(IS_LIVE_SITE) : ?>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
-            crossorigin="anonymous"></script>
+
+    <?php if(\Util\Helper::GetCurrentUserSubscription()->showAds == \Helper\Check::$True):  ?>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504" crossorigin="anonymous"></script>
+    <?php endif?>
 
     <script async src="https://fundingchoicesmessages.google.com/i/pub-1836789549483504?ers=1" nonce="0K6Yq1G9mjwZbl4XaDmRrg"></script><script nonce="0K6Yq1G9mjwZbl4XaDmRrg">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
 
@@ -266,6 +268,7 @@
         </div>
     </div>
 
+    <?php if(\Util\Helper::GetCurrentUserSubscription()->showAds == \Helper\Check::$True):  ?>
     <script data-cfasync="false" type="text/javascript" id="clever-core">
         /* <![CDATA[ */
         (function (document, window) {
@@ -292,7 +295,7 @@
         })(document, window);
         /* ]]> */
     </script>
-
+    <?php endif?>
 </body>
 
 </html>

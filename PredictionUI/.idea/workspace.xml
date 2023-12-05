@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/mypredictions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +170,7 @@
       <workItem from="1700786875884" duration="29523000" />
       <workItem from="1701387614426" duration="4547000" />
       <workItem from="1701491458660" duration="603000" />
-      <workItem from="1701617877706" duration="2460000" />
+      <workItem from="1701617877706" duration="3124000" />
     </task>
     <servers />
   </component>

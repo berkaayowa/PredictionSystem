@@ -32,7 +32,6 @@ $subscription = \Util\Helper::GetCurrentUserSubscription();
     </div>
 </div>
 
-
 <div class="row">
     <div class="col-sm-12">
         <div class="box  box-default ">
