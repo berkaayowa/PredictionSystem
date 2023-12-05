@@ -1,4 +1,8 @@
 <?=\BerkaPhp\Helper\Element::Render("Breadcrumb", "Client", array("breadcrumb"=>$breadcrumb))?>
+<?php
+$subscription = \Util\Helper::GetCurrentUserSubscription();
+?>
+
 <div class="row">
     <div class="col-sm-12">
         <div class="panel-group">
@@ -40,7 +44,7 @@
                         </div>
                         <div class="form-group col-sm-3 col-md-3 col-lg-3">
                             <div class="input-group">
-                                <input required autocomplete="off" data-date-max="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("Fixtures Date")?>" type="text" class="form-control" name="date" id="date">
+                                <input required autocomplete="off" max="<?= date('m-d-Y', strtotime(DATE_NOW. ' + '.$subscription->numOfUpfrondRequestDays.' days')) ?>" data-date-max="<?= DATE_SECOND_FORMAT ?>" placeholder="<?=Resource\Label::General("Fixtures Date")?>" type="text" class="form-control" name="date" id="date">
                                 <span class="input-group-addon">
                                 <span class="fa fa-calendar"></span>
                             </span>
@@ -156,11 +160,25 @@
 
     $(document).ready(function (e) {
 
-        $('[data-date-max]').datepicker({
-            autoclose: true,
-            format: 'dd-mm-yyyy',
-            endDate: new Date()
-        });
+        $('[data-date-max]').each(function(e) {
+
+            alert($(this).attr("max"));
+
+            var endDate =  new Date($(this).attr("max"));
+
+            $(this).datepicker({
+                autoclose: true,
+                format: 'dd-mm-yyyy',
+                endDate: endDate
+            });
+
+        })
+
+        // $('[data-date-max]').datepicker({
+        //     autoclose: true,
+        //     format: 'dd-mm-yyyy',
+        //     endDate: new Date()
+        // });
 
         if($('.bg-safe').length > 0) {
 
