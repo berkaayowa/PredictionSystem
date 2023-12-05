@@ -161,7 +161,7 @@ $subscription = \Util\Helper::GetCurrentUserSubscription();
 
         $('[data-date-max]').each(function(e) {
 
-            alert($(this).attr("max"));
+            //alert($(this).attr("max"));
 
             var endDate =  new Date($(this).attr("max"));
 
