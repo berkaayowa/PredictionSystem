@@ -121,7 +121,7 @@ $subscription = \Util\Helper::GetCurrentUserSubscription();
                                                                     <span class="glyphicon glyphicon-refresh action-icon"></span> Regenerate
                                                                 </a>
 
-                                                                <?php if((\BerkaPhp\Helper\Auth::IsUserLogged() && BerkaPhp\Helper\Auth::GetActiveUser()->role->code == 'ADM')): ?>
+                                                                <?php if($subscription->canRegenerate == \Helper\Check::$True): ?>
                                                                     <a data-ajax-confirmation confirmation-title="Confirmation" confirmation-message="Please confirm to regenerate (No caching) (<?=ucfirst($request->description)?>)" class="tb-action" title="Delete" href="/prediction/regenerate/<?=$request->id?>?cache=true">
                                                                         <span class="glyphicon glyphicon-warning-sign action-icon"></span> Regenerate (No caching)
                                                                     </a>

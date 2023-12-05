@@ -79,7 +79,7 @@ $maxAdsPredictionCounter = 0;
                                     </div>
                                     <?php foreach ($predictions as $prediction ): ?>
                                         <?php \BerkaPhp\Helper\Element::Render("Prediction", "Client", array('prediction'=>$prediction))?>
-                                        <?php if($maxAdsPredictionCounter == $subscription->numOfAds): ?>
+                                        <?php if($subscription->showAds && \Helper\Check::$True && $maxAdsPredictionCounter == $subscription->numOfAds): ?>
                                             <div class="adsHolder">
                                                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1836789549483504"
                                                         crossorigin="anonymous"></script>
