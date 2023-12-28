@@ -10,10 +10,13 @@
     <div data-toggle="collapse" data-target="#cl583" role="button" aria-controls="cl583" data-open="true" class="league league_">
 
         <img class="flag lazy" width="18" height="13" data-original="<?=$prediction->HomeTeam->CountryFlag?>" alt="England">
-        <div> <?=$prediction->Country?> <a href="/leagues/england/premier-league/583"> <?=$prediction->League?> </a></div>
-        <div class="counter_m hide">
+        <div> <?=$prediction->Country?> <a> <?=$prediction->League?> </a></div>
+        <div class="counter_m ">
             <span class="count_matches ">
-                <?=property_exists($prediction, 'PredictionLabelFull') ? \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName, $prediction->PredictionLabelFull): \Util\Helper::GetPredictionLabel($prediction->HomeTeam->TeamName, $prediction->AwayTeam->TeamName,$prediction->Prediction)?>
+                <form name="frmPrediction<?=$prediction->UniqueId?>" action="/prediction/summary/<?=$prediction->UniqueId?>" method="post">
+                    <input type="hidden" name="hdPrediction" id="hdPrediction" value="<?= json_encode($prediction)?>">
+                    <button type="submit" href="" >Read report & summary of this match</button>
+                </form>
             </span>
         </div>
         <span class="css-c19m5y">

@@ -772,9 +772,7 @@ option , select{
         margin: 0;
     }
 
-    .counter_m {
-        /*display: contents!important;*/
-    }
+
 
     .wf.info {
         justify-content: flex-start!important;
@@ -857,6 +855,10 @@ option , select{
         z-index: 99999!important;
     }
 
+}
+
+.counter_m {
+    /*display: contents!important;*/
 }
 
 @media (min-width: 768px) {
@@ -1930,3 +1932,16 @@ span.second_text.status_info {
 .update-notification a {
     text-decoration: underline!important;
 }
+
+.count_matches  {
+    font-weight: normal!important;
+}
+
+.count_matches button {
+    background: transparent!important;
+    border: none!important;
+}
+
+
+
+

@@ -479,6 +479,17 @@
 
         }
 
+        function summary($params = array()) {
+
+            //echo $this->getPost()["hdPrediction"];
+            $prediction = json_decode($this->getPost()["hdPrediction"]);
+            var_dump($this->getPost());
+            $this->view->set('prediction', $prediction);
+            $this->view->set('breadcrumb', array("Predictions", "Summary", "ttt"));
+            $this->view->set('title', "Summary");
+            $this->view->render();
+        }
+
 	}
 
 ?>

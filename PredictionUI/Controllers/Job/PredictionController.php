@@ -274,7 +274,7 @@ class PredictionController extends RestfulApiController
 
                     if($request->Save()) {
 
-                        if($request->notify == Check::$True) {
+                        if($request->notify == Check::$True  && $statusCode == 'CNP') {
 
                             $link = "<a href='".SITE_URL."/prediction?requestcode=".$request->id."'>click here to view</a>";
                             $emailContent = "Hi ".ucfirst($request->user->name)." " .ucfirst($request->user->surname). ",<br><br>Your prediction request #".$request->id." is ready, " . $link;
@@ -282,6 +282,9 @@ class PredictionController extends RestfulApiController
 
                             $content = $this->view->renderGetContent('Views/Email/default');
                             $isSent = $this->mailer->send(EMAIL_FROM_NAME, "Your prediction #" . $request->id . " is ready", "", $content, $request->user->emailAddress);
+
+
+
 
                         }
                         return $this->jsonFormat(['error' => false]);
@@ -354,11 +357,73 @@ class PredictionController extends RestfulApiController
                 $request->predictionRequestStatusId = $status->id;
                 $request->isPublic = \Helper\Check::$True;
                 $request->notify = 1;
-                $request->cache = 0;
+                $request->cache = 1;
                 $request->description = $name;
 
                 if($request->Save())
                     return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Your request has been successfully received."]);
+                else
+                    return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "Your request couldn't be saved, try again"]);
+
+            }
+
+        }
+
+    }
+
+    function updateresult($option = null) {
+
+        if(isset($option['args']) && isset($option['args']['query']) && isset($option['args']['query']['code'])) {
+
+            $data = Request::GetData();
+
+            $result = @T::Find('prediction_result')
+                ->Where('uniqueId', '=', $data['uniqueId'])
+                ->Where('isDeleted', '=', \Helper\Check::$False)
+                ->FetchFirstOrDefault();
+
+            if($result->IsAny())
+                return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "This result updated already "]);
+            else {
+
+                $request = @T::Find('prediction_request')
+                    ->Where('prediction_request.fileName', '=', $data['fileName'])
+                    ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
+                    ->FetchFirstOrDefault();
+
+                $result->uniqueId = $data['uniqueId'];
+                $result->predictionContributionId = $request->predictionContributionId;
+                $result->predictionRequestId = $request->id;
+                $result->country = $data['country'];
+                $result->league = $data['league'];
+                $result->home = $data['home'];
+                $result->away = $data['away'];
+
+                $result->homeLeaguePointPerecentage = $data['homeLeaguePointPerecentage'];
+                $result->homeleaguePositionPerecentage = $data['homeleaguePositionPerecentage'];
+                $result->homeHeadtoheadPerecentage = $data['homeHeadtoheadPerecentage'];
+                $result->homeLastGamesPerecentage = $data['homeLastGamesPerecentage'];
+                $result->homeAwayOrHomePerecentage = $data['homeAwayOrHomePerecentage'];
+                $result->homeTotalPerecentage = $data['homeTotalPerecentage'];
+
+                $result->awayLeaguePointPerecentage = $data['awayLeaguePointPerecentage'];
+                $result->awayleaguePositionPerecentage = $data['awayleaguePositionPerecentage'];
+                $result->awayHeadtoheadPerecentage = $data['awayHeadtoheadPerecentage'];
+                $result->awayLastGamesPerecentage = $data['awayLastGamesPerecentage'];
+                $result->awayAwayOrHomePerecentage = $data['awayAwayOrHomePerecentage'];
+                $result->awayTotalPerecentage = $data['awayTotalPerecentage'];
+                $result->predictionCode = $data['predictionCode'];
+                $result->correctPredictionCode = $data['correctPredictionCode'];
+                $result->itWentAsPredicted = $data['itWentAsPredicted'];
+
+                $result->homeScore = $data['homeScore'];
+                $result->awayScore = $data['awayScore'];
+
+                $result->countryCode = $data['countryCode'];
+                $result->leagueCode = $data['leagueCode'];
+
+                if($result->Save())
+                    return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> "Result has been updated."]);
                 else
                     return $this->jsonFormat(['success'=>false,'error'=> true, 'message'=> "Your request couldn't be saved, try again"]);
 
