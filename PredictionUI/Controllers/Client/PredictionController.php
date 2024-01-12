@@ -500,7 +500,7 @@
             $correctPredictionResults = @T::Find('prediction_result')
                 ->Where('leagueCode', '=', $league)
                 ->Where('countryCode', '=', $country)
-                ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
+//                ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
                 ->FetchList();
 
             $this->view->set('previousPredictions', $correctPredictionResults);

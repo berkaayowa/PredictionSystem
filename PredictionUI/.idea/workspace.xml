@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Views/Client/Prediction/history.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Elements/Prediction.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Elements/Prediction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/summary.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/summary.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +177,7 @@
       <workItem from="1703485113592" duration="11263000" />
       <workItem from="1704526694896" duration="14111000" />
       <workItem from="1704954166067" duration="1028000" />
+      <workItem from="1705079328916" duration="377000" />
     </task>
     <servers />
   </component>
