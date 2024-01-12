@@ -13,7 +13,7 @@
         <div> <?=$prediction->Country?> <a> <?=$prediction->League?> </a></div>
         <div class="counter_m ">
             <span class="count_matches ">
-                <form name="frmPrediction<?=$prediction->UniqueId?>" action="/prediction/summary/<?=$prediction->UniqueId?>" method="post">
+                <form target="_blank" name="frmPrediction<?=$prediction->UniqueId?>" action="/prediction/summary/<?=$prediction->UniqueId?>" method="post">
                     <input type="hidden" name="hdPrediction" id="hdPrediction" value="<?= htmlspecialchars(json_encode($prediction))?>">
                     <button type="submit" href="" >Read report & summary of this match</button>
                 </form>
