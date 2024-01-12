@@ -14,7 +14,7 @@
         <div class="counter_m ">
             <span class="count_matches ">
                 <form name="frmPrediction<?=$prediction->UniqueId?>" action="/prediction/summary/<?=$prediction->UniqueId?>" method="post">
-                    <input type="hidden" name="hdPrediction" id="hdPrediction" value="<?= json_encode($prediction)?>">
+                    <input type="hidden" name="hdPrediction" id="hdPrediction" value="<?= htmlspecialchars(json_encode($prediction))?>">
                     <button type="submit" href="" >Read report & summary of this match</button>
                 </form>
             </span>
@@ -394,14 +394,10 @@
 
             </div>
 
-            <?php if(false) : ?>
+            <?php if(true) : ?>
                 <div class="col-xs-12" id="cmt<?=$prediction->UniqueId?>">
-                    <div class="cmt text-right" target="#cmt<?=$prediction->UniqueId?>" data-post-action="/prediction/comments/<?=$prediction->UniqueId?>">
-                        <?php if(\Util\Helper::CountComments($prediction->UniqueId) > 0) : ?>
-                            <a><?=\Util\Helper::CountComments($prediction->UniqueId)?> <i class="fa fa-comment"></i> Comment/s</a>
-                        <?php else : ?>
-                            <a><i class="fa fa-comment"></i> Comment</a>
-                        <?php endif ?>
+                    <div class="cmt text-right" target="#cmt<?=$prediction->UniqueId?>" data-post-action="/prediction/history?country=<?=$prediction->Country?>&league=<?=$prediction->League?>">
+                        Previous Predictions/s
                     </div>
                 </div>
 

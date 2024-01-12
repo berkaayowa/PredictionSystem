@@ -481,15 +481,77 @@
 
         function summary($params = array()) {
 
-            //echo $this->getPost()["hdPrediction"];
             $prediction = json_decode($this->getPost()["hdPrediction"]);
-            var_dump($this->getPost());
+            //var_dump($prediction);
+
+            $league = $this->removeNonAlphaChar($prediction->League);
+            $country = $this->getName($prediction->Country);
+
+//            $resultsPerCountry = @T::Find('prediction_result')
+//                ->Where('leagueCode', '=', $league)
+//                ->Where('countryCode', '=', $country)
+//                ->FetchList();
+
+            $results = @T::Find('prediction_result')
+                ->Where('leagueCode', '=', $league)
+                ->Where('countryCode', '=', $country)
+                ->FetchList();
+
+            $correctPredictionResults = @T::Find('prediction_result')
+                ->Where('leagueCode', '=', $league)
+                ->Where('countryCode', '=', $country)
+                ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
+                ->FetchList();
+
+            $this->view->set('previousPredictions', $correctPredictionResults);
+
             $this->view->set('prediction', $prediction);
-            $this->view->set('breadcrumb', array("Predictions", "Summary", "ttt"));
+            $this->view->set('breadcrumb', array("Predictions", "Summary", $prediction->Country,  $prediction->League, $prediction->HomeTeam->TeamName .' - ' . $prediction->AwayTeam->TeamName));
             $this->view->set('title', "Summary");
             $this->view->render();
         }
 
-	}
+        function history($params = array()) {
+
+            $league = $this->removeNonAlphaChar($params['args']['query']['league']);
+            $country = $this->getName($params['args']['query']['country']);
+
+            $data = $this->getPost();
+
+            $results = @T::Find('prediction_result')
+                ->Where('leagueCode', '=', $league)
+                ->Where('countryCode', '=', $country)
+                ->FetchList();
+
+            $this->view->set("comments", $results);
+//            $this->view->set("predictionId", $id);
+            $data = $this->view->renderGetContent();
+
+            return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> false,  'data'=> $data]);
+
+        }
+
+        function removeNonAlphaChar($value) {
+            $rgx = "/[^a-zA-Z]/";
+            $value = preg_replace($rgx, "", $value);
+            $value = str_replace(" ", "", $value);
+            return $value;
+        }
+
+        function getName($value) {
+            if (empty($value)) {
+                return "Unknown";
+            }
+            $value = str_replace(" ", "", $value);
+            $value = str_replace(",", "", $value);
+            $value = trim($value);
+            $value = strtolower($value);
+            return $value;
+        }
+
+
+
+
+    }
 
 ?>
