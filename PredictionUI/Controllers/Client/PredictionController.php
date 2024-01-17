@@ -492,15 +492,22 @@
 //                ->Where('countryCode', '=', $country)
 //                ->FetchList();
 
-            $results = @T::Find('prediction_result')
-                ->Where('leagueCode', '=', $league)
-                ->Where('countryCode', '=', $country)
-                ->FetchList();
+//            $results = @T::Find('prediction_result')
+//                ->Where('leagueCode', '=', $league)
+//                ->Where('countryCode', '=', $country)
+//                ->FetchList();
+
+            $start = $prediction->HomeTeam->TotalPerecentage > $prediction->AwayTeam->TotalPerecentage ? $prediction->HomeTeam->TotalPerecentage : $prediction->AwayTeam->TotalPerecentage;
+            $end = $start + 2;
+            $start = $start - 5;
 
             $correctPredictionResults = @T::Find('prediction_result')
                 ->Where('leagueCode', '=', $league)
                 ->Where('countryCode', '=', $country)
 //                ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
+
+                ->Where('ABS(homeTotalPerecentage - awayTotalPerecentage)', 'BETWEEN '.$start.' AND ', $end)
+                ->OrderBy("id")
                 ->FetchList();
 
             $this->view->set('previousPredictions', $correctPredictionResults);
