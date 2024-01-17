@@ -502,8 +502,8 @@
             $start = $start - 5;
 
             $correctPredictionResults = @T::Find('prediction_result')
-                ->Where('leagueCode', '=', $league)
-                ->Where('countryCode', '=', $country)
+                ->Where('leagueCode', 'like', $league)
+                ->Where('countryCode', 'like', $country)
 //                ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
 
                 ->Where('ABS(homeTotalPerecentage - awayTotalPerecentage)', 'BETWEEN '.$start.' AND ', $end)
