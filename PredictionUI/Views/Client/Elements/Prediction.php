@@ -51,6 +51,22 @@
                 </div>
             <?php endif?>
 
+            <span class="second_text status_info">
+                <div class="pRate">
+                <?php if(property_exists($prediction, 'Score')  && !empty($prediction->Score->ft_score)) :?>
+
+                    <?php if(\Util\Helper::CheckPrediction($prediction->HomeTeam, $prediction->AwayTeam, property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction)):?>
+                        <span class="glyphicon glyphicon-check"></span>
+                    <?php else:?>
+                        <span style="color: white" class="glyphicon glyphicon-check"></span>
+                    <?php endif?>
+
+                <?php else:?>
+                    <span style="color: white" class="glyphicon glyphicon-check"></span>
+                <?php endif?>
+                </div>
+            </span>
+
             <div class="subBlockHolder hideOnMobile">
                 <span class="label label-default livescoreBarIcon">Recent Form</span>
                 <span data-home-score="" class="">
@@ -145,21 +161,6 @@
                 </span>
             </div>
 
-            <span class="second_text status_info">
-                <div class="pRate">
-                <?php if(property_exists($prediction, 'Score')  && !empty($prediction->Score->ft_score)) :?>
-
-                    <?php if(\Util\Helper::CheckPrediction($prediction->HomeTeam, $prediction->AwayTeam, property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction)):?>
-                        <span class="glyphicon glyphicon-check"></span>
-                    <?php else:?>
-                        <span style="color: white" class="glyphicon glyphicon-check"></span>
-                    <?php endif?>
-
-                <?php else:?>
-                    <span style="color: white" class="glyphicon glyphicon-check"></span>
-                <?php endif?>
-                </div>
-            </span>
             <div class="wf info">
                 <a class="predictionOnDesktop">
                     <span class="live_btn" title="Prediction" data-toggle="collapse" data-target="#panel<?=$prediction->UniqueId?>" data-details="<?=$prediction->UniqueId?>">
