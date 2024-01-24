@@ -1942,6 +1942,30 @@ span.second_text.status_info {
     border: none!important;
 }
 
+.progress {
+    margin-bottom: 10px!important;
+}
+
+.subBlock {
+    display: block;
+}
+
+
+.subBlockHolder > .livescoreBarIcon {
+    top:-26px;
+}
+
+.subBlockHolder {
+    padding-left: 10px;
+    opacity: 0.6;
+}
+
+.lblPosition {
+    display: inline-block;
+    width: 30px;
+    margin-right: 5px;
+    opacity: 0.6;
+}
 
 
 

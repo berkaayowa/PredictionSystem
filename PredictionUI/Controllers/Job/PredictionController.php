@@ -5,6 +5,7 @@ use BerkaPhp\Helper\Check;
 use BerkaPhp\Helper\Debug;
 use BrkORM\T;
 use Controller\RestfulApiController;
+use Util\Helper;
 use Util\ISendHelper;
 use Util\Request;
 use Util\SMS;
@@ -283,10 +284,8 @@ class PredictionController extends RestfulApiController
                             $content = $this->view->renderGetContent('Views/Email/default');
                             $isSent = $this->mailer->send(EMAIL_FROM_NAME, "Your prediction #" . $request->id . " is ready", "", $content, $request->user->emailAddress);
 
-
-
-
                         }
+
                         return $this->jsonFormat(['error' => false]);
                     }
 
@@ -430,6 +429,80 @@ class PredictionController extends RestfulApiController
             }
 
         }
+
+    }
+
+    function saveprediction($option) {
+
+        //http://localhost:8091/job/prediction/getleague?code=run
+        if(isset($option['args']) && isset($option['args']['query']) && isset($option['args']['query']['code'])) {
+
+            $code = $option['args']['query']['code'];
+
+            if($code == 'run') {
+
+                $statusCode = $option['args']['query']['statusCode'];
+                $id = $option['args']['query']['id'];
+                $filename = '';
+
+                if(array_key_exists('filename', $option['args']['query']))
+                    $filename =$option['args']['query']['filename'];
+
+                $request = @T::Find('prediction_request')
+                    ->Join('user', 'user.id = prediction_request.userId')
+                    ->Where('prediction_request.id', '=', $id)
+                    ->Where('prediction_request.isDeleted', '=', \Helper\Check::$False)
+                    ->FetchFirstOrDefault();
+
+                //$statusCode == 'CNP
+
+                if($request->IsAny()) {
+
+                    $filePath = FILE_PATH . $request->fileName;
+                    $data = Helper::GetFileContent($filePath);
+                    $array = [];
+
+                    if(strlen($data) > 0) {
+
+                        $array = json_decode($data);
+
+                        usort($array, function ($a, $b) {
+                            return $a->Percentage < $b->Percentage;
+                        });
+
+                        foreach ($array as $record) {
+
+                            $prediction = @T::Find('prediction')
+                                ->Where('uniqueId', '=', $record->UniqueId)
+                                ->Where('predictionRequestId', '=', $request->id)
+                                ->Where('isDeleted', '=', \Helper\Check::$False)
+                                ->FetchFirstOrDefault();
+
+                            $prediction->uniqueId = $record->UniqueId;
+                            $prediction->predictionRequestId = $request->id;
+                            $prediction->data = json_encode($record);;
+
+                            if($prediction->Save()) {
+
+
+                            } else {
+
+                            }
+
+                        }
+
+                        return $this->jsonFormat(['error' => false]);
+
+                    }
+
+
+
+                }
+
+            }
+        }
+
+        return $this->jsonFormat(['error'=> true]);
 
     }
 

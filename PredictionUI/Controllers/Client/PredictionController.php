@@ -479,9 +479,15 @@
 
         }
 
-        function summary($params = array()) {
+        function summary($option = array()) {
 
-            $prediction = json_decode($this->getPost()["hdPrediction"]);
+            $id = $option['args']['params'][0];
+            $predictionRecord = @T::Find('prediction')
+                ->Where('uniqueId', '=', $id)
+                ->Where('isDeleted', '=', \Helper\Check::$False)
+                ->FetchFirstOrDefault();
+
+            $prediction = json_decode($predictionRecord->data);
             //var_dump($prediction);
 
             $league = $this->removeNonAlphaChar($prediction->League);
@@ -510,7 +516,23 @@
                 ->OrderBy("id")
                 ->FetchList();
 
+            $correctPredictionPerCountry = @T::Find('prediction_result')
+                ->Where('countryCode', 'like', $country)
+                ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
+//                ->Where('ABS(homeTotalPerecentage - awayTotalPerecentage)', 'BETWEEN '.$start.' AND ', $end)
+                ->OrderBy("id")
+                ->FetchList();
+
+            $correctPredictionPerLeague = @T::Find('prediction_result')
+                ->Where('countryCode', 'like', $country)
+                ->Where('leagueCode', 'like', $league)
+                ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
+//                ->Where('ABS(homeTotalPerecentage - awayTotalPerecentage)', 'BETWEEN '.$start.' AND ', $end)
+                ->OrderBy("id")
+                ->FetchList();
+
             $this->view->set('previousPredictions', $correctPredictionResults);
+            $this->view->set('correctPredictionPerCountry', $correctPredictionPerCountry);
 
             $this->view->set('prediction', $prediction);
             $this->view->set('breadcrumb', array("Predictions", "Summary", $prediction->Country,  $prediction->League, $prediction->HomeTeam->TeamName .' - ' . $prediction->AwayTeam->TeamName));

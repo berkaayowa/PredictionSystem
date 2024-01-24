@@ -11,7 +11,7 @@
 
         <img class="flag lazy" width="18" height="13" data-original="<?=$prediction->HomeTeam->CountryFlag?>" alt="England">
         <div> <?=$prediction->Country?> <a> <?=$prediction->League?> </a></div>
-        <div class="counter_m ">
+        <div class="counter_m hidden">
             <span class="count_matches ">
                 <form target="_blank" name="frmPrediction<?=$prediction->UniqueId?>" action="/prediction/summary/<?=$prediction->UniqueId?>" method="post">
                     <input type="hidden" name="hdPrediction" id="hdPrediction" value="<?= htmlspecialchars(json_encode($prediction))?>">
@@ -30,10 +30,10 @@
             </div>
             <div class="mteams">
                 <div data-home-id="9" class="home ">
-                    <div class="events"></div> <?=$prediction->HomeTeam->TeamName?> <img class="lazy" data-original="<?= !empty($prediction->HomeTeam->TeamFlag) ? $prediction->HomeTeam->TeamFlag : "/Views/Client/Assets/images/icon3.png"?>" width="14" height="14">
+                    <div class="events"></div> <?=$prediction->HomeTeam->TeamName?> <span class="label label-default lblPosition"><?=$prediction->HomeTeam->Data->LeaguePosition?>th</span> <img class="lazy" data-original="<?= !empty($prediction->HomeTeam->TeamFlag) ? $prediction->HomeTeam->TeamFlag : "/Views/Client/Assets/images/icon3.png"?>" width="14" height="14">
                 </div>
                 <div data-away-id="18" class="away ">
-                    <img class="lazy" data-original="<?= !empty($prediction->AwayTeam->TeamFlag) ? $prediction->AwayTeam->TeamFlag : "/Views/Client/Assets/images/icon3.png"?>" alt="arsenal-fc" width="14" height="14"><?=$prediction->AwayTeam->TeamName?> <div class="events"></div>
+                    <img class="lazy" data-original="<?= !empty($prediction->AwayTeam->TeamFlag) ? $prediction->AwayTeam->TeamFlag : "/Views/Client/Assets/images/icon3.png"?>" alt="arsenal-fc" width="14" height="14"> <span class="label label-default lblPosition"><?=$prediction->AwayTeam->Data->LeaguePosition?>th</span> <?=$prediction->AwayTeam->TeamName?> <div class="events"></div>
                 </div>
             </div>
 
@@ -50,6 +50,100 @@
                     <span data-away-score="" class=""></span>
                 </div>
             <?php endif?>
+
+            <div class="subBlockHolder hideOnMobile">
+                <span class="label label-default livescoreBarIcon">Recent Form</span>
+                <span data-home-score="" class="">
+                    <div class="subBlock">
+                        <?php
+
+                        if(property_exists($prediction->HomeTeam, 'Data')) {
+
+                            $chars = str_split($prediction->HomeTeam->Data->RecentForm);
+                            $element = "";
+                            foreach ($chars as $char) {
+                                $element = $element . "<label class='recentForm ".$char."'>".$char."</label>";
+                            }
+
+                            echo "<div class='recentFormWrapper'>".$element."</div>";
+
+                        } else {
+                            echo 'Not Available';
+                        }
+
+                        ?>
+                    </div>
+                </span>
+                <span data-away-score="" class="">
+
+                    <div class="subBlock">
+                        <?php
+
+                        if(property_exists($prediction->AwayTeam, 'Data')) {
+
+                            $chars = str_split($prediction->AwayTeam->Data->RecentForm);
+                            $element = "";
+                            foreach ($chars as $char) {
+                                $element = $element . "<label class='recentForm ".$char."'>".$char."</label>";
+                            }
+
+                            echo "<div class='recentFormWrapper'>".$element."</div>";
+
+                        } else {
+                            echo 'Not Available';
+                        }
+
+                        ?>
+                    </div>
+                </span>
+            </div>
+
+            <div class="subBlockHolder hideOnMobile">
+                <span class="label label-default livescoreBarIcon">Head 2 Head</span>
+                <span data-home-score="" class="">
+                    <div class="subBlock">
+                        <?php
+
+                        if(property_exists($prediction->HomeTeam, 'Data')) {
+
+                            $chars = str_split($prediction->HomeTeam->Data->Headtohead);
+                            $element = "";
+                            foreach ($chars as $char) {
+                                $element = $element . "<label class='recentForm ".$char."'>".$char."</label>";
+                            }
+
+                            echo "<div class='recentFormWrapper'>".$element."</div>";
+
+                        } else {
+                            echo 'Not Available';
+                        }
+
+                        ?>
+                    </div>
+                </span>
+                <span data-away-score="" class="">
+
+                    <div class="subBlock">
+                        <?php
+
+                        if(property_exists($prediction->AwayTeam, 'Data')) {
+
+                            $chars = str_split($prediction->AwayTeam->Data->Headtohead);
+                            $element = "";
+                            foreach ($chars as $char) {
+                                $element = $element . "<label class='recentForm ".$char."'>".$char."</label>";
+                            }
+
+                            echo "<div class='recentFormWrapper'>".$element."</div>";
+
+                        } else {
+                            echo 'Not Available';
+                        }
+
+                        ?>
+                    </div>
+                </span>
+            </div>
 
             <span class="second_text status_info">
                 <div class="pRate">
@@ -79,6 +173,12 @@
                         Details
                     </span>
                 </a>
+                <a target="_blank" href="/prediction/summary/<?=$prediction->UniqueId?>" title="View more prediction details" class="live_stream">
+                    <span class="live_btn">
+                        <i class="fa fa-dashboard"></i>
+                    </span>
+                </a>
+
             </div>
         </div>
     </div>
@@ -394,7 +494,7 @@
 
             </div>
 
-            <?php if(true) : ?>
+            <?php if(false) : ?>
                 <div class="col-xs-12" id="cmt<?=$prediction->UniqueId?>">
                     <div class="cmt text-right" target="#cmt<?=$prediction->UniqueId?>" data-post-action="/prediction/history?country=<?=$prediction->Country?>&league=<?=$prediction->League?>">
                         Previous Predictions/s

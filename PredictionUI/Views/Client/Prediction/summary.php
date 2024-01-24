@@ -5,6 +5,53 @@
         <div class="box  box-default breadcrumb-box">
             <div class="box-body">
 
+                <h3 class="">
+                    <label class="label label-default"><?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?></label>
+                </h3>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading no-p-l"><h4>Prediction Success Rates</h4></div>
+                            <div class="panel-body">
+
+                                <small>Country</small>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%">
+                                        <span class="sr-only">72% Complete</span>
+                                    </div>
+                                </div>
+                                <small>League</small>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                        <span class="sr-only">20% Complete</span>
+                                    </div>
+                                </div>
+                                <small>Team</small>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                        <span class="sr-only">60% Complete (warning)</span>
+                                    </div>
+                                </div>
+                                <small>Danger</small>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                        <span class="sr-only">80% Complete</span>
+                                    </div>
+                                </div>
+
+                            </div><!--/panel-body-->
+                        </div><!--/panel-->
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+<!--                        Country & Flag:-->
+<!--                        Teams & Flags-->
+<!--                        Match Day & Time-->
+
+                        
+                    </div>
+                </div>
+
                 <div class="row">
                     <?php if(true) : ?>
                         <div class="col-xs-12 col-sm-6 no-p-r-lg">
@@ -341,9 +388,6 @@
 
                 </p>
 
-                <div for="" class="text-center">
-                    <h3><?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?></h3>
-                </div>
             </div>
         </div>
     </div>
