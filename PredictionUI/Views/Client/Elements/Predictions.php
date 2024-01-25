@@ -168,8 +168,6 @@ $maxAdsPredictionCounter = 0;
 
     $(document).ready(function (e) {
 
-
-
         $("img.lazy").lazyload({effect : "fadeIn"});
 
         $('[data-details]').on('click', function (e) {

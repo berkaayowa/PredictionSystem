@@ -34,12 +34,12 @@
                     </div>
                     <!-- ./col -->
                     <div class="col-xs-6 col-md-3 text-center">
-                        <input type="text" class="knob" value="-80" data-min="-150" data-max="150" data-width="90" data-height="90" data-fgColor="#00a65a">
+                        <input type="text" class="knob" value="0" data-min="-150" data-max="150" data-width="90" data-height="90" data-fgColor="#00a65a">
                         <div class="knob-label">Team</div>
                     </div>
                     <!-- ./col -->
                     <div class="col-xs-6 col-md-3 text-center">
-                        <input type="text" class="knob" value="40" data-width="90" data-height="90" data-fgColor="#00c0ef">
+                        <input type="text" class="knob" value="0" data-width="90" data-height="90" data-fgColor="#00c0ef">
                         <div class="knob-label">Option</div>
                     </div>
                     <!-- ./col -->
