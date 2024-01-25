@@ -1983,5 +1983,7 @@ span.second_text.status_info {
     margin-bottom: 0;
 }
 
-
+.clickable :hover{
+    cursor: pointer!important;
+}
 
