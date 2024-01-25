@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/Util/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/Util/Helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Elements/CouponPredictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Elements/CouponPredictions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Elements/Predictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Elements/Predictions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +180,7 @@
       <workItem from="1705530029032" duration="3972000" />
       <workItem from="1705626994489" duration="7481000" />
       <workItem from="1705918555112" duration="1187000" />
-      <workItem from="1706101148184" duration="22655000" />
+      <workItem from="1706101148184" duration="23095000" />
     </task>
     <servers />
   </component>
