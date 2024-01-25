@@ -4,9 +4,11 @@
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Job/PredictionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Job/PredictionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/Util/Helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Client/Elements/Prediction.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Elements/Prediction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Elements/Predictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Elements/Predictions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/js/mts.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/js/mts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/summary.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/summary.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +187,7 @@
       <workItem from="1705530029032" duration="3972000" />
       <workItem from="1705626994489" duration="7481000" />
       <workItem from="1705918555112" duration="1187000" />
-      <workItem from="1706101148184" duration="5635000" />
+      <workItem from="1706101148184" duration="21198000" />
     </task>
     <servers />
   </component>

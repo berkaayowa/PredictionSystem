@@ -56,8 +56,6 @@
     <?php endif?>
 
     <?=isset($meta_data) && !empty($meta_data) ? $meta_data : "" ?>
-<!--    <meta charset="utf-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
 
     <meta name="description" content="Unlock your winning potential with our free daily soccer betting tips and predictions!">
     <meta name="author" content="soccerprediction.co.za">
@@ -268,7 +266,7 @@
         </div>
     </div>
 
-    <?php if(\Util\Helper::GetCurrentUserSubscription()->showAds == \Helper\Check::$True):  ?>
+    <?php if(\Util\Helper::GetCurrentUserSubscription()->showPrimaryAds == \Helper\Check::$True):  ?>
     <script data-cfasync="false" type="text/javascript" id="clever-core">
         /* <![CDATA[ */
         (function (document, window) {

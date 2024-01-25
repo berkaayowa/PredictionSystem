@@ -11,14 +11,7 @@
 
         <img class="flag lazy" width="18" height="13" data-original="<?=$prediction->HomeTeam->CountryFlag?>" alt="England">
         <div> <?=$prediction->Country?> <a> <?=$prediction->League?> </a></div>
-        <div class="counter_m hidden">
-            <span class="count_matches ">
-                <form target="_blank" name="frmPrediction<?=$prediction->UniqueId?>" action="/prediction/summary/<?=$prediction->UniqueId?>" method="post">
-                    <input type="hidden" name="hdPrediction" id="hdPrediction" value="<?= htmlspecialchars(json_encode($prediction))?>">
-                    <button type="submit" href="" >Read report & summary of this match</button>
-                </form>
-            </span>
-        </div>
+
         <span class="css-c19m5y">
             <i class="wf left"></i>
           </span>
@@ -174,7 +167,7 @@
                         Details
                     </span>
                 </a>
-                <a target="_blank" href="/prediction/summary/<?=$prediction->UniqueId?>" title="View more prediction details" class="live_stream">
+                <a data-ajax-modal="#myPredictionReportModal" modal-data="#mdData" href="/prediction/summary/<?=$prediction->UniqueId?>" title="View more prediction details" class="live_stream">
                     <span class="live_btn">
                         <i class="fa fa-dashboard"></i>
                     </span>

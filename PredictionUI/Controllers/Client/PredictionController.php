@@ -507,19 +507,29 @@
             $end = $start + 2;
             $start = $start - 5;
 
-            $correctPredictionResults = @T::Find('prediction_result')
-                ->Where('leagueCode', 'like', $league)
-                ->Where('countryCode', 'like', $country)
-//                ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
+//            $correctPredictionResults = @T::Find('prediction_result')
+//                ->Where('leagueCode', 'like', $league)
+//                ->Where('countryCode', 'like', $country)
+////                ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
+//
+//                //->Where('ABS(homeTotalPerecentage - awayTotalPerecentage)', 'BETWEEN '.$start.' AND ', $end)
+//                ->OrderBy("id")
+//                ->FetchList();
 
-                ->Where('ABS(homeTotalPerecentage - awayTotalPerecentage)', 'BETWEEN '.$start.' AND ', $end)
+            $predictionPerCountry = @T::Find('prediction_result')
+                ->Where('countryCode', 'like', $country)
                 ->OrderBy("id")
                 ->FetchList();
 
             $correctPredictionPerCountry = @T::Find('prediction_result')
                 ->Where('countryCode', 'like', $country)
                 ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
-//                ->Where('ABS(homeTotalPerecentage - awayTotalPerecentage)', 'BETWEEN '.$start.' AND ', $end)
+                ->OrderBy("id")
+                ->FetchList();
+
+            $predictionPerLeague = @T::Find('prediction_result')
+                ->Where('countryCode', 'like', $country)
+                ->Where('leagueCode', 'like', $league)
                 ->OrderBy("id")
                 ->FetchList();
 
@@ -527,17 +537,25 @@
                 ->Where('countryCode', 'like', $country)
                 ->Where('leagueCode', 'like', $league)
                 ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
-//                ->Where('ABS(homeTotalPerecentage - awayTotalPerecentage)', 'BETWEEN '.$start.' AND ', $end)
                 ->OrderBy("id")
                 ->FetchList();
 
-            $this->view->set('previousPredictions', $correctPredictionResults);
-            $this->view->set('correctPredictionPerCountry', $correctPredictionPerCountry);
+            $this->view->set('previousPredictions', $predictionPerLeague);
 
             $this->view->set('prediction', $prediction);
-            $this->view->set('breadcrumb', array("Predictions", "Summary", $prediction->Country,  $prediction->League, $prediction->HomeTeam->TeamName .' - ' . $prediction->AwayTeam->TeamName));
+            $this->view->set('breadcrumb', array($prediction->Country,  $prediction->League, $prediction->HomeTeam->TeamName .' - ' . $prediction->AwayTeam->TeamName, property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction));
             $this->view->set('title', "Summary");
-            $this->view->render();
+
+            $perCountry = (sizeof($correctPredictionPerCountry) / sizeof($predictionPerCountry)) * 100;
+            $perLeague = (sizeof($correctPredictionPerLeague) / sizeof($predictionPerLeague)) * 100;
+
+            $this->view->set('perCountry', array("percentage"=>$perCountry, 'detail'=> sizeof($correctPredictionPerCountry) . " out of ".sizeof($predictionPerCountry)));
+            $this->view->set('perLeague', array("percentage"=>$perLeague, 'detail'=> sizeof($correctPredictionPerLeague) . " out of ".sizeof($predictionPerLeague)));
+
+            $this->overWriteLayout('/Client/Layout/layoutEmpty');
+            $data = $this->view->renderGetContent();
+
+            return $this->jsonFormat(['success'=>true,'error'=> false, 'message'=> false,  'data'=> $data]);
         }
 
         function history($params = array()) {

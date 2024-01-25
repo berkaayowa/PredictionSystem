@@ -743,6 +743,38 @@ mts.InitAjaxText = function () {
     });
 }
 
+mts.InitAjaxModal = function () {
+
+    $('[data-ajax-modal]').each(function (e) {
+
+        $(this).on("click", function (e) {
+
+            e.preventDefault();
+
+            var element = $(this);
+            var key = $(this).attr('name');
+            var modal = $(this).data('ajax-modal');
+            var url = $(this).attr('href');
+            var dataHolder = $(this).attr('modal-data');
+
+            berkaPhpJs.request({
+                url: url,
+                type: "GET",
+                hasFile: true,
+                showLoader: true,
+            }, function (success, result) {
+                if (success) {
+                    if (typeof result['data']!= 'undefined') {
+                        $(dataHolder).html(result['data']);
+                        $(modal).modal('toggle');
+                    }
+                }
+            });
+
+        })
+    });
+}
+
 mts.initReceive = function()  {
 
     function confirm(id, authCode, message, uniqueID) {
@@ -1017,6 +1049,7 @@ mts.initAll = function() {
     //mts.initAction();
     mts.initButton();
     //mts.InitAjaxText();
+    mts.InitAjaxModal();
 
 
     $('[data-static-dropdown]').each(function (e) {
@@ -1048,7 +1081,7 @@ mts.initTable = function() {
         paging: true
     });
 
-
+    //$('.dataTablePaging').DataTable();
 };
 
 mts.initCropper = function () {

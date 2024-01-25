@@ -748,6 +748,10 @@ class Helper {
 
     }
 
+    public static function GetColor($percentage) {
+        return 'red';
+    }
+
     public static function GetCurrentUserSubscription() {
 
         $subscription = @T::Find('subscription')

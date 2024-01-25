@@ -1967,5 +1967,21 @@ span.second_text.status_info {
     opacity: 1;
 }
 
+.stDetails {
+    height: 30px!important;
+}
+
+.stDetails > .close {
+    margin-top: -9px!important;
+}
+
+#mdData {
+    padding-top: 0;
+}
+
+#mdData > .breadcrumb-box {
+    margin-bottom: 0;
+}
+
 
 

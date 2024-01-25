@@ -1,429 +1,75 @@
 <?=\BerkaPhp\Helper\Element::Render("Breadcrumb", "Client", array("breadcrumb"=>$breadcrumb))?>
 
 <div class="row">
-    <div class="col-sm-12 col-md-12">
-        <div class="box  box-default breadcrumb-box">
+
+<!--    <div class="col-xs-12">-->
+<!--        <div class="box box-solid">-->
+<!--            <div class="box-body">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-xs-12">-->
+<!--                        <h5 id="">-->
+<!--                            Prediction statistics so far-->
+<!--                        </h5>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="col-xs-12">
+        <!-- jQuery Knob -->
+        <div class="box box-solid">
+<!--            <div class="box-header">-->
+<!--            </div>-->
             <div class="box-body">
-
-                <h3 class="">
-                    <label class="label label-default"><?=property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction?></label>
-                </h3>
-
                 <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading no-p-l"><h4>Prediction Success Rates</h4></div>
-                            <div class="panel-body">
 
-                                <small>Country</small>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%">
-                                        <span class="sr-only">72% Complete</span>
-                                    </div>
-                                </div>
-                                <small>League</small>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                        <span class="sr-only">20% Complete</span>
-                                    </div>
-                                </div>
-                                <small>Team</small>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                        <span class="sr-only">60% Complete (warning)</span>
-                                    </div>
-                                </div>
-                                <small>Danger</small>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                        <span class="sr-only">80% Complete</span>
-                                    </div>
-                                </div>
-
-                            </div><!--/panel-body-->
-                        </div><!--/panel-->
+                    <div class="col-xs-6 col-md-3 text-center">
+                        <input type="text" class="knob" data-min="0" data-max="100" value="<?=number_format((float) $perCountry['percentage'], 1, '.', '')?>%" data-width="90" data-height="90" data-fgColor="<?= \Util\Helper::GetColor($perCountry['percentage'])?>">
+                        <div class="knob-label"><?=$prediction->Country?> <br> <?=$perCountry['detail']?></div>
                     </div>
-                    <div class="col-sm-12 col-md-6">
-<!--                        Country & Flag:-->
-<!--                        Teams & Flags-->
-<!--                        Match Day & Time-->
-
-                        
+                    <!-- ./col -->
+                    <div class="col-xs-6 col-md-3 text-center">
+                        <input type="text" class="knob" data-min="0" data-max="100" value="<?=number_format((float) $perLeague['percentage'], 1, '.', '')?>%" data-width="90" data-height="90" data-fgColor="<?= \Util\Helper::GetColor($perLeague['percentage'])?>">
+                        <div class="knob-label"><?=$prediction->League?> <br> <?=$perLeague['detail']?></div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <?php if(true) : ?>
-                        <div class="col-xs-12 col-sm-6 no-p-r-lg">
-                            <div class="panel panel-default panel-wrapper" >
-                                <div class="panel-heading text-left cpanel-header">Prediction Break Down</div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <table class="table table-striped predictionTable">
-                                                <thead class="thead-inverse">
-                                                <tr class=table-header">
-                                                    <th class="txt-capitalized  wtp" style="color: #c8c8c8;">
-                                                        Attributes
-                                                    </th>
-                                                    <th class="txt-capitalized text-center wtp" style="color: #c8c8c8;">
-                                                        Weight %
-                                                    </th>
-                                                    <th class="txt-capitalized text-right wtp underline">
-                                                        <?=$prediction->HomeTeam->TeamName?>
-                                                    </th>
-                                                    <th class="txt-capitalized text-left wtp underline">
-                                                        <?=$prediction->AwayTeam->TeamName?>
-                                                    </th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td class="txt-capitalized tSubItem ">
-                                                        League Points
-                                                    </td>
-                                                    <td class="txt-capitalized tSubItem text-center">
-                                                        <?=$prediction->PredictionContribution->LeaguePointPercentage?>
-                                                    </td>
-                                                    <td class="txt-capitalized text-right tSubItem ">
-                                                        <?=number_format((float) $prediction->HomeTeam->LeaguePointPerecentage, 2, '.', '')?>%
-                                                    </td>
-                                                    <td class="txt-capitalized text-left tSubItem">
-                                                        <?=number_format((float) $prediction->AwayTeam->LeaguePointPerecentage, 2, '.', '')?>%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="txt-capitalized tSubItem ">
-                                                        League Position
-                                                    </td>
-                                                    <td class="txt-capitalized tSubItem text-center">
-                                                        <?=$prediction->PredictionContribution->LeaguePositionPercentage?>
-                                                    </td>
-                                                    <td class="txt-capitalized text-right tSubItem">
-                                                        <?=number_format((float) $prediction->HomeTeam->LeaguePositionPerecentage, 2, '.', '')?>%
-                                                    </td>
-                                                    <td class="txt-capitalized text-left tSubItem">
-                                                        <?=number_format((float) $prediction->AwayTeam->LeaguePositionPerecentage, 2, '.', '')?>%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="txt-capitalized tSubItem">
-                                                        Head 2 head
-                                                    </td>
-                                                    <td class="txt-capitalized tSubItem text-center">
-                                                        <?=$prediction->PredictionContribution->HeadtoheadPercentage?>
-                                                    </td>
-                                                    <td class="txt-capitalized text-right tSubItem">
-                                                        <?=number_format((float) $prediction->HomeTeam->HeadtoheadPerecentage, 2, '.', '')?>%
-                                                    </td>
-                                                    <td class="txt-capitalized text-left tSubItem">
-                                                        <?=number_format((float) $prediction->AwayTeam->HeadtoheadPerecentage, 2, '.', '')?>%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="txt-capitalized tSubItem ">
-                                                        Motivation
-                                                    </td>
-                                                    <td class="txt-capitalized tSubItem text-center">
-                                                        <?=$prediction->PredictionContribution->LastMatchPercentage?>
-                                                    </td>
-                                                    <td class="txt-capitalized text-right tSubItem">
-                                                        <?=number_format((float) $prediction->HomeTeam->LastGamesPerecentage, 2, '.', '')?>%
-                                                    </td>
-                                                    <td class="txt-capitalized text-left tSubItem">
-                                                        <?=number_format((float) $prediction->AwayTeam->LastGamesPerecentage, 2, '.', '')?>%
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="txt-capitalized tSubItem ">
-                                                        Game Location
-                                                    </td>
-                                                    <td class="txt-capitalized tSubItem text-center">
-                                                        <?=$prediction->PredictionContribution->AwayHomePercentage?>
-                                                    </td>
-                                                    <td class="txt-capitalized text-right">
-                                                        <?=number_format((float) $prediction->HomeTeam->AwayOrHomePerecentage, 2, '.', '')?>%
-                                                    </td>
-                                                    <td class="txt-capitalized text-left tSubItem">
-                                                        <?=number_format((float) $prediction->AwayTeam->AwayOrHomePerecentage, 2, '.', '')?>%
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="txt-capitalized tSubItem">
-                                                        Total %
-                                                    </td>
-                                                    <td class="txt-capitalized tSubItem text-center">
-                                                        100%
-                                                    </td>
-                                                    <td class="txt-capitalized text-right">
-                                                        <?=number_format((float) $prediction->HomeTeam->TotalPerecentage, 2, '.', '')?>%
-                                                    </td>
-                                                    <td class="txt-capitalized text-left">
-                                                        <?=number_format((float) $prediction->AwayTeam->TotalPerecentage, 2, '.', '')?>%
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 no-p-l-lg">
-                            <div class="panel panel-default panel-wrapper" >
-                                <div class="panel-heading text-left cpanel-header">Teams & Standing</div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <table class="table table-striped predictionTable">
-                                                <thead class="thead-inverse">
-                                                <tr class=table-header">
-                                                    <th  class="txt-capitalized  wtp" style="color: #c8c8c8;">
-                                                        Description
-                                                    </th>
-                                                    <th class="txt-capitalized text-center wtp" style="color: white;">
-                                                        *******
-                                                    </th>
-                                                    <th class="txt-capitalized text-right wtp underline">
-                                                        <?=$prediction->HomeTeam->TeamName?>
-                                                    </th>
-                                                    <th class="txt-capitalized text-left wtp underline">
-                                                        <?=$prediction->AwayTeam->TeamName?>
-                                                    </th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td class="txt-capitalized tSubItem ">
-                                                        League Points
-                                                    </td>
-                                                    <td class="txt-capitalized tSubItem text-center">
-
-                                                    </td>
-                                                    <td class="txt-capitalized text-right tSubItem ">
-                                                        <?=property_exists($prediction->HomeTeam, 'Data') ? $prediction->HomeTeam->Data->LeaguePoints: 'Not Available'?>
-                                                    </td>
-                                                    <td class="txt-capitalized text-left tSubItem">
-                                                        <?=property_exists($prediction->AwayTeam, 'Data') ? $prediction->AwayTeam->Data->LeaguePoints: 'Not Available'?>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="txt-capitalized tSubItem ">
-                                                        League Position
-                                                    </td>
-                                                    <td class="txt-capitalized tSubItem text-center">
-
-                                                    </td>
-                                                    <td class="txt-capitalized text-right tSubItem">
-                                                        <?=property_exists($prediction->HomeTeam, 'Data') ? $prediction->HomeTeam->Data->LeaguePosition.'th': 'Not Available'?>
-                                                    </td>
-                                                    <td class="txt-capitalized text-left tSubItem">
-                                                        <?=property_exists($prediction->AwayTeam, 'Data') ? $prediction->AwayTeam->Data->LeaguePosition.'th': 'Not Available'?>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="txt-capitalized tSubItem">
-                                                        Head 2 Head
-                                                    </td>
-                                                    <td class="txt-capitalized tSubItem text-center">
-
-                                                    </td>
-                                                    <td class="txt-capitalized text-right tSubItem">
-                                                        <?php
-
-                                                        if(property_exists($prediction->HomeTeam, 'Data')) {
-
-                                                            $chars = str_split($prediction->HomeTeam->Data->Headtohead);
-                                                            $element = "";
-                                                            foreach ($chars as $char) {
-                                                                $element = $element . "<label class='recentForm ".$char."'>".$char."</label>";
-                                                            }
-
-                                                            echo "<div class='recentFormWrapper'>".$element."</div>";
-
-                                                        } else {
-                                                            echo 'Not Available';
-                                                        }
-
-                                                        ?>
-                                                    </td>
-                                                    <td class="txt-capitalized text-left tSubItem">
-                                                        <?php
-
-                                                        if(property_exists($prediction->AwayTeam, 'Data')) {
-
-                                                            $chars = str_split($prediction->AwayTeam->Data->Headtohead);
-                                                            $element = "";
-                                                            foreach ($chars as $char) {
-                                                                $element = $element . "<label class='recentForm ".$char."'>".$char."</label>";
-                                                            }
-
-                                                            echo "<div class='recentFormWrapper'>".$element."</div>";
-
-                                                        } else {
-                                                            echo 'Not Available';
-                                                        }
-
-                                                        ?>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="txt-capitalized tSubItem ">
-                                                        Recent Form
-                                                    </td>
-                                                    <td class="txt-capitalized tSubItem text-center">
-
-                                                    </td>
-                                                    <td class="txt-capitalized text-right tSubItem">
-
-                                                        <?php
-
-                                                        if(property_exists($prediction->HomeTeam, 'Data')) {
-
-                                                            $chars = str_split($prediction->HomeTeam->Data->RecentForm);
-                                                            $element = "";
-                                                            foreach ($chars as $char) {
-                                                                $element = $element . "<label class='recentForm ".$char."'>".$char."</label>";
-                                                            }
-
-                                                            echo "<div class='recentFormWrapper'>".$element."</div>";
-
-                                                        } else {
-                                                            echo 'Not Available';
-                                                        }
-
-                                                        ?>
-                                                    </td>
-                                                    <td class="txt-capitalized text-left tSubItem">
-
-                                                        <?php
-
-                                                        if(property_exists($prediction->AwayTeam, 'Data')) {
-
-                                                            $chars = str_split($prediction->AwayTeam->Data->RecentForm);
-                                                            $element = "";
-                                                            foreach ($chars as $char) {
-                                                                $element = $element . "<label class='recentForm ".$char."'>".$char."</label>";
-                                                            }
-
-                                                            echo "<div class='recentFormWrapper'>".$element."</div>";
-
-                                                        } else {
-                                                            echo 'Not Available';
-                                                        }
-
-                                                        ?>
-
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="txt-capitalized tSubItem">
-                                                        Odds
-                                                    </td>
-                                                    <td class="txt-capitalized tSubItem text-center">
-
-                                                    </td>
-                                                    <td class="txt-capitalized text-right">
-                                                        <?=property_exists($prediction->HomeTeam->Data, 'Odd')  && !empty($prediction->HomeTeam->Data->Odd) ? $prediction->HomeTeam->Data->Odd : ' Not Available'?>
-                                                    </td>
-                                                    <td class="txt-capitalized text-left tSubItem">
-                                                        <?=property_exists($prediction->AwayTeam->Data, 'Odd') && !empty($prediction->AwayTeam->Data->Odd) ? $prediction->AwayTeam->Data->Odd : ' Not Available'?>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="txt-capitalized tSubItem ">
-                                                        Teams In The League
-                                                    </td>
-                                                    <td class="txt-capitalized tSubItem text-center">
-
-                                                    </td>
-                                                    <td class="txt-capitalized text-right">
-
-                                                    </td>
-                                                    <td class="txt-capitalized text-left ">
-                                                        <?=property_exists($prediction->AwayTeam, 'Data') ? $prediction->AwayTeam->Data->NumberOfTeamsInTheLeague: 'Not Available'?>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    <?php else: ?>
-                        <div class="col-xs-12 text-center">
-                            <a data-toggle="modal" data-target="#mySigninModal">Please sign in to view the prediction break down</a>
-                        </div>
-                    <?php endif ?>
-                </div>
-
-                <div class="matchDetails hidden">
-                    <div class="home">
-                        <div class="title"><?=$prediction->HomeTeam->TeamName?></div>
-                        <img class="lazy" data-original="<?= !empty($prediction->HomeTeam->TeamFlag) ? $prediction->HomeTeam->TeamFlag : "/Views/Client/Assets/images/icon3.png"?>" alt="arsenal-fc" width="14" height="14">
+                    <!-- ./col -->
+                    <div class="col-xs-6 col-md-3 text-center">
+                        <input type="text" class="knob" value="-80" data-min="-150" data-max="150" data-width="90" data-height="90" data-fgColor="#00a65a">
+                        <div class="knob-label">Team</div>
                     </div>
+                    <!-- ./col -->
+                    <div class="col-xs-6 col-md-3 text-center">
+                        <input type="text" class="knob" value="40" data-width="90" data-height="90" data-fgColor="#00c0ef">
+                        <div class="knob-label">Option</div>
+                    </div>
+                    <!-- ./col -->
                 </div>
-
-                <br>
-                <p class="hidden">
-                    <?php if($prediction->HomeTeam->LeaguePositionPerecentage > $prediction->AwayTeam->LeaguePositionPerecentage) :?>
-
-                        <b><?=$prediction->HomeTeam->TeamName?></b> is currently positioned higher in the league, sitting at <b><?=$prediction->HomeTeam->Data->LeaguePosition?>th</b> with <b><?=$prediction->HomeTeam->Data->LeaguePoints?> points.</b>
-                    <?php else : ?>
-                        <b><?=$prediction->AwayTeam->TeamName?></b> is currently positioned higher in the league, sitting at <b><?=$prediction->AwayTeam->Data->LeaguePosition?>th</b> with <b><?=$prediction->AwayTeam->Data->LeaguePoints?> points.</b>
-                    <?php endif ?>
-
-                    <?php if($prediction->HomeTeam->LeaguePositionPerecentage < $prediction->AwayTeam->LeaguePositionPerecentage) :?>
-                        <b><?=$prediction->HomeTeam->TeamName?></b>  on the other hand, is <b><?=$prediction->HomeTeam->Data->LeaguePosition?>th</b> with <b><?=$prediction->HomeTeam->Data->LeaguePoints?> points.</b>
-                    <?php else : ?>
-                        <b><?=$prediction->AwayTeam->TeamName?></b>  on the other hand, is <b><?=$prediction->AwayTeam->Data->LeaguePosition?>th</b> with <b><?=$prediction->AwayTeam->Data->LeaguePoints?> points</b>.
-                    <?php endif ?>
-
-                    and the league consists of  <b><?=$prediction->AwayTeam->Data->NumberOfTeamsInTheLeague?></b> teams,
-
-                </p>
-
             </div>
         </div>
     </div>
+</div>
 
-
+<?php if(\Util\Helper::GetCurrentUserSubscription()->showPreviousPrediction == \Helper\Check::$True):  ?>
+<div class="row">
     <div class="col-sm-12">
 
         <div class="box  box-default breadcrumb-box">
             <div class="box-body">
                 <ul class="nav nav-tabs" id="myTab">
-                    <li class="active"><a href="#profile" data-toggle="tab">Previous Predictions</a></li>
+                    <li class="active"><a href="#profile" data-toggle="tab"><?=$prediction->League?> Past Predictions</a></li>
                 </ul>
 
                 <div class="tab-content">
                     <div class="tab-pane active" id="profile">
 <!--                        <div class="fixtureTable">-->
-                            <table id="dataTable" class="table table-striped predictionTable">
+                            <table class=" dataTablePaging table table-striped predictionTable">
                                 <thead class="thead-inverse">
                                 <tr class=table-header">
-                                    <th class="txt-capitalized  wtp" style="">
-                                        Country
-                                    </th>
-                                    <th class="txt-capitalized  wtp" style="">
-                                        League
-                                    </th>
-                                    <th class="txt-capitalized  wtp" style="">
+                                    <th class="txt-capitalized text-right wtp underline">
                                         home
                                     </th>
-                                    <th class="txt-capitalized text-center wtp" style="">
-                                        away
-                                    </th>
-                                    <th class="txt-capitalized text-right wtp underline">
-                                        home %
-                                    </th>
                                     <th class="txt-capitalized text-left wtp underline">
-                                        Away %
+                                        Away
                                     </th>
                                     <th class="txt-capitalized text-left wtp underline">
                                         Prediction
@@ -439,12 +85,9 @@
                                 <tbody>
                                 <?php foreach ($previousPredictions as $previousPrediction ): ?>
                                     <tr>
-                                        <td><?=$previousPrediction->country?></td>
-                                        <td><?=$previousPrediction->league?></td>
-                                        <td><?=$previousPrediction->home?></td>
-                                        <td><?=$previousPrediction->away?></td>
-                                        <td><?=$previousPrediction->homeTotalPerecentage?></td>
-                                        <td><?=$previousPrediction->awayTotalPerecentage?></td>
+
+                                        <td><?=number_format((float) $previousPrediction->homeTotalPerecentage, 2, '.', '')?></td>
+                                        <td><?=number_format((float) $previousPrediction->awayTotalPerecentage, 2, '.', '')?></td>
                                         <td><?=$previousPrediction->predictionCode?></td>
                                         <td><?=$previousPrediction->correctPredictionCode?></td>
                                         <td><?=$previousPrediction->homeScore?> - <?=$previousPrediction->awayScore?></td>
@@ -458,16 +101,62 @@
             </div>
         </div>
     </div>
-
-
 </div>
-
+<?php endif;?>
 
 <script>
 
     $(document).ready(function (e) {
-
+        $('.dataTablePaging').DataTable({
+            "order": [0],
+            "pageLength": 5,
+            paging: true
+        });
         $("img.lazy").lazyload({effect : "fadeIn"});
+
+        $(".knob").knob({
+            draw: function () {
+                if (this.$.data('skin') == 'tron') {
+
+                    var a = this.angle(this.cv)  // Angle
+                        , sa = this.startAngle          // Previous start angle
+                        , sat = this.startAngle         // Start angle
+                        , ea                            // Previous end angle
+                        , eat = sat + a                 // End angle
+                        , r = true;
+
+                    this.g.lineWidth = this.lineWidth;
+
+                    this.o.cursor
+                    && (sat = eat - 0.3)
+                    && (eat = eat + 0.3);
+
+                    if (this.o.displayPrevious) {
+                        ea = this.startAngle + this.angle(this.value);
+                        this.o.cursor
+                        && (sa = ea - 0.3)
+                        && (ea = ea + 0.3);
+                        this.g.beginPath();
+                        this.g.strokeStyle = this.previousColor;
+                        this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
+                        this.g.stroke();
+                    }
+
+                    this.g.beginPath();
+                    this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;
+                    this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
+                    this.g.stroke();
+
+                    this.g.lineWidth = 2;
+                    this.g.beginPath();
+                    this.g.strokeStyle = this.o.fgColor;
+                    this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+                    this.g.stroke();
+
+                    return false;
+                }
+            }
+        });
 
     })
 </script>
