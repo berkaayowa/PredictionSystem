@@ -1063,19 +1063,6 @@ var countOrder = 0;
 
 mts.initTable = function() {
 
-
-    //$("#dataTable").tableExport({
-    //    headings: true,
-    //    footers: true,
-    //    formats: [],
-    //    fileName: "id",
-    //    bootstrap: true,
-    //    position: "bottom",
-    //    ignoreRows: null,
-    //    ignoreCols: null,
-    //    trimWhitespace: true
-    //});
-
     $('#dataTable').DataTable({
         "order": [0],
         paging: true
