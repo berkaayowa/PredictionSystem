@@ -1081,7 +1081,6 @@ mts.initTable = function() {
         paging: true
     });
 
-    //$('.dataTablePaging').DataTable();
 };
 
 mts.initCropper = function () {
