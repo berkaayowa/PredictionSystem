@@ -490,7 +490,7 @@
             $prediction = json_decode($predictionRecord->data);
             //var_dump($prediction);
 
-            $league = $this->removeNonAlphaChar($prediction->League);
+            $league = strtolower($this->removeNonAlphaChar($prediction->League));
             $country = $this->getName($prediction->Country);
 
 
