@@ -532,8 +532,18 @@
             $this->view->set('breadcrumb', array($prediction->Country,  $prediction->League, $prediction->HomeTeam->TeamName .' - ' . $prediction->AwayTeam->TeamName, property_exists($prediction, 'PredictionLabelFull') ? $prediction->PredictionLabelFull : $prediction->Prediction));
             $this->view->set('title', "Summary");
 
-            $perCountry = (sizeof($correctPredictionPerCountry) / sizeof($predictionPerCountry)) * 100;
-            $perLeague = (sizeof($correctPredictionPerLeague) / sizeof($predictionPerLeague)) * 100;
+            $perLeague = 0;
+            $perCountry = 0;
+
+            $size = sizeof($correctPredictionPerCountry);
+
+            if($size > 0)
+                $perCountry = ($size / sizeof($predictionPerCountry)) * 100;
+
+            $size = sizeof($correctPredictionPerLeague);
+
+            if($size > 0)
+                $perLeague = ($size / sizeof($predictionPerLeague)) * 100;
 
             $this->view->set('perCountry', array("percentage"=>$perCountry, 'detail'=> sizeof($correctPredictionPerCountry) . " out of ".sizeof($predictionPerCountry).' Correct Predictions'));
             $this->view->set('perLeague', array("percentage"=>$perLeague, 'detail'=> sizeof($correctPredictionPerLeague) . " out of ".sizeof($predictionPerLeague) .' Correct Predictions'));
