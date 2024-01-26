@@ -753,9 +753,9 @@ class Helper {
         if($percentage < 50)
             return 'red';
         else  if($percentage > 49 && $percentage < 58 )
-            return '#ff9800';
-        else  if($percentage > 57 && $percentage < 67 )
             return '#6b4207';
+        else  if($percentage > 57 && $percentage < 67 )
+            return '#ff9800';
         else  if($percentage > 66 )
             return 'green';
         else
