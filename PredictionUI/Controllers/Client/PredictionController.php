@@ -504,9 +504,6 @@
             $predictionPerLeague = array();
             $correctPredictionPerCountry = array();
 
-            $homeWin = array();
-            $homeWinDraw = array();
-
             $predictionPerCountry = @T::Find('prediction_result')
                 ->Where('countryCode', '=', $country)
                 ->OrderBy("id")
@@ -514,28 +511,20 @@
 
             foreach ($predictionPerCountry as $recordPerCountry) {
 
-                if($recordPerCountry->countryCode == $country && $recordPerCountry->leagueCode == $league && $recordPerCountry->itWentAsPredicted == \Helper\Check::$True) {
+                if($recordPerCountry->leagueCode == $league && $recordPerCountry->itWentAsPredicted == \Helper\Check::$True) {
                     array_push($correctPredictionPerLeague, $recordPerCountry);
                 }
 
-                if($recordPerCountry->countryCode == $country && $recordPerCountry->leagueCode == $league) {
+                if($recordPerCountry->leagueCode == $league) {
                     array_push($predictionPerLeague, $recordPerCountry);
                 }
 
                 if($recordPerCountry->itWentAsPredicted == \Helper\Check::$True) {
                     array_push($correctPredictionPerCountry, $recordPerCountry);
 
-                    if($recordPerCountry->predictionCode == "Home Win") {
-                        array_push($homeWin, $recordPerCountry);
-                    }
-                    if($recordPerCountry->predictionCode == "Home Win/Draw") {
-                        array_push($homeWinDraw, $recordPerCountry);
-                    }
-
                 }
 
             }
-
 
             $this->view->set('previousPredictions', $predictionPerLeague);
 

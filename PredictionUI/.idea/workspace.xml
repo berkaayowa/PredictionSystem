@@ -4,11 +4,6 @@
     <list default="true" id="427f4363-2b05-4c30-b9c7-3bdf644c49e2" name="Changes" comment="xxx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Client/PredictionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Elements/Predictions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Elements/Predictions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/js/mts.js" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/js/mts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Layout/layout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Client/Prediction/summary.php" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Client/Prediction/summary.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +181,7 @@
       <workItem from="1705530029032" duration="3972000" />
       <workItem from="1705626994489" duration="7481000" />
       <workItem from="1705918555112" duration="1187000" />
-      <workItem from="1706101148184" duration="31623000" />
+      <workItem from="1706101148184" duration="32280000" />
     </task>
     <task id="LOCAL-00001" summary="xxx">
       <created>1706227162940</created>
