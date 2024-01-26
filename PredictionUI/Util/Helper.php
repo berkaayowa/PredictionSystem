@@ -750,14 +750,18 @@ class Helper {
 
     public static function GetColor($percentage) {
 
-        if($percentage < 40)
+        if($percentage < 50)
             return 'red';
-        else  if($percentage > 50 && $percentage < 60 )
+        else  if($percentage > 49 && $percentage < 58 )
             return '#ff9800';
-        else  if($percentage > 60 )
+        else  if($percentage > 57 && $percentage < 67 )
+            return '#6b4207';
+        else  if($percentage > 66 )
             return 'green';
         else
             return '';
+
+
     }
 
     public static function GetCurrentUserSubscription() {

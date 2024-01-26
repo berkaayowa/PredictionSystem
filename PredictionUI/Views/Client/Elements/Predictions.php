@@ -147,7 +147,8 @@ $maxAdsPredictionCounter = 0;
     </div>
 </div>
 
-<div id="myPredictionReportModal" class="modal fade " role="dialog">
+<!--<a data-toggle="modal" data-target="#myPredictionReportModal" class="hidden"></a>-->
+<div id="myPredictionReportModal" class="modal fade " role="dialog" >
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">

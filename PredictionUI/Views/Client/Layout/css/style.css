@@ -1987,3 +1987,14 @@ span.second_text.status_info {
     cursor: pointer!important;
 }
 
+/*#myPredictionReportModal .modal-dialog {*/
+/*    width: 1200px;*/
+/*}*/
+/*#myPredictionReportModal .modal-body {*/
+/*    min-height: calc(100vh - 210px);*/
+/*    overflow-y: auto;*/
+/*    overflow-x: hidden;*/
+/*    max-height: 100%;*/
+/*    position: relative;*/
+/*}*/
+

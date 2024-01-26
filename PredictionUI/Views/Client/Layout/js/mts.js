@@ -766,7 +766,7 @@ mts.InitAjaxModal = function () {
                 if (success) {
                     if (typeof result['data']!= 'undefined') {
                         $(dataHolder).html(result['data']);
-                        $(modal).modal('toggle');
+                        $(modal).modal('show');
                     }
                 }
             });

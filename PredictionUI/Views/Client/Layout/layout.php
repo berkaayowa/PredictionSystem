@@ -406,6 +406,7 @@
 <script src="/Views/Client/Layout/js/color-picker.js"></script>
 <script src="/Views/Client/Layout/js/lazyload.esm.min.js"></script>
 <script src="/Views/Shared/Scripts/Theme/Chart.js"></script>
+
 <script src="/Views/Client/Layout/js/mts.js"></script>
 
 

@@ -2,50 +2,30 @@
 
 <div class="row">
 
-<!--    <div class="col-xs-12">-->
-<!--        <div class="box box-solid">-->
-<!--            <div class="box-body">-->
-<!--                <div class="row">-->
-<!--                    <div class="col-xs-12">-->
-<!--                        <h5 id="">-->
-<!--                            Prediction statistics so far-->
-<!--                        </h5>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-    <div class="col-xs-12">
+    <div class="col-sm-12 col-md-12">
         <!-- jQuery Knob -->
-        <div class="box box-solid">
-<!--            <div class="box-header">-->
-<!--            </div>-->
+        <div class="box box-default">
+            <div class="box-header with-border center">
+                <i class="fa fa-bar-chart-o"></i>
+                <h3 class="box-title">Prediction Statistics</h3>
+            </div>
             <div class="box-body">
                 <div class="row">
 
-                    <div class="col-xs-6 col-md-3 text-center">
+                    <div class="col-xs-6 col-md-6 text-center">
                         <input type="text" class="knob" data-min="0" data-max="100" value="<?=number_format((float) $perCountry['percentage'], 1, '.', '')?>%" data-width="90" data-height="90" data-fgColor="<?= \Util\Helper::GetColor($perCountry['percentage'])?>">
                         <div class="knob-label"><?=$prediction->Country?> <br> <?=$perCountry['detail']?></div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-xs-6 col-md-3 text-center">
+                    <div class="col-xs-6 col-md-6 text-center">
                         <input type="text" class="knob" data-min="0" data-max="100" value="<?=number_format((float) $perLeague['percentage'], 1, '.', '')?>%" data-width="90" data-height="90" data-fgColor="<?= \Util\Helper::GetColor($perLeague['percentage'])?>">
                         <div class="knob-label"><?=$prediction->League?> <br> <?=$perLeague['detail']?></div>
                     </div>
-                    <!-- ./col -->
-                    <div class="col-xs-6 col-md-3 text-center">
-                        <input type="text" class="knob" value="0" data-min="-150" data-max="150" data-width="90" data-height="90" data-fgColor="#00a65a">
-                        <div class="knob-label">Team</div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-xs-6 col-md-3 text-center">
-                        <input type="text" class="knob" value="0" data-width="90" data-height="90" data-fgColor="#00c0ef">
-                        <div class="knob-label">Option</div>
-                    </div>
-                    <!-- ./col -->
+
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 
@@ -157,6 +137,7 @@
                 }
             }
         });
+
 
     })
 </script>

@@ -493,52 +493,49 @@
             $league = $this->removeNonAlphaChar($prediction->League);
             $country = $this->getName($prediction->Country);
 
-//            $resultsPerCountry = @T::Find('prediction_result')
-//                ->Where('leagueCode', '=', $league)
-//                ->Where('countryCode', '=', $country)
-//                ->FetchList();
-
-//            $results = @T::Find('prediction_result')
-//                ->Where('leagueCode', '=', $league)
-//                ->Where('countryCode', '=', $country)
-//                ->FetchList();
 
             $start = $prediction->HomeTeam->TotalPerecentage > $prediction->AwayTeam->TotalPerecentage ? $prediction->HomeTeam->TotalPerecentage : $prediction->AwayTeam->TotalPerecentage;
             $end = $start + 2;
             $start = $start - 5;
 
-//            $correctPredictionResults = @T::Find('prediction_result')
-//                ->Where('leagueCode', 'like', $league)
-//                ->Where('countryCode', 'like', $country)
-////                ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
-//
-//                //->Where('ABS(homeTotalPerecentage - awayTotalPerecentage)', 'BETWEEN '.$start.' AND ', $end)
-//                ->OrderBy("id")
-//                ->FetchList();
+            //->Where('ABS(homeTotalPerecentage - awayTotalPerecentage)', 'BETWEEN '.$start.' AND ', $end)
+
+            $correctPredictionPerLeague = array();
+            $predictionPerLeague = array();
+            $correctPredictionPerCountry = array();
+
+            $homeWin = array();
+            $homeWinDraw = array();
 
             $predictionPerCountry = @T::Find('prediction_result')
-                ->Where('countryCode', 'like', $country)
+                ->Where('countryCode', '=', $country)
                 ->OrderBy("id")
                 ->FetchList();
 
-            $correctPredictionPerCountry = @T::Find('prediction_result')
-                ->Where('countryCode', 'like', $country)
-                ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
-                ->OrderBy("id")
-                ->FetchList();
+            foreach ($predictionPerCountry as $recordPerCountry) {
 
-            $predictionPerLeague = @T::Find('prediction_result')
-                ->Where('countryCode', 'like', $country)
-                ->Where('leagueCode', 'like', $league)
-                ->OrderBy("id")
-                ->FetchList();
+                if($recordPerCountry->countryCode == $country && $recordPerCountry->leagueCode == $league && $recordPerCountry->itWentAsPredicted == \Helper\Check::$True) {
+                    array_push($correctPredictionPerLeague, $recordPerCountry);
+                }
 
-            $correctPredictionPerLeague = @T::Find('prediction_result')
-                ->Where('countryCode', 'like', $country)
-                ->Where('leagueCode', 'like', $league)
-                ->Where('itWentAsPredicted', '=', \Helper\Check::$True)
-                ->OrderBy("id")
-                ->FetchList();
+                if($recordPerCountry->countryCode == $country && $recordPerCountry->leagueCode == $league) {
+                    array_push($predictionPerLeague, $recordPerCountry);
+                }
+
+                if($recordPerCountry->itWentAsPredicted == \Helper\Check::$True) {
+                    array_push($correctPredictionPerCountry, $recordPerCountry);
+
+                    if($recordPerCountry->predictionCode == "Home Win") {
+                        array_push($homeWin, $recordPerCountry);
+                    }
+                    if($recordPerCountry->predictionCode == "Home Win/Draw") {
+                        array_push($homeWinDraw, $recordPerCountry);
+                    }
+
+                }
+
+            }
+
 
             $this->view->set('previousPredictions', $predictionPerLeague);
 
@@ -549,8 +546,8 @@
             $perCountry = (sizeof($correctPredictionPerCountry) / sizeof($predictionPerCountry)) * 100;
             $perLeague = (sizeof($correctPredictionPerLeague) / sizeof($predictionPerLeague)) * 100;
 
-            $this->view->set('perCountry', array("percentage"=>$perCountry, 'detail'=> sizeof($correctPredictionPerCountry) . " out of ".sizeof($predictionPerCountry)));
-            $this->view->set('perLeague', array("percentage"=>$perLeague, 'detail'=> sizeof($correctPredictionPerLeague) . " out of ".sizeof($predictionPerLeague)));
+            $this->view->set('perCountry', array("percentage"=>$perCountry, 'detail'=> sizeof($correctPredictionPerCountry) . " out of ".sizeof($predictionPerCountry).' Correct Predictions'));
+            $this->view->set('perLeague', array("percentage"=>$perLeague, 'detail'=> sizeof($correctPredictionPerLeague) . " out of ".sizeof($predictionPerLeague) .' Correct Predictions'));
 
             $this->overWriteLayout('/Client/Layout/layoutEmpty');
             $data = $this->view->renderGetContent();
