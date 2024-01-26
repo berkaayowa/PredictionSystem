@@ -505,7 +505,7 @@
             $correctPredictionPerCountry = array();
 
             $predictionPerCountry = @T::Find('prediction_result')
-                ->Where('countryCode', '=', $country)
+                ->Where('countryCode', 'like', $country)
                 ->OrderBy("id")
                 ->FetchList();
 

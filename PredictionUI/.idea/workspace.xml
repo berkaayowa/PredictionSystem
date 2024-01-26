@@ -181,7 +181,7 @@
       <workItem from="1705530029032" duration="3972000" />
       <workItem from="1705626994489" duration="7481000" />
       <workItem from="1705918555112" duration="1187000" />
-      <workItem from="1706101148184" duration="32280000" />
+      <workItem from="1706101148184" duration="32691000" />
     </task>
     <task id="LOCAL-00001" summary="xxx">
       <created>1706227162940</created>
@@ -233,6 +233,15 @@
           <url>file://$PROJECT_DIR$/Controllers/Client/UsersController.php</url>
           <line>264</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/Controllers/Client/PredictionController.php</url>
+          <line>546</line>
+          <properties>
+            <option name="className" value="\Controller\Client\PredictionController" />
+            <option name="methodName" value="history" />
+          </properties>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
