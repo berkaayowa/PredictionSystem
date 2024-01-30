@@ -167,7 +167,7 @@
                         Details
                     </span>
                 </a>
-                <div class="clickable" data-ajax-modal="#myPredictionReportModal" modal-data="#mdData" href="/prediction/summary/<?=$prediction->UniqueId?>" title="View more prediction details" class="live_stream">
+                <div class="clickable" data-ajax-modal="#myPredictionReportModal" modal-data="#mdData" href="/prediction/summary/<?=$prediction->UniqueId?>" title="Prediction Statistics" class="live_stream">
                     <span class="live_btn">
                         <i class="fa fa-dashboard"></i>
                     </span>
