@@ -42,7 +42,7 @@
                                         <?=Resource\Label::General("Recommended Matches")?>
                                     </a>
                                 <?php endif;?>
-                                <?php if($predictionRequest != null && $predictionRequest->IsAny()) :?>
+                                <?php if(false && $predictionRequest != null && $predictionRequest->IsAny()) :?>
                                     <a class="searchBtnHome btn btn-success" href="/coupons/index/<?=$predictionRequest->id?>?oddDifference=0&numberOfGamesPerCoupon=10&numberOfGamesPerLeague=2&leaguePointPercentageOverOREqual=2&gameMotivation=2.5&h2hPercentage=2&gameLocation=0&allowedDuplicateGame=2&&options%5B%5D=Win_at&options%5B%5D=Win%2FDraw_at&leaguePositionPercentageOverOREqual=0&teamsLeaguePointsDiff=3&teamsLeaguePositionDiff=9" >
                                         <?=Resource\Label::General("View Recommended Coupons")?>
                                     </a>
