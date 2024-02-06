@@ -145,6 +145,16 @@ $maxAdsPredictionCounter = 0;
             </div>
         </div>
     </div>
+
+    <?php if(\Util\Helper::GetCurrentUserSubscription()->showSecondaryAds == \Helper\Check::$True):  ?>
+    <div class="col-sm-12">
+        <div id='div-gpt-ad-1706881872775-0' style='min-width: 160px; min-height: 600px;'>
+            <script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1706881872775-0'); });
+            </script>
+        </div>
+    </div>
+    <?php endif;?>
 </div>
 
 <!--<a data-toggle="modal" data-target="#myPredictionReportModal" class="hidden"></a>-->

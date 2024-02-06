@@ -66,6 +66,19 @@
 
     <?= BerkaPhp\Helper\Element::Render('css') ?>
     <?= BerkaPhp\Helper\Element::Render('Style') ?>
+
+
+    <?php if(\Util\Helper::GetCurrentUserSubscription()->showSecondaryAds == \Helper\Check::$True):  ?>
+        <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+        <script>
+            window.googletag = window.googletag || {cmd: []};
+            googletag.cmd.push(function() {
+                googletag.defineSlot('/22890180776,23056707116/Banner_soccerprediction.co.za_160x600a', [160, 600], 'div-gpt-ad-1706881872775-0').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+        </script>
+    <?php endif;?>
 </head>
 <body class="hold-transition ">
     <div class="page-container">
@@ -156,7 +169,7 @@
                 <a target="_blank" title="instagram" href='https://www.instagram.com/soccerprediction.co.za'><i class="fa fa-instagram fa-3x fa-fw"></i></a>
                 <a target="_blank" title="youtube" href='https://www.youtube.com/@soccerprediction27/about'><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
 
-                <div class="copyRight"><a target="_blank" href='https://www.tiktok.com/@soccerprediction.co.za?_t=8etdqA0Hz9h&_r=1'>TikTok</i></a></div>
+                <div class="copyRight hidden"><a target="_blank" href='https://www.tiktok.com/@soccerprediction.co.za?_t=8etdqA0Hz9h&_r=1'>TikTok</i></a></div>
                 <div class="copyRight"><a href="/contacts" >Contacts Us</i></a></div>
                 <div class="copyRight"><a href="https://www.paypal.com/donate/?hosted_button_id=3EUXREY22UMGQ" >Donate</i></a></div>
                 <div class="copyRight">
