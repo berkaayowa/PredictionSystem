@@ -25,7 +25,7 @@
                 <div class="box-body row ">
                     <div class="col-xm-12 colFrmSearch col-lg-12">
                         <form class="frmSearch row" message="<?=Resource\Label::General("Searching")?>..."  method="GET" id="transactionSearch" ACTION="<?= BerkaPhp\Helper\Html::action('/prediction')?>">
-                            <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-4 no-mg-b">
+                            <div class="form-group col-xs-12 col-sm-6 col-md-3 col-lg-3 no-mg-b">
                                 <div class="input-group">
                                     <input value="<?=$StartDate?>"  data-date="<?=DATE_SECOND_FORMAT?>" placeholder="<?=Resource\Label::General("StartDate")?>" type="text" class="form-control" name="startDate" id="startDate">
                                     <span class="input-group-addon">
@@ -33,7 +33,17 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="form-group col-xs-12 col-sm-6 col-md-8 col-lg-8 no-mg-b">
+                            <div class="form-group col-xs-12 col-sm-6 col-md-3 col-lg-3 no-mg-b">
+<!--                                <div class="input-group">-->
+                                    <?= Util\Helper::select('sortBy', [['id'=>'1','label'=>'Start Time - ASC'], ['id'=>'2','label'=>'Start Time - DESC']], ['default'=>'Sort By','value'=>'id',  'selected'=> $sortBy, 'class'=>'form-control', 'data-dropdrown'=>true], function($data) {
+                                        return $data['label'];
+                                    }) ?>
+<!--                                    <span class="input-group-addon">-->
+<!--                                        <span class="fa fa-sort"></span>-->
+<!--                                    </span>-->
+<!--                                </div>-->
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 no-mg-b">
                                 <button type="submit" class="searchBtnHome btn btn-primary">
                                     <?=Resource\Label::General("Search")?>
                                 </button>

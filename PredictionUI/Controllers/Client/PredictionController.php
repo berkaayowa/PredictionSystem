@@ -32,6 +32,7 @@
             $requetcode = '';
             $shareCode = false;
             $filePath = '';
+            $sortBy = '';
 
             if(array_key_exists("endDate", $params['args']['query']))
                 $endDate = $params['args']['query']['endDate'];
@@ -44,6 +45,9 @@
 
             if(array_key_exists("requestcode", $params['args']['query']))
                 $requetcode = $params['args']['query']['requestcode'];
+
+            if(array_key_exists("sortBy", $params['args']['query']))
+                $sortBy = $params['args']['query']['sortBy'];
 
             $startDateFile = strtotime($startDate);
 
@@ -99,18 +103,17 @@
             $array = [];
 
             if(strlen($data) > 0) {
-                $array = json_decode($data);
-                usort($array, function ($a, $b) {
-                    return $a->Percentage < $b->Percentage;
-                });
 
-//                usort($array, function ($a, $b) {
-//
-//                    $aOddDifference = Helper::GetOddDiff($a);
-//                    $bOddDifference = Helper::GetOddDiff($b);
-//
-//                    return ($a->Percentage + ($aOddDifference * 10)) < ($b->Percentage + ($bOddDifference * 10));
-//                });
+                $array = json_decode($data);
+                usort($array, function ($a, $b) use ($sortBy) {
+
+                    if($sortBy == '2')
+                        return  strtotime($b->Date) <=> strtotime($a->Date);
+                    else if($sortBy == '1')
+                        return  strtotime($a->Date) <=> strtotime($b->Date);
+                    else
+                        return $a->Percentage < $b->Percentage;
+                });
 
             }
 
@@ -128,6 +131,7 @@
             $this->view->set('shareCode', $shareCode);
 
             $this->view->set('title', $title);
+            $this->view->set('sortBy', $sortBy);
             $this->view->render();
         }
 
