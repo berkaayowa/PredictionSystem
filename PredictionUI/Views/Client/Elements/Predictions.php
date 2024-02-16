@@ -148,9 +148,10 @@ $maxAdsPredictionCounter = 0;
 
     <?php if(\Util\Helper::GetCurrentUserSubscription()->showSecondaryAds == \Helper\Check::$True):  ?>
     <div class="col-sm-12">
-        <div id='div-gpt-ad-1706881872775-0' style='min-width: 160px; min-height: 600px;'>
+        <!-- /22890180776,23056707116/Banner_soccerprediction.co.za_160x600b -->
+        <div id='div-gpt-ad-1706881964479-0' style='min-width: 160px; min-height: 600px;'>
             <script>
-                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1706881872775-0'); });
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1706881964479-0'); });
             </script>
         </div>
     </div>
