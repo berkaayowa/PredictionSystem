@@ -73,7 +73,7 @@
         <script>
             window.googletag = window.googletag || {cmd: []};
             googletag.cmd.push(function() {
-                googletag.defineSlot('/22890180776,23056707116/Banner_soccerprediction.co.za_160x600a', [160, 600], 'div-gpt-ad-1706881872775-0').addService(googletag.pubads());
+                googletag.defineSlot('/22890180776,23056707116/Banner_soccerprediction.co.za_160x600b', [160, 600], 'div-gpt-ad-1706881964479-0').addService(googletag.pubads());
                 googletag.pubads().enableSingleRequest();
                 googletag.enableServices();
             });
